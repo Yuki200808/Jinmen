@@ -1,0 +1,5917 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="天津专升本学习与测评平台：高等数学、英语、信息技术、软件工程专业课，每日学习、巩固练习、阶段测验与公办院校达标分析。">
+  <title>津门升本 · 天津专升本学习与测评</title>
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231d4ed8%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230ea5e9%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2245%22%20text-anchor%3D%22middle%22%20font-family%3D%22PingFang%20SC%2C%20Microsoft%20YaHei%2C%20sans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3E%E6%B4%A5%3C%2Ftext%3E%0A%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <style>
+:root {
+  --bg: #f4f7fb;
+  --bg-glow: #e8f1ff;
+  --panel: #ffffff;
+  --panel-2: #f8fafc;
+  --text: #0f172a;
+  --text-2: #334155;
+  --muted: #64748b;
+  --line: #e6ebf2;
+  --line-strong: #d5deea;
+  --brand: #1d4ed8;
+  --brand-2: #0ea5e9;
+  --brand-soft: #eff6ff;
+  --success: #0f9f6e;
+  --success-soft: #e7f8f1;
+  --warn: #d97706;
+  --warn-soft: #fff7e6;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.1);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --sidebar-w: 252px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1120;
+  --bg-glow: #12203a;
+  --panel: #111a2e;
+  --panel-2: #0e1729;
+  --text: #e8eef9;
+  --text-2: #c3cfe2;
+  --muted: #94a6c2;
+  --line: #22304a;
+  --line-strong: #2d3f5d;
+  --brand: #5b8cff;
+  --brand-2: #38bdf8;
+  --brand-soft: #17294a;
+  --success: #34d399;
+  --success-soft: #102c27;
+  --warn: #fbbf24;
+  --warn-soft: #2d2412;
+  --danger: #f87171;
+  --danger-soft: #2e1719;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font);
+  background:
+    radial-gradient(1100px 620px at 82% -10%, var(--bg-glow), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--brand);
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- 侧边栏 ---------- */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 26px 18px 20px;
+  border-right: 1px solid var(--line);
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow-y: auto;
+  z-index: 30;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 6px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 700;
+  background: linear-gradient(145deg, #1d4ed8, #0ea5e9);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.32);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+.brand-sub {
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: 0.4px;
+  margin-top: 1px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  padding: 11px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  transition: background 0.18s ease, color 0.18s ease;
+  text-align: left;
+}
+
+.nav-item svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: color 0.18s ease;
+}
+
+.nav-item:hover {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.nav-item.active {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.nav-item.active svg {
+  color: var(--brand);
+}
+
+.nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 9px;
+  bottom: 9px;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+}
+
+.sidebar-goal {
+  margin-top: auto;
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, var(--panel-2), var(--panel));
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.sidebar-goal .goal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+
+.sidebar-goal strong {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.sidebar-goal .goal-bar {
+  height: 7px;
+  border-radius: 99px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.sidebar-goal .goal-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar-goal .goal-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+  font-size: 11px;
+}
+
+.sidebar-foot {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 6px;
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.sidebar-foot .dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+/* ---------- 主区域 ---------- */
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 72px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 25;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mobile-brand {
+  display: none;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--brand);
+}
+
+.topbar-title {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.chip strong {
+  font-size: 14px;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.chip svg {
+  width: 15px;
+  height: 15px;
+  color: var(--warn);
+}
+
+.countdown-chip strong {
+  color: var(--brand);
+}
+
+.chip-unit {
+  font-size: 11px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  transition: color 0.18s, border-color 0.18s, transform 0.18s;
+}
+
+.icon-btn:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+  transform: rotate(-8deg);
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.view {
+  padding: 30px 32px 70px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  outline: none;
+}
+
+.view > * {
+  animation: rise 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.view > *:nth-child(2) { animation-delay: 0.04s; }
+.view > *:nth-child(3) { animation-delay: 0.08s; }
+.view > *:nth-child(4) { animation-delay: 0.12s; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 通用组件 ---------- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 30px 34px;
+  color: #fff;
+  background:
+    radial-gradient(600px 300px at 90% -30%, rgba(56, 189, 248, 0.55), transparent 65%),
+    linear-gradient(125deg, #0f2e6e 0%, #1d4ed8 52%, #0e7490 100%);
+  box-shadow: 0 24px 50px rgba(29, 78, 216, 0.26);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 18px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: 190px;
+  top: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 660px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.hero .eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero h2 {
+  font-size: 28px;
+  line-height: 1.35;
+  margin: 10px 0 9px;
+  letter-spacing: 0.2px;
+}
+
+.hero h2 em {
+  font-style: normal;
+  color: #7dd3fc;
+}
+
+.hero-desc {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.76);
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hero-ring {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-ring svg {
+  width: 138px;
+  height: 138px;
+}
+
+.hero-ring .ring-label {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  padding: 10px 17px;
+  font-size: 13.5px;
+  font-weight: 650;
+  line-height: 1.2;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, opacity 0.18s;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.24);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 12px 26px rgba(29, 78, 216, 0.32);
+}
+
+.btn-light {
+  background: #fff;
+  color: #12306f;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.btn-ghost-light {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.26);
+}
+
+.btn-ghost-light:hover,
+.btn-light:hover {
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--text-2);
+}
+
+.btn-outline:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.btn-soft {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.btn-danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-color: transparent;
+}
+
+.btn-sm {
+  padding: 8px 13px;
+  font-size: 12.5px;
+  border-radius: 9px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.text-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--brand);
+  font-size: 12.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 26px 2px 13px;
+}
+
+.section-head h2 {
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.section-head p {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.section-head .text-link {
+  flex-shrink: 0;
+  padding-bottom: 2px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.kpi {
+  padding: 17px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi::after {
+  content: "";
+  position: absolute;
+  right: -22px;
+  bottom: -26px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  opacity: 0.75;
+}
+
+.kpi-label {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.kpi strong {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi strong small {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 3px;
+}
+
+.kpi-hint {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.subject-card {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+}
+
+.subject-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--subject, var(--brand));
+}
+
+.subject-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subject-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--subject, var(--brand));
+  background: var(--soft, var(--brand-soft));
+  flex-shrink: 0;
+}
+
+.subject-top h3 {
+  font-size: 14.5px;
+  line-height: 1.3;
+}
+
+.subject-top p {
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.subject-top .tag {
+  margin-left: auto;
+  align-self: flex-start;
+}
+
+.meter {
+  height: 7px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--subject, var(--brand));
+  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.subject-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.subject-meta b {
+  color: var(--text-2);
+  font-weight: 650;
+}
+
+.subject-card .btn {
+  margin-top: auto;
+  background: var(--soft, var(--brand-soft));
+  color: var(--subject, var(--brand));
+  border-color: transparent;
+}
+
+.subject-card .btn:hover {
+  filter: brightness(0.97);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.tag-soft {
+  background: var(--soft, var(--brand-soft));
+  color: var(--subject, var(--brand));
+  border-color: transparent;
+}
+
+.tag-success {
+  background: var(--success-soft);
+  color: var(--success);
+  border-color: transparent;
+}
+
+.tag-warn {
+  background: var(--warn-soft);
+  color: var(--warn);
+  border-color: transparent;
+}
+
+.tag-danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-color: transparent;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 13px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  text-align: left;
+  transition: border-color 0.18s, background 0.18s, transform 0.18s;
+}
+
+.task-row:hover {
+  border-color: var(--subject, var(--brand));
+  background: var(--panel-2);
+  transform: translateX(2px);
+}
+
+.task-row.done {
+  background: var(--panel-2);
+  opacity: 0.72;
+}
+
+.task-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  border: 1.5px solid var(--line-strong);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: transparent;
+}
+
+.task-row.done .task-check {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.task-check svg {
+  width: 13px;
+  height: 13px;
+}
+
+.task-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.task-main strong {
+  font-size: 13px;
+  font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-main small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.task-side {
+  margin-left: auto;
+  font-size: 11.5px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.task-row.done .task-side {
+  color: var(--success);
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.forecast-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.forecast-head span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.forecast-head strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 30px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.forecast-head strong em {
+  font-style: normal;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.target-meter {
+  position: relative;
+  height: 12px;
+  border-radius: 99px;
+  background: var(--line);
+  margin-top: 4px;
+}
+
+.target-meter .target-fill {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.target-meter .target-fill.near {
+  background: linear-gradient(90deg, #0d9488, #34d399);
+}
+
+.target-meter .target-line {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 2px;
+  background: var(--warn);
+  border-radius: 2px;
+}
+
+.target-meter .target-line::after {
+  content: "目标";
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9.5px;
+  color: var(--warn);
+  white-space: nowrap;
+}
+
+.forecast-legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.mini-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.mini-bar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+}
+
+.mini-bar .mb-label {
+  width: 58px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.mini-bar .mb-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.mini-bar .mb-track span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--subject, var(--brand));
+}
+
+.mini-bar .mb-val {
+  width: 48px;
+  text-align: right;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.callout {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brand);
+  background: var(--panel-2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.callout strong {
+  color: var(--text-2);
+}
+
+/* ---------- 今日学习 ---------- */
+.page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.page-head h2 {
+  font-size: 24px;
+  letter-spacing: -0.2px;
+}
+
+.page-head p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+  max-width: 700px;
+}
+
+.day-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 13px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  flex-shrink: 0;
+}
+
+.day-badge strong {
+  font-size: 22px;
+  color: var(--brand);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.day-badge span {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.unit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 20px;
+  border-top: 3px solid var(--subject, var(--brand));
+}
+
+.unit-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.unit-head h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+.unit-head p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.unit-status {
+  margin-left: auto;
+  font-size: 10.5px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 3px 9px;
+  flex-shrink: 0;
+}
+
+.unit-status.done {
+  color: var(--success);
+  background: var(--success-soft);
+  border-color: transparent;
+}
+
+.points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.points li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--subject, var(--brand));
+  opacity: 0.65;
+}
+
+.unit-tip {
+  font-size: 11.5px;
+  color: var(--muted);
+  background: var(--panel-2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  line-height: 1.6;
+}
+
+.unit-tip strong {
+  color: var(--subject, var(--brand));
+  margin-right: 5px;
+}
+
+.unit-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.unit-actions .btn-primary {
+  background: var(--subject, var(--brand));
+  box-shadow: none;
+}
+
+.daily-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  border-radius: 15px;
+  border: 1px dashed var(--line-strong);
+  background: var(--panel-2);
+}
+
+.daily-banner .db-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-weight: 800;
+}
+
+.daily-banner strong {
+  font-size: 13px;
+}
+
+.daily-banner p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.daily-banner .btn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ---------- 练习 / 测验 ---------- */
+.practice-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 28px;
+  margin-bottom: 16px;
+  background:
+    radial-gradient(420px 200px at 100% 0%, rgba(14, 165, 233, 0.16), transparent 70%),
+    var(--panel);
+}
+
+.practice-hero h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.practice-hero p {
+  color: var(--muted);
+  font-size: 12.5px;
+  max-width: 560px;
+}
+
+.practice-meta {
+  display: flex;
+  gap: 22px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.practice-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.practice-meta strong {
+  font-size: 20px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.practice-meta span {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.practice-hero .btn {
+  flex-shrink: 0;
+}
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-box {
+  padding: 15px 16px;
+  border-radius: 13px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.stat-box span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.stat-box strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 20px;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-box strong small {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.quiz-shell {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 26px 30px;
+}
+
+.quiz-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.quiz-head .quiz-index {
+  font-weight: 650;
+  color: var(--text-2);
+}
+
+.quiz-progress {
+  height: 5px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 10px 0 22px;
+}
+
+.quiz-progress span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  transition: width 0.3s ease;
+}
+
+.quiz-stem {
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 600;
+  margin-bottom: 18px;
+  white-space: pre-line;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.option {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: var(--panel);
+  cursor: pointer;
+  transition: border-color 0.16s, background 0.16s;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.option:hover {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.option-key {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.option.selected {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.option.selected .option-key {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.option.correct {
+  border-color: var(--success);
+  background: var(--success-soft);
+}
+
+.option.correct .option-key {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.option.wrong {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.option.wrong .option-key {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+}
+
+.option.show-correct {
+  border-color: var(--success);
+  border-style: dashed;
+}
+
+.quiz-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.quiz-actions .spacer {
+  flex: 1;
+}
+
+.quiz-palette {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.palette-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 11.5px;
+  font-weight: 650;
+  transition: all 0.15s;
+}
+
+.palette-btn.answered {
+  background: var(--brand-soft);
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.palette-btn.current {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.palette-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.palette-legend i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  margin-right: 4px;
+  vertical-align: 1px;
+}
+
+.exam-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.exam-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.exam-title strong {
+  color: var(--text);
+  font-size: 15px;
+}
+
+.timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 9px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.timer.warn {
+  color: var(--danger);
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.exam-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 16px;
+  align-items: start;
+}
+
+.exam-main {
+  padding: 26px 30px;
+}
+
+.exam-side {
+  position: sticky;
+  top: 92px;
+  padding: 18px;
+}
+
+.exam-side h3 {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.exam-side .btn {
+  margin-top: 16px;
+}
+
+.exam-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1.5px solid var(--line);
+  background: var(--panel);
+  border-radius: 11px;
+  padding: 11px 12px;
+  text-align: left;
+  font-size: 12.5px;
+  transition: all 0.16s;
+}
+
+.choice .choice-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--subject, var(--line-strong));
+  flex-shrink: 0;
+}
+
+.choice:hover {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+}
+
+.choice.active {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.choice small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.exam-config {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.config-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.config-row strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.result-hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 30px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.result-hero::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  opacity: 0.6;
+}
+
+.result-ring {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.result-ring svg {
+  width: 132px;
+  height: 132px;
+}
+
+.result-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.result-copy h2 {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+.result-copy > p {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-top: 4px;
+}
+
+.result-metrics {
+  display: flex;
+  gap: 26px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.result-metrics div {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-metrics strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-metrics span {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 16px 18px;
+}
+
+.review-item.is-correct {
+  border-left: 3px solid var(--success);
+}
+
+.review-item.is-wrong {
+  border-left: 3px solid var(--danger);
+}
+
+.review-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+.review-item .review-stem {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.review-answer {
+  margin-top: 9px;
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.review-answer .wrong-text {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.review-answer .right-text {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.explain {
+  margin-top: 9px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: var(--panel-2);
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.explain strong {
+  color: var(--text-2);
+}
+
+/* ---------- 学情分析 ---------- */
+.chart-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 16px;
+}
+
+.chart-card {
+  padding: 20px 22px;
+}
+
+.chart-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.chart-head h3 {
+  font-size: 14.5px;
+}
+
+.chart-head p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.chart-wrap {
+  width: 100%;
+}
+
+.chart-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.chart-empty {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.mastery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 6px;
+}
+
+.mastery-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mastery-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.mastery-top b {
+  font-size: 13.5px;
+}
+
+.mastery-top span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mastery-bar {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.mastery-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--subject, var(--brand));
+  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mastery-hint {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table th {
+  text-align: left;
+  font-size: 10.5px;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-2);
+}
+
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+.table .score {
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.wrong-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.wrong-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 13px 14px;
+  background: var(--panel);
+}
+
+.wrong-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.wrong-top strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.wrong-item p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.wrong-item .wrong-answer {
+  margin-top: 7px;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.wrong-item .explain {
+  margin-top: 8px;
+}
+
+.empty {
+  padding: 38px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12.5px;
+  border: 1px dashed var(--line);
+  border-radius: 13px;
+}
+
+.empty strong {
+  display: block;
+  color: var(--text-2);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* ---------- 设置 ---------- */
+.settings-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: 11.5px;
+  font-weight: 650;
+  color: var(--text-2);
+}
+
+.field input,
+.field select {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  padding: 0 12px;
+  font-size: 13px;
+  transition: border-color 0.16s, box-shadow 0.16s;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-soft);
+}
+
+.field small {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.form-actions {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.setting-block {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.setting-block:first-of-type {
+  border-top: 0;
+  padding-top: 4px;
+}
+
+.setting-block h3 {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.setting-block p {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.danger-zone {
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+  padding: 14px;
+  background: var(--danger-soft);
+}
+
+.danger-zone h3 {
+  color: var(--danger);
+}
+
+.danger-zone .btn {
+  margin-top: 4px;
+}
+
+.school-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.school-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  transition: border-color 0.16s, background 0.16s;
+}
+
+button.school-row:hover {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+}
+
+.school-row > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.school-row > .tag {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.school-row .school-meta {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  flex: 0 0 auto;
+}
+
+.school-row .school-score {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.school-row.active {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.school-row strong {
+  font-size: 12.5px;
+}
+
+/* ---------- 移动端底部导航 / 提示 ---------- */
+.bottom-nav {
+  display: none;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 34px;
+  transform: translate(-50%, 14px);
+  background: #0f172a;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 99px;
+  font-size: 12.5px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s, transform 0.22s;
+  z-index: 100;
+  max-width: min(90vw, 420px);
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.footer-note {
+  margin-top: 26px;
+  font-size: 10.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1180px) {
+  .subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .chart-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 980px) {
+  .sidebar { display: none; }
+  .mobile-brand { display: block; }
+  .topbar { padding: 0 18px; height: 62px; }
+  .view { padding: 20px 18px 100px; }
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 40;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 6px;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
+    justify-content: space-around;
+  }
+  .bottom-nav button {
+    flex: 1;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 6px 2px;
+    border-radius: 11px;
+  }
+  .bottom-nav button svg {
+    width: 19px;
+    height: 19px;
+  }
+  .bottom-nav button.active {
+    color: var(--brand);
+    background: var(--brand-soft);
+  }
+  .exam-layout { grid-template-columns: 1fr; }
+  .exam-side { position: static; }
+  .unit-grid { grid-template-columns: 1fr; }
+  .settings-grid { grid-template-columns: 1fr; }
+  .topbar-title { font-size: 17px; }
+  .countdown-chip .chip-label { display: none; }
+  .hero { padding: 24px; flex-direction: column; align-items: flex-start; }
+  .hero-ring { align-self: center; }
+  .hero h2 { font-size: 23px; }
+  .hero::after { display: none; }
+  .toast { bottom: 88px; }
+}
+
+@media (max-width: 640px) {
+  .grid-2, .grid-3, .grid-4, .subject-grid, .kpi-grid, .stat-strip {
+    grid-template-columns: 1fr;
+  }
+  .stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .subject-grid { grid-template-columns: 1fr; }
+  .hero { padding: 20px; border-radius: 18px; }
+  .hero h2 { font-size: 21px; }
+  .hero-ring svg { width: 112px; height: 112px; }
+  .hero-ring .ring-wrap { width: 112px !important; height: 112px !important; }
+  .result-ring .ring-wrap { width: 104px !important; height: 104px !important; }
+  .ring-center strong { font-size: 20px; }
+  .card { padding: 17px; border-radius: 15px; }
+  .practice-hero { flex-direction: column; align-items: flex-start; padding: 20px; }
+  .practice-hero .btn { width: 100%; }
+  .quiz-shell { padding: 18px; }
+  .quiz-stem { font-size: 14.5px; }
+  .option { padding: 11px 12px; font-size: 13px; }
+  .result-hero { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; }
+  .result-ring svg { width: 104px; height: 104px; }
+  .page-head { flex-direction: column; }
+  .day-badge { align-self: stretch; justify-content: center; }
+  .form-grid { grid-template-columns: 1fr; }
+  .choice-grid { grid-template-columns: 1fr; }
+  .topbar-actions .streak-chip { display: none; }
+  .daily-banner { flex-wrap: wrap; }
+  .daily-banner .btn { margin-left: 0; width: 100%; }
+  .section-head h2 { font-size: 16px; }
+  .hero-actions .btn { flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- 进度环 ---------- */
+.ring-wrap {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  pointer-events: none;
+}
+
+.ring-center strong {
+  font-size: 25px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ring-center span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.hero .ring-center strong {
+  color: #fff;
+}
+
+.hero .ring-center span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ---------- 深色模式适配 ---------- */
+[data-theme="dark"] .subject-icon,
+[data-theme="dark"] .tag-soft,
+[data-theme="dark"] .subject-card .btn {
+  background: color-mix(in srgb, var(--subject, var(--brand)) 22%, var(--panel));
+  color: color-mix(in srgb, var(--subject, var(--brand)) 55%, #ffffff);
+}
+
+[data-theme="dark"] .hero .btn-light {
+  background: #f8fafc;
+  color: #12306f;
+}
+
+[data-theme="dark"] .toast {
+  background: #e8eef9;
+  color: #0b1120;
+}
+
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">津</div>
+        <div>
+          <div class="brand-name">津门升本</div>
+          <div class="brand-sub">天津专升本学习与测评</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <button class="nav-item" data-view="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+          </svg>
+          <span>学习总览</span>
+        </button>
+        <button class="nav-item" data-view="today">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <path d="M8 3v4M16 3v4M3 10h18M8 14h4"></path>
+          </svg>
+          <span>今日学习</span>
+        </button>
+        <button class="nav-item" data-view="practice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+          <span>每日巩固</span>
+        </button>
+        <button class="nav-item" data-view="exam">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="13" r="8"></circle>
+            <path d="M12 9v4l3 2M9 2h6"></path>
+          </svg>
+          <span>阶段测验</span>
+        </button>
+        <button class="nav-item" data-view="analysis">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 3v18h18"></path>
+            <path d="M7 15l4-4 3 3 5-6"></path>
+          </svg>
+          <span>学情分析</span>
+        </button>
+        <button class="nav-item" data-view="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.9-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 2.9-1.2V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.9H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path>
+          </svg>
+          <span>设置</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-goal" id="sidebarGoal"></div>
+      <div class="sidebar-foot">
+        <span>数据保存在本地浏览器</span>
+        <span class="dot"></span>
+        <span>v1.0</span>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="mobile-brand">津门升本</div>
+          <h1 class="topbar-title" id="viewTitle">学习总览</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="chip countdown-chip" title="距离考试日期">
+            <span class="chip-label">距考试</span>
+            <strong id="topCountdown">--</strong>
+            <span class="chip-unit">天</span>
+          </div>
+          <div class="chip streak-chip" title="连续学习天数">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-5 .5 1.5 1.5 2 2 2 0-3-1-5 1-7z"></path>
+            </svg>
+            <strong id="topStreak">0</strong>
+            <span class="chip-unit">天</span>
+          </div>
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换深色模式" title="切换深色模式">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="view" id="view" tabindex="-1"></main>
+    </div>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="移动端导航"></nav>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+const SUBJECTS = [
+  {
+    id: "math",
+    name: "高等数学",
+    short: "高数",
+    icon: "∑",
+    color: "#2563eb",
+    soft: "#e8f0fe",
+    full: 150,
+    desc: "理科必考，重在极限、导数与积分的计算和综合应用。",
+    examTip: "选择填空控制在 40 分钟，计算题写清关键步骤。"
+  },
+  {
+    id: "english",
+    name: "英语",
+    short: "英语",
+    icon: "A",
+    color: "#7c3aed",
+    soft: "#f1eafe",
+    full: 150,
+    desc: "词汇语法是底座，阅读与写作决定上限，需要每天滚动积累。",
+    examTip: "阅读与写作留足 50 分钟，先易后难，不卡单题。"
+  },
+  {
+    id: "it",
+    name: "信息技术",
+    short: "信息技术",
+    icon: "▤",
+    color: "#0d9488",
+    soft: "#e2f7f4",
+    full: 150,
+    desc: "计算机应用基础，覆盖 Office 操作、网络、安全与算法常识。",
+    examTip: "操作题按步骤给分，快捷键和函数必须熟练。"
+  },
+  {
+    id: "se",
+    name: "软件工程专业课",
+    short: "软工",
+    icon: "⌘",
+    color: "#ea580c",
+    soft: "#fdeee3",
+    full: 200,
+    desc: "校考专业课，围绕需求、设计、测试、项目管理和 C 语言基础。",
+    examTip: "简答与案例题分点作答，优先写专业术语。"
+  }
+];
+
+const STAGES = [
+  {
+    id: "basic",
+    name: "基础阶段",
+    short: "基础",
+    desc: "补齐知识框架，把概念、公式和基本题型吃透。",
+    weeks: "第 1—4 周",
+    color: "#0d9488",
+    soft: "#e2f7f4"
+  },
+  {
+    id: "strong",
+    name: "强化阶段",
+    short: "强化",
+    desc: "专题突破，提升综合题与跨知识点题型的得分率。",
+    weeks: "第 5—8 周",
+    color: "#2563eb",
+    soft: "#e8f0fe"
+  },
+  {
+    id: "sprint",
+    name: "冲刺阶段",
+    short: "冲刺",
+    desc: "限时模拟与错题复盘，把会做的题稳定拿分。",
+    weeks: "第 9—12 周",
+    color: "#ea580c",
+    soft: "#fdeee3"
+  }
+];
+
+const UNITS = [
+  {
+    id: "m1",
+    subject: "math",
+    stage: "basic",
+    title: "函数、极限与连续",
+    focus: "两个重要极限与等价无穷小",
+    points: [
+      "极限存在的充要条件：左极限与右极限都存在且相等。",
+      "两个重要极限：lim(x→0) sinx/x = 1；lim(x→∞)(1+1/x)^x = e。",
+      "常用等价无穷小（x→0）：sinx~x，tanx~x，1-cosx~x²/2，ln(1+x)~x，e^x-1~x。",
+      "连续的定义：lim(x→x₀)f(x)=f(x₀)；间断点分第一类与第二类。"
+    ],
+    tip: "先判断极限类型再代值，0/0 型优先考虑等价无穷小或洛必达。"
+  },
+  {
+    id: "m2",
+    subject: "math",
+    stage: "basic",
+    title: "导数与微分",
+    focus: "复合函数链式法则",
+    points: [
+      "导数定义：f'(x₀)=lim(Δx→0)[f(x₀+Δx)-f(x₀)]/Δx。",
+      "基本公式：(xⁿ)'=nxⁿ⁻¹，(sinx)'=cosx，(e^x)'=e^x，(lnx)'=1/x。",
+      "乘积法则：(uv)'=u'v+uv'；商的导数按“分母平方”记忆。",
+      "复合函数链式法则：y'=f'(u)·u'，逐层求导、逐层相乘。"
+    ],
+    tip: "复合函数先分层再求导，最容易丢分的是漏乘内层导数。"
+  },
+  {
+    id: "m3",
+    subject: "math",
+    stage: "basic",
+    title: "导数的应用",
+    focus: "单调性、极值与最值",
+    points: [
+      "单调性：f'(x)>0 时递增，f'(x)<0 时递减。",
+      "极值必要条件 f'(x₀)=0；第一充分条件看导数是否变号。",
+      "第二充分条件：f'(x₀)=0 且 f''(x₀)>0 为极小值，f''(x₀)<0 为极大值。",
+      "闭区间最值：比较驻点与两个端点的函数值。"
+    ],
+    tip: "用表格列出导数符号区间，比死记结论更稳。"
+  },
+  {
+    id: "m4",
+    subject: "math",
+    stage: "basic",
+    title: "不定积分",
+    focus: "凑微分与分部积分",
+    points: [
+      "原函数与不定积分：∫f(x)dx=F(x)+C，C 不能漏。",
+      "基本公式：∫xⁿdx=xⁿ⁺¹/(n+1)+C (n≠-1)，∫1/x dx=ln|x|+C，∫e^xdx=e^x+C。",
+      "第一类换元（凑微分）：∫f(φ(x))φ'(x)dx=∫f(u)du。",
+      "分部积分：∫u dv=uv-∫v du，u 的选择顺序为“反对幂指三”。"
+    ],
+    tip: "积分结果求导验证，是最快的自查方法。"
+  },
+  {
+    id: "m5",
+    subject: "math",
+    stage: "strong",
+    title: "定积分及其应用",
+    focus: "牛顿-莱布尼茨公式与变上限积分",
+    points: [
+      "牛顿-莱布尼茨公式：∫ₐᵇf(x)dx=F(b)-F(a)。",
+      "变上限积分求导：d/dx∫ₐ^{φ(x)}f(t)dt=f(φ(x))φ'(x)。",
+      "对称区间上奇函数积分为 0，偶函数积分为半区间的 2 倍。",
+      "面积 S=∫ₐᵇ|f(x)-g(x)|dx；旋转体体积 V=π∫ₐᵇf²(x)dx。"
+    ],
+    tip: "定积分是一个数，不定积分是函数族，概念题常在这里设坑。"
+  },
+  {
+    id: "m6",
+    subject: "math",
+    stage: "strong",
+    title: "微分方程",
+    focus: "一阶线性与二阶常系数",
+    points: [
+      "可分离变量：dy/dx=f(x)g(y)，分离后两边积分。",
+      "一阶线性 y'+P(x)y=Q(x)，用通解公式或积分因子法。",
+      "二阶常系数齐次方程由特征方程 r²+pr+q=0 的根写出通解。",
+      "非齐次方程的特解按自由项类型设待定系数。"
+    ],
+    tip: "先判断方程类型，再套对应解法，不要一上来就硬算。"
+  },
+  {
+    id: "m7",
+    subject: "math",
+    stage: "strong",
+    title: "多元函数与二重积分",
+    focus: "偏导数、全微分与累次积分",
+    points: [
+      "偏导数：对 x 求导时把 y 视为常数，反之亦然。",
+      "全微分 dz=∂z/∂x dx+∂z/∂y dy。",
+      "二重积分化为累次积分，先画区域再定上下限。",
+      "极坐标：x=r cosθ，y=r sinθ，面积元 dA=r dr dθ。"
+    ],
+    tip: "画积分区域图，是二重积分不丢分的关键一步。"
+  },
+  {
+    id: "m8",
+    subject: "math",
+    stage: "strong",
+    title: "无穷级数",
+    focus: "敛散性判别与几何级数求和",
+    points: [
+      "p 级数 ∑1/n^p：p>1 收敛，p≤1 发散。",
+      "几何级数 ∑aqⁿ：|q|<1 收敛，和为 a/(1-q)。",
+      "比值判别法：lim|aₙ₊₁/aₙ|=ρ，ρ<1 收敛，ρ>1 发散。",
+      "交错级数用莱布尼茨判别法，区分绝对收敛与条件收敛。"
+    ],
+    tip: "先看通项是否趋于 0，不趋于 0 一定发散。"
+  },
+  {
+    id: "m9",
+    subject: "math",
+    stage: "sprint",
+    title: "向量与空间解析几何",
+    focus: "数量积、向量积与平面方程",
+    points: [
+      "数量积 a·b=|a||b|cosθ，两向量垂直等价于 a·b=0。",
+      "向量积 a×b 同时垂直于 a、b，模长等于平行四边形面积。",
+      "平面点法式：A(x-x₀)+B(y-y₀)+C(z-z₀)=0，法向量为 (A,B,C)。",
+      "直线对称式：(x-x₀)/m=(y-y₀)/n=(z-z₀)/p，方向向量为 (m,n,p)。"
+    ],
+    tip: "求平面先找法向量，求直线先找方向向量。"
+  },
+  {
+    id: "m10",
+    subject: "math",
+    stage: "sprint",
+    title: "极限与导数综合",
+    focus: "洛必达法则的适用条件",
+    points: [
+      "0/0 与 ∞/∞ 型可用洛必达法则，但先用等价无穷小往往更快。",
+      "1^∞ 型极限用重要极限或取对数处理。",
+      "分段函数在分界点处用左右导数判断可导性。",
+      "抽象函数极限常借助导数定义转化。"
+    ],
+    tip: "使用洛必达前先验证条件，滥用是常见失分点。"
+  },
+  {
+    id: "m11",
+    subject: "math",
+    stage: "sprint",
+    title: "积分综合与技巧",
+    focus: "换元、分部与分段积分",
+    points: [
+      "三角有理式可考虑万能代换或凑微分。",
+      "含根号的积分先有理化或换元去根号。",
+      "分段函数积分必须分段进行，注意分界点。",
+      "定积分比较大小，可比较被积函数在区间上的大小。"
+    ],
+    tip: "换元后一定同步更换积分上下限。"
+  },
+  {
+    id: "m12",
+    subject: "math",
+    stage: "sprint",
+    title: "考前模拟与答题策略",
+    focus: "限时训练与步骤分",
+    points: [
+      "先易后难，选择填空控制在 40 分钟内完成。",
+      "计算题写清关键步骤，公式和代入过程都能得分。",
+      "交卷前检查符号、积分上下限和分母是否为零。",
+      "错题按“知识点+错因”归类，每天复盘 10 分钟。"
+    ],
+    tip: "每天限时一套小卷，训练做题节奏比刷难题更有效。"
+  },
+  {
+    id: "e1",
+    subject: "english",
+    stage: "basic",
+    title: "核心词汇与词义辨析",
+    focus: "高频词根与固定搭配",
+    points: [
+      "高频词根：spect 看、port 携带、dict 说、tract 拉。",
+      "affect 是动词“影响”，effect 多作名词“影响、效果”。",
+      "常见搭配：make progress、take measures、pay attention to。",
+      "每天 30 个高频词，第二天先滚动复习前一天的词。"
+    ],
+    tip: "单词放进句子里记，搭配比孤立词义更重要。"
+  },
+  {
+    id: "e2",
+    subject: "english",
+    stage: "basic",
+    title: "动词时态与语态",
+    focus: "时间状语与时态对应",
+    points: [
+      "一般现在时表习惯与客观事实；现在完成时表过去动作对现在的影响。",
+      "时间状语是判断信号：since/for 常配完成时，ago 配一般过去时。",
+      "被动语态 be+过去分词，时态变化体现在 be 上。",
+      "主谓一致：each/every+单数；the number of+单数。"
+    ],
+    tip: "先找时间状语，再确定时态，比凭语感可靠。"
+  },
+  {
+    id: "e3",
+    subject: "english",
+    stage: "basic",
+    title: "非谓语动词",
+    focus: "主动与被动、目的与习惯",
+    points: [
+      "不定式表目的或将来；动名词表习惯或抽象动作；分词表主动或被动。",
+      "介词后接动名词：look forward to doing、be used to doing。",
+      "只接动名词的动词：enjoy、finish、avoid、mind、suggest。",
+      "分词作状语时，其逻辑主语要与主句主语一致。"
+    ],
+    tip: "看非谓语与逻辑主语的关系：主动用 -ing，被动用 -ed。"
+  },
+  {
+    id: "e4",
+    subject: "english",
+    stage: "basic",
+    title: "定语从句",
+    focus: "关系代词与关系副词的选择",
+    points: [
+      "关系代词 who/whom/whose/which/that；关系副词 when/where/why。",
+      "先行词是物时 which 与 that 常可互换，介词后只能用 which。",
+      "非限制性定语从句用逗号隔开，不能用 that 引导。",
+      "从句缺主语或宾语用关系代词，缺状语用关系副词。"
+    ],
+    tip: "把先行词代回从句，看缺什么成分，答案就出来了。"
+  },
+  {
+    id: "e5",
+    subject: "english",
+    stage: "strong",
+    title: "名词性从句",
+    focus: "what 与 that 的区别",
+    points: [
+      "主语从句、宾语从句、表语从句、同位语从句统称名词性从句。",
+      "that 只起连接作用、不作成分；what 在从句中作主语或宾语。",
+      "介词后或句首主语从句表“是否”时用 whether，不用 if。",
+      "同位语从句解释 fact、idea、news 等抽象名词的内容。"
+    ],
+    tip: "判断从句是否缺成分：缺成分用 what，不缺用 that。"
+  },
+  {
+    id: "e6",
+    subject: "english",
+    stage: "strong",
+    title: "状语从句与虚拟语气",
+    focus: "三类虚拟时间的公式",
+    points: [
+      "时间状语从句“主将从现”：if/when/until 从句用一般现在时表将来。",
+      "与现在事实相反：if+过去式，主句 would/could+动词原形。",
+      "与过去事实相反：if+had done，主句 would have done。",
+      "建议、要求类动词后的从句用 (should)+动词原形。"
+    ],
+    tip: "虚拟语气先判断时间，再套对应公式。"
+  },
+  {
+    id: "e7",
+    subject: "english",
+    stage: "strong",
+    title: "倒装、强调与主谓一致",
+    focus: "部分倒装与强调句结构",
+    points: [
+      "only+状语置于句首，主句部分倒装。",
+      "否定词 hardly/never/not until 置于句首，主句部分倒装。",
+      "强调句：It is/was+被强调部分+that/who+其余部分。",
+      "就近一致：neither...nor、either...or、not only...but also。"
+    ],
+    tip: "倒装只提前助动词，实义动词位置保持不变。"
+  },
+  {
+    id: "e8",
+    subject: "english",
+    stage: "strong",
+    title: "阅读理解：细节与主旨",
+    focus: "同义替换与段落首尾句",
+    points: [
+      "先读题干定位关键词，再回原文找同义替换。",
+      "主旨题重点看首尾段和各段首句。",
+      "细节题警惕偷换概念、绝对化和无中生有。",
+      "推理题答案必须基于原文，不选过度推断项。"
+    ],
+    tip: "每篇控制在 8 分钟内，先做细节题再做主旨题。"
+  },
+  {
+    id: "e9",
+    subject: "english",
+    stage: "sprint",
+    title: "完形填空与逻辑衔接",
+    focus: "上下文复现与连接词",
+    points: [
+      "先通读全文抓主线，再逐空选择，避免断章取义。",
+      "关注逻辑连接词：however、therefore、besides、instead。",
+      "复现原则：上下文常出现同义或原词提示。",
+      "固定搭配与语法一致是高频考点。"
+    ],
+    tip: "不确定的空先跳过，第二遍结合上下文再补。"
+  },
+  {
+    id: "e10",
+    subject: "english",
+    stage: "sprint",
+    title: "翻译与句型转换",
+    focus: "先主干后修饰",
+    points: [
+      "先确定主干（主谓宾），再补状语和修饰成分。",
+      "中文无主句可补形式主语 it。",
+      "常见句型：It is+adj.+for sb.+to do sth.。",
+      "译完检查时态、单复数、冠词和介词搭配。"
+    ],
+    tip: "翻译求准确通顺，不追求华丽辞藻。"
+  },
+  {
+    id: "e11",
+    subject: "english",
+    stage: "sprint",
+    title: "应用文写作",
+    focus: "三段式与万能句型",
+    points: [
+      "常见类型：邀请信、申请信、感谢信、通知。",
+      "三段式：说明目的—具体内容—期待回复。",
+      "开头句：I am writing to invite you to...",
+      "结尾句：I would appreciate it if you could reply soon."
+    ],
+    tip: "背熟 5 个万能句型，比临场造句更稳。"
+  },
+  {
+    id: "e12",
+    subject: "english",
+    stage: "sprint",
+    title: "真题策略与时间管理",
+    focus: "做题顺序与时间分配",
+    points: [
+      "建议顺序：词汇语法→阅读→完形→翻译→写作。",
+      "阅读和写作占分高，必须留足 50 分钟。",
+      "不会的题先标记，避免在一道题上卡住。",
+      "考前一周只做真题和错题，不再开新资料。"
+    ],
+    tip: "模拟时严格计时，训练考试生物钟。"
+  },
+  {
+    id: "i1",
+    subject: "it",
+    stage: "basic",
+    title: "计算机基础与数据表示",
+    focus: "进制转换与存储单位",
+    points: [
+      "计算机由运算器、控制器、存储器、输入设备、输出设备五部分组成。",
+      "CPU=运算器+控制器；内存断电丢失数据，外存可持久保存。",
+      "1KB=1024B，1MB=1024KB，1GB=1024MB。",
+      "进制转换：二进制权为 2 的幂，八进制、十六进制分别按 3 位、4 位分组。"
+    ],
+    tip: "进制题先转成十进制再比较，最不容易出错。"
+  },
+  {
+    id: "i2",
+    subject: "it",
+    stage: "basic",
+    title: "操作系统基础",
+    focus: "Windows 快捷键与文件管理",
+    points: [
+      "操作系统是最重要的系统软件，管理硬件、软件和数据资源。",
+      "五大功能：处理器管理、存储管理、设备管理、文件管理、作业管理。",
+      "常用快捷键：Ctrl+C 复制、Ctrl+V 粘贴、Ctrl+Z 撤销、Alt+Tab 切换窗口。",
+      "扩展名决定文件的打开方式，回收站可还原误删文件。"
+    ],
+    tip: "快捷键和文件操作属于送分题，必须熟练。"
+  },
+  {
+    id: "i3",
+    subject: "it",
+    stage: "basic",
+    title: "Word 文字处理",
+    focus: "段落格式与页面设置",
+    points: [
+      "Word 文档扩展名为 .docx；Ctrl+A 全选、Ctrl+S 保存、Ctrl+F 查找。",
+      "段落格式包括对齐方式、缩进、行距、段前段后间距。",
+      "页眉页脚、页码、分节符用于控制版式。",
+      "邮件合并可批量生成通知书、标签等文档。"
+    ],
+    tip: "操作题按“选中对象→执行命令”的顺序检查。"
+  },
+  {
+    id: "i4",
+    subject: "it",
+    stage: "basic",
+    title: "Excel 电子表格",
+    focus: "单元格引用与常用函数",
+    points: [
+      "单元格引用：相对引用 A1、绝对引用 $A$1、混合引用 A$1。",
+      "常用函数：SUM、AVERAGE、MAX、MIN、COUNT、IF、VLOOKUP。",
+      "区域用冒号表示，如 A1:B5；公式必须以等号开头。",
+      "排序、筛选、分类汇总和图表是操作题高频考点。"
+    ],
+    tip: "复制公式时绝对引用不变，相对引用随位置变化。"
+  },
+  {
+    id: "i5",
+    subject: "it",
+    stage: "strong",
+    title: "PowerPoint 演示文稿",
+    focus: "切换与动画的区别",
+    points: [
+      "演示文稿扩展名为 .pptx；幻灯片母版用于统一版式。",
+      "动画分进入、强调、退出、动作路径四类。",
+      "切换效果作用于幻灯片之间，动画作用于幻灯片中的对象。",
+      "演示文稿可另存为 PDF、图片或视频。"
+    ],
+    tip: "区分“切换”和“动画”是选择题常考陷阱。"
+  },
+  {
+    id: "i6",
+    subject: "it",
+    stage: "strong",
+    title: "计算机网络基础",
+    focus: "IP 地址与 OSI 七层",
+    points: [
+      "按覆盖范围分为局域网 LAN、城域网 MAN、广域网 WAN。",
+      "IPv4 地址为 32 位，由网络号和主机号组成。",
+      "OSI 七层：物理、数据链路、网络、传输、会话、表示、应用。",
+      "TCP 可靠、面向连接；UDP 不可靠但传输速度快。"
+    ],
+    tip: "记口诀“物数网传会表应”，七层顺序不会乱。"
+  },
+  {
+    id: "i7",
+    subject: "it",
+    stage: "strong",
+    title: "Internet 应用",
+    focus: "协议与端口对应",
+    points: [
+      "HTTP 默认端口 80，HTTPS 默认端口 443。",
+      "DNS 负责把域名解析为 IP 地址。",
+      "电子邮件：SMTP 用于发送，POP3/IMAP 用于接收。",
+      "浏览器、搜索引擎、云服务都属于 Internet 应用。"
+    ],
+    tip: "协议和端口成对记忆，考场上直接匹配。"
+  },
+  {
+    id: "i8",
+    subject: "it",
+    stage: "strong",
+    title: "信息安全与病毒防护",
+    focus: "病毒特征与防护手段",
+    points: [
+      "计算机病毒具有传染性、潜伏性、破坏性和可触发性。",
+      "防火墙用于隔离内外网，过滤非法访问。",
+      "强密码：长度足够，包含大小写字母、数字和符号，并定期更换。",
+      "定期备份是应对勒索病毒和数据损坏的有效手段。"
+    ],
+    tip: "不点陌生链接、不装未知软件，是最基础的防护。"
+  },
+  {
+    id: "i9",
+    subject: "it",
+    stage: "sprint",
+    title: "多媒体技术基础",
+    focus: "常见格式与压缩方式",
+    points: [
+      "常见图像格式：BMP、JPEG、GIF、PNG，其中 JPEG 为有损压缩。",
+      "音频格式：WAV、MP3；视频格式：MP4、AVI。",
+      "分辨率和颜色深度影响图像质量与文件大小。",
+      "多媒体压缩分为无损压缩与有损压缩。"
+    ],
+    tip: "格式与压缩方式要对应记忆，选择题常直接考。"
+  },
+  {
+    id: "i10",
+    subject: "it",
+    stage: "sprint",
+    title: "数据库基础",
+    focus: "关系模型与 SQL 查询",
+    points: [
+      "数据库管理系统 DBMS 负责数据定义、操纵和控制。",
+      "关系模型用二维表表示，行是记录，列是字段。",
+      "SQL 查询基本句式：SELECT 列 FROM 表 WHERE 条件。",
+      "主键唯一标识记录，外键用于建立表间联系。"
+    ],
+    tip: "SELECT-FROM-WHERE 是最常考的 SQL 句式。"
+  },
+  {
+    id: "i11",
+    subject: "it",
+    stage: "sprint",
+    title: "算法与程序设计基础",
+    focus: "算法特征与时间复杂度",
+    points: [
+      "算法特征：有穷性、确定性、可行性、输入、输出。",
+      "三种基本结构：顺序、选择、循环。",
+      "冒泡排序最坏时间复杂度 O(n²)，二分查找 O(log n)。",
+      "程序=数据结构+算法；C 是编译型语言，Python 是解释型语言。"
+    ],
+    tip: "复杂度看循环层数，双重循环通常是 O(n²)。"
+  },
+  {
+    id: "i12",
+    subject: "it",
+    stage: "sprint",
+    title: "综合操作与真题",
+    focus: "操作题得分细节",
+    points: [
+      "操作题先看清题目要求保存的位置和文件名。",
+      "选择题遇到不确定的选项，先排除明显错误项。",
+      "Excel 函数题注意参数分隔符和区域引用。",
+      "考前把 Word、Excel、PPT 高频操作各练一遍。"
+    ],
+    tip: "操作题按步骤给分，不会做也不要留空。"
+  },
+  {
+    id: "s1",
+    subject: "se",
+    stage: "basic",
+    title: "软件工程概述与生命周期",
+    focus: "三要素与阶段顺序",
+    points: [
+      "软件工程三要素：方法、工具、过程。",
+      "软件生命周期：可行性研究、需求分析、设计、编码、测试、维护。",
+      "软件危机表现为成本超支、进度拖延、质量难以保证。",
+      "瀑布模型阶段清晰，但难以适应需求频繁变化。"
+    ],
+    tip: "生命周期阶段的先后顺序是必背考点。"
+  },
+  {
+    id: "s2",
+    subject: "se",
+    stage: "basic",
+    title: "需求工程",
+    focus: "需求分类与 SRS",
+    points: [
+      "需求分为功能需求、非功能需求和领域需求。",
+      "需求获取方法：访谈、问卷、观察、原型、文档分析。",
+      "需求分析的核心产出是软件需求规格说明书 SRS。",
+      "需求验证要保证需求正确、完整、一致、可测试。"
+    ],
+    tip: "SRS 是需求阶段结束的标志性文档。"
+  },
+  {
+    id: "s3",
+    subject: "se",
+    stage: "basic",
+    title: "结构化分析与设计",
+    focus: "数据流图与数据字典",
+    points: [
+      "数据流图 DFD 描述数据流动与加工，分为顶层图、0 层图和 1 层图。",
+      "数据字典定义数据流、数据项、数据存储和加工。",
+      "结构化设计自顶向下、逐步细化，强调模块化。",
+      "结构图描述模块之间的调用关系。"
+    ],
+    tip: "DFD 只画数据流，不画控制流。"
+  },
+  {
+    id: "s4",
+    subject: "se",
+    stage: "basic",
+    title: "模块化设计：耦合与内聚",
+    focus: "高内聚低耦合",
+    points: [
+      "耦合越低越好，内聚越高越好。",
+      "耦合由低到高：数据、标记、控制、外部、公共、内容耦合。",
+      "内聚由高到低：功能、顺序、通信、过程、时间、逻辑、偶然内聚。",
+      "模块化设计的目标是高内聚、低耦合。"
+    ],
+    tip: "记住“功能内聚最高，内容耦合最差”。"
+  },
+  {
+    id: "s5",
+    subject: "se",
+    stage: "strong",
+    title: "UML 与面向对象建模",
+    focus: "用例图、类图与顺序图",
+    points: [
+      "用例图描述参与者与系统功能，常用于需求建模。",
+      "类图描述类及关系：关联、聚合、组合、继承、依赖。",
+      "顺序图描述对象之间消息传递的时间顺序。",
+      "活动图描述业务流程与并发控制。"
+    ],
+    tip: "聚合是整体与部分可分离，组合是不可分离。"
+  },
+  {
+    id: "s6",
+    subject: "se",
+    stage: "strong",
+    title: "软件体系结构与详细设计",
+    focus: "B/S 架构与设计工具",
+    points: [
+      "C/S 为客户端/服务器；B/S 为浏览器/服务器，部署维护更方便。",
+      "常见架构风格：分层架构、MVC、客户机/服务器。",
+      "详细设计工具：程序流程图、N-S 图、PAD 图、伪代码。",
+      "设计原则：抽象、模块化、信息隐蔽、逐步求精。"
+    ],
+    tip: "B/S 维护成本低，C/S 交互性能好，按场景选。"
+  },
+  {
+    id: "s7",
+    subject: "se",
+    stage: "strong",
+    title: "软件测试基础",
+    focus: "测试目的与测试阶段",
+    points: [
+      "测试的目的是发现缺陷，而不是证明程序没有错误。",
+      "黑盒测试关注功能，白盒测试关注内部逻辑。",
+      "测试阶段：单元测试、集成测试、系统测试、验收测试。",
+      "静态测试包括代码审查；动态测试需要运行程序。"
+    ],
+    tip: "单元测试常用白盒方法，系统测试多用黑盒方法。"
+  },
+  {
+    id: "s8",
+    subject: "se",
+    stage: "strong",
+    title: "测试用例设计",
+    focus: "等价类与边界值",
+    points: [
+      "等价类划分：有效等价类和无效等价类。",
+      "边界值分析重点取边界值及边界附近的值。",
+      "因果图、判定表适合处理多个条件的组合。",
+      "测试用例应包含输入、预期输出和执行步骤。"
+    ],
+    tip: "边界值常与等价类结合使用，覆盖更充分。"
+  },
+  {
+    id: "s9",
+    subject: "se",
+    stage: "sprint",
+    title: "软件项目管理与进度",
+    focus: "关键路径与甘特图",
+    points: [
+      "进度管理工具：甘特图、PERT 图、关键路径法。",
+      "关键路径是耗时最长的路径，决定项目最短工期。",
+      "风险管理：风险识别、分析、应对规划、监控。",
+      "n 人团队的沟通路径数为 n(n-1)/2。"
+    ],
+    tip: "关键路径上的任务没有浮动时间，延迟会直接影响工期。"
+  },
+  {
+    id: "s10",
+    subject: "se",
+    stage: "sprint",
+    title: "软件质量与配置管理",
+    focus: "质量特性与基线",
+    points: [
+      "质量特性：功能性、可靠性、易用性、效率、可维护性、可移植性。",
+      "配置管理包括配置项标识、版本控制、变更控制和配置审计。",
+      "基线是经过评审确认的配置项集合。",
+      "维护分为改正性、适应性、完善性和预防性维护。"
+    ],
+    tip: "Git、SVN 属于版本控制工具，是配置管理的一部分。"
+  },
+  {
+    id: "s11",
+    subject: "se",
+    stage: "sprint",
+    title: "C 语言与数据结构基础",
+    focus: "数组、指针、栈与队列",
+    points: [
+      "数组下标从 0 开始，int a[5] 的合法下标是 0—4。",
+      "指针存放地址，*p 取指向的值，&x 取变量地址。",
+      "栈后进先出 LIFO，队列先进先出 FIFO。",
+      "时间复杂度关注基本操作执行次数的增长阶。"
+    ],
+    tip: "指针题画内存图，分清“地址”和“地址里的值”。"
+  },
+  {
+    id: "s12",
+    subject: "se",
+    stage: "sprint",
+    title: "综合案例与真题演练",
+    focus: "主观题答题结构",
+    points: [
+      "案例题按“问题—分析—方案—评价”组织答案。",
+      "画图题注意图例、箭头方向和命名规范。",
+      "简答题分点作答，专业术语放在每点开头。",
+      "考前复盘错题，形成自己的答题模板。"
+    ],
+    tip: "专业课主观题写专业术语，避免口语化表达。"
+  }
+];
+
+const SCHOOLS = [
+  {
+    id: "tjut",
+    name: "天津理工大学",
+    level: "市属重点",
+    line: 485,
+    note: "公办，工科优势明显，软件工程方向关注度高。"
+  },
+  {
+    id: "tjnu",
+    name: "天津师范大学",
+    level: "市属重点",
+    line: 470,
+    note: "公办，师范类热门，英语单科要求相对较高。"
+  },
+  {
+    id: "tcu",
+    name: "天津城建大学",
+    level: "公办本科",
+    line: 450,
+    note: "公办，城建与信息技术类专业招生稳定。"
+  },
+  {
+    id: "tute",
+    name: "天津职业技术师范大学",
+    level: "公办本科",
+    line: 430,
+    note: "公办，职教师资特色，适合求稳上岸。"
+  },
+  {
+    id: "tjau",
+    name: "天津农学院",
+    level: "公办本科",
+    line: 410,
+    note: "公办，分数线相对友好，可作为保底选择。"
+  },
+  {
+    id: "tjcdu",
+    name: "天津中德应用技术大学",
+    level: "公办应用型",
+    line: 400,
+    note: "公办应用型本科，重视实践能力。"
+  }
+];
+
+const DAILY_TIPS = [
+  "今天的任务不用多，完成 4 个知识单元 + 1 次巩固，就是有效学习。",
+  "错题不是失败，是命题人提前告诉你的得分点。",
+  "先理解再记忆：能用自己的话讲出来，才算真正掌握。",
+  "每天固定一个时间段学习，比临时突击更可靠。",
+  "做完题务必看解析，尤其要弄清错误选项为什么错。",
+  "英语词汇靠滚动复习，宁可少背也要每天见面。",
+  "高数计算题写步骤，考场上步骤分往往比结果分更稳。",
+  "信息技术多动手操作，快捷键和函数用一遍就记住了。",
+  "软工简答题先写关键词，再展开解释。",
+  "距离考试的日子在减少，但每天进步一点，结果会不一样。"
+];
+
+const EXAM_NOTE = "院校分数线为基于公开信息的备考参考值，实际以天津市教育招生考试院及招生院校当年公布为准。";
+  </script>
+  <script>
+const QUESTIONS = [
+  {
+    id: "q1", subject: "math", unit: "m1", stage: "basic",
+    stem: "求极限 lim(x→0) sin3x / x 的值。",
+    options: ["0", "1", "3", "无穷大"],
+    answer: 2,
+    explain: "当 x→0 时 sin3x ~ 3x，所以 sin3x/x → 3。"
+  },
+  {
+    id: "q2", subject: "math", unit: "m1", stage: "basic",
+    stem: "求极限 lim(x→∞) (2x²+1)/(x²-3)。",
+    options: ["0", "1", "2", "无穷大"],
+    answer: 2,
+    explain: "分子分母同除以 x²，得 (2+1/x²)/(1-3/x²) → 2。"
+  },
+  {
+    id: "q3", subject: "math", unit: "m2", stage: "basic",
+    stem: "设 y=x³+2x，求 y' 在 x=1 处的值。",
+    options: ["3", "4", "5", "6"],
+    answer: 2,
+    explain: "y'=3x²+2，代入 x=1 得 3+2=5。"
+  },
+  {
+    id: "q4", subject: "math", unit: "m2", stage: "basic",
+    stem: "设 y=x²sinx，则 y' 等于（ ）。",
+    options: ["2x cosx", "2x sinx + x²cosx", "x²cosx", "2x sinx"],
+    answer: 1,
+    explain: "使用乘积法则：(x²)'sinx + x²(sinx)' = 2x sinx + x²cosx。"
+  },
+  {
+    id: "q5", subject: "math", unit: "m2", stage: "basic",
+    stem: "设 y=e^(2x)，则 y' 等于（ ）。",
+    options: ["e^(2x)", "2e^(2x)", "2xe^(2x)", "e^(2x)/2"],
+    answer: 1,
+    explain: "复合函数求导，外层 e^u 的导数仍为 e^u，再乘内层导数 2。"
+  },
+  {
+    id: "q6", subject: "math", unit: "m3", stage: "basic",
+    stem: "函数 y=x³-3x 的极大值点对应的 x 是（ ）。",
+    options: ["-1", "1", "0", "±1"],
+    answer: 0,
+    explain: "y'=3x²-3=3(x-1)(x+1)。x<-1 时导数为正，-1<x<1 时为负，故 x=-1 为极大值点。"
+  },
+  {
+    id: "q7", subject: "math", unit: "m3", stage: "basic",
+    stem: "若在区间 I 上恒有 f'(x)>0，则 f(x) 在 I 上（ ）。",
+    options: ["单调递增", "单调递减", "恒为常数", "先增后减"],
+    answer: 0,
+    explain: "导数大于零说明函数值随 x 增大而增大，即单调递增。"
+  },
+  {
+    id: "q8", subject: "math", unit: "m3", stage: "basic",
+    stem: "函数 f(x)=x-ln x（x>0）的极小值为（ ）。",
+    options: ["0", "1", "e", "1/e"],
+    answer: 1,
+    explain: "f'(x)=1-1/x，令其为 0 得 x=1。f''(x)=1/x²>0，故 f(1)=1 为极小值。"
+  },
+  {
+    id: "q9", subject: "math", unit: "m4", stage: "basic",
+    stem: "求不定积分 ∫(3x²+2)dx。",
+    options: ["x³+2x+C", "3x²+2+C", "x³+2x", "x³/3+2x+C"],
+    answer: 0,
+    explain: "逐项积分：∫3x²dx=x³，∫2dx=2x，最后加常数 C。"
+  },
+  {
+    id: "q10", subject: "math", unit: "m4", stage: "basic",
+    stem: "求不定积分 ∫(1/x)dx。",
+    options: ["ln x + C", "ln|x| + C", "1/x² + C", "x + C"],
+    answer: 1,
+    explain: "∫(1/x)dx=ln|x|+C，绝对值不能省略。"
+  },
+  {
+    id: "q11", subject: "math", unit: "m5", stage: "strong",
+    stem: "计算定积分 ∫₀¹(2x+1)dx。",
+    options: ["1", "2", "3", "4"],
+    answer: 1,
+    explain: "原函数为 x²+x，代入上下限得 (1+1)-0=2。"
+  },
+  {
+    id: "q12", subject: "math", unit: "m5", stage: "strong",
+    stem: "计算定积分 ∫₀^π sinx dx。",
+    options: ["0", "1", "2", "π"],
+    answer: 2,
+    explain: "原函数为 -cosx，代入得 -cosπ-(-cos0)=1+1=2。"
+  },
+  {
+    id: "q13", subject: "math", unit: "m5", stage: "strong",
+    stem: "求导数 d/dx ∫₀^x sin t dt。",
+    options: ["sin x", "cos x", "-sin x", "sin x + x cos x"],
+    answer: 0,
+    explain: "变上限积分求导，上限为 x 时结果就是被积函数在 x 处的值。"
+  },
+  {
+    id: "q14", subject: "math", unit: "m6", stage: "strong",
+    stem: "微分方程 y'=2x 的通解是（ ）。",
+    options: ["y=x²", "y=x²+C", "y=2x+C", "y=x+C"],
+    answer: 1,
+    explain: "两边积分得 y=x²+C，通解必须含任意常数。"
+  },
+  {
+    id: "q15", subject: "math", unit: "m6", stage: "strong",
+    stem: "微分方程 y''+y=0 的通解是（ ）。",
+    options: ["C₁e^x+C₂e^(-x)", "C₁cosx+C₂sinx", "C₁x+C₂", "e^x(C₁cosx+C₂sinx)"],
+    answer: 1,
+    explain: "特征方程 r²+1=0，根为 ±i，故通解为 C₁cosx+C₂sinx。"
+  },
+  {
+    id: "q16", subject: "math", unit: "m7", stage: "strong",
+    stem: "设 z=x²y，求 ∂z/∂x。",
+    options: ["2xy", "x²", "2x", "y"],
+    answer: 0,
+    explain: "对 x 求偏导时把 y 看作常数，得 2xy。"
+  },
+  {
+    id: "q17", subject: "math", unit: "m7", stage: "strong",
+    stem: "计算二重积分 ∫∫_D 1 dA，其中 D：0≤x≤1，0≤y≤x。",
+    options: ["1/4", "1/3", "1/2", "1"],
+    answer: 2,
+    explain: "区域是三角形，面积为 1×1/2=1/2；被积函数为 1，积分值等于面积。"
+  },
+  {
+    id: "q18", subject: "math", unit: "m8", stage: "strong",
+    stem: "级数 ∑(n=1→∞) 1/n² 的敛散性是（ ）。",
+    options: ["发散", "收敛", "条件收敛", "无法判断"],
+    answer: 1,
+    explain: "这是 p=2 的 p 级数，p>1，所以收敛。"
+  },
+  {
+    id: "q19", subject: "math", unit: "m8", stage: "strong",
+    stem: "级数 ∑(n=1→∞)(1/2)^n 的和为（ ）。",
+    options: ["1/2", "1", "2", "3/2"],
+    answer: 1,
+    explain: "首项 a=1/2，公比 q=1/2，和 S=a/(1-q)=(1/2)/(1/2)=1。"
+  },
+  {
+    id: "q20", subject: "math", unit: "m8", stage: "strong",
+    stem: "级数 ∑(n=1→∞)(-1)^n/n 的敛散性是（ ）。",
+    options: ["绝对收敛", "条件收敛", "发散", "和为 0"],
+    answer: 1,
+    explain: "交错级数满足莱布尼茨条件，故收敛；但 ∑1/n 发散，所以是条件收敛。"
+  },
+  {
+    id: "q21", subject: "math", unit: "m9", stage: "sprint",
+    stem: "设 a=(1,2,3)，b=(2,0,1)，则 a·b 等于（ ）。",
+    options: ["3", "5", "7", "9"],
+    answer: 1,
+    explain: "数量积为对应分量乘积之和：1×2+2×0+3×1=5。"
+  },
+  {
+    id: "q22", subject: "math", unit: "m9", stage: "sprint",
+    stem: "平面 x+2y-z=3 的一个法向量是（ ）。",
+    options: ["(1,2,1)", "(1,2,-1)", "(1,-2,1)", "(2,1,-1)"],
+    answer: 1,
+    explain: "平面 Ax+By+Cz=D 的法向量为 (A,B,C)，故为 (1,2,-1)。"
+  },
+  {
+    id: "q23", subject: "math", unit: "m9", stage: "sprint",
+    stem: "设 a=(1,2,3)，b=(2,0,1)，则 a×b 等于（ ）。",
+    options: ["(2,5,-4)", "(2,-5,4)", "(-2,5,4)", "(2,5,4)"],
+    answer: 0,
+    explain: "按行列式展开：第二个分量 3×2-1×1=5，第三个分量 1×0-2×2=-4，结果为 (2,5,-4)。"
+  },
+  {
+    id: "q24", subject: "math", unit: "m10", stage: "sprint",
+    stem: "求极限 lim(x→0)(1-cosx)/x²。",
+    options: ["0", "1/2", "1", "2"],
+    answer: 1,
+    explain: "利用等价无穷小 1-cosx ~ x²/2，原式 → (x²/2)/x²=1/2。"
+  },
+  {
+    id: "q25", subject: "math", unit: "m10", stage: "sprint",
+    stem: "求极限 lim(x→0)(e^x-1)/x。",
+    options: ["0", "1", "e", "无穷大"],
+    answer: 1,
+    explain: "e^x-1 ~ x，故极限为 1；也可用洛必达法则验证。"
+  },
+  {
+    id: "q26", subject: "math", unit: "m10", stage: "sprint",
+    stem: "曲线 y=x³ 在 x=1 处的切线方程是（ ）。",
+    options: ["y=3x-2", "y=3x+2", "y=x", "y=3x+1"],
+    answer: 0,
+    explain: "切点 (1,1)，斜率 y'=3x²=3，故 y-1=3(x-1)，即 y=3x-2。"
+  },
+  {
+    id: "q27", subject: "math", unit: "m11", stage: "sprint",
+    stem: "求不定积分 ∫x e^x dx。",
+    options: ["xe^x+C", "(x-1)e^x+C", "(x+1)e^x+C", "x²e^x/2+C"],
+    answer: 1,
+    explain: "分部积分，取 u=x，dv=e^xdx，得 xe^x-∫e^xdx=(x-1)e^x+C。"
+  },
+  {
+    id: "q28", subject: "math", unit: "m11", stage: "sprint",
+    stem: "计算定积分 ∫₀¹ x² dx。",
+    options: ["1/2", "1/3", "1/4", "1"],
+    answer: 1,
+    explain: "原函数为 x³/3，代入上下限得 1/3。"
+  },
+  {
+    id: "q29", subject: "math", unit: "m12", stage: "sprint",
+    stem: "若 f'(x₀)=0 且 f''(x₀)>0，则 f(x) 在 x₀ 处（ ）。",
+    options: ["取得极大值", "取得极小值", "不是极值点", "无法判断"],
+    answer: 1,
+    explain: "二阶导数大于零，曲线在该点附近下凸，故取得极小值。"
+  },
+  {
+    id: "q30", subject: "math", unit: "m12", stage: "sprint",
+    stem: "求闭区间上函数最值时，正确做法是（ ）。",
+    options: ["只比较驻点函数值", "只比较端点函数值", "比较驻点与端点的函数值", "只比较拐点函数值"],
+    answer: 2,
+    explain: "闭区间上连续函数的最值只能在驻点、不可导点或端点处取得，需全部比较。"
+  },
+
+  {
+    id: "q31", subject: "english", unit: "e1", stage: "basic",
+    stem: "The word \"abandon\" most probably means（ ）。",
+    options: ["give up", "arrive at", "borrow", "repair"],
+    answer: 0,
+    explain: "abandon 意为放弃、抛弃，与 give up 同义。"
+  },
+  {
+    id: "q32", subject: "english", unit: "e1", stage: "basic",
+    stem: "An \"efficient\" way of working is one that（ ）。",
+    options: ["works well without waste", "costs a lot of money", "is very complicated", "takes a long time"],
+    answer: 0,
+    explain: "efficient 表示高效的，强调以较少时间或资源取得好效果。"
+  },
+  {
+    id: "q33", subject: "english", unit: "e1", stage: "basic",
+    stem: "The phrase \"take part in\" is closest in meaning to（ ）。",
+    options: ["participate in", "put off", "give up", "look after"],
+    answer: 0,
+    explain: "take part in 与 participate in 都表示参加。"
+  },
+  {
+    id: "q34", subject: "english", unit: "e2", stage: "basic",
+    stem: "He ___ to Beijing last year.",
+    options: ["goes", "went", "has gone", "will go"],
+    answer: 1,
+    explain: "last year 是明确的过去时间状语，用一般过去时 went。"
+  },
+  {
+    id: "q35", subject: "english", unit: "e2", stage: "basic",
+    stem: "She has lived here ___ 2010.",
+    options: ["for", "since", "in", "at"],
+    answer: 1,
+    explain: "since 后接时间点，for 后接时间段；2010 是时间点。"
+  },
+  {
+    id: "q36", subject: "english", unit: "e2", stage: "basic",
+    stem: "If it ___ tomorrow, we will stay at home.",
+    options: ["rains", "will rain", "rained", "is raining"],
+    answer: 0,
+    explain: "真实条件句遵循“主将从现”，从句用一般现在时。"
+  },
+  {
+    id: "q37", subject: "english", unit: "e3", stage: "basic",
+    stem: "I'm looking forward to ___ from you.",
+    options: ["hear", "heard", "hearing", "be heard"],
+    answer: 2,
+    explain: "look forward to 中 to 是介词，后接动名词 hearing。"
+  },
+  {
+    id: "q38", subject: "english", unit: "e3", stage: "basic",
+    stem: "He is used to ___ up early.",
+    options: ["get", "got", "getting", "be got"],
+    answer: 2,
+    explain: "be used to 表示习惯于，to 是介词，后接动名词。"
+  },
+  {
+    id: "q39", subject: "english", unit: "e4", stage: "basic",
+    stem: "The girl ___ is singing is my sister.",
+    options: ["who", "which", "whom", "whose"],
+    answer: 0,
+    explain: "先行词 the girl 指人，在从句中作主语，用 who。"
+  },
+  {
+    id: "q40", subject: "english", unit: "e4", stage: "basic",
+    stem: "This is the house ___ we lived in last year.",
+    options: ["where", "which", "when", "what"],
+    answer: 1,
+    explain: "从句中 lived in 缺宾语，先行词是物，用 which（或 that）。"
+  },
+  {
+    id: "q41", subject: "english", unit: "e5", stage: "strong",
+    stem: "___ he said made us happy.",
+    options: ["That", "What", "Which", "Whether"],
+    answer: 1,
+    explain: "主语从句中 said 缺宾语，用 what 充当主语和宾语。"
+  },
+  {
+    id: "q42", subject: "english", unit: "e5", stage: "strong",
+    stem: "It depends on ___ we will go there.",
+    options: ["if", "whether", "that", "what"],
+    answer: 1,
+    explain: "介词 on 后表“是否”只能用 whether，不能用 if。"
+  },
+  {
+    id: "q43", subject: "english", unit: "e6", stage: "strong",
+    stem: "If I ___ you, I would accept the offer.",
+    options: ["am", "was", "were", "had been"],
+    answer: 2,
+    explain: "与现在事实相反的虚拟条件句，be 动词统一用 were。"
+  },
+  {
+    id: "q44", subject: "english", unit: "e6", stage: "strong",
+    stem: "It is important that every student ___ on time.",
+    options: ["arrives", "arrived", "arrive", "will arrive"],
+    answer: 2,
+    explain: "important 后的主语从句用虚拟语气，(should)+动词原形。"
+  },
+  {
+    id: "q45", subject: "english", unit: "e6", stage: "strong",
+    stem: "I would rather you ___ tomorrow.",
+    options: ["come", "came", "will come", "have come"],
+    answer: 1,
+    explain: "would rather 后接从句时，用过去式表示对现在或未来的虚拟。"
+  },
+  {
+    id: "q46", subject: "english", unit: "e7", stage: "strong",
+    stem: "Not until he left ___ he had made a mistake.",
+    options: ["he realized", "did he realize", "he did realize", "realized he"],
+    answer: 1,
+    explain: "Not until 置于句首，主句部分倒装，借助 did。"
+  },
+  {
+    id: "q47", subject: "english", unit: "e7", stage: "strong",
+    stem: "It was in 2020 ___ he graduated from college.",
+    options: ["when", "which", "that", "where"],
+    answer: 2,
+    explain: "强调句结构 It was + 被强调部分 + that + 其余部分。"
+  },
+  {
+    id: "q48", subject: "english", unit: "e7", stage: "strong",
+    stem: "Neither Tom nor his friends ___ interested in the film.",
+    options: ["is", "are", "was", "has been"],
+    answer: 1,
+    explain: "neither...nor 遵循就近一致原则，靠近谓语的是 his friends，用 are。"
+  },
+  {
+    id: "q49", subject: "english", unit: "e8", stage: "strong",
+    stem: "阅读材料：Many students believe that studying longer hours always leads to better results. However, research suggests that the quality of study time matters more than the quantity. Students who take regular breaks and review what they have learned tend to remember more. In contrast, those who study for hours without rest often feel tired and lose focus.\n\nWhat is the main idea of the passage?",
+    options: ["The longer you study, the better results you get.", "The quality of study matters more than the quantity.", "Breaks always lower students' grades.", "All students feel tired after studying."],
+    answer: 1,
+    explain: "文章用 However 转折，核心观点是学习质量比时长更重要。"
+  },
+  {
+    id: "q50", subject: "english", unit: "e8", stage: "strong",
+    stem: "According to the passage, students who take regular breaks tend to ___.",
+    options: ["forget more", "remember more", "sleep less", "study longer"],
+    answer: 1,
+    explain: "原文明确提到 take regular breaks and review ... tend to remember more。"
+  },
+  {
+    id: "q51", subject: "english", unit: "e9", stage: "sprint",
+    stem: "Tom was tired, ___ he kept working.",
+    options: ["so", "but", "because", "or"],
+    answer: 1,
+    explain: "前后为转折关系：虽然累，但仍继续工作，用 but。"
+  },
+  {
+    id: "q52", subject: "english", unit: "e9", stage: "sprint",
+    stem: "The task was difficult. In other words, it was ___.",
+    options: ["challenging", "easy", "boring", "similar"],
+    answer: 0,
+    explain: "上下文复现原则，difficult 与 challenging 同义。"
+  },
+  {
+    id: "q53", subject: "english", unit: "e10", stage: "sprint",
+    stem: "这本书值得一读。This book is worth ___.",
+    options: ["read", "to read", "reading", "being read"],
+    answer: 2,
+    explain: "be worth doing 是固定搭配，worth 后接动名词。"
+  },
+  {
+    id: "q54", subject: "english", unit: "e10", stage: "sprint",
+    stem: "It is important for us ___ English well.",
+    options: ["learn", "learning", "to learn", "learned"],
+    answer: 2,
+    explain: "It is + adj. + for sb. + to do sth. 是固定句型。"
+  },
+  {
+    id: "q55", subject: "english", unit: "e11", stage: "sprint",
+    stem: "写一封邀请信，开头最合适的是（ ）。",
+    options: ["I am writing to invite you to our graduation party.", "I want to tell you a story.", "Please give me some money.", "I am sorry for being late."],
+    answer: 0,
+    explain: "邀请信开头应直接说明写作目的，I am writing to invite you to... 最合适。"
+  },
+  {
+    id: "q56", subject: "english", unit: "e11", stage: "sprint",
+    stem: "应用文结尾表达“期待回复”，最得体的是（ ）。",
+    options: ["I would appreciate it if you could reply soon.", "You must answer me now.", "I have nothing to say.", "Goodbye forever."],
+    answer: 0,
+    explain: "I would appreciate it if... 是礼貌且常用的结尾句型。"
+  },
+  {
+    id: "q57", subject: "english", unit: "e12", stage: "sprint",
+    stem: "英语考试中比较合理的做题顺序是（ ）。",
+    options: ["写作→阅读→词汇语法→完形→翻译", "词汇语法→阅读→完形→翻译→写作", "完形→写作→阅读→翻译→词汇语法", "翻译→写作→完形→阅读→词汇语法"],
+    answer: 1,
+    explain: "先做词汇语法稳定心态，再完成阅读和完形，最后留时间翻译与写作。"
+  },
+  {
+    id: "q58", subject: "english", unit: "e12", stage: "sprint",
+    stem: "英语考试中，阅读和写作通常建议至少留出（ ）。",
+    options: ["20 分钟", "30 分钟", "50 分钟", "80 分钟"],
+    answer: 2,
+    explain: "阅读和写作分值高、耗时长，至少留 50 分钟才能保证完成质量。"
+  },
+  {
+    id: "q59", subject: "english", unit: "e12", stage: "sprint",
+    stem: "考前一星期的复习策略，最合理的是（ ）。",
+    options: ["大量购买新资料刷题", "只做真题和错题，保持手感", "完全停止学习", "只背单词不做题"],
+    answer: 1,
+    explain: "考前一周以真题和错题复盘为主，避免新资料带来的焦虑。"
+  },
+  {
+    id: "q60", subject: "english", unit: "e11", stage: "sprint",
+    stem: "写一则通知时，必须包含的要素是（ ）。",
+    options: ["个人爱好", "时间、地点和事由", "天气情况", "家庭住址"],
+    answer: 1,
+    explain: "通知的核心是让读者知道何时、何地、做什么，因此时间地点事由缺一不可。"
+  },
+
+  {
+    id: "q61", subject: "it", unit: "i1", stage: "basic",
+    stem: "1KB 等于（ ）。",
+    options: ["1000B", "1024B", "1024KB", "8B"],
+    answer: 1,
+    explain: "计算机存储换算以 1024 为基数，1KB=1024B。"
+  },
+  {
+    id: "q62", subject: "it", unit: "i1", stage: "basic",
+    stem: "二进制数 1011 对应的十进制数是（ ）。",
+    options: ["9", "10", "11", "13"],
+    answer: 2,
+    explain: "1×2³+0×2²+1×2¹+1×2⁰=8+0+2+1=11。"
+  },
+  {
+    id: "q63", subject: "it", unit: "i1", stage: "basic",
+    stem: "断电后数据会丢失的存储器是（ ）。",
+    options: ["ROM", "RAM", "硬盘", "U 盘"],
+    answer: 1,
+    explain: "RAM 是易失性存储器，断电后内容丢失；ROM 和硬盘、U 盘可长期保存。"
+  },
+  {
+    id: "q64", subject: "it", unit: "i2", stage: "basic",
+    stem: "操作系统属于（ ）。",
+    options: ["应用软件", "系统软件", "硬件设备", "网络协议"],
+    answer: 1,
+    explain: "操作系统管理计算机软硬件资源，是最重要的系统软件。"
+  },
+  {
+    id: "q65", subject: "it", unit: "i2", stage: "basic",
+    stem: "Windows 中复制选中内容的快捷键是（ ）。",
+    options: ["Ctrl+V", "Ctrl+C", "Ctrl+X", "Ctrl+Z"],
+    answer: 1,
+    explain: "Ctrl+C 复制，Ctrl+V 粘贴，Ctrl+X 剪切，Ctrl+Z 撤销。"
+  },
+  {
+    id: "q66", subject: "it", unit: "i2", stage: "basic",
+    stem: "Windows 回收站的主要作用是（ ）。",
+    options: ["永久删除文件", "暂时存放被删除的文件，可还原", "压缩文件", "给文件加密"],
+    answer: 1,
+    explain: "回收站暂存删除的文件，未清空之前可以还原。"
+  },
+  {
+    id: "q67", subject: "it", unit: "i3", stage: "basic",
+    stem: "Word 文档的默认扩展名是（ ）。",
+    options: [".txt", ".docx", ".xlsx", ".pptx"],
+    answer: 1,
+    explain: "Word 文档为 .docx，Excel 为 .xlsx，PowerPoint 为 .pptx。"
+  },
+  {
+    id: "q68", subject: "it", unit: "i3", stage: "basic",
+    stem: "在 Word 中选中全文的快捷键是（ ）。",
+    options: ["Ctrl+A", "Ctrl+S", "Ctrl+F", "Ctrl+P"],
+    answer: 0,
+    explain: "Ctrl+A 全选，Ctrl+S 保存，Ctrl+F 查找，Ctrl+P 打印。"
+  },
+  {
+    id: "q69", subject: "it", unit: "i4", stage: "basic",
+    stem: "Excel 中用于求和的函数是（ ）。",
+    options: ["SUM", "AVERAGE", "MAX", "COUNT"],
+    answer: 0,
+    explain: "SUM 求和，AVERAGE 求平均，MAX 求最大值，COUNT 统计数值个数。"
+  },
+  {
+    id: "q70", subject: "it", unit: "i4", stage: "basic",
+    stem: "Excel 中表示绝对引用的是（ ）。",
+    options: ["A1", "$A$1", "A$1", "$A1"],
+    answer: 1,
+    explain: "行号和列标前都加 $ 才是绝对引用，复制公式时位置不变。"
+  },
+  {
+    id: "q71", subject: "it", unit: "i5", stage: "strong",
+    stem: "PowerPoint 中的“切换”效果作用于（ ）。",
+    options: ["幻灯片中的对象", "幻灯片之间", "文字段落", "图片颜色"],
+    answer: 1,
+    explain: "切换是幻灯片之间的过渡效果，动画才作用于幻灯片内的对象。"
+  },
+  {
+    id: "q72", subject: "it", unit: "i5", stage: "strong",
+    stem: "幻灯片母版的主要作用是（ ）。",
+    options: ["统一演示文稿的版式风格", "插入表格", "设置放映时间", "压缩图片"],
+    answer: 0,
+    explain: "母版用于统一标题、正文、背景等版式，修改后所有对应幻灯片同步更新。"
+  },
+  {
+    id: "q73", subject: "it", unit: "i6", stage: "strong",
+    stem: "IPv4 地址的长度是（ ）。",
+    options: ["8 位", "16 位", "32 位", "64 位"],
+    answer: 2,
+    explain: "IPv4 地址为 32 位二进制数，通常写成点分十进制。"
+  },
+  {
+    id: "q74", subject: "it", unit: "i6", stage: "strong",
+    stem: "HTTP 协议默认使用的端口号是（ ）。",
+    options: ["21", "25", "80", "443"],
+    answer: 2,
+    explain: "HTTP 默认端口 80，HTTPS 默认端口 443，FTP 为 21。"
+  },
+  {
+    id: "q75", subject: "it", unit: "i6", stage: "strong",
+    stem: "OSI 参考模型中，负责端到端可靠传输的是（ ）。",
+    options: ["网络层", "传输层", "会话层", "应用层"],
+    answer: 1,
+    explain: "传输层提供端到端通信，TCP 在其上实现可靠传输。"
+  },
+  {
+    id: "q76", subject: "it", unit: "i7", stage: "strong",
+    stem: "DNS 的主要作用是（ ）。",
+    options: ["把域名解析为 IP 地址", "把 IP 地址转换为 MAC 地址", "发送电子邮件", "传输文件"],
+    answer: 0,
+    explain: "DNS 是域名系统，负责域名与 IP 地址之间的解析。"
+  },
+  {
+    id: "q77", subject: "it", unit: "i7", stage: "strong",
+    stem: "发送电子邮件使用的协议是（ ）。",
+    options: ["POP3", "IMAP", "SMTP", "FTP"],
+    answer: 2,
+    explain: "SMTP 用于发送邮件，POP3 和 IMAP 用于接收邮件。"
+  },
+  {
+    id: "q78", subject: "it", unit: "i8", stage: "strong",
+    stem: "下列不属于计算机病毒特征的是（ ）。",
+    options: ["传染性", "潜伏性", "破坏性", "可读性"],
+    answer: 3,
+    explain: "计算机病毒具有传染性、潜伏性、破坏性和可触发性，可读性不是其特征。"
+  },
+  {
+    id: "q79", subject: "it", unit: "i8", stage: "strong",
+    stem: "防火墙的主要作用是（ ）。",
+    options: ["提高上网速度", "隔离内外网并过滤非法访问", "清除所有病毒", "备份重要数据"],
+    answer: 1,
+    explain: "防火墙通过访问控制规则过滤进出网络的流量，不能替代杀毒软件和备份。"
+  },
+  {
+    id: "q80", subject: "it", unit: "i8", stage: "strong",
+    stem: "下列密码中安全性最高的是（ ）。",
+    options: ["123456", "20000101", "Ab3$xY9!", "zhangsan"],
+    answer: 2,
+    explain: "强密码应足够长，并混合大小写字母、数字和符号。"
+  },
+  {
+    id: "q81", subject: "it", unit: "i9", stage: "sprint",
+    stem: "JPEG 图像格式采用的压缩方式是（ ）。",
+    options: ["无损压缩", "有损压缩", "不压缩", "只支持黑白"],
+    answer: 1,
+    explain: "JPEG 采用有损压缩，通过舍弃部分细节换取更小的文件体积。"
+  },
+  {
+    id: "q82", subject: "it", unit: "i9", stage: "sprint",
+    stem: "下列属于图像文件格式的是（ ）。",
+    options: ["MP3", "PNG", "MP4", "DOCX"],
+    answer: 1,
+    explain: "PNG 是图像格式；MP3 是音频，MP4 是视频，DOCX 是文档。"
+  },
+  {
+    id: "q83", subject: "it", unit: "i10", stage: "sprint",
+    stem: "SQL 中用于查询数据的关键字是（ ）。",
+    options: ["SELECT", "UPDATE", "DELETE", "INSERT"],
+    answer: 0,
+    explain: "SELECT 查询，UPDATE 修改，DELETE 删除，INSERT 插入。"
+  },
+  {
+    id: "q84", subject: "it", unit: "i10", stage: "sprint",
+    stem: "关系表中主键的作用是（ ）。",
+    options: ["允许重复", "唯一标识一条记录", "必须为空", "只能存储数字"],
+    answer: 1,
+    explain: "主键的值唯一且不能为空，用于唯一标识表中的记录。"
+  },
+  {
+    id: "q85", subject: "it", unit: "i10", stage: "sprint",
+    stem: "在关系表中，一行称为（ ）。",
+    options: ["字段", "记录", "属性", "视图"],
+    answer: 1,
+    explain: "关系表的一行是一条记录，一列是一个字段（属性）。"
+  },
+  {
+    id: "q86", subject: "it", unit: "i11", stage: "sprint",
+    stem: "下列不属于算法基本特征的是（ ）。",
+    options: ["有穷性", "确定性", "可行性", "随机性"],
+    answer: 3,
+    explain: "算法具有有穷性、确定性、可行性、输入和输出，随机性不是基本特征。"
+  },
+  {
+    id: "q87", subject: "it", unit: "i11", stage: "sprint",
+    stem: "冒泡排序在最坏情况下的时间复杂度是（ ）。",
+    options: ["O(n)", "O(n log n)", "O(n²)", "O(1)"],
+    answer: 2,
+    explain: "冒泡排序需要多轮比较和交换，最坏情况下时间复杂度为 O(n²)。"
+  },
+  {
+    id: "q88", subject: "it", unit: "i11", stage: "sprint",
+    stem: "程序的三种基本控制结构是（ ）。",
+    options: ["顺序、选择、循环", "输入、处理、输出", "变量、函数、数组", "编译、链接、运行"],
+    answer: 0,
+    explain: "顺序、选择、循环是结构化程序设计的三种基本结构。"
+  },
+  {
+    id: "q89", subject: "it", unit: "i12", stage: "sprint",
+    stem: "完成 Office 操作题后，保存文件时应（ ）。",
+    options: ["保存在任意位置即可", "一律保存到桌面", "按题目要求的位置和文件名保存", "不需要保存"],
+    answer: 2,
+    explain: "操作题通常按保存位置和文件名评分，必须严格按题目要求执行。"
+  },
+  {
+    id: "q90", subject: "it", unit: "i12", stage: "sprint",
+    stem: "Excel 中区域 A1:B5 包含的单元格个数是（ ）。",
+    options: ["10 个", "5 个", "2 个", "25 个"],
+    answer: 0,
+    explain: "A1:B5 覆盖 2 列、5 行，共 2×5=10 个单元格。"
+  },
+
+  {
+    id: "q91", subject: "se", unit: "s1", stage: "basic",
+    stem: "软件工程的三要素是（ ）。",
+    options: ["方法、工具、过程", "需求、设计、测试", "人员、成本、进度", "数据、算法、程序"],
+    answer: 0,
+    explain: "软件工程三要素为方法、工具和过程。"
+  },
+  {
+    id: "q92", subject: "se", unit: "s1", stage: "basic",
+    stem: "软件生命周期中，投入运行后持续时间最长的阶段是（ ）。",
+    options: ["测试", "维护", "编码", "需求分析"],
+    answer: 1,
+    explain: "软件维护贯穿软件投入使用后的整个时期，通常占生命周期成本的大部分。"
+  },
+  {
+    id: "q93", subject: "se", unit: "s1", stage: "basic",
+    stem: "瀑布模型的主要缺点是（ ）。",
+    options: ["阶段划分不清", "难以适应需求变化", "缺少文档", "不能进行测试"],
+    answer: 1,
+    explain: "瀑布模型要求各阶段按顺序推进，前期确定的需求后期变更成本很高。"
+  },
+  {
+    id: "q94", subject: "se", unit: "s2", stage: "basic",
+    stem: "软件需求规格说明书的英文缩写是（ ）。",
+    options: ["SRS", "DFD", "UML", "SCM"],
+    answer: 0,
+    explain: "SRS 即 Software Requirements Specification，软件需求规格说明书。"
+  },
+  {
+    id: "q95", subject: "se", unit: "s2", stage: "basic",
+    stem: "下列属于非功能需求的是（ ）。",
+    options: ["用户能够登录系统", "系统响应时间不超过 2 秒", "系统能够导出报表", "管理员能够修改密码"],
+    answer: 1,
+    explain: "响应时间属于性能约束，是非功能需求；其余为功能需求。"
+  },
+  {
+    id: "q96", subject: "se", unit: "s3", stage: "basic",
+    stem: "数据流图 DFD 主要描述（ ）。",
+    options: ["数据的流动与加工", "模块之间的调用关系", "对象之间的消息交互", "项目的进度安排"],
+    answer: 0,
+    explain: "DFD 从数据流动和加工的角度描述系统逻辑模型。"
+  },
+  {
+    id: "q97", subject: "se", unit: "s3", stage: "basic",
+    stem: "数据字典的主要作用是（ ）。",
+    options: ["定义数据流、数据项和数据存储", "描述项目进度", "设计测试用例", "管理代码版本"],
+    answer: 0,
+    explain: "数据字典对 DFD 中的数据元素进行严格定义，是结构化分析的重要工具。"
+  },
+  {
+    id: "q98", subject: "se", unit: "s4", stage: "basic",
+    stem: "模块化设计追求的目标是（ ）。",
+    options: ["高耦合、低内聚", "高内聚、低耦合", "高耦合、高内聚", "低内聚、低耦合"],
+    answer: 1,
+    explain: "高内聚说明模块内部联系紧密，低耦合说明模块之间依赖少，便于维护。"
+  },
+  {
+    id: "q99", subject: "se", unit: "s4", stage: "basic",
+    stem: "下列内聚类型中，内聚程度最高的是（ ）。",
+    options: ["功能内聚", "逻辑内聚", "偶然内聚", "时间内聚"],
+    answer: 0,
+    explain: "功能内聚的模块只完成一个明确功能，内聚程度最高。"
+  },
+  {
+    id: "q100", subject: "se", unit: "s4", stage: "basic",
+    stem: "下列耦合类型中，耦合程度最高、最应避免的是（ ）。",
+    options: ["数据耦合", "标记耦合", "内容耦合", "公共耦合"],
+    answer: 2,
+    explain: "内容耦合中一个模块直接访问另一个模块的内部数据，耦合程度最高。"
+  },
+  {
+    id: "q101", subject: "se", unit: "s5", stage: "strong",
+    stem: "UML 用例图的主要组成元素是（ ）。",
+    options: ["类与对象", "参与者与用例", "模块与接口", "节点与边"],
+    answer: 1,
+    explain: "用例图由参与者、用例及其关系组成，用于描述系统功能需求。"
+  },
+  {
+    id: "q102", subject: "se", unit: "s5", stage: "strong",
+    stem: "关于聚合与组合，下列说法正确的是（ ）。",
+    options: ["聚合中整体与部分不可分离", "组合中整体与部分不可分离", "两者完全相同", "聚合表示继承关系"],
+    answer: 1,
+    explain: "组合是强聚合，整体销毁时部分也随之销毁；聚合的部分可以独立存在。"
+  },
+  {
+    id: "q103", subject: "se", unit: "s5", stage: "strong",
+    stem: "UML 顺序图主要描述（ ）。",
+    options: ["类之间的静态关系", "对象之间消息传递的时间顺序", "数据的流动方向", "项目的进度计划"],
+    answer: 1,
+    explain: "顺序图强调消息在时间轴上的先后顺序和对象交互。"
+  },
+  {
+    id: "q104", subject: "se", unit: "s6", stage: "strong",
+    stem: "与 C/S 架构相比，B/S 架构的主要优点是（ ）。",
+    options: ["交互性能最好", "部署和维护方便", "不需要网络", "安全性最高"],
+    answer: 1,
+    explain: "B/S 通过浏览器访问，客户端无需安装维护，升级部署更方便。"
+  },
+  {
+    id: "q105", subject: "se", unit: "s6", stage: "strong",
+    stem: "下列属于详细设计工具的是（ ）。",
+    options: ["甘特图", "程序流程图", "用例图", "数据字典"],
+    answer: 1,
+    explain: "程序流程图、N-S 图、PAD 图和伪代码用于详细设计；甘特图用于进度管理。"
+  },
+  {
+    id: "q106", subject: "se", unit: "s7", stage: "strong",
+    stem: "软件测试的根本目的是（ ）。",
+    options: ["证明程序没有错误", "发现程序中的缺陷", "展示软件功能", "提高运行速度"],
+    answer: 1,
+    explain: "测试只能证明缺陷存在，不能证明程序无错；其目的是尽可能发现缺陷。"
+  },
+  {
+    id: "q107", subject: "se", unit: "s7", stage: "strong",
+    stem: "单元测试的测试对象是（ ）。",
+    options: ["整个系统", "软件的最小可测试单元", "用户验收环境", "集成后的子系统"],
+    answer: 1,
+    explain: "单元测试针对函数、类或模块等最小可测试单元进行。"
+  },
+  {
+    id: "q108", subject: "se", unit: "s8", stage: "strong",
+    stem: "等价类划分法属于（ ）。",
+    options: ["白盒测试", "黑盒测试", "静态测试", "回归测试"],
+    answer: 1,
+    explain: "等价类划分依据输入域划分用例，不关心内部代码，属于黑盒测试。"
+  },
+  {
+    id: "q109", subject: "se", unit: "s8", stage: "strong",
+    stem: "边界值分析选取的测试数据应（ ）。",
+    options: ["完全随机", "取边界值及其附近的值", "只取区间中间值", "只取最大值"],
+    answer: 1,
+    explain: "大量缺陷出现在边界附近，因此重点选取边界值、边界内侧和外侧的值。"
+  },
+  {
+    id: "q110", subject: "se", unit: "s8", stage: "strong",
+    stem: "一个完整的测试用例通常应包含（ ）。",
+    options: ["只有输入数据", "输入数据与预期输出", "只包含代码", "只包含需求描述"],
+    answer: 1,
+    explain: "测试用例应包含输入、预期输出以及执行步骤，便于判断结果是否正确。"
+  },
+  {
+    id: "q111", subject: "se", unit: "s9", stage: "sprint",
+    stem: "项目网络图中的关键路径是（ ）。",
+    options: ["耗时最短的路径", "耗时最长的路径", "节点最多的路径", "成本最低的路径"],
+    answer: 1,
+    explain: "关键路径决定项目的最短工期，路径上任务没有浮动时间。"
+  },
+  {
+    id: "q112", subject: "se", unit: "s9", stage: "sprint",
+    stem: "甘特图主要用于（ ）。",
+    options: ["项目进度管理", "组织结构设计", "数据流分析", "类关系建模"],
+    answer: 0,
+    explain: "甘特图用横道线表示任务的起止时间和进度，是常用的进度管理工具。"
+  },
+  {
+    id: "q113", subject: "se", unit: "s9", stage: "sprint",
+    stem: "5 人团队中，可能的沟通路径数量是（ ）。",
+    options: ["5", "10", "15", "20"],
+    answer: 1,
+    explain: "沟通路径数为 n(n-1)/2，即 5×4/2=10。"
+  },
+  {
+    id: "q114", subject: "se", unit: "s10", stage: "sprint",
+    stem: "下列不属于软件质量特性的是（ ）。",
+    options: ["可靠性", "易用性", "可维护性", "可读性"],
+    answer: 3,
+    explain: "软件质量特性包括功能性、可靠性、易用性、效率、可维护性和可移植性。"
+  },
+  {
+    id: "q115", subject: "se", unit: "s10", stage: "sprint",
+    stem: "软件配置管理中的“基线”是指（ ）。",
+    options: ["临时保存的文件", "经评审确认的配置项集合", "测试数据集合", "需求变更记录"],
+    answer: 1,
+    explain: "基线是经过评审和确认的配置项集合，后续变更需走变更控制流程。"
+  },
+  {
+    id: "q116", subject: "se", unit: "s11", stage: "sprint",
+    stem: "在 C 语言中，int a[5] 的合法下标范围是（ ）。",
+    options: ["1—5", "0—4", "0—5", "1—4"],
+    answer: 1,
+    explain: "C 语言数组下标从 0 开始，长度为 5 的数组下标为 0 到 4。"
+  },
+  {
+    id: "q117", subject: "se", unit: "s11", stage: "sprint",
+    stem: "栈的基本特点是（ ）。",
+    options: ["先进先出", "后进先出", "随机存取", "只能读取不能写入"],
+    answer: 1,
+    explain: "栈只允许在栈顶插入和删除，遵循后进先出 LIFO 原则。"
+  },
+  {
+    id: "q118", subject: "se", unit: "s11", stage: "sprint",
+    stem: "下列程序结构的时间复杂度通常为 O(n²) 的是（ ）。",
+    options: ["顺序结构", "单层循环", "双重循环", "二分查找"],
+    answer: 2,
+    explain: "双重循环中内层循环执行次数与 n 成正比，总次数约为 n²。"
+  },
+  {
+    id: "q119", subject: "se", unit: "s12", stage: "sprint",
+    stem: "回答软件工程案例题时，比较清晰的结构是（ ）。",
+    options: ["问题—分析—方案—评价", "结论—结论—结论", "只写代码", "只写个人感受"],
+    answer: 0,
+    explain: "先指出问题，再分析原因，给出解决方案并评价其效果，逻辑完整易得分。"
+  },
+  {
+    id: "q120", subject: "se", unit: "s12", stage: "sprint",
+    stem: "软件工程简答题的作答方式，最容易得分的是（ ）。",
+    options: ["写成一大段长文", "分点作答并突出专业术语", "只写一个结论", "用口语化表达"],
+    answer: 1,
+    explain: "分点作答便于阅卷，专业术语能体现掌握程度，是主观题得分关键。"
+  }
+];
+  </script>
+  <script>
+(function () {
+  "use strict";
+
+  const STORAGE_KEY = "jinmen-upgrade-v1";
+  const LETTERS = ["A", "B", "C", "D", "E", "F"];
+  const VIEW_TITLES = {
+    dashboard: "学习总览",
+    today: "今日学习",
+    practice: "每日巩固",
+    exam: "阶段测验",
+    analysis: "学情分析",
+    settings: "设置"
+  };
+  const NAV_ORDER = ["dashboard", "today", "practice", "exam", "analysis", "settings"];
+
+  const SUBJECT_MAP = {};
+  SUBJECTS.forEach(function (s) { SUBJECT_MAP[s.id] = s; });
+  const UNIT_MAP = {};
+  UNITS.forEach(function (u) { UNIT_MAP[u.id] = u; });
+  const QUESTION_MAP = {};
+  QUESTIONS.forEach(function (q) { QUESTION_MAP[q.id] = q; });
+  const SCHOOL_MAP = {};
+  SCHOOLS.forEach(function (s) { SCHOOL_MAP[s.id] = s; });
+  const STAGE_MAP = {};
+  STAGES.forEach(function (s) { STAGE_MAP[s.id] = s; });
+
+  let examTimerId = null;
+  let toastTimer = null;
+
+  let ui = {
+    view: "dashboard",
+    examConfig: { subject: "math", stage: "basic" },
+    practice: null,
+    exam: null,
+    examResult: null
+  };
+
+  let state = loadState();
+
+  /* ---------- 基础工具 ---------- */
+  function pad(n) {
+    return n < 10 ? "0" + n : String(n);
+  }
+
+  function dateKey(d) {
+    const date = d || new Date();
+    return date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate());
+  }
+
+  function parseDate(key) {
+    return new Date(key + "T00:00:00");
+  }
+
+  function shiftDate(key, delta) {
+    const d = parseDate(key);
+    d.setDate(d.getDate() + delta);
+    return dateKey(d);
+  }
+
+  function daysBetween(a, b) {
+    return Math.round((parseDate(a) - parseDate(b)) / 86400000);
+  }
+
+  function chineseDate(key) {
+    const d = parseDate(key);
+    const weeks = ["日", "一", "二", "三", "四", "五", "六"];
+    return (d.getMonth() + 1) + "月" + d.getDate() + "日 · 周" + weeks[d.getDay()];
+  }
+
+  function defaultExamDate() {
+    const now = new Date();
+    let y = now.getFullYear();
+    const target = new Date(y, 2, 13);
+    if (target < new Date(now.getFullYear(), now.getMonth(), now.getDate())) y += 1;
+    return y + "-03-13";
+  }
+
+  function esc(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
+
+  function clamp(n, min, max) {
+    return Math.max(min, Math.min(max, n));
+  }
+
+  function round(n) {
+    return Math.round(n);
+  }
+
+  function sum(list, key) {
+    return list.reduce(function (acc, item) { return acc + (item[key] || 0); }, 0);
+  }
+
+  function shuffle(list) {
+    const arr = list.slice();
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+    return arr;
+  }
+
+  function todayKey() {
+    return dateKey(new Date());
+  }
+
+  function greeting() {
+    const h = new Date().getHours();
+    if (h < 6) return "凌晨好";
+    if (h < 11) return "早上好";
+    if (h < 14) return "中午好";
+    if (h < 18) return "下午好";
+    return "晚上好";
+  }
+
+  /* ---------- 状态存取 ---------- */
+  function defaultState() {
+    return {
+      version: 1,
+      profile: {
+        name: "同学",
+        examDate: defaultExamDate(),
+        schoolId: "tjut",
+        dailyMinutes: 120,
+        theme: "light"
+      },
+      completed: { math: [], english: [], it: [], se: [] },
+      dailyLog: {},
+      practiceLog: [],
+      exams: [],
+      wrongs: [],
+      streak: { last: "", days: 0 },
+      startedAt: todayKey()
+    };
+  }
+
+  function normalizeState(raw) {
+    const def = defaultState();
+    if (!raw || typeof raw !== "object") return def;
+    const result = Object.assign({}, def, raw);
+    result.profile = Object.assign({}, def.profile, raw.profile || {});
+    if (!SCHOOL_MAP[result.profile.schoolId]) result.profile.schoolId = "tjut";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(result.profile.examDate || "")) {
+      result.profile.examDate = def.profile.examDate;
+    }
+    if (!["light", "dark"].includes(result.profile.theme)) result.profile.theme = "light";
+    result.completed = Object.assign({}, def.completed, raw.completed || {});
+    SUBJECTS.forEach(function (s) {
+      if (!Array.isArray(result.completed[s.id])) result.completed[s.id] = [];
+      result.completed[s.id] = result.completed[s.id].filter(function (id) { return !!UNIT_MAP[id]; });
+    });
+    result.dailyLog = raw.dailyLog && typeof raw.dailyLog === "object" ? raw.dailyLog : {};
+    Object.keys(result.dailyLog).forEach(function (key) {
+      const entry = result.dailyLog[key];
+      if (!entry || typeof entry !== "object") {
+        delete result.dailyLog[key];
+        return;
+      }
+      entry.units = Array.isArray(entry.units) ? entry.units.filter(function (id) { return !!UNIT_MAP[id]; }) : [];
+      entry.doneUnits = Array.isArray(entry.doneUnits) ? entry.doneUnits.filter(function (id) { return !!UNIT_MAP[id]; }) : [];
+      if (!("quiz" in entry)) entry.quiz = null;
+      if (entry.quiz && (typeof entry.quiz.correct !== "number" || typeof entry.quiz.total !== "number")) entry.quiz = null;
+    });
+    result.practiceLog = Array.isArray(raw.practiceLog) ? raw.practiceLog.filter(function (x) {
+      return x && SUBJECT_MAP[x.subject] && typeof x.correct === "number" && typeof x.total === "number";
+    }).map(function (x) {
+      return {
+        date: /^\d{4}-\d{2}-\d{2}$/.test(x.date || "") ? x.date : todayKey(),
+        subject: x.subject,
+        correct: x.correct,
+        total: x.total,
+        source: x.source || "practice"
+      };
+    }) : [];
+    result.exams = Array.isArray(raw.exams) ? raw.exams.filter(function (x) {
+      return x && SUBJECT_MAP[x.subject] && typeof x.score === "number";
+    }).map(function (x) {
+      const qids = Array.isArray(x.qids) ? x.qids.filter(function (id) { return !!QUESTION_MAP[id]; }) : [];
+      return {
+        id: x.id || "exam-" + Math.random().toString(36).slice(2, 10),
+        date: /^\d{4}-\d{2}-\d{2}$/.test(x.date || "") ? x.date : todayKey(),
+        subject: x.subject,
+        stage: STAGE_MAP[x.stage] ? x.stage : "basic",
+        score: clamp(Number(x.score) || 0, 0, 100),
+        correct: Number(x.correct) || 0,
+        totalQ: Number(x.totalQ) || qids.length || 10,
+        timeUsed: Number(x.timeUsed) || 0,
+        qids: qids,
+        answers: x.answers && typeof x.answers === "object" ? x.answers : {}
+      };
+    }) : [];
+    result.wrongs = Array.isArray(raw.wrongs) ? raw.wrongs.filter(function (x) {
+      return x && QUESTION_MAP[x.qid];
+    }).map(function (x) {
+      return {
+        qid: x.qid,
+        date: /^\d{4}-\d{2}-\d{2}$/.test(x.date || "") ? x.date : todayKey(),
+        count: Number(x.count) || 1
+      };
+    }) : [];
+    result.streak = Object.assign({ last: "", days: 0 }, raw.streak || {});
+    result.startedAt = /^\d{4}-\d{2}-\d{2}$/.test(result.startedAt || "") ? result.startedAt : def.startedAt;
+    return result;
+  }
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return defaultState();
+      return normalizeState(JSON.parse(raw));
+    } catch (err) {
+      return defaultState();
+    }
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (err) {
+      showToast("本地保存失败，请检查浏览器存储权限");
+    }
+  }
+
+  /* ---------- 学习进度计算 ---------- */
+  function unitsOf(subjectId) {
+    return UNITS.filter(function (u) { return u.subject === subjectId; });
+  }
+
+  function completedCount(subjectId) {
+    return (state.completed[subjectId] || []).length;
+  }
+
+  function completionRate(subjectId) {
+    const total = unitsOf(subjectId).length;
+    return total ? completedCount(subjectId) / total : 0;
+  }
+
+  function totalCompleted() {
+    return SUBJECTS.reduce(function (acc, s) { return acc + completedCount(s.id); }, 0);
+  }
+
+  function todayEntry() {
+    const key = todayKey();
+    if (!state.dailyLog[key]) {
+      state.dailyLog[key] = {
+        units: SUBJECTS.map(function (s) { return nextUnitForSubject(s.id).unit.id; }),
+        doneUnits: [],
+        quiz: null
+      };
+      saveState();
+    }
+    const entry = state.dailyLog[key];
+    if (!Array.isArray(entry.units) || !entry.units.length) {
+      entry.units = SUBJECTS.map(function (s) { return nextUnitForSubject(s.id).unit.id; });
+    }
+    if (!Array.isArray(entry.doneUnits)) entry.doneUnits = [];
+    return entry;
+  }
+
+  function nextUnitForSubject(subjectId) {
+    const units = unitsOf(subjectId);
+    const done = state.completed[subjectId] || [];
+    const remaining = units.filter(function (u) { return done.indexOf(u.id) === -1; });
+    if (remaining.length) return { unit: remaining[0], review: false };
+    let best = units[0];
+    let bestWrong = -1;
+    units.forEach(function (u) {
+      const ids = QUESTIONS.filter(function (q) { return q.unit === u.id; }).map(function (q) { return q.id; });
+      const wrong = state.wrongs.filter(function (w) { return ids.indexOf(w.qid) !== -1; })
+        .reduce(function (acc, w) { return acc + (w.count || 1); }, 0);
+      if (wrong > bestWrong) {
+        bestWrong = wrong;
+        best = u;
+      }
+    });
+    return { unit: best, review: true };
+  }
+
+  function stageOfSubject(subjectId) {
+    const r = completionRate(subjectId);
+    if (r < 0.34) return STAGE_MAP.basic;
+    if (r < 0.67) return STAGE_MAP.strong;
+    return STAGE_MAP.sprint;
+  }
+
+  function subjectStats(subjectId) {
+    const logs = state.practiceLog.filter(function (x) { return x.subject === subjectId; });
+    const exams = state.exams.filter(function (x) { return x.subject === subjectId; });
+    const pTotal = sum(logs, "total");
+    const pCorrect = sum(logs, "correct");
+    const eTotal = sum(exams, "totalQ") || sum(exams, "total");
+    const eCorrect = sum(exams, "correct");
+    return {
+      practiceTotal: pTotal,
+      practiceCorrect: pCorrect,
+      practiceRate: pTotal ? pCorrect / pTotal : 0,
+      examCount: exams.length,
+      examRate: exams.length ? exams.reduce(function (acc, e) { return acc + e.score / 100; }, 0) / exams.length : 0,
+      examAvg: exams.length ? round(exams.reduce(function (acc, e) { return acc + e.score; }, 0) / exams.length) : null
+    };
+  }
+
+  function masteryRate(subjectId) {
+    const stats = subjectStats(subjectId);
+    return 0.3 * completionRate(subjectId) + 0.4 * stats.practiceRate + 0.3 * stats.examRate;
+  }
+
+  function masteryOf(subjectId) {
+    return clamp(round(masteryRate(subjectId) * 100), 0, 100);
+  }
+
+  function hasEvidence(subjectId) {
+    const st = subjectStats(subjectId);
+    return st.practiceTotal > 0 || st.examCount > 0;
+  }
+
+  function forecast() {
+    const ready = state.practiceLog.length > 0 || state.exams.length > 0;
+    const rows = SUBJECTS.map(function (s) {
+      return {
+        subject: s,
+        score: Math.round(s.full * masteryRate(s.id)),
+        rate: masteryRate(s.id)
+      };
+    });
+    return {
+      ready: ready,
+      rows: rows,
+      total: rows.reduce(function (acc, r) { return acc + r.score; }, 0)
+    };
+  }
+
+  function overallAccuracy() {
+    const pTotal = sum(state.practiceLog, "total");
+    const pCorrect = sum(state.practiceLog, "correct");
+    const eTotal = state.exams.reduce(function (acc, e) { return acc + (e.totalQ || 10); }, 0);
+    const eCorrect = sum(state.exams, "correct");
+    const total = pTotal + eTotal;
+    return total ? round((pCorrect + eCorrect) / total * 100) : null;
+  }
+
+  function totalAnswered() {
+    return sum(state.practiceLog, "total") + state.exams.reduce(function (acc, e) { return acc + (e.totalQ || 10); }, 0);
+  }
+
+  function effectiveStreak() {
+    const today = todayKey();
+    if (state.streak.last === today || state.streak.last === shiftDate(today, -1)) {
+      return state.streak.days || 0;
+    }
+    return 0;
+  }
+
+  function touchStreak() {
+    const today = todayKey();
+    if (state.streak.last === today) return;
+    if (state.streak.last === shiftDate(today, -1)) {
+      state.streak.days = (state.streak.days || 0) + 1;
+    } else {
+      state.streak.days = 1;
+    }
+    state.streak.last = today;
+  }
+
+  function examDaysLeft() {
+    return daysBetween(state.profile.examDate, todayKey());
+  }
+
+  function studyDay() {
+    return Math.max(1, daysBetween(todayKey(), state.startedAt) + 1);
+  }
+
+  /* ---------- 学习动作 ---------- */
+  function completeUnit(unitId) {
+    const unit = UNIT_MAP[unitId];
+    if (!unit) return;
+    const entry = todayEntry();
+    if (entry.doneUnits.indexOf(unitId) !== -1) {
+      showToast("这个单元今天已经完成啦");
+      return;
+    }
+    entry.doneUnits.push(unitId);
+    if ((state.completed[unit.subject] || []).indexOf(unitId) === -1) {
+      state.completed[unit.subject].push(unitId);
+    }
+    touchStreak();
+    saveState();
+    const isReview = (state.completed[unit.subject] || []).length === unitsOf(unit.subject).length;
+    showToast(isReview ? "已完成复习，记得做巩固题" : "单元已学完，继续下一个");
+    render();
+  }
+
+  function recordPracticeResult(result) {
+    const bySubject = {};
+    result.details.forEach(function (d) {
+      const q = QUESTION_MAP[d.qid];
+      if (!q) return;
+      if (!bySubject[q.subject]) bySubject[q.subject] = { correct: 0, total: 0 };
+      bySubject[q.subject].total += 1;
+      if (d.correct) bySubject[q.subject].correct += 1;
+    });
+    const now = todayKey();
+    Object.keys(bySubject).forEach(function (sid) {
+      state.practiceLog.push({
+        date: now,
+        subject: sid,
+        correct: bySubject[sid].correct,
+        total: bySubject[sid].total,
+        source: result.mode
+      });
+    });
+  }
+
+  function recordWrongs(details) {
+    details.forEach(function (d) {
+      const q = QUESTION_MAP[d.qid];
+      if (!q) return;
+      const idx = state.wrongs.findIndex(function (w) { return w.qid === d.qid; });
+      if (d.correct) {
+        if (idx !== -1) state.wrongs.splice(idx, 1);
+      } else if (idx !== -1) {
+        state.wrongs[idx].count = (state.wrongs[idx].count || 1) + 1;
+        state.wrongs[idx].date = todayKey();
+      } else {
+        state.wrongs.push({ qid: d.qid, date: todayKey(), count: 1 });
+      }
+    });
+  }
+
+  function buildDetails(qids, answers) {
+    return qids.map(function (qid) {
+      const q = QUESTION_MAP[qid];
+      const chosen = answers[qid];
+      return {
+        qid: qid,
+        chosen: typeof chosen === "number" ? chosen : null,
+        correct: chosen === q.answer
+      };
+    });
+  }
+
+  /* ---------- 练习流程 ---------- */
+  function buildDailyPractice() {
+    const entry = todayEntry();
+    const picked = [];
+    SUBJECTS.forEach(function (s) {
+      const unitId = entry.units.find(function (id) {
+        return UNIT_MAP[id] && UNIT_MAP[id].subject === s.id;
+      });
+      let pool = unitId ? QUESTIONS.filter(function (q) { return q.unit === unitId; }) : [];
+      const need = 3 - pool.length;
+      if (need > 0) {
+        const stageId = unitId && UNIT_MAP[unitId] ? UNIT_MAP[unitId].stage : null;
+        const exclude = pool.map(function (q) { return q.id; }).concat(picked);
+        let extra = QUESTIONS.filter(function (q) {
+          return q.subject === s.id && q.stage === stageId && exclude.indexOf(q.id) === -1;
+        });
+        if (extra.length < need) {
+          const more = QUESTIONS.filter(function (q) {
+            return q.subject === s.id && exclude.indexOf(q.id) === -1 &&
+              extra.map(function (x) { return x.id; }).indexOf(q.id) === -1;
+          });
+          extra = extra.concat(shuffle(more));
+        }
+        pool = pool.concat(shuffle(extra).slice(0, need));
+      }
+      picked.push.apply(picked, shuffle(pool).slice(0, 3).map(function (q) { return q.id; }));
+    });
+    return shuffle(picked);
+  }
+
+  function buildSubjectPractice(subjectId) {
+    return shuffle(QUESTIONS.filter(function (q) { return q.subject === subjectId; }))
+      .slice(0, 6).map(function (q) { return q.id; });
+  }
+
+  function buildUnitPractice(unitId) {
+    return shuffle(QUESTIONS.filter(function (q) { return q.unit === unitId; }))
+      .map(function (q) { return q.id; });
+  }
+
+  function startPractice(mode, options) {
+    const opts = options || {};
+    let qids = [];
+    if (mode === "daily") qids = buildDailyPractice();
+    if (mode === "subject") qids = buildSubjectPractice(opts.subjectId);
+    if (mode === "unit") qids = buildUnitPractice(opts.unitId);
+    if (!qids.length) {
+      showToast("暂时没有可用题目");
+      return;
+    }
+    ui.practice = {
+      mode: mode,
+      subjectId: opts.subjectId || null,
+      unitId: opts.unitId || null,
+      qids: qids,
+      answers: {},
+      index: 0,
+      startedAt: Date.now(),
+      submitted: false,
+      result: null
+    };
+    ui.view = "practice";
+    if (location.hash === "#practice") {
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      location.hash = "practice";
+    }
+  }
+
+  function submitPractice() {
+    const p = ui.practice;
+    if (!p || p.submitted) return;
+    const unanswered = p.qids.filter(function (qid) {
+      return typeof p.answers[qid] !== "number";
+    });
+    if (unanswered.length) {
+      showToast("还有 " + unanswered.length + " 道题未作答，请先完成");
+      return;
+    }
+    const details = buildDetails(p.qids, p.answers);
+    const correct = details.filter(function (d) { return d.correct; }).length;
+    const result = {
+      mode: p.mode,
+      details: details,
+      correct: correct,
+      total: details.length,
+      timeUsed: Math.max(1, round((Date.now() - p.startedAt) / 60000))
+    };
+    recordPracticeResult(result);
+    recordWrongs(details);
+    touchStreak();
+    if (p.mode === "daily") {
+      const entry = todayEntry();
+      entry.quiz = { correct: correct, total: details.length, at: todayKey() };
+    }
+    saveState();
+    p.result = result;
+    p.submitted = true;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  /* ---------- 测验流程 ---------- */
+  function startExam() {
+    const subjectId = ui.examConfig.subject;
+    const stageId = ui.examConfig.stage;
+    let pool = QUESTIONS.filter(function (q) { return q.subject === subjectId && q.stage === stageId; });
+    if (pool.length < 10) {
+      const extra = QUESTIONS.filter(function (q) {
+        return q.subject === subjectId && q.stage !== stageId &&
+          pool.map(function (p) { return p.id; }).indexOf(q.id) === -1;
+      });
+      pool = pool.concat(shuffle(extra).slice(0, 10 - pool.length));
+    }
+    const qids = shuffle(pool).slice(0, 10).map(function (q) { return q.id; });
+    if (qids.length < 10) {
+      showToast("该阶段题目不足，请切换其他阶段");
+      return;
+    }
+    ui.examResult = null;
+    ui.exam = {
+      subject: subjectId,
+      stage: stageId,
+      qids: qids,
+      answers: {},
+      index: 0,
+      startedAt: Date.now(),
+      duration: 15 * 60,
+      result: null
+    };
+    ui.view = "exam";
+    if (location.hash === "#exam") {
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      location.hash = "exam";
+    }
+  }
+
+  function submitExam(auto) {
+    const exam = ui.exam;
+    if (!exam) return;
+    const unanswered = exam.qids.filter(function (qid) {
+      return typeof exam.answers[qid] !== "number";
+    });
+    if (!auto) {
+      const message = unanswered.length
+        ? "还有 " + unanswered.length + " 道题未作答，确定交卷吗？"
+        : "确定交卷并查看解析吗？";
+      if (!window.confirm(message)) return;
+      if (unanswered.length) {
+        const sure = window.confirm("未作答的题目将按错误计分，仍要交卷吗？");
+        if (!sure) return;
+      }
+    }
+    const details = buildDetails(exam.qids, exam.answers);
+    const correct = details.filter(function (d) { return d.correct; }).length;
+    const timeUsed = Math.min(exam.duration, Math.max(1, Math.round((Date.now() - exam.startedAt) / 1000)));
+    const record = {
+      id: "exam-" + Date.now(),
+      date: todayKey(),
+      subject: exam.subject,
+      stage: exam.stage,
+      score: correct * 10,
+      correct: correct,
+      totalQ: details.length,
+      timeUsed: timeUsed,
+      qids: exam.qids.slice(),
+      answers: Object.assign({}, exam.answers)
+    };
+    state.exams.push(record);
+    recordWrongs(details);
+    touchStreak();
+    saveState();
+    ui.exam = null;
+    clearInterval(examTimerId);
+    ui.examResult = buildExamResult(record);
+    render();
+    showToast(auto ? "考试时间到，已自动交卷" : "已完成交卷，查看解析");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function buildExamResult(record) {
+    const details = buildDetails(record.qids, record.answers);
+    return {
+      record: record,
+      details: details,
+      score: record.score,
+      correct: record.correct,
+      total: record.totalQ || record.qids.length,
+      timeUsed: record.timeUsed
+    };
+  }
+
+  function openExamRecord(id) {
+    const record = state.exams.find(function (e) { return e.id === id; });
+    if (!record) return;
+    ui.examResult = buildExamResult(record);
+    ui.view = "exam";
+    if (location.hash === "#exam") {
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      location.hash = "exam";
+    }
+  }
+
+  /* ---------- 启动计时器 ---------- */
+  function formatClock(seconds) {
+    const s = Math.max(0, seconds);
+    return pad(Math.floor(s / 60)) + ":" + pad(s % 60);
+  }
+
+  function startExamTimer() {
+    clearInterval(examTimerId);
+    function tick() {
+      if (!ui.exam || ui.view !== "exam") {
+        clearInterval(examTimerId);
+        return;
+      }
+      const left = Math.max(0, ui.exam.duration - Math.floor((Date.now() - ui.exam.startedAt) / 1000));
+      const el = document.getElementById("examTimer");
+      if (el) {
+        el.textContent = formatClock(left);
+        el.classList.toggle("warn", left <= 180);
+      }
+      if (left <= 0) {
+        clearInterval(examTimerId);
+        submitExam(true);
+      }
+    }
+    tick();
+    examTimerId = setInterval(tick, 1000);
+  }
+
+  /* ---------- 通用 UI ---------- */
+  function showToast(message) {
+    const el = document.getElementById("toast");
+    if (!el) return;
+    el.textContent = message;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.classList.remove("show"); }, 2600);
+  }
+
+  function applyTheme() {
+    document.documentElement.dataset.theme = state.profile.theme === "dark" ? "dark" : "light";
+    const btn = document.getElementById("themeBtn");
+    if (btn) {
+      btn.setAttribute("aria-label", state.profile.theme === "dark" ? "切换浅色模式" : "切换深色模式");
+      btn.title = state.profile.theme === "dark" ? "切换浅色模式" : "切换深色模式";
+    }
+  }
+
+  function navigate(view) {
+    if (!VIEW_TITLES[view]) view = "dashboard";
+    if (location.hash === "#" + view) {
+      ui.view = view;
+      render();
+    } else {
+      location.hash = view;
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderChrome() {
+    const school = SCHOOL_MAP[state.profile.schoolId] || SCHOOLS[0];
+    const fc = forecast();
+    const days = examDaysLeft();
+    const title = document.getElementById("viewTitle");
+    if (title) title.textContent = VIEW_TITLES[ui.view] || "学习总览";
+    const countdown = document.getElementById("topCountdown");
+    if (countdown) countdown.textContent = days >= 0 ? String(days) : "0";
+    const streak = document.getElementById("topStreak");
+    if (streak) streak.textContent = String(effectiveStreak());
+
+    document.querySelectorAll("#nav .nav-item, #bottomNav button").forEach(function (btn) {
+      btn.classList.toggle("active", btn.dataset.view === ui.view);
+    });
+
+    const goal = document.getElementById("sidebarGoal");
+    if (goal) {
+      const pct = Math.round(totalCompleted() / UNITS.length * 100);
+      const predicted = fc.ready ? fc.total : null;
+      goal.innerHTML =
+        '<div class="goal-top"><strong>' + esc(school.name) + '</strong><span>目标</span></div>' +
+        '<div class="goal-bar"><span style="width:' + pct + '%"></span></div>' +
+        '<div class="goal-meta"><span>已完成 ' + totalCompleted() + '/' + UNITS.length + ' 单元</span><span>' +
+        (predicted == null ? "待预测" : predicted + "/650") + "</span></div>";
+    }
+  }
+
+  /* ---------- 图表 ---------- */
+  function ringHTML(pct, size, color, label, track) {
+    const r = 52;
+    const c = 2 * Math.PI * r;
+    const value = clamp(round(pct), 0, 100);
+    const offset = c * (1 - value / 100);
+    return '<div class="ring-wrap" style="width:' + size + 'px;height:' + size + 'px">' +
+      '<svg viewBox="0 0 120 120" width="' + size + '" height="' + size + '" aria-hidden="true">' +
+      '<circle cx="60" cy="60" r="' + r + '" fill="none" stroke="' + (track || "var(--line)") + '" stroke-width="9"></circle>' +
+      '<circle cx="60" cy="60" r="' + r + '" fill="none" stroke="' + color + '" stroke-width="9" stroke-linecap="round" ' +
+      'stroke-dasharray="' + c.toFixed(1) + '" stroke-dashoffset="' + offset.toFixed(1) + '" transform="rotate(-90 60 60)"></circle>' +
+      "</svg>" +
+      '<div class="ring-center"><strong>' + value + '%</strong><span>' + esc(label) + "</span></div>" +
+      "</div>";
+  }
+
+  function radarChart() {
+    const cx = 160;
+    const cy = 134;
+    const R = 86;
+    const angles = [-Math.PI / 2, 0, Math.PI / 2, Math.PI];
+    const labels = SUBJECTS.map(function (s) { return s.short; });
+    let svg = '<svg viewBox="0 0 320 282" role="img" aria-label="四科掌握度雷达图">';
+    [0.25, 0.5, 0.75, 1].forEach(function (k) {
+      const pts = angles.map(function (a) {
+        return (cx + R * k * Math.cos(a)).toFixed(1) + "," + (cy + R * k * Math.sin(a)).toFixed(1);
+      }).join(" ");
+      svg += '<polygon points="' + pts + '" fill="none" stroke="var(--line)" stroke-width="1"></polygon>';
+    });
+    angles.forEach(function (a) {
+      svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + (cx + R * Math.cos(a)).toFixed(1) +
+        '" y2="' + (cy + R * Math.sin(a)).toFixed(1) + '" stroke="var(--line)" stroke-width="1"></line>';
+    });
+    const values = SUBJECTS.map(function (s) { return masteryOf(s.id) / 100; });
+    const points = angles.map(function (a, i) {
+      return (cx + R * values[i] * Math.cos(a)).toFixed(1) + "," + (cy + R * values[i] * Math.sin(a)).toFixed(1);
+    }).join(" ");
+    svg += '<polygon points="' + points + '" fill="rgba(37,99,235,0.16)" stroke="var(--brand)" stroke-width="2"></polygon>';
+    SUBJECTS.forEach(function (s, i) {
+      const x = (cx + R * values[i] * Math.cos(angles[i])).toFixed(1);
+      const y = (cy + R * values[i] * Math.sin(angles[i])).toFixed(1);
+      svg += '<circle cx="' + x + '" cy="' + y + '" r="3.5" fill="var(--brand)" stroke="var(--panel)" stroke-width="1.5"></circle>';
+    });
+    const labelPos = [
+      [cx, cy - R - 18, "middle"],
+      [cx + R + 30, cy + 4, "start"],
+      [cx, cy + R + 26, "middle"],
+      [cx - R - 30, cy + 4, "end"]
+    ];
+    SUBJECTS.forEach(function (s, i) {
+      const pos = labelPos[i];
+      svg += '<text x="' + pos[0] + '" y="' + pos[1] + '" text-anchor="' + pos[2] +
+        '" font-size="11" font-weight="600" fill="var(--text-2)">' + esc(labels[i]) + "</text>";
+      svg += '<text x="' + pos[0] + '" y="' + (pos[1] + 14) + '" text-anchor="' + pos[2] +
+        '" font-size="10" fill="var(--muted)">' + masteryOf(s.id) + "%</text>";
+    });
+    svg += "</svg>";
+    return svg;
+  }
+
+  function lineChart(points) {
+    if (!points.length) return "";
+    const W = 520;
+    const H = 230;
+    const left = 40;
+    const right = 16;
+    const top = 22;
+    const bottom = 38;
+    const plotW = W - left - right;
+    const plotH = H - top - bottom;
+    const n = points.length;
+    const xOf = function (i) {
+      return n === 1 ? left + plotW / 2 : left + plotW * i / (n - 1);
+    };
+    const yOf = function (v) {
+      return top + plotH * (1 - clamp(v, 0, 100) / 100);
+    };
+    let svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="成绩趋势图">';
+    [0, 25, 50, 75, 100].forEach(function (v) {
+      const y = yOf(v);
+      svg += '<line x1="' + left + '" y1="' + y + '" x2="' + (W - right) + '" y2="' + y +
+        '" stroke="var(--line)" stroke-width="1" stroke-dasharray="' + (v === 0 ? "0" : "3 4") + '"></line>';
+      svg += '<text x="' + (left - 8) + '" y="' + (y + 3.5) + '" text-anchor="end" font-size="9" fill="var(--muted)">' + v + "</text>";
+    });
+    const linePoints = points.map(function (p, i) {
+      return xOf(i).toFixed(1) + "," + yOf(p.value).toFixed(1);
+    });
+    const area = left + "," + yOf(0).toFixed(1) + " " + linePoints.join(" ") + " " +
+      (xOf(n - 1)).toFixed(1) + "," + yOf(0).toFixed(1);
+    svg += '<polygon points="' + area + '" fill="rgba(37,99,235,0.1)"></polygon>';
+    svg += '<polyline points="' + linePoints.join(" ") + '" fill="none" stroke="var(--brand)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></polyline>';
+    points.forEach(function (p, i) {
+      const x = xOf(i);
+      const y = yOf(p.value);
+      svg += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3.8" fill="var(--panel)" stroke="var(--brand)" stroke-width="2"></circle>';
+      if (n <= 8 || i % 2 === 0 || i === n - 1) {
+        svg += '<text x="' + x.toFixed(1) + '" y="' + (H - 18) + '" text-anchor="middle" font-size="9" fill="var(--muted)">' + esc(p.label) + "</text>";
+      }
+    });
+    svg += "</svg>";
+    return svg;
+  }
+
+  /* ---------- 仪表盘 ---------- */
+  function viewDashboard() {
+    const entry = todayEntry();
+    const school = SCHOOL_MAP[state.profile.schoolId] || SCHOOLS[0];
+    const fc = forecast();
+    const totalPct = Math.round(totalCompleted() / UNITS.length * 100);
+    const doneToday = entry.units.filter(function (id) { return entry.doneUnits.indexOf(id) !== -1; }).length;
+    const answered = totalAnswered();
+    const acc = overallAccuracy();
+    const streak = effectiveStreak();
+    const stage = (function () {
+      const r = totalCompleted() / UNITS.length;
+      if (r < 0.34) return STAGE_MAP.basic;
+      if (r < 0.67) return STAGE_MAP.strong;
+      return STAGE_MAP.sprint;
+    })();
+    const days = examDaysLeft();
+    const examYear = parseDate(state.profile.examDate).getFullYear();
+
+    const subjectCards = SUBJECTS.map(function (s) {
+      const done = completedCount(s.id);
+      const total = unitsOf(s.id).length;
+      const pct = Math.round(done / total * 100);
+      const stageTag = stageOfSubject(s.id);
+      return '<article class="subject-card card" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
+        '<div class="subject-top">' +
+        '<span class="subject-icon">' + esc(s.icon) + "</span>" +
+        "<div><h3>" + esc(s.name) + "</h3><p>" + esc(s.desc) + "</p></div>" +
+        '<span class="tag tag-soft">' + esc(stageTag.short) + "阶段</span>" +
+        "</div>" +
+        '<div class="meter"><span style="width:' + pct + '%"></span></div>' +
+        '<div class="subject-meta"><span>完成 <b>' + done + "/" + total + "</b> 单元</span><span>掌握 <b>" + masteryOf(s.id) + '%</b></span></div>' +
+        '<button class="btn btn-sm" type="button" data-view="today">继续学习</button>' +
+        "</article>";
+    }).join("");
+
+    const taskRows = entry.units.map(function (id) {
+      const unit = UNIT_MAP[id];
+      if (!unit) return "";
+      const s = SUBJECT_MAP[unit.subject];
+      const done = entry.doneUnits.indexOf(id) !== -1;
+      return '<button class="task-row' + (done ? " done" : "") + '" type="button" data-view="today" style="--subject:' + s.color + '">' +
+        '<span class="task-check">' + checkSvg() + "</span>" +
+        '<span class="task-main"><strong>' + esc(s.short) + " · " + esc(unit.title) + "</strong><small>" +
+        esc(STAGE_MAP[unit.stage].name) + " · 约 25 分钟</small></span>" +
+        '<span class="task-side">' + (done ? "已完成" : "去学习 →") + "</span>" +
+        "</button>";
+    }).join("");
+
+    const quizDone = !!entry.quiz;
+    const quizRow = '<button class="task-row' + (quizDone ? " done" : "") + '" type="button" data-view="practice" style="--subject:var(--brand)">' +
+      '<span class="task-check">' + checkSvg() + "</span>" +
+      '<span class="task-main"><strong>每日巩固 · 四科混合练习</strong><small>' +
+      (quizDone ? "今日已答对 " + entry.quiz.correct + "/" + entry.quiz.total + " 题" : "约 12 题 · 检验今天的掌握情况") +
+      "</small></span>" +
+      '<span class="task-side">' + (quizDone ? "再练一次" : "去练习 →") + "</span>" +
+      "</button>";
+
+    const gap = fc.total - school.line;
+    let forecastHtml = "";
+    if (!fc.ready) {
+      forecastHtml =
+        '<div class="empty" style="border:0;padding:26px 10px">' +
+        "<strong>预测尚未生成</strong>" +
+        "完成一次每日巩固或阶段测验后，系统会结合单元进度与正确率，测算你的公办院校达标概率。" +
+        '</div><button class="btn btn-primary btn-block" type="button" data-view="practice">去做第一次巩固</button>';
+    } else {
+      const meterPct = clamp(fc.total / 650 * 100, 0, 100);
+      const targetPct = clamp(school.line / 650 * 100, 0, 100);
+      const gapText = gap >= 0 ? "已达目标线 +" + gap + " 分" : "距目标线 " + Math.abs(gap) + " 分";
+      const miniBars = fc.rows.map(function (r) {
+        return '<div class="mini-bar" style="--subject:' + r.subject.color + '">' +
+          '<span class="mb-label">' + esc(r.subject.short) + '</span>' +
+          '<span class="mb-track"><span style="width:' + clamp(r.rate * 100, 0, 100) + '%"></span></span>' +
+          '<span class="mb-val">' + r.score + "/" + r.subject.full + "</span></div>";
+      }).join("");
+      forecastHtml =
+        '<div class="forecast-head"><div><span>预测总分</span><strong>' + fc.total + "<em>/650</em></strong></div>" +
+        '<span class="tag ' + (gap >= 0 ? "tag-success" : "tag-warn") + '">' + gapText + "</span></div>" +
+        '<div class="target-meter"><span class="target-fill' + (gap >= 0 ? " near" : "") + '" style="width:' + meterPct + '%"></span>' +
+        '<span class="target-line" style="left:' + targetPct + '%"></span></div>' +
+        '<div class="forecast-legend"><span>0</span><span>' + esc(school.name) + " 参考线 " + school.line + "</span><span>650</span></div>" +
+        '<div class="mini-bars">' + miniBars + "</div>" +
+        '<p class="mastery-hint">预测会随学习进度、练习正确率与测验成绩动态变化。</p>';
+    }
+
+    const recent = state.exams.slice(-4).reverse();
+    let recentHtml = "";
+    if (recent.length) {
+      recentHtml = '<div class="section-head"><div><h2>最近测验</h2><p>阶段测验记录与得分率</p></div>' +
+        '<button class="text-link" type="button" data-view="analysis">查看分析 →</button></div>' +
+        '<div class="card" style="overflow-x:auto"><table class="table"><thead><tr><th>日期</th><th>科目</th><th>阶段</th><th>得分</th><th>用时</th><th></th></tr></thead><tbody>' +
+        recent.map(function (e) {
+          const s = SUBJECT_MAP[e.subject];
+          return "<tr><td>" + esc(e.date.slice(5)) + "</td><td>" + esc(s ? s.short : e.subject) +
+            "</td><td>" + esc(STAGE_MAP[e.stage] ? STAGE_MAP[e.stage].short : e.stage) +
+            '</td><td class="score">' + e.score + '</td><td>' + formatClock(e.timeUsed || 0) +
+            '</td><td><button class="text-link" type="button" data-action="openExamRecord" data-id="' + esc(e.id) + '">解析</button></td></tr>';
+        }).join("") +
+        "</tbody></table></div>";
+    }
+
+    return '<section class="hero">' +
+      '<div class="hero-copy">' +
+      '<span class="eyebrow">' + examYear + " 天津专升本 · " + esc(stage.name) + "</span>" +
+      "<h2>" + greeting() + "，" + esc(state.profile.name) + "。<br>今天也向上岸<em>靠近一点</em>。</h2>" +
+      '<p class="hero-desc">目标院校：' + esc(school.name) + "（" + esc(school.level) + "），参考线 " + school.line +
+      "/650。今日还有 " + (4 - doneToday) + " 个知识单元待完成" + (quizDone ? "，巩固已完成。" : "，每日巩固待完成。") +
+      (days >= 0 ? " 距离考试还有 " + days + " 天。" : "") + "</p>" +
+      '<div class="hero-actions">' +
+      '<button class="btn btn-light" type="button" data-view="today">开始今日学习</button>' +
+      '<button class="btn btn-ghost-light" type="button" data-view="practice">每日巩固</button>' +
+      "</div></div>" +
+      '<div class="hero-ring">' + ringHTML(totalPct, 138, "#7dd3fc", "总进度", "rgba(255,255,255,.2)") +
+      '<span class="ring-label">已完成 ' + totalCompleted() + "/" + UNITS.length + " 个知识单元</span>" +
+      "</div></section>" +
+      '<div class="kpi-grid">' +
+      '<div class="kpi card"><span class="kpi-label">已完成单元</span><strong>' + totalCompleted() + "<small>/" + UNITS.length + "</small></strong><span class=\"kpi-hint\">循序渐进推进四科</span></div>" +
+      '<div class="kpi card"><span class="kpi-label">累计答题</span><strong>' + answered + "<small>题</small></strong><span class=\"kpi-hint\">练习与测验合计</span></div>" +
+      '<div class="kpi card"><span class="kpi-label">综合正确率</span><strong>' + (acc == null ? "--" : acc) + "<small>" + (acc == null ? "" : "%") + "</small></strong><span class=\"kpi-hint\">正确率持续更新</span></div>" +
+      '<div class="kpi card"><span class="kpi-label">连续学习</span><strong>' + streak + "<small>天</small></strong><span class=\"kpi-hint\">今天学习即可续上</span></div>" +
+      "</div>" +
+      '<div class="section-head"><div><h2>四科学习进度</h2><p>高数、英语、信息技术、软件工程专业课</p></div><button class="text-link" type="button" data-view="analysis">掌握度分析 →</button></div>' +
+      '<div class="subject-grid">' + subjectCards + "</div>" +
+      '<div class="section-head"><div><h2>今日任务</h2><p>' + chineseDate(todayKey()) + " · 第 " + studyDay() + ' 天</p></div><button class="text-link" type="button" data-view="today">查看全部 →</button></div>' +
+      '<div class="grid grid-2">' +
+      '<section class="card"><div class="task-list">' + taskRows + quizRow + "</div></section>" +
+      '<section class="card"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px">' +
+      "<div><h3 style=\"font-size:14px\">公办院校达标预测</h3><p style=\"font-size:11px;color:var(--muted);margin-top:2px\">" +
+      esc(school.name) + " · 参考线 " + school.line + "/650</p></div>" +
+      '<span class="tag">' + esc(state.profile.examDate) + "</span></div>" + forecastHtml + "</section>" +
+      "</div>" + recentHtml +
+      '<p class="footer-note">院校分数线为备考参考值，实际以天津市教育招生考试院及招生院校当年公布为准。数据仅保存在本机浏览器。</p>';
+  }
+
+  function checkSvg() {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>';
+  }
+
+  function crossSvg() {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"></path></svg>';
+  }
+
+  /* ---------- 今日学习 ---------- */
+  function viewToday() {
+    const entry = todayEntry();
+    const units = entry.units.map(function (id) { return UNIT_MAP[id]; }).filter(Boolean);
+    const tip = DAILY_TIPS[(studyDay() - 1) % DAILY_TIPS.length];
+    const doneCount = units.filter(function (u) { return entry.doneUnits.indexOf(u.id) !== -1; }).length;
+    const quizDone = !!entry.quiz;
+    const overall = totalCompleted() / UNITS.length;
+    const stage = overall < 0.34 ? STAGE_MAP.basic : overall < 0.67 ? STAGE_MAP.strong : STAGE_MAP.sprint;
+
+    const cards = units.map(function (unit) {
+      const s = SUBJECT_MAP[unit.subject];
+      const already = (state.completed[unit.subject] || []).indexOf(unit.id) !== -1;
+      const doneToday = entry.doneUnits.indexOf(unit.id) !== -1;
+      const isReview = !unitsOf(unit.subject).some(function (u) {
+        return (state.completed[unit.subject] || []).indexOf(u.id) === -1;
+      });
+      return '<article class="unit-card card" id="unit-' + unit.id + '" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
+        '<div class="unit-head">' +
+        '<span class="subject-icon">' + esc(s.icon) + "</span>" +
+        "<div><span class=\"tag tag-soft\">" + esc(STAGE_MAP[unit.stage].name) + (isReview ? " · 二轮复习" : "") + "</span>" +
+        "<h3>" + esc(unit.title) + "</h3>" +
+        "<p>" + esc(s.name) + " · 建议 25 分钟 · " + QUESTIONS.filter(function (q) { return q.unit === unit.id; }).length + " 道配套题</p></div>" +
+        '<span class="unit-status' + (doneToday ? " done" : "") + '">' + (doneToday ? "今日已完成" : already ? "已学 · 可复习" : "待学习") + "</span>" +
+        "</div>" +
+        '<ul class="points">' + unit.points.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" +
+        '<div class="unit-tip"><strong>学习提示</strong>' + esc(unit.tip) + "</div>" +
+        '<div class="unit-actions">' +
+        (doneToday
+          ? '<button class="btn btn-outline btn-sm" type="button" disabled>今日已完成</button>'
+          : '<button class="btn btn-primary btn-sm" type="button" data-action="completeUnit" data-id="' + unit.id + '">' + (already ? "完成复习" : "标记已学") + "</button>") +
+        '<button class="btn btn-soft btn-sm" type="button" data-action="practiceUnit" data-id="' + unit.id + '">练这个单元</button>' +
+        "</div></article>";
+    }).join("");
+
+    return '<div class="page-head"><div><h2>今日学习</h2>' +
+      "<p>" + chineseDate(todayKey()) + " · 第 " + studyDay() + " 天 · 当前处于" + esc(stage.name) +
+      "。按四科轮换推进，学完一个单元再进入下一个，避免跳跃式复习。</p></div>" +
+      '<div class="day-badge"><strong>' + doneCount + "/" + units.length + '</strong><span>今日单元<br>已完成</span></div></div>' +
+      '<div class="daily-banner"><div class="db-icon">' + String(studyDay()).slice(-2) + "</div>" +
+      "<div><strong>今日学习建议</strong><p>" + esc(tip) + "</p></div>" +
+      '<button class="btn btn-primary btn-sm" type="button" data-view="practice">' + (quizDone ? "再巩固一次" : "完成每日巩固") + "</button></div>" +
+      '<div class="unit-grid">' + cards + "</div>" +
+      '<div class="section-head"><div><h2>学习节奏</h2><p>每个单元建议 25 分钟，四个单元约 100 分钟。</p></div></div>' +
+      '<div class="grid grid-3">' +
+      '<div class="card"><span class="tag tag-soft">基础阶段</span><h3 style="font-size:14px;margin:10px 0 5px">理解概念与公式</h3><p style="font-size:12px;color:var(--muted)">先把知识框架搭起来，配套题只求做对，不求速度。</p></div>' +
+      '<div class="card"><span class="tag tag-soft">强化阶段</span><h3 style="font-size:14px;margin:10px 0 5px">专题突破综合题</h3><p style="font-size:12px;color:var(--muted)">把跨知识点题型拆开训练，错题当天复盘。</p></div>' +
+      '<div class="card"><span class="tag tag-soft">冲刺阶段</span><h3 style="font-size:14px;margin:10px 0 5px">限时模拟稳得分</h3><p style="font-size:12px;color:var(--muted)">严格计时，优先把会做的题全部拿到分。</p></div>' +
+      "</div>";
+  }
+
+  /* ---------- 每日巩固 ---------- */
+  function viewPractice() {
+    if (ui.practice) {
+      if (ui.practice.submitted) return viewPracticeResult();
+      return viewPracticeQuiz();
+    }
+    const entry = todayEntry();
+    const quiz = entry.quiz;
+    const total = sum(state.practiceLog, "total");
+    const correct = sum(state.practiceLog, "correct");
+    const acc = total ? round(correct / total * 100) : null;
+    const todayQuestions = 12;
+
+    const scope = SUBJECTS.map(function (s) {
+      const id = entry.units.find(function (uid) { return UNIT_MAP[uid] && UNIT_MAP[uid].subject === s.id; });
+      const unit = id ? UNIT_MAP[id] : null;
+      return '<div class="school-row" style="--subject:' + s.color + '">' +
+        '<span class="subject-icon" style="width:30px;height:30px;font-size:14px">' + esc(s.icon) + "</span>" +
+        "<div><strong>" + esc(s.name) + "</strong><p style=\"font-size:10.5px;color:var(--muted)\">" +
+        (unit ? esc(unit.title) : "综合复习") + "</p></div>" +
+        '<span class="tag">' + (unit ? QUESTIONS.filter(function (q) { return q.unit === unit.id; }).length : 0) + " 题</span>" +
+        "</div>";
+    }).join("");
+
+    const subjectCards = SUBJECTS.map(function (s) {
+      return '<article class="subject-card card" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
+        '<div class="subject-top"><span class="subject-icon">' + esc(s.icon) + "</span>" +
+        "<div><h3>" + esc(s.name) + "专项</h3><p>从本科题库随机抽 6 题</p></div></div>" +
+        '<div class="subject-meta"><span>已练 <b>' + sum(state.practiceLog.filter(function (x) { return x.subject === s.id; }), "total") +
+        "</b> 题</span><span>正确率 <b>" + (function () {
+          const logs = state.practiceLog.filter(function (x) { return x.subject === s.id; });
+          const t = sum(logs, "total");
+          return t ? round(sum(logs, "correct") / t * 100) + "%" : "--";
+        })() + "</b></span></div>" +
+        '<button class="btn btn-sm" type="button" data-action="practiceSubject" data-id="' + s.id + '">开始专项练习</button>' +
+        "</article>";
+    }).join("");
+
+    return '<section class="practice-hero card">' +
+      "<div><span class=\"eyebrow\">每日巩固</span><h2>" + (quiz ? "今天已经巩固过一轮" : "用 12 道题检验今天的学习") + "</h2>" +
+      "<p>题目来自今天四个知识单元，覆盖高数、英语、信息技术与软件工程专业课。提交后立即查看逐题解析，错题会自动进入错题本。</p>" +
+      '<div class="practice-meta"><div><strong>' + todayQuestions + "</strong><span>今日题量</span></div>" +
+      "<div><strong>约 15</strong><span>分钟</span></div>" +
+      "<div><strong>" + (quiz ? quiz.correct + "/" + quiz.total : "--") + "</strong><span>今日成绩</span></div>" +
+      "<div><strong>" + (acc == null ? "--" : acc + "%") + "</strong><span>累计正确率</span></div></div></div>" +
+      '<button class="btn btn-primary" type="button" data-action="startDaily">' + (quiz ? "再练一轮" : "开始今日巩固") + "</button>" +
+      "</section>" +
+      '<div class="stat-strip">' +
+      '<div class="stat-box"><span>累计答题</span><strong>' + total + "<small> 题</small></strong></div>" +
+      '<div class="stat-box"><span>累计答对</span><strong>' + correct + "<small> 题</small></strong></div>" +
+      '<div class="stat-box"><span>错题本</span><strong>' + state.wrongs.length + "<small> 题</small></strong></div>" +
+      '<div class="stat-box"><span>今日巩固</span><strong>' + (quiz ? quiz.correct + "/" + quiz.total : "待完成") + "</strong></div>" +
+      "</div>" +
+      '<div class="section-head"><div><h2>今日出题范围</h2><p>每科抽取 3 题，优先覆盖当天单元</p></div></div>' +
+      '<div class="card" style="padding:12px"><div class="school-list" style="margin:0">' + scope + "</div></div>" +
+      '<div class="section-head"><div><h2>分科专项练习</h2><p>想单独补一科时使用，每次 6 题</p></div></div>' +
+      '<div class="subject-grid">' + subjectCards + "</div>" +
+      '<p class="footer-note">练习记录会用于计算各科掌握度，建议每天至少完成一次巩固。</p>';
+  }
+
+  function viewPracticeQuiz() {
+    const p = ui.practice;
+    const q = QUESTION_MAP[p.qids[p.index]];
+    if (!q) { ui.practice = null; return viewPractice(); }
+    const s = SUBJECT_MAP[q.subject];
+    const answered = p.qids.filter(function (id) { return typeof p.answers[id] === "number"; }).length;
+    const options = q.options.map(function (opt, i) {
+      const selected = p.answers[q.id] === i;
+      return '<button class="option' + (selected ? " selected" : "") + '" type="button" role="radio" aria-checked="' + selected +
+        '" data-action="answer" data-qid="' + q.id + '" data-opt="' + i + '">' +
+        '<span class="option-key">' + LETTERS[i] + "</span><span>" + esc(opt) + "</span></button>";
+    }).join("");
+    const palette = p.qids.map(function (id, i) {
+      const cls = i === p.index ? " current" : (typeof p.answers[id] === "number" ? " answered" : "");
+      return '<button class="palette-btn' + cls + '" type="button" data-action="practiceJump" data-index="' + i + '">' + (i + 1) + "</button>";
+    }).join("");
+    const isLast = p.index === p.qids.length - 1;
+    return '<div class="exam-topbar"><div class="exam-title">' +
+      '<strong>' + (p.mode === "daily" ? "每日巩固" : p.mode === "unit" ? "单元练习" : esc(s.name) + "专项练习") + "</strong>" +
+      '<span class="tag tag-soft" style="--subject:' + s.color + '">' + esc(s.name) + " · " + esc(STAGE_MAP[q.stage].name) + "</span>" +
+      '<span>已作答 ' + answered + "/" + p.qids.length + "</span></div>" +
+      '<button class="btn btn-outline btn-sm" type="button" data-action="exitPractice">退出练习</button></div>' +
+      '<div class="quiz-shell card">' +
+      '<div class="quiz-head"><span class="quiz-index">第 ' + (p.index + 1) + " / " + p.qids.length + " 题</span>" +
+      "<span>" + esc(UNIT_MAP[q.unit] ? UNIT_MAP[q.unit].title : "") + "</span></div>" +
+      '<div class="quiz-progress"><span style="width:' + ((p.index + 1) / p.qids.length * 100) + '%"></span></div>' +
+      '<h3 class="quiz-stem">' + esc(q.stem) + "</h3>" +
+      '<div class="options" role="radiogroup" aria-label="选项">' + options + "</div>" +
+      '<div class="quiz-palette">' + palette + "</div>" +
+      '<div class="palette-legend"><span><i style="background:var(--brand)"></i>当前题</span><span><i style="background:var(--brand-soft);border:1px solid var(--brand)"></i>已作答</span><span><i style="background:var(--line)"></i>未作答</span></div>' +
+      '<div class="quiz-actions">' +
+      '<button class="btn btn-outline btn-sm" type="button" data-action="practicePrev"' + (p.index === 0 ? " disabled" : "") + ">上一题</button>" +
+      '<button class="btn btn-outline btn-sm" type="button" data-action="practiceNext"' + (isLast ? " disabled" : "") + ">下一题</button>" +
+      '<span class="spacer"></span>' +
+      '<button class="btn btn-primary" type="button" data-action="submitPractice">提交答卷</button>' +
+      "</div></div>" +
+      '<p class="footer-note">选择会自动保存。提交后统一判分并展示解析，未答完无法提交。</p>';
+  }
+
+  function viewPracticeResult() {
+    const p = ui.practice;
+    const r = p.result;
+    const pct = round(r.correct / r.total * 100);
+    const color = pct >= 80 ? "var(--success)" : pct >= 60 ? "var(--brand)" : "var(--danger)";
+    const wrongUnits = {};
+    r.details.forEach(function (d) {
+      if (d.correct) return;
+      const q = QUESTION_MAP[d.qid];
+      const unit = UNIT_MAP[q.unit];
+      if (unit) wrongUnits[unit.id] = unit;
+    });
+    const weak = Object.keys(wrongUnits).map(function (id) { return UNIT_MAP[id]; });
+    const review = r.details.map(function (d, i) {
+      const q = QUESTION_MAP[d.qid];
+      const s = SUBJECT_MAP[q.subject];
+      const chosenText = d.chosen == null ? "未作答" : LETTERS[d.chosen] + ". " + q.options[d.chosen];
+      return '<div class="review-item ' + (d.correct ? "is-correct" : "is-wrong") + '">' +
+        '<div class="review-head"><span>第 ' + (i + 1) + " 题 · " + esc(s.short) + " · " + esc(UNIT_MAP[q.unit] ? UNIT_MAP[q.unit].title : "") + "</span>" +
+        '<span class="tag ' + (d.correct ? "tag-success" : "tag-danger") + '">' + (d.correct ? "正确" : "错误") + "</span></div>" +
+        '<p class="review-stem">' + esc(q.stem) + "</p>" +
+        '<div class="review-answer">你的答案：<span class="' + (d.correct ? "right-text" : "wrong-text") + '">' + esc(chosenText) +
+        "</span> ｜ 正确答案：<span class=\"right-text\">" + LETTERS[q.answer] + ". " + esc(q.options[q.answer]) + "</span></div>" +
+        '<div class="explain"><strong>解析：</strong>' + esc(q.explain) + "</div></div>";
+    }).join("");
+
+    return '<section class="result-hero card">' +
+      '<div class="result-ring">' + ringHTML(pct, 132, color, "正确率") + "</div>" +
+      '<div class="result-copy"><span class="eyebrow">巩固完成</span>' +
+      "<h2>" + (p.mode === "daily" ? "每日巩固" : p.mode === "unit" ? "单元练习" : "专项练习") + " · 答对 " + r.correct + "/" + r.total + " 题</h2>" +
+      "<p>" + (pct >= 80 ? "掌握得不错，保持这个节奏。" : pct >= 60 ? "基础题基本过关，建议把错题所在单元再看一遍。" : "本次暴露了不少薄弱点，先回到知识点，再做一次巩固。") + "</p>" +
+      '<div class="result-metrics"><div><strong>' + pct + '%</strong><span>正确率</span></div>' +
+      "<div><strong>" + r.total + "</strong><span>总题数</span></div>" +
+      "<div><strong>" + r.timeUsed + "</strong><span>用时（分钟）</span></div>" +
+      "<div><strong>" + state.wrongs.length + "</strong><span>错题本总数</span></div></div>" +
+      (weak.length ? '<p style="font-size:11.5px;color:var(--muted);margin-top:12px">薄弱单元：' + weak.map(function (u) { return esc(u.title); }).join("、") + "</p>" : "") +
+      "</div></section>" +
+      '<div class="section-head"><div><h2>逐题解析</h2><p>答错的题已自动加入错题本</p></div>' +
+      '<div style="display:flex;gap:8px"><button class="btn btn-outline btn-sm" type="button" data-view="analysis">查看学情</button>' +
+      '<button class="btn btn-primary btn-sm" type="button" data-action="exitPractice">返回巩固首页</button></div></div>' +
+      '<div class="review-list">' + review + "</div>";
+  }
+
+  /* ---------- 阶段测验 ---------- */
+  function viewExam() {
+    if (ui.examResult) return viewExamResult();
+    if (ui.exam) return viewExamTaking();
+    return viewExamConfig();
+  }
+
+  function viewExamConfig() {
+    const cfg = ui.examConfig;
+    const subject = SUBJECT_MAP[cfg.subject];
+    const stage = STAGE_MAP[cfg.stage];
+    const subjectChoices = SUBJECTS.map(function (s) {
+      return '<button class="choice' + (cfg.subject === s.id ? " active" : "") + '" type="button" data-action="examSubject" data-id="' + s.id + '" style="--subject:' + s.color + '">' +
+        '<span class="choice-dot"></span><span><strong>' + esc(s.name) + "</strong><small>" + s.full + " 分 · " + unitsOf(s.id).length + " 单元</small></span></button>";
+    }).join("");
+    const stageChoices = STAGES.map(function (st) {
+      const count = QUESTIONS.filter(function (q) { return q.subject === cfg.subject && q.stage === st.id; }).length;
+      return '<button class="choice' + (cfg.stage === st.id ? " active" : "") + '" type="button" data-action="examStage" data-id="' + st.id + '">' +
+        '<span class="choice-dot" style="background:' + st.color + '"></span><span><strong>' + esc(st.name) + "</strong><small>" + count + " 道题 · " + esc(st.weeks) + "</small></span></button>";
+    }).join("");
+    const history = state.exams.slice(-6).reverse();
+    const avg = history.length ? round(state.exams.reduce(function (a, e) { return a + e.score; }, 0) / state.exams.length) : null;
+    const subjectTipRows = SUBJECTS.map(function (s) {
+      return '<div class="school-row" style="--subject:' + s.color + '">' +
+        '<span class="subject-icon" style="width:30px;height:30px;font-size:14px">' + esc(s.icon) + "</span>" +
+        "<div><strong>" + esc(s.name) + '</strong><p style="font-size:10.5px;color:var(--muted)">' + esc(s.examTip) + "</p></div>" +
+        '<span class="tag">' + s.full + " 分</span></div>";
+    }).join("");
+
+    let historyHtml = "";
+    if (state.exams.length) {
+      historyHtml = '<div class="section-head"><div><h2>测验记录</h2><p>共 ' + state.exams.length + " 次，平均 " + avg + " 分</p></div></div>" +
+        '<div class="card" style="overflow-x:auto"><table class="table"><thead><tr><th>日期</th><th>科目</th><th>阶段</th><th>得分</th><th>用时</th><th></th></tr></thead><tbody>' +
+        history.map(function (e) {
+          return "<tr><td>" + esc(e.date.slice(5)) + "</td><td>" + esc(SUBJECT_MAP[e.subject].short) +
+            "</td><td>" + esc(STAGE_MAP[e.stage] ? STAGE_MAP[e.stage].short : e.stage) +
+            '</td><td class="score">' + e.score + "</td><td>" + formatClock(e.timeUsed || 0) +
+            '</td><td><button class="text-link" type="button" data-action="openExamRecord" data-id="' + esc(e.id) + '">查看解析</button></td></tr>';
+        }).join("") + "</tbody></table></div>";
+    }
+
+    return '<div class="page-head"><div><h2>阶段测验</h2>' +
+      "<p>按科目和阶段抽取 10 道题，限时 15 分钟，满分 100 分。建议每学完一个阶段就测一次，用成绩校准掌握度。</p></div>" +
+      '<div class="day-badge"><strong>' + (avg == null ? "--" : avg) + "</strong><span>历史平均<br>得分</span></div></div>" +
+      '<div class="grid grid-2">' +
+      '<section class="card"><div class="chart-head"><div><h3>选择科目</h3><p>四科均可单独测验</p></div></div><div class="choice-grid">' + subjectChoices + "</div>" +
+      '<div class="callout" style="margin-top:14px"><strong>提示：</strong>' + esc(subject.examTip) + "</div>" +
+      '<div class="section-head" style="margin:16px 2px 8px"><div><h3 style="font-size:13px">四科测验建议</h3></div></div>' +
+      '<div class="school-list" style="margin-top:0">' + subjectTipRows + "</div></section>" +
+      '<section class="card"><div class="chart-head"><div><h3>选择阶段</h3><p>按学习进度选择对应难度</p></div></div><div class="choice-grid">' + stageChoices + "</div>" +
+      '<div class="config-row"><span>科目</span><strong>' + esc(subject.name) + "</strong></div>" +
+      '<div class="config-row"><span>阶段</span><strong>' + esc(stage.name) + "</strong></div>" +
+      '<div class="config-row"><span>题量与时间</span><strong>10 题 · 15 分钟</strong></div>' +
+      '<button class="btn btn-primary btn-block" type="button" data-action="startExam">开始 ' + esc(subject.short) + " · " + esc(stage.short) + "测验</button>" +
+      '<p class="exam-note">交卷后立即出分并展示逐题解析，成绩会计入该科掌握度。未作答题目按错误计分。</p></section>' +
+      "</div>" + historyHtml +
+      '<p class="footer-note">阶段测验难度与题量参考天津专升本常见题型设置，仅用于校内自测。</p>';
+  }
+
+  function viewExamTaking() {
+    const exam = ui.exam;
+    const q = QUESTION_MAP[exam.qids[exam.index]];
+    const s = SUBJECT_MAP[exam.subject];
+    const stage = STAGE_MAP[exam.stage];
+    const answered = exam.qids.filter(function (id) { return typeof exam.answers[id] === "number"; }).length;
+    const left = Math.max(0, exam.duration - Math.floor((Date.now() - exam.startedAt) / 1000));
+    const options = q.options.map(function (opt, i) {
+      const selected = exam.answers[q.id] === i;
+      return '<button class="option' + (selected ? " selected" : "") + '" type="button" role="radio" aria-checked="' + selected +
+        '" data-action="answer" data-qid="' + q.id + '" data-opt="' + i + '">' +
+        '<span class="option-key">' + LETTERS[i] + "</span><span>" + esc(opt) + "</span></button>";
+    }).join("");
+    const palette = exam.qids.map(function (id, i) {
+      const cls = i === exam.index ? " current" : (typeof exam.answers[id] === "number" ? " answered" : "");
+      return '<button class="palette-btn' + cls + '" type="button" data-action="examJump" data-index="' + i + '">' + (i + 1) + "</button>";
+    }).join("");
+    const isLast = exam.index === exam.qids.length - 1;
+    return '<div class="exam-topbar"><div class="exam-title"><strong>' + esc(s.name) + " · " + esc(stage.name) + "测验</strong>" +
+      '<span class="tag tag-soft" style="--subject:' + s.color + '">满分 100</span>' +
+      "<span>已作答 " + answered + "/" + exam.qids.length + "</span></div>" +
+      '<span class="timer' + (left <= 180 ? " warn" : "") + '" id="examTimer">' + formatClock(left) + "</span></div>" +
+      '<div class="exam-layout"><section class="card exam-main">' +
+      '<div class="quiz-head"><span class="quiz-index">第 ' + (exam.index + 1) + " / " + exam.qids.length + " 题</span><span>单选题 · 每题 10 分</span></div>" +
+      '<div class="quiz-progress"><span style="width:' + ((exam.index + 1) / exam.qids.length * 100) + '%"></span></div>' +
+      '<h3 class="quiz-stem">' + esc(q.stem) + "</h3>" +
+      '<div class="options" role="radiogroup" aria-label="选项">' + options + "</div>" +
+      '<div class="quiz-actions">' +
+      '<button class="btn btn-outline btn-sm" type="button" data-action="examPrev"' + (exam.index === 0 ? " disabled" : "") + ">上一题</button>" +
+      '<button class="btn btn-outline btn-sm" type="button" data-action="examNext"' + (isLast ? " disabled" : "") + ">下一题</button>" +
+      '<span class="spacer"></span><button class="btn btn-primary" type="button" data-action="submitExam">交卷</button>' +
+      "</div></section>" +
+      '<aside class="card exam-side"><h3>答题卡</h3><div class="quiz-palette">' + palette + "</div>" +
+      '<div class="palette-legend"><span><i style="background:var(--brand)"></i>当前</span><span><i style="background:var(--brand-soft);border:1px solid var(--brand)"></i>已答</span><span><i style="background:var(--line)"></i>未答</span></div>' +
+      '<button class="btn btn-primary btn-block" type="button" data-action="submitExam">交卷并查看解析</button>' +
+      '<p class="exam-note">时间到会自动交卷。离开页面计时不会暂停，建议留出完整 15 分钟。</p></aside></div>';
+  }
+
+  function viewExamResult() {
+    const res = ui.examResult;
+    const rec = res.record;
+    const pct = round(res.score);
+    const color = pct >= 80 ? "var(--success)" : pct >= 60 ? "var(--brand)" : "var(--danger)";
+    const s = SUBJECT_MAP[rec.subject];
+    const stage = STAGE_MAP[rec.stage];
+    const wrong = res.details.filter(function (d) { return !d.correct; });
+    const wrongUnits = {};
+    wrong.forEach(function (d) {
+      const unit = UNIT_MAP[QUESTION_MAP[d.qid].unit];
+      if (unit) wrongUnits[unit.id] = unit;
+    });
+    const advice = res.score >= 80
+      ? "这一阶段掌握得比较扎实，可以进入下一阶段，或继续用限时卷保持手感。"
+      : res.score >= 60
+        ? "基本盘已经具备，建议针对错题所在单元做一次专项练习，再测一轮。"
+        : "当前阶段还有明显漏洞，先回到知识单元重学，不要急着刷下一阶段。";
+    const review = res.details.map(function (d, i) {
+      const q = QUESTION_MAP[d.qid];
+      const chosenText = d.chosen == null ? "未作答" : LETTERS[d.chosen] + ". " + q.options[d.chosen];
+      return '<div class="review-item ' + (d.correct ? "is-correct" : "is-wrong") + '">' +
+        '<div class="review-head"><span>第 ' + (i + 1) + " 题 · " + esc(UNIT_MAP[q.unit] ? UNIT_MAP[q.unit].title : "") + "</span>" +
+        '<span class="tag ' + (d.correct ? "tag-success" : "tag-danger") + '">' + (d.correct ? "正确 +10" : "错误 0") + "</span></div>" +
+        '<p class="review-stem">' + esc(q.stem) + "</p>" +
+        '<div class="review-answer">你的答案：<span class="' + (d.correct ? "right-text" : "wrong-text") + '">' + esc(chosenText) +
+        "</span> ｜ 正确答案：<span class=\"right-text\">" + LETTERS[q.answer] + ". " + esc(q.options[q.answer]) + "</span></div>" +
+        '<div class="explain"><strong>解析：</strong>' + esc(q.explain) + "</div></div>";
+    }).join("");
+    return '<section class="result-hero card">' +
+      '<div class="result-ring">' + ringHTML(pct, 132, color, "得分率") + "</div>" +
+      '<div class="result-copy"><span class="eyebrow">' + esc(s.name) + " · " + esc(stage.name) + "测验</span>" +
+      "<h2>得分 " + res.score + " / 100</h2><p>" + advice + "</p>" +
+      '<div class="result-metrics"><div><strong>' + res.correct + "/" + res.total + "</strong><span>答对题数</span></div>" +
+      "<div><strong>" + formatClock(res.timeUsed || 0) + "</strong><span>用时</span></div>" +
+      "<div><strong>" + masteryOf(rec.subject) + "%</strong><span>该科当前掌握度</span></div>" +
+      "<div><strong>" + (wrong.length ? wrong.length : 0) + "</strong><span>本次错题</span></div></div>" +
+      (Object.keys(wrongUnits).length ? '<p style="font-size:11.5px;color:var(--muted);margin-top:12px">需要回看：' + Object.keys(wrongUnits).map(function (id) { return esc(UNIT_MAP[id].title); }).join("、") + "</p>" : "") +
+      "</div></section>" +
+      '<div class="section-head"><div><h2>逐题解析</h2><p>错题已进入错题本，可在学情分析中回看</p></div>' +
+      '<div style="display:flex;gap:8px"><button class="btn btn-outline btn-sm" type="button" data-view="analysis">查看学情</button>' +
+      '<button class="btn btn-primary btn-sm" type="button" data-action="exitExamResult">返回测验首页</button></div></div>' +
+      '<div class="review-list">' + review + "</div>";
+  }
+
+  /* ---------- 学情分析 ---------- */
+  function trendPoints() {
+    if (state.exams.length >= 2) {
+      return state.exams.slice(-8).map(function (e) {
+        return { label: e.date.slice(5), value: e.score };
+      });
+    }
+    const map = {};
+    state.practiceLog.forEach(function (p) {
+      if (!map[p.date]) map[p.date] = { correct: 0, total: 0 };
+      map[p.date].correct += p.correct;
+      map[p.date].total += p.total;
+    });
+    const keys = Object.keys(map).sort().slice(-7);
+    return keys.map(function (k) {
+      return { label: k.slice(5), value: map[k].total ? round(map[k].correct / map[k].total * 100) : 0 };
+    });
+  }
+
+  function viewAnalysis() {
+    const school = SCHOOL_MAP[state.profile.schoolId] || SCHOOLS[0];
+    const fc = forecast();
+    const acc = overallAccuracy();
+    const avg = state.exams.length ? round(state.exams.reduce(function (a, e) { return a + e.score; }, 0) / state.exams.length) : null;
+    const total = totalCompleted();
+    const points = trendPoints();
+    const trendTitle = state.exams.length >= 2 ? "最近测验得分率" : "最近练习正确率";
+    const trendNote = state.exams.length >= 2 ? "最近 8 次阶段测验" : "按日汇总的练习正确率";
+
+    const masteryRows = SUBJECTS.map(function (s) {
+      const st = subjectStats(s.id);
+      const m = masteryOf(s.id);
+      const hint = !hasEvidence(s.id)
+        ? "还没有练习或测验记录，先完成一次巩固"
+        : m < 45
+          ? "基础还不稳，建议回看当前阶段单元"
+          : m < 70
+            ? "正确率有提升空间，优先复盘错题"
+            : m < 85
+              ? "已接近目标水平，加强综合题训练"
+              : "掌握良好，保持限时训练";
+      return '<div class="mastery-row" style="--subject:' + s.color + '">' +
+        '<div class="mastery-top"><b>' + esc(s.name) + "</b><span>进度 " + round(completionRate(s.id) * 100) + "% · 练习 " +
+        (st.practiceTotal ? round(st.practiceRate * 100) + "%" : "--") + " · 测验 " + (st.examAvg == null ? "--" : st.examAvg + "分") + "</span></div>" +
+        '<div class="mastery-bar"><span style="width:' + m + '%"></span></div>' +
+        '<span class="mastery-hint">掌握度 ' + m + "% · " + hint + "</span></div>";
+    }).join("");
+
+    const examCountBySubject = SUBJECTS.map(function (s) {
+      return state.exams.filter(function (e) { return e.subject === s.id; }).length;
+    });
+    const checklist = [
+      { ok: total === UNITS.length, label: "完成全部知识单元", detail: total + "/" + UNITS.length },
+      { ok: examCountBySubject.every(function (n) { return n >= 1; }), label: "四科各完成至少 1 次阶段测验", detail: examCountBySubject.filter(function (n) { return n >= 1; }).length + "/4" },
+      { ok: acc != null && acc >= 70, label: "综合正确率达到 70%", detail: acc == null ? "待练习" : acc + "%" },
+      { ok: fc.ready && fc.total >= school.line, label: "预测总分达到 " + school.name + " 参考线", detail: fc.ready ? fc.total + "/" + school.line : "待生成" }
+    ];
+    const checklistHtml = checklist.map(function (c) {
+      return '<div class="school-row" style="' + (c.ok ? "border-color:var(--success);" : "") + '">' +
+        '<span style="width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:' +
+        (c.ok ? "var(--success-soft);color:var(--success)" : "var(--panel-2);color:var(--muted)") + '">' +
+        (c.ok ? checkSvg() : crossSvg()) + "</span>" +
+        "<div><strong>" + esc(c.label) + '</strong><p style="font-size:10.5px;color:var(--muted)">' + esc(c.detail) + "</p></div></div>";
+    }).join("");
+
+    const wrongs = state.wrongs.slice().sort(function (a, b) {
+      return String(b.date).localeCompare(String(a.date));
+    });
+    let wrongHtml = '<div class="empty"><strong>错题本是空的</strong>完成练习或测验后，答错的题会自动收录到这里。</div>';
+    if (wrongs.length) {
+      wrongHtml = '<div class="wrong-list">' + wrongs.slice(0, 12).map(function (w) {
+        const q = QUESTION_MAP[w.qid];
+        const unit = UNIT_MAP[q.unit];
+        const s = SUBJECT_MAP[q.subject];
+        return '<div class="wrong-item" style="border-left:3px solid ' + s.color + '">' +
+          '<div class="wrong-top"><strong>' + esc(s.short) + " · " + esc(unit ? unit.title : "") + "</strong>" +
+          '<span class="tag">错 ' + (w.count || 1) + " 次 · " + esc(String(w.date).slice(5)) + "</span></div>" +
+          "<p>" + esc(q.stem) + "</p>" +
+          '<div class="wrong-answer">正确答案：' + LETTERS[q.answer] + ". " + esc(q.options[q.answer]) + "</div>" +
+          '<div class="explain"><strong>解析：</strong>' + esc(q.explain) + "</div>" +
+          '<div style="margin-top:8px;display:flex;gap:8px"><button class="btn btn-outline btn-sm" type="button" data-action="removeWrong" data-id="' + q.id + '">已掌握，移除</button>' +
+          '<button class="btn btn-soft btn-sm" type="button" data-action="practiceSubject" data-id="' + s.id + '">再做 ' + esc(s.short) + "专项</button></div></div>";
+      }).join("") + "</div>";
+    }
+
+    const history = state.exams.slice(-8).reverse();
+    let historyHtml = '<div class="empty"><strong>还没有阶段测验记录</strong>去测验页完成一次阶段测验，成绩会用于校准掌握度。</div>';
+    if (history.length) {
+      historyHtml = '<div class="card" style="overflow-x:auto;padding:6px 0"><table class="table"><thead><tr><th>日期</th><th>科目</th><th>阶段</th><th>得分</th><th>用时</th></tr></thead><tbody>' +
+        history.map(function (e) {
+          return "<tr><td>" + esc(e.date.slice(5)) + "</td><td>" + esc(SUBJECT_MAP[e.subject].name) +
+            "</td><td>" + esc(STAGE_MAP[e.stage] ? STAGE_MAP[e.stage].name : e.stage) +
+            '</td><td class="score">' + e.score + "</td><td>" + formatClock(e.timeUsed || 0) + "</td></tr>";
+        }).join("") + "</tbody></table></div>";
+    }
+
+    return '<div class="page-head"><div><h2>学情分析</h2>' +
+      "<p>把学习进度、练习正确率与阶段测验成绩综合起来，判断四科短板以及离公办院校参考线还有多远。</p></div>" +
+      '<div class="day-badge"><strong>' + (fc.ready ? fc.total : "--") + "</strong><span>预测总分<br>/ 650</span></div></div>" +
+      '<div class="kpi-grid">' +
+      '<div class="kpi card"><span class="kpi-label">已完成单元</span><strong>' + total + "<small>/" + UNITS.length + "</small></strong><span class=\"kpi-hint\">知识覆盖进度</span></div>" +
+      '<div class="kpi card"><span class="kpi-label">综合正确率</span><strong>' + (acc == null ? "--" : acc) + "<small>" + (acc == null ? "" : "%") + "</small></strong><span class=\"kpi-hint\">练习与测验合计</span></div>" +
+      '<div class="kpi card"><span class="kpi-label">测验平均分</span><strong>' + (avg == null ? "--" : avg) + "<small>" + (avg == null ? "" : "分") + "</small></strong><span class=\"kpi-hint\">阶段测验百分制</span></div>" +
+      '<div class="kpi card"><span class="kpi-label">目标差距</span><strong>' + (fc.ready ? (fc.total >= school.line ? "+" + (fc.total - school.line) : "-" + (school.line - fc.total)) : "--") + "<small>" + (fc.ready ? "分" : "") + "</small></strong><span class=\"kpi-hint\">" + esc(school.name) + " 参考线 " + school.line + "</span></div>" +
+      "</div>" +
+      '<div class="chart-grid">' +
+      '<section class="card chart-card"><div class="chart-head"><div><h3>四科掌握度雷达</h3><p>进度 30% + 练习 40% + 测验 30%</p></div><span class="tag">满分 100</span></div>' +
+      '<div class="chart-wrap">' + radarChart() + "</div></section>" +
+      '<section class="card chart-card"><div class="chart-head"><div><h3>' + trendTitle + "</h3><p>" + trendNote + "</p></div></div>" +
+      (points.length ? '<div class="chart-wrap">' + lineChart(points) + "</div>" : '<div class="chart-empty">完成至少一次练习或测验后，这里会显示成绩趋势。</div>') +
+      "</section></div>" +
+      '<div class="section-head"><div><h2>各科掌握情况</h2><p>掌握度会随学习与测试动态变化</p></div></div>' +
+      '<div class="grid grid-2"><section class="card"><div class="mastery-list">' + masteryRows + "</div></section>" +
+      '<section class="card"><div class="chart-head"><div><h3>公办院校达标标准</h3><p>' + esc(school.name) + " · " + esc(school.level) + "</p></div></div>" +
+      '<div class="callout" style="margin-bottom:10px">本平台建议标准：总分不低于 <strong>' + school.line + "/650</strong>，英语建议 <strong>≥60/150</strong>，软件工程专业课建议 <strong>≥120/200</strong>，且四科无明显短板。</div>" +
+      '<div class="school-list">' + checklistHtml + "</div>" +
+      '<p class="mastery-hint" style="margin-top:10px">' + esc(EXAM_NOTE) + "</p></section></div>" +
+      '<div class="section-head"><div><h2>错题本</h2><p>共 ' + state.wrongs.length + " 题，答对后自动移出</p></div></div>" + wrongHtml +
+      (state.wrongs.length > 12 ? '<p class="mastery-hint" style="margin-top:10px">仅展示最近 12 道错题，完成对应专项练习并答对后可移出。</p>' : "") +
+      '<div class="section-head"><div><h2>阶段测验记录</h2><p>最近 8 次成绩</p></div></div>' + historyHtml +
+      '<p class="footer-note">达标判断为学习辅助参考，不代表真实录取结果。请以官方招生政策为准。</p>';
+  }
+
+  /* ---------- 设置 ---------- */
+  function viewSettings() {
+    const school = SCHOOL_MAP[state.profile.schoolId] || SCHOOLS[0];
+    const schoolOptions = SCHOOLS.map(function (s) {
+      return '<option value="' + s.id + '"' + (s.id === state.profile.schoolId ? " selected" : "") + ">" + esc(s.name) + "（参考线 " + s.line + "）</option>";
+    }).join("");
+    const schoolList = SCHOOLS.map(function (s) {
+      return '<button class="school-row' + (s.id === state.profile.schoolId ? " active" : "") + '" type="button" data-action="selectSchool" data-id="' + s.id + '">' +
+        "<div><strong>" + esc(s.name) + '</strong><p style="font-size:10.5px;color:var(--muted)">' + esc(s.note) + "</p></div>" +
+        '<div class="school-meta"><span class="tag">' + esc(s.level) + '</span><span class="school-score">' + s.line + "/650</span></div></button>";
+    }).join("");
+
+    return '<div class="page-head"><div><h2>设置</h2><p>调整考试日期、目标院校与每日学习目标。所有数据保存在当前浏览器，可随时导出备份。</p></div></div>' +
+      '<div class="settings-grid">' +
+      '<section class="card"><div class="chart-head"><div><h3>个人备考设置</h3><p>保存后立即生效</p></div></div>' +
+      '<div class="form-grid">' +
+      '<div class="field"><label for="setName">你的称呼</label><input id="setName" type="text" maxlength="16" value="' + esc(state.profile.name) + '" placeholder="同学"></div>' +
+      '<div class="field"><label for="setExamDate">考试日期</label><input id="setExamDate" type="date" value="' + esc(state.profile.examDate) + '"><small>用于倒计时与每日提醒</small></div>' +
+      '<div class="field full"><label for="setSchool">目标公办院校</label><select id="setSchool">' + schoolOptions + "</select></div>" +
+      '<div class="field full"><label for="setMinutes">每日学习时长目标</label><select id="setMinutes">' +
+      [60, 90, 120, 150, 180, 240].map(function (m) {
+        return '<option value="' + m + '"' + (Number(state.profile.dailyMinutes) === m ? " selected" : "") + ">" + m + " 分钟</option>";
+      }).join("") + "</select><small>建议每天至少 90 分钟，四个单元约 100 分钟</small></div>" +
+      "</div>" +
+      '<div class="form-actions"><button class="btn btn-primary" type="button" data-action="saveSettings">保存设置</button>' +
+      '<button class="btn btn-outline" type="button" data-action="exportData">导出学习数据</button>' +
+      '<button class="btn btn-outline" type="button" data-action="importData">导入数据</button>' +
+      '<input type="file" id="importFile" accept="application/json,.json" style="display:none"></div>' +
+      '<div class="setting-block"><h3>关于达标标准</h3><p>' + esc(EXAM_NOTE) +
+      " 本平台按总分 650 分（高数 150 + 英语 150 + 信息技术 150 + 软件工程专业课 200）进行预测，专业课分值与考试科目请以目标院校当年招生简章为准。</p></div>" +
+      "</section>" +
+      '<div style="display:flex;flex-direction:column;gap:16px">' +
+      '<section class="card"><div class="chart-head"><div><h3>目标院校参考线</h3><p>点击切换目标，预测随之更新</p></div></div>' +
+      '<div class="school-list" style="margin-top:0">' + schoolList + "</div></section>" +
+      '<section class="card"><div class="chart-head"><div><h3>数据概览</h3><p>当前学习记录</p></div></div>' +
+      '<div class="config-row" style="border-top:0"><span>学习单元</span><strong>' + totalCompleted() + "/" + UNITS.length + "</strong></div>" +
+      '<div class="config-row"><span>答题记录</span><strong>' + totalAnswered() + " 题</strong></div>" +
+      '<div class="config-row"><span>阶段测验</span><strong>' + state.exams.length + " 次</strong></div>" +
+      '<div class="config-row"><span>错题本</span><strong>' + state.wrongs.length + " 题</strong></div>" +
+      '<div class="config-row"><span>连续学习</span><strong>' + effectiveStreak() + " 天</strong></div>" +
+      "</section>" +
+      '<section class="card danger-zone"><h3>重置学习数据</h3><p>清空全部进度、练习、测验与错题记录，操作不可恢复。建议先导出备份。</p>' +
+      '<button class="btn btn-danger btn-sm" type="button" data-action="resetData">清空全部数据</button></section>' +
+      "</div></div>" +
+      '<p class="footer-note">当前目标：' + esc(school.name) + " · 参考线 " + school.line + "/650。数据存储于 localStorage，不涉及云端上传。</p>";
+  }
+
+  /* ---------- 设置动作 ---------- */
+  function saveSettings() {
+    const nameEl = document.getElementById("setName");
+    const dateEl = document.getElementById("setExamDate");
+    const schoolEl = document.getElementById("setSchool");
+    const minEl = document.getElementById("setMinutes");
+    if (!nameEl || !dateEl || !schoolEl || !minEl) return;
+    const name = nameEl.value.trim() || "同学";
+    const examDate = dateEl.value;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(examDate)) {
+      showToast("请选择有效的考试日期");
+      return;
+    }
+    state.profile.name = name.slice(0, 16);
+    state.profile.examDate = examDate;
+    state.profile.schoolId = SCHOOL_MAP[schoolEl.value] ? schoolEl.value : "tjut";
+    state.profile.dailyMinutes = Number(minEl.value) || 120;
+    saveState();
+    showToast("设置已保存");
+    render();
+  }
+
+  function exportData() {
+    const payload = JSON.stringify(state, null, 2);
+    const blob = new Blob([payload], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "jinmen-progress-" + todayKey() + ".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    showToast("学习数据已导出");
+  }
+
+  function importDataFile(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function () {
+      try {
+        const parsed = JSON.parse(String(reader.result));
+        if (!parsed || typeof parsed !== "object" || !parsed.profile || !parsed.completed) {
+          showToast("文件格式不正确，需要本平台导出的 JSON");
+          return;
+        }
+        if (!window.confirm("导入将覆盖当前学习数据，确定继续吗？")) return;
+        state = normalizeState(parsed);
+        saveState();
+        applyTheme();
+        ui.practice = null;
+        ui.exam = null;
+        ui.examResult = null;
+        render();
+        showToast("数据导入成功");
+      } catch (err) {
+        showToast("读取失败，请确认文件是有效的 JSON");
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  function resetData() {
+    if (!window.confirm("确定要清空全部学习数据吗？此操作不可恢复。")) return;
+    if (!window.confirm("再次确认：进度、测验和错题都会删除，建议先导出备份。")) return;
+    state = defaultState();
+    saveState();
+    ui.practice = null;
+    ui.exam = null;
+    ui.examResult = null;
+    applyTheme();
+    render();
+    showToast("已重置，重新开始吧");
+  }
+
+  /* ---------- 渲染入口 ---------- */
+  function render() {
+    clearInterval(examTimerId);
+    applyTheme();
+    if (!VIEW_TITLES[ui.view]) ui.view = "dashboard";
+    renderChrome();
+    const view = document.getElementById("view");
+    if (!view) return;
+    let html = "";
+    switch (ui.view) {
+      case "today": html = viewToday(); break;
+      case "practice": html = viewPractice(); break;
+      case "exam": html = viewExam(); break;
+      case "analysis": html = viewAnalysis(); break;
+      case "settings": html = viewSettings(); break;
+      default: html = viewDashboard(); break;
+    }
+    view.innerHTML = html;
+    if (ui.view === "exam" && ui.exam) startExamTimer();
+  }
+
+  function buildBottomNav() {
+    const bottom = document.getElementById("bottomNav");
+    const nav = document.getElementById("nav");
+    if (!bottom || !nav) return;
+    const items = nav.querySelectorAll(".nav-item");
+    bottom.innerHTML = Array.prototype.map.call(items, function (item) {
+      return '<button type="button" data-view="' + item.dataset.view + '">' +
+        item.querySelector("svg").outerHTML + "<span>" + item.querySelector("span").textContent + "</span></button>";
+    }).join("");
+  }
+
+  /* ---------- 事件绑定 ---------- */
+  function handleViewClick(e) {
+    const target = e.target.closest("[data-action]");
+    if (target) {
+      const action = target.dataset.action;
+      if (action === "answer") {
+        const qid = target.dataset.qid;
+        const opt = Number(target.dataset.opt);
+        if (ui.practice && !ui.practice.submitted) {
+          ui.practice.answers[qid] = opt;
+          render();
+        } else if (ui.exam) {
+          ui.exam.answers[qid] = opt;
+          render();
+        }
+        return;
+      }
+      if (action === "practiceJump") {
+        if (!ui.practice) return;
+        ui.practice.index = Number(target.dataset.index);
+        render();
+        return;
+      }
+      if (action === "practicePrev" && ui.practice) {
+        ui.practice.index = Math.max(0, ui.practice.index - 1);
+        render();
+        return;
+      }
+      if (action === "practiceNext" && ui.practice) {
+        ui.practice.index = Math.min(ui.practice.qids.length - 1, ui.practice.index + 1);
+        render();
+        return;
+      }
+      if (action === "submitPractice") {
+        submitPractice();
+        return;
+      }
+      if (action === "exitPractice") {
+        if (ui.practice && !ui.practice.submitted) {
+          const answered = Object.keys(ui.practice.answers).length;
+          if (answered && !window.confirm("退出后本次作答不会保存，确定退出吗？")) return;
+        }
+        ui.practice = null;
+        render();
+        return;
+      }
+      if (action === "startDaily") {
+        startPractice("daily");
+        return;
+      }
+      if (action === "practiceSubject") {
+        startPractice("subject", { subjectId: target.dataset.id });
+        return;
+      }
+      if (action === "practiceUnit") {
+        startPractice("unit", { unitId: target.dataset.id });
+        return;
+      }
+      if (action === "completeUnit") {
+        completeUnit(target.dataset.id);
+        return;
+      }
+      if (action === "examSubject") {
+        ui.examConfig.subject = target.dataset.id;
+        ui.examResult = null;
+        render();
+        return;
+      }
+      if (action === "examStage") {
+        ui.examConfig.stage = target.dataset.id;
+        ui.examResult = null;
+        render();
+        return;
+      }
+      if (action === "startExam") {
+        startExam();
+        return;
+      }
+      if (action === "examJump" && ui.exam) {
+        ui.exam.index = Number(target.dataset.index);
+        render();
+        return;
+      }
+      if (action === "examPrev" && ui.exam) {
+        ui.exam.index = Math.max(0, ui.exam.index - 1);
+        render();
+        return;
+      }
+      if (action === "examNext" && ui.exam) {
+        ui.exam.index = Math.min(ui.exam.qids.length - 1, ui.exam.index + 1);
+        render();
+        return;
+      }
+      if (action === "submitExam") {
+        submitExam(false);
+        return;
+      }
+      if (action === "exitExamResult") {
+        ui.examResult = null;
+        render();
+        return;
+      }
+      if (action === "openExamRecord") {
+        openExamRecord(target.dataset.id);
+        return;
+      }
+      if (action === "saveSettings") {
+        saveSettings();
+        return;
+      }
+      if (action === "selectSchool") {
+        const id = target.dataset.id;
+        if (SCHOOL_MAP[id]) {
+          state.profile.schoolId = id;
+          saveState();
+          showToast("目标院校已切换为" + SCHOOL_MAP[id].name);
+          render();
+        }
+        return;
+      }
+      if (action === "exportData") {
+        exportData();
+        return;
+      }
+      if (action === "importData") {
+        const input = document.getElementById("importFile");
+        if (input) input.click();
+        return;
+      }
+      if (action === "resetData") {
+        resetData();
+        return;
+      }
+      if (action === "removeWrong") {
+        const idx = state.wrongs.findIndex(function (w) { return w.qid === target.dataset.id; });
+        if (idx !== -1) {
+          state.wrongs.splice(idx, 1);
+          saveState();
+          showToast("已从错题本移除");
+          render();
+        }
+        return;
+      }
+    }
+
+    const navTarget = e.target.closest("[data-view]");
+    if (navTarget && VIEW_TITLES[navTarget.dataset.view]) {
+      navigate(navTarget.dataset.view);
+    }
+  }
+
+  function init() {
+    const hash = (location.hash || "#dashboard").replace("#", "");
+    ui.view = VIEW_TITLES[hash] ? hash : "dashboard";
+    buildBottomNav();
+    applyTheme();
+    todayEntry();
+
+    document.getElementById("nav").addEventListener("click", function (e) {
+      const btn = e.target.closest("[data-view]");
+      if (btn) navigate(btn.dataset.view);
+    });
+    document.getElementById("bottomNav").addEventListener("click", function (e) {
+      const btn = e.target.closest("[data-view]");
+      if (btn) navigate(btn.dataset.view);
+    });
+    document.getElementById("view").addEventListener("click", handleViewClick);
+    document.getElementById("view").addEventListener("change", function (e) {
+      if (e.target && e.target.id === "importFile") importDataFile(e.target.files[0]);
+    });
+    document.getElementById("themeBtn").addEventListener("click", function () {
+      state.profile.theme = state.profile.theme === "dark" ? "light" : "dark";
+      saveState();
+      applyTheme();
+      showToast(state.profile.theme === "dark" ? "已切换深色模式" : "已切换浅色模式");
+    });
+    window.addEventListener("hashchange", function () {
+      const next = (location.hash || "#dashboard").replace("#", "");
+      ui.view = VIEW_TITLES[next] ? next : "dashboard";
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) {
+        todayEntry();
+        render();
+      }
+    });
+    render();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+  </script>
+</body>
+</html>
