@@ -2355,6 +2355,601 @@ button.school-row:hover {
   color: #0b1120;
 }
 
+/* ---------- 学习资料 ---------- */
+.materials-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 28px;
+  margin-bottom: 16px;
+  background:
+    radial-gradient(460px 220px at 100% 0%, rgba(14, 165, 233, 0.14), transparent 70%),
+    var(--panel);
+}
+
+.materials-hero-copy {
+  min-width: 0;
+}
+
+.materials-hero h2 {
+  font-size: 23px;
+  margin: 5px 0 6px;
+  letter-spacing: -0.2px;
+}
+
+.materials-hero p {
+  font-size: 12.5px;
+  color: var(--muted);
+  max-width: 650px;
+}
+
+.material-stats {
+  display: flex;
+  gap: 26px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.material-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.material-stats strong {
+  font-size: 21px;
+  line-height: 1.2;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+}
+
+.material-stats span {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.search-box {
+  width: 360px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 13px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 140px;
+  height: 34px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  border-radius: 9px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-soft);
+}
+
+.search-box .text-link {
+  width: 100%;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.subject-tabs {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 2px 1px 8px;
+  margin-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.tab-pill {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  border-radius: 99px;
+  padding: 7px 15px;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: all 0.16s;
+}
+
+.tab-pill:hover {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.tab-pill.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(29, 78, 216, 0.22);
+}
+
+.cheat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.cheat-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 15px;
+  cursor: default;
+}
+
+.cheat-card h3 {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.cheat-card p {
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
+.cheat-card .text-link {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.material-card {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 18px;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+
+.material-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--line-strong);
+}
+
+.material-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.material-top > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.material-top h3 {
+  font-size: 14.5px;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+.material-top p {
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.read-badge {
+  flex-shrink: 0;
+  font-size: 10px;
+  color: var(--success);
+  background: var(--success-soft);
+  border-radius: 99px;
+  padding: 3px 8px;
+  font-weight: 650;
+}
+
+.read-badge.muted {
+  color: var(--muted);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+}
+
+.material-summary {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.material-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 3px;
+}
+
+.material-foot .btn {
+  background: var(--soft, var(--brand-soft));
+  color: var(--subject, var(--brand));
+  border-color: transparent;
+}
+
+.reader-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.reader-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.reader-article {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 32px 38px 28px;
+  border-top: 3px solid var(--subject, var(--brand));
+}
+
+.article-head {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.article-head h1 {
+  font-size: 29px;
+  line-height: 1.35;
+  letter-spacing: -0.4px;
+  margin: 12px 0 8px;
+}
+
+.article-head > p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 760px;
+}
+
+.article-goals {
+  margin: 20px 0 4px;
+  padding: 15px 18px;
+  border-radius: 12px;
+  background: var(--soft, var(--brand-soft));
+  border: 1px solid transparent;
+}
+
+.article-goals > strong {
+  display: block;
+  font-size: 12px;
+  color: var(--subject, var(--brand));
+  margin-bottom: 5px;
+}
+
+.article-goals ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.article-goals li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.article-section {
+  padding: 20px 0 16px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.article-section:last-child {
+  border-bottom: 0;
+}
+
+.article-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.section-index {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: var(--soft, var(--brand-soft));
+  color: var(--subject, var(--brand));
+  display: inline-grid;
+  place-items: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.article-intro {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 0 0 9px 33px;
+}
+
+.article-points {
+  margin: 0;
+  padding: 0 0 0 33px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.article-points li {
+  position: relative;
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+.article-points li::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--subject, var(--brand));
+  opacity: 0.7;
+}
+
+.example-box,
+.pitfall-box {
+  margin-top: 18px;
+  padding: 17px 19px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+}
+
+.example-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.example-box h3 {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.example-steps {
+  margin: 11px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.example-steps li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.75;
+  display: flex;
+  gap: 8px;
+}
+
+.step-index {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+  display: inline-grid;
+  place-items: center;
+  font-size: 9.5px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pitfall-box {
+  background: var(--warn-soft);
+  border-color: transparent;
+}
+
+.pitfall-box .example-label {
+  background: rgba(217, 119, 6, 0.13);
+  color: var(--warn);
+}
+
+.pitfall-box ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pitfall-box li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.mnemonic-box {
+  margin-top: 18px;
+  padding: 17px 20px;
+  border-radius: 14px;
+  background: linear-gradient(120deg, rgba(29, 78, 216, 0.06), rgba(14, 165, 233, 0.1));
+  border: 1px dashed var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mnemonic-box span {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.mnemonic-box strong {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+.reader-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.reader-nav .btn {
+  max-width: 46%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cheat-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.cheat-group h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cheat-group h3::before {
+  content: "";
+  width: 4px;
+  height: 15px;
+  border-radius: 3px;
+  background: var(--subject, var(--brand));
+}
+
+.cheat-items {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cheat-item {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 12px;
+}
+
+.cheat-item:first-child {
+  border-top: 0;
+}
+
+.cheat-item span {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.cheat-item strong {
+  font-weight: 500;
+  color: var(--text-2);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1180px) {
+  .material-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cheat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 980px) {
+  .materials-hero { flex-direction: column; align-items: flex-start; }
+  .search-box { width: 100%; }
+  .reader-article { padding: 24px 22px; }
+  .article-head h1 { font-size: 24px; }
+  .search-box input { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .material-grid { grid-template-columns: 1fr; }
+  .cheat-grid { grid-template-columns: 1fr; }
+  .materials-hero { padding: 19px; }
+  .materials-hero h2 { font-size: 20px; }
+  .material-stats { gap: 18px; }
+  .reader-article { padding: 19px 16px; border-radius: 15px; }
+  .article-head h1 { font-size: 22px; }
+  .article-intro { margin-left: 0; }
+  .article-points { padding-left: 17px; }
+  .cheat-item { grid-template-columns: 1fr; gap: 2px; }
+  .cheat-item span { font-size: 10.5px; }
+  .reader-nav .btn { max-width: 100%; width: 100%; }
+  .material-foot { flex-wrap: wrap; }
+  .material-foot .btn { flex: 1; }
+}
+
   </style>
 </head>
 <body>
@@ -2384,6 +2979,13 @@ button.school-row:hover {
             <path d="M8 3v4M16 3v4M3 10h18M8 14h4"></path>
           </svg>
           <span>今日学习</span>
+        </button>
+        <button class="nav-item" data-view="materials">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>学习资料</span>
         </button>
         <button class="nav-item" data-view="practice">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -4119,6 +4721,2533 @@ const QUESTIONS = [
 ];
   </script>
   <script>
+const MATERIALS = {
+  m1: {
+    summary: "极限是高数的入口，导数、积分、级数都建立在极限之上。本单元把极限计算、两个重要极限和连续性判断串成一条完整的解题链。",
+    goals: ["能判断极限类型并选择合适方法", "熟记常用等价无穷小", "会判断分段函数在分界点处的连续性"],
+    sections: [
+      {
+        title: "极限的四步计算法",
+        intro: "拿到一道极限题，先判断类型，再决定方法，不要一上来就硬算。",
+        bullets: [
+          "先代入：能把 x 的值直接代入并算出结果，就直接写答案。",
+          "0/0 型：优先考虑因式分解、有理化或等价无穷小替换。",
+          "∞/∞ 型：分子分母同除以最高次幂，或直接比较最高次项。",
+          "1^∞ 型：凑重要极限，或取对数把指数型化为乘积型。"
+        ]
+      },
+      {
+        title: "两个重要极限与等价无穷小",
+        intro: "这是选择题和计算题的高频工具，必须做到条件反射。",
+        bullets: [
+          "lim(x→0) sinx/x = 1，变形 sin(ax)~ax。",
+          "lim(x→∞)(1+1/x)^x = e，变形 lim(x→0)(1+ax)^(1/x)=e^a。",
+          "x→0 时：sinx~x、tanx~x、1-cosx~x²/2、ln(1+x)~x、e^x-1~x。",
+          "等价无穷小通常只用于乘除；加减中直接替换容易丢项。"
+        ]
+      },
+      {
+        title: "连续与间断",
+        intro: "连续的本质是极限值等于函数值，分段函数是考查重点。",
+        bullets: [
+          "连续的三个条件：函数在该点有定义、极限存在、极限值等于函数值。",
+          "第一类间断点：可去间断点与跳跃间断点；第二类：无穷间断与振荡间断。",
+          "分段函数在分界点处分别求左右极限，再与函数值比较。"
+        ]
+      }
+    ],
+    example: {
+      question: "求 lim(x→0)(tanx - sinx)/x³。",
+      solution: [
+        "先化为 sinx(1/cosx - 1)/x³ = sinx(1-cosx)/(x³cosx)。",
+        "利用 sinx~x、1-cosx~x²/2，原式 → x·(x²/2)/(x³·1)=1/2。",
+        "所以极限为 1/2。"
+      ]
+    },
+    pitfalls: [
+      "等价无穷小在加减法中随意替换，容易得到错误结果。",
+      "极限不存在不等同于极限为无穷，左右极限要分别判断。",
+      "忘记先看定义域，导致对 lnx、1/x 等函数的极限判断出错。"
+    ],
+    mnemonic: "先代后化，0/0 找等价；无穷比次，1∞ 想 e。"
+  },
+  m2: {
+    summary: "导数是瞬时变化率，几何上就是切线斜率。掌握定义、公式和链式法则，是后续单调性、极值和微分方程的基础。",
+    goals: ["理解导数定义与几何意义", "熟练使用基本求导公式", "正确处理复合函数和分段函数求导"],
+    sections: [
+      {
+        title: "导数定义与几何意义",
+        intro: "定义题往往以极限形式出现，要能识别导数的“外壳”。",
+        bullets: [
+          "f'(x₀)=lim(Δx→0)[f(x₀+Δx)-f(x₀)]/Δx。",
+          "几何意义：曲线 y=f(x) 在点 (x₀,f(x₀)) 处切线的斜率。",
+          "可导必连续，连续不一定可导，例如 y=|x| 在 x=0 处不可导。"
+        ]
+      },
+      {
+        title: "求导公式与运算法则",
+        intro: "先背熟基本公式，再叠加乘积、商和复合运算法则。",
+        bullets: [
+          "(xⁿ)'=nxⁿ⁻¹，(sinx)'=cosx，(cosx)'=-sinx，(e^x)'=e^x，(lnx)'=1/x。",
+          "乘积法则：(uv)'=u'v+uv'；商的导数按分母平方记忆。",
+          "链式法则：y'=f'(u)·u'，从外到内逐层求导。"
+        ]
+      },
+      {
+        title: "高阶导数与微分",
+        intro: "微分是函数增量的线性主部，常用于近似计算。",
+        bullets: [
+          "dy=f'(x)dx，导数可以看作微商 dy/dx。",
+          "e^(ax) 的 n 阶导数为 aⁿe^(ax)，sinx 与 cosx 的导数每四阶循环。",
+          "近似计算：f(x₀+Δx)≈f(x₀)+f'(x₀)Δx。"
+        ]
+      }
+    ],
+    example: {
+      question: "设 y=ln(cosx)，求 y'。",
+      solution: [
+        "外层是 ln u，内层是 u=cosx。",
+        "y'=(1/cosx)·(cosx)'=(1/cosx)·(-sinx)。",
+        "化简得 y'=-tanx。"
+      ]
+    },
+    pitfalls: [
+      "复合函数漏乘内层导数，是最高频失分点。",
+      "把“连续”和“可导”混为一谈。",
+      "分段函数在分界点处直接套公式，而没有用左右导数判断。"
+    ],
+    mnemonic: "外导乘内导，层层剥洋葱。"
+  },
+  m3: {
+    summary: "导数应用主要解决“函数长什么样”的问题：哪里增、哪里减、哪里取得极值、哪里最值最大。",
+    goals: ["会用导数判断单调区间", "掌握极值的两个充分条件", "会求闭区间最值并判断凹凸性"],
+    sections: [
+      {
+        title: "单调性与极值",
+        intro: "先求定义域，再求导，再解 f'(x)=0，最后列表判断符号。",
+        bullets: [
+          "f'(x)>0 时函数递增，f'(x)<0 时函数递减。",
+          "极值必要条件：可导极值点处 f'(x₀)=0。",
+          "第一充分条件看导数是否变号；第二充分条件看 f''(x₀) 的符号。"
+        ]
+      },
+      {
+        title: "最值与凹凸性",
+        intro: "极值是局部概念，最值是整个区间上的比较结果。",
+        bullets: [
+          "闭区间最值：比较驻点、不可导点和端点处的函数值。",
+          "f''>0 时曲线下凸（凹向上），f''<0 时曲线上凸。",
+          "拐点是凹凸性改变的点，需检查 f''=0 或 f'' 不存在的点。"
+        ]
+      },
+      {
+        title: "切线、法线与变化率",
+        intro: "导数应用常与几何、物理背景结合。",
+        bullets: [
+          "切线方程：y-f(x₀)=f'(x₀)(x-x₀)。",
+          "法线斜率与切线斜率互为负倒数（切线斜率不为 0 时）。",
+          "变化率问题先建立函数关系，再对时间或变量求导。"
+        ]
+      }
+    ],
+    example: {
+      question: "求 f(x)=x³-3x 的单调区间与极值。",
+      solution: [
+        "f'(x)=3x²-3=3(x-1)(x+1)。",
+        "x<-1 时 f'>0，-1<x<1 时 f'<0，x>1 时 f'>0。",
+        "故增区间为 (-∞,-1) 和 (1,+∞)，减区间为 (-1,1)。",
+        "x=-1 处极大值 f(-1)=2，x=1 处极小值 f(1)=-2。"
+      ]
+    },
+    pitfalls: [
+      "驻点不一定是极值点，例如 y=x³ 在 x=0 处。",
+      "极值不一定是最大值，最值要在整个区间上比较。",
+      "忘记先确定定义域，导致单调区间写错。"
+    ],
+    mnemonic: "导数定增减，变号定极值；二阶定凹凸。"
+  },
+  m4: {
+    summary: "不定积分是求导的逆运算。核心是背熟基本积分表，再掌握凑微分和分部积分两大方法。",
+    goals: ["理解原函数与不定积分的关系", "熟记基本积分公式", "会用凑微分和分部积分"],
+    sections: [
+      {
+        title: "原函数与基本积分表",
+        intro: "不定积分的结果是一个函数族，常数 C 必须写。",
+        bullets: [
+          "∫xⁿdx=xⁿ⁺¹/(n+1)+C（n≠-1）。",
+          "∫1/x dx=ln|x|+C，∫e^xdx=e^x+C。",
+          "∫sinxdx=-cosx+C，∫cosxdx=sinx+C，∫sec²xdx=tanx+C。"
+        ]
+      },
+      {
+        title: "第一类换元（凑微分）",
+        intro: "把被积表达式中的一部分看成 u，剩余部分恰好是 du。",
+        bullets: [
+          "∫f(φ(x))φ'(x)dx=∫f(u)du。",
+          "常见凑法：xdx 凑 d(x²/2)，1/x dx 凑 d(lnx)，e^xdx 凑 d(e^x)。",
+          "换元后要回代原变量，结果不能保留 u。"
+        ]
+      },
+      {
+        title: "分部积分",
+        intro: "适用于两类函数相乘，关键是选对 u 和 dv。",
+        bullets: [
+          "∫u dv=uv-∫v du。",
+          "u 的选择顺序：反三角函数、对数函数、幂函数、指数函数、三角函数。",
+          "∫xe^xdx、∫xlnxdx、∫lnxdx 是典型题。"
+        ]
+      }
+    ],
+    example: {
+      question: "求 ∫x/(x²+1)dx。",
+      solution: [
+        "令 u=x²+1，则 du=2xdx，xdx=du/2。",
+        "原式=(1/2)∫du/u=(1/2)ln|u|+C。",
+        "回代得 (1/2)ln(x²+1)+C。"
+      ]
+    },
+    pitfalls: [
+      "忘记写常数 C，或把 C 写成 0。",
+      "换元后没有回代，答案中残留中间变量。",
+      "含 1/x 的积分忘记加绝对值。"
+    ],
+    mnemonic: "一公式，二凑微，三分部。"
+  },
+  m5: {
+    summary: "定积分把“无限求和”压缩成一个数。牛顿-莱布尼茨公式是计算核心，变上限积分和对称性是高频技巧。",
+    goals: ["熟练使用牛顿-莱布尼茨公式", "会求变上限积分的导数", "掌握面积与旋转体体积公式"],
+    sections: [
+      {
+        title: "牛顿-莱布尼茨公式",
+        intro: "定积分的值等于原函数在上限与下限处的差。",
+        bullets: [
+          "∫ₐᵇf(x)dx=F(b)-F(a)，其中 F'(x)=f(x)。",
+          "定积分与积分变量无关：∫ₐᵇf(x)dx=∫ₐᵇf(t)dt。",
+          "定积分是一个数，不定积分是函数族，概念题常在此设坑。"
+        ]
+      },
+      {
+        title: "变上限积分与对称性",
+        intro: "变上限积分本身是一个函数，求导时把上限代入被积函数。",
+        bullets: [
+          "d/dx∫ₐ^x f(t)dt=f(x)。",
+          "d/dx∫ₐ^{φ(x)}f(t)dt=f(φ(x))φ'(x)。",
+          "对称区间上奇函数积分为 0，偶函数积分为 2 倍半区间积分。"
+        ]
+      },
+      {
+        title: "定积分的应用",
+        intro: "几何应用主要是面积和旋转体体积。",
+        bullets: [
+          "两曲线围成面积：S=∫ₐᵇ|f(x)-g(x)|dx。",
+          "绕 x 轴旋转：V=π∫ₐᵇf²(x)dx。",
+          "分段函数积分要分段进行，绝对值先拆号。"
+        ]
+      }
+    ],
+    example: {
+      question: "计算 ∫₀²|x-1|dx。",
+      solution: [
+        "在 x=1 处分段：∫₀¹(1-x)dx + ∫₁²(x-1)dx。",
+        "第一段 = [x-x²/2]₀¹=1/2，第二段 = [x²/2-x]₁²=1/2。",
+        "总面积为 1。"
+      ]
+    },
+    pitfalls: [
+      "换元后忘记同步更换积分上下限。",
+      "面积计算忘记取绝对值，导致结果出现负数。",
+      "把定积分当成函数，写出 +C。"
+    ],
+    mnemonic: "原函数代上下限，换元同步换限。"
+  },
+  m6: {
+    summary: "微分方程是含导数的方程。先识别类型，再套对应解法，最后用初始条件确定常数。",
+    goals: ["会解可分离变量方程", "掌握一阶线性方程通解公式", "会写二阶常系数齐次方程通解"],
+    sections: [
+      {
+        title: "可分离变量方程",
+        intro: "能把 x 和 y 分别放到等号两边的，优先用分离变量法。",
+        bullets: [
+          "dy/dx=f(x)g(y) → dy/g(y)=f(x)dx。",
+          "两边分别积分，得到含任意常数的通解。",
+          "若有初始条件，代入定出常数，得到特解。"
+        ]
+      },
+      {
+        title: "一阶线性方程",
+        intro: "标准形式 y'+P(x)y=Q(x)，可用积分因子或通解公式。",
+        bullets: [
+          "通解 y=e^{-∫Pdx}(∫Q e^{∫Pdx}dx+C)。",
+          "先化为标准形式，再识别 P(x) 与 Q(x)。",
+          "积分因子 μ(x)=e^{∫Pdx}，两边同乘后左边变为 (μy)'。"
+        ]
+      },
+      {
+        title: "二阶常系数齐次方程",
+        intro: "y''+py'+qy=0 的解法完全由特征方程的根决定。",
+        bullets: [
+          "特征方程 r²+pr+q=0。",
+          "两个不同实根 r₁,r₂：通解 C₁e^{r₁x}+C₂e^{r₂x}。",
+          "重根 r：通解 (C₁+C₂x)e^{rx}；共轭复根 α±βi：e^{αx}(C₁cosβx+C₂sinβx)。"
+        ]
+      }
+    ],
+    example: {
+      question: "解方程 y'=2xy，且 y(0)=1。",
+      solution: [
+        "分离变量：dy/y=2xdx（y≠0）。",
+        "积分得 ln|y|=x²+C，即 y=Ce^{x²}。",
+        "代入 y(0)=1 得 C=1，所以特解为 y=e^{x²}。"
+      ]
+    },
+    pitfalls: [
+      "通解忘记写任意常数 C。",
+      "二阶重根时漏掉 x 因子。",
+      "初始条件代入时把 x、y 的位置代反。"
+    ],
+    mnemonic: "先分类，后套公式，最后代初值。"
+  },
+  m7: {
+    summary: "多元函数把“一个自变量”扩展到多个自变量。偏导数、全微分和二重积分是校考常见题型。",
+    goals: ["会求偏导数与全微分", "能画出二重积分区域并定限", "掌握极坐标变换"],
+    sections: [
+      {
+        title: "偏导数与全微分",
+        intro: "对某个变量求偏导时，把其他变量都看作常数。",
+        bullets: [
+          "z=x²y 时，∂z/∂x=2xy，∂z/∂y=x²。",
+          "全微分 dz=∂z/∂x dx+∂z/∂y dy。",
+          "二阶混合偏导在连续条件下与求导次序无关。"
+        ]
+      },
+      {
+        title: "二重积分的直角坐标计算",
+        intro: "先画区域，再决定先对谁积分。",
+        bullets: [
+          "X 型区域：先对 y 积分，再对 x 积分。",
+          "Y 型区域：先对 x 积分，再对 y 积分。",
+          "积分限一定是从小到大，内层积分限可以含外层变量。"
+        ]
+      },
+      {
+        title: "极坐标变换",
+        intro: "区域是圆、扇形、圆环时，极坐标通常更简单。",
+        bullets: [
+          "x=r cosθ，y=r sinθ。",
+          "面积元 dA=r dr dθ，不要漏掉 r。",
+          "圆 x²+y²≤a² 对应 0≤r≤a，0≤θ≤2π。"
+        ]
+      }
+    ],
+    example: {
+      question: "计算 ∫∫_D (x+y)dA，其中 D：0≤x≤1，0≤y≤1。",
+      solution: [
+        "区域是单位正方形，可写成 0≤x≤1，0≤y≤1。",
+        "先对 y 积分：∫₀¹(x+y)dy=x+1/2。",
+        "再对 x 积分：∫₀¹(x+1/2)dx=1/2+1/2=1。"
+      ]
+    },
+    pitfalls: [
+      "求偏导时把另一个变量也当成变量。",
+      "极坐标面积元漏写 r。",
+      "积分上下限写反，或内外层变量混淆。"
+    ],
+    mnemonic: "画域定限，内到外积。"
+  },
+  m8: {
+    summary: "无穷级数研究无限个数相加是否有和。先判断敛散性，再考虑求和或绝对/条件收敛。",
+    goals: ["记住 p 级数与几何级数的结论", "会用比值判别法", "区分绝对收敛与条件收敛"],
+    sections: [
+      {
+        title: "级数的基本概念",
+        intro: "通项趋于 0 只是收敛的必要条件，不是充分条件。",
+        bullets: [
+          "∑aₙ 收敛的必要条件：lim(n→∞)aₙ=0。",
+          "调和级数 ∑1/n 发散，虽然通项趋于 0。",
+          "级数收敛时，任意改变前有限项不影响敛散性。"
+        ]
+      },
+      {
+        title: "正项级数判别法",
+        intro: "p 级数、几何级数和比值判别法覆盖大部分校考题。",
+        bullets: [
+          "p 级数 ∑1/n^p：p>1 收敛，p≤1 发散。",
+          "几何级数 ∑aqⁿ：|q|<1 收敛，和为 a/(1-q)；|q|≥1 发散。",
+          "比值判别：lim|aₙ₊₁/aₙ|=ρ，ρ<1 收敛，ρ>1 发散，ρ=1 需另判。"
+        ]
+      },
+      {
+        title: "交错级数与绝对收敛",
+        intro: "交错级数用莱布尼茨判别法，收敛方式要写清楚。",
+        bullets: [
+          "交错级数 ∑(-1)ⁿuₙ，若 uₙ 单调递减且趋于 0，则收敛。",
+          "∑|aₙ| 收敛称为绝对收敛；∑aₙ 收敛但 ∑|aₙ| 发散称为条件收敛。",
+          "∑(-1)ⁿ/n 是条件收敛的典型例子。"
+        ]
+      }
+    ],
+    example: {
+      question: "判断级数 ∑(n=1→∞) n/2ⁿ 的敛散性。",
+      solution: [
+        "这是正项级数，使用比值判别法。",
+        "aₙ₊₁/aₙ=[(n+1)/2^{n+1}]/[n/2ⁿ]=(n+1)/(2n)。",
+        "极限为 1/2<1，所以级数收敛。"
+      ]
+    },
+    pitfalls: [
+      "把“通项趋于 0”直接当成收敛。",
+      "p 级数在 p=1 时误判为收敛。",
+      "条件收敛与绝对收敛概念混淆。"
+    ],
+    mnemonic: "先看通项，再选判别，交错用莱布尼茨。"
+  },
+  m9: {
+    summary: "向量与空间解析几何把代数和几何连接起来。数量积判垂直，向量积求法向量，平面和直线方程是高频计算题。",
+    goals: ["掌握数量积与向量积", "会写平面与直线方程", "能判断平面、直线间的位置关系"],
+    sections: [
+      {
+        title: "向量运算",
+        intro: "数量积得到数，向量积得到向量，两者几何意义不同。",
+        bullets: [
+          "a·b=|a||b|cosθ，a⊥b ⇔ a·b=0。",
+          "a×b 同时垂直于 a、b，|a×b| 等于平行四边形面积。",
+          "向量积不满足交换律：a×b=-(b×a)。"
+        ]
+      },
+      {
+        title: "平面方程",
+        intro: "确定一个平面，关键是找到一个点和法向量。",
+        bullets: [
+          "点法式：A(x-x₀)+B(y-y₀)+C(z-z₀)=0。",
+          "一般式：Ax+By+Cz+D=0，法向量为 (A,B,C)。",
+          "两平面平行 ⇔ 法向量平行；垂直 ⇔ 法向量数量积为 0。"
+        ]
+      },
+      {
+        title: "直线方程与位置关系",
+        intro: "直线的方向向量是解题核心。",
+        bullets: [
+          "对称式：(x-x₀)/m=(y-y₀)/n=(z-z₀)/p，方向向量 (m,n,p)。",
+          "直线与平面平行 ⇔ 方向向量与法向量垂直。",
+          "直线与平面垂直 ⇔ 方向向量与法向量平行。"
+        ]
+      }
+    ],
+    example: {
+      question: "求过点 (1,2,3) 且法向量为 (1,-1,2) 的平面方程。",
+      solution: [
+        "代入点法式：1(x-1)-1(y-2)+2(z-3)=0。",
+        "展开得 x-1-y+2+2z-6=0。",
+        "整理为 x-y+2z-5=0。"
+      ]
+    },
+    pitfalls: [
+      "向量积顺序写反，导致方向相反。",
+      "平面方程中把法向量和方向向量混用。",
+      "求距离或夹角时忘记取绝对值。"
+    ],
+    mnemonic: "面看法向量，线看方向向量。"
+  },
+  m10: {
+    summary: "本单元把极限、导数、洛必达和分段函数综合起来，训练识别题型和选择方法的能力。",
+    goals: ["掌握洛必达法则的适用条件", "会处理 1^∞ 型极限", "能判断分段函数在分界点处的可导性"],
+    sections: [
+      {
+        title: "洛必达法则",
+        intro: "只处理 0/0 或 ∞/∞ 型，使用前必须先验证条件。",
+        bullets: [
+          "lim f/g = lim f'/g'，前提是仍是 0/0 或 ∞/∞。",
+          "每次使用后重新判断类型，避免循环。",
+          "能用等价无穷小或重要极限时，通常比洛必达更快。"
+        ]
+      },
+      {
+        title: "其他未定式",
+        intro: "0·∞、∞-∞、1^∞ 要先变形，再转化为基本型。",
+        bullets: [
+          "1^∞ 型：取对数或凑 (1+1/u)^u。",
+          "0·∞ 型：把其中一个因子写成倒数，化为 0/0 或 ∞/∞。",
+          "∞-∞ 型：通分或有理化后再判断。"
+        ]
+      },
+      {
+        title: "分段函数与抽象函数",
+        intro: "分界点处优先用定义，抽象函数则借助导数定义转化。",
+        bullets: [
+          "左右导数都存在且相等，函数在该点才可导。",
+          "lim(Δx→0)[f(x₀+Δx)-f(x₀)]/Δx 是导数定义的常见外壳。",
+          "分段函数求导后，分界点要单独检查。"
+        ]
+      }
+    ],
+    example: {
+      question: "求 lim(x→0)(1+2x)^{1/x}。",
+      solution: [
+        "这是 1^∞ 型，凑重要极限。",
+        "原式=[(1+2x)^{1/(2x)}]²。",
+        "括号内趋于 e，所以极限为 e²。"
+      ]
+    },
+    pitfalls: [
+      "没有验证洛必达条件就使用。",
+      "反复洛必达导致循环或越算越复杂。",
+      "分段点只算函数值，不检查左右导数。"
+    ],
+    mnemonic: "先化简，后洛必达，条件先验证。"
+  },
+  m11: {
+    summary: "积分综合题考查方法选择：换元、分部、有理函数拆分、分段积分。选对方法比算得快更重要。",
+    goals: ["会根据被积函数选择积分方法", "掌握换元与分部积分的组合", "会处理分段函数和绝对值积分"],
+    sections: [
+      {
+        title: "换元法",
+        intro: "看到“函数+其导数”或根式、三角式，优先考虑换元。",
+        bullets: [
+          "含 √(a²-x²) 可令 x=a sinθ；含 √(x²+a²) 可令 x=a tanθ。",
+          "定积分换元必须同步换上下限。",
+          "换元后先化简，再积分，最后回代或直接算定积分。"
+        ]
+      },
+      {
+        title: "分部积分与有理函数",
+        intro: "分部积分用于两类函数相乘，有理函数则先拆分再积分。",
+        bullets: [
+          "∫u dv=uv-∫v du，u 按“反对幂指三”选择。",
+          "有理函数先做部分分式分解，再逐项积分。",
+          "分母次数高于分子时，先做多项式除法。"
+        ]
+      },
+      {
+        title: "定积分技巧",
+        intro: "对称性、周期性、区间再现能大幅简化计算。",
+        bullets: [
+          "对称区间先判断奇偶性。",
+          "∫₀^π x f(sinx)dx 可用区间再现公式化简。",
+          "分段函数和绝对值积分要按分界点拆开。"
+        ]
+      }
+    ],
+    example: {
+      question: "求 ∫lnx dx。",
+      solution: [
+        "令 u=lnx，dv=dx，则 du=dx/x，v=x。",
+        "原式=xlnx-∫x·(1/x)dx=xlnx-∫1dx。",
+        "结果为 xlnx-x+C。"
+      ]
+    },
+    pitfalls: [
+      "换元后忘记换积分限。",
+      "分部积分中 u 和 dv 选反，导致越算越复杂。",
+      "拆分有理函数时漏项或符号出错。"
+    ],
+    mnemonic: "换元换限，分部选 u。"
+  },
+  m12: {
+    summary: "考前阶段不追求做难题，而是把会做的题稳定拿分。时间分配、步骤书写和错题复盘决定最终成绩。",
+    goals: ["建立适合自己的做题顺序", "掌握计算题步骤分技巧", "形成考前检查清单"],
+    sections: [
+      {
+        title: "时间分配",
+        intro: "按照题型分值分配时间，不在单题上纠缠。",
+        bullets: [
+          "选择填空控制在 40 分钟内，给大题留足时间。",
+          "遇到卡壳题先标记跳过，做完一轮再回来。",
+          "最后预留 10 分钟检查符号、上下限和计算。"
+        ]
+      },
+      {
+        title: "步骤分与书写",
+        intro: "阅卷按步骤给分，关键公式和代入过程必须写出来。",
+        bullets: [
+          "先写所用公式，再代入数据，最后写结果。",
+          "积分题写清原函数和上下限，微分方程写清类型。",
+          "结果带单位或说明范围，避免因表述不清丢分。"
+        ]
+      },
+      {
+        title: "错题复盘",
+        intro: "错题按知识点和错因分类，比单纯重做更有效。",
+        bullets: [
+          "错因分为概念不清、计算失误、审题错误、方法不会。",
+          "同一知识点连续错两次，回到讲义重学。",
+          "考前一周只看错题和真题，不再开新资料。"
+        ]
+      }
+    ],
+    example: {
+      question: "一道 12 分综合题，做到一半卡住，应该怎么处理？",
+      solution: [
+        "先检查已写步骤能否拿到公式分和代入分。",
+        "标记题目，跳到下一题，保证其他题目的时间。",
+        "全部做完后回来，优先补写关键公式和结论。"
+      ]
+    },
+    pitfalls: [
+      "在一道题上耗时过久，导致后面会做的题没时间。",
+      "只写答案不写过程，步骤分全部丢失。",
+      "做完不检查，符号和上下限错误没有发现。"
+    ],
+    mnemonic: "先易后难，写全步骤，最后检查。"
+  },
+  e1: {
+    summary: "词汇是英语的地基。本单元用词根词缀、近义词辨析和固定搭配三条线，帮助你把单词记得准、用得对。",
+    goals: ["掌握常见词根词缀", "能辨析高频近义词", "积累写作和阅读中的固定搭配"],
+    sections: [
+      {
+        title: "词根词缀记忆法",
+        intro: "把单词拆成“前缀+词根+后缀”，记忆效率会明显提高。",
+        bullets: [
+          "spect 表示“看”：inspect 检查、respect 尊重、spectator 观众。",
+          "port 表示“携带”：transport 运输、import 进口、export 出口。",
+          "dict 表示“说”：predict 预测、dictate 口述、dictionary 词典。",
+          "常见前缀：un- 否定、re- 再、pre- 预先、sub- 在下。"
+        ]
+      },
+      {
+        title: "近义词辨析",
+        intro: "辨析题看搭配和词性，不能只背中文意思。",
+        bullets: [
+          "affect 是动词“影响”，effect 多作名词“影响、效果”。",
+          "borrow 是借入，lend 是借出。",
+          "spend 主语是人，cost 主语是物，take 常用于 It takes sb. some time。",
+          "raise 是及物动词，rise 是不及物动词。"
+        ]
+      },
+      {
+        title: "高频固定搭配",
+        intro: "搭配是完形填空和写作的得分点。",
+        bullets: [
+          "make progress 取得进步，take measures 采取措施。",
+          "pay attention to 注意，be worth doing 值得做。",
+          "look forward to doing 期待，be used to doing 习惯于。",
+          "in spite of 尽管，as a result of 由于。"
+        ]
+      }
+    ],
+    example: {
+      question: "选择：The new policy will ___ our daily life. (affect/effect)",
+      solution: [
+        "空格前有 will，后面接宾语 our daily life，需要动词。",
+        "affect 是动词，effect 作名词。",
+        "答案：affect。"
+      ]
+    },
+    pitfalls: [
+      "只记中文释义，不记搭配和词性。",
+      "形近词混淆，如 affect/effect、adapt/adopt。",
+      "把不可数名词当可数名词使用。"
+    ],
+    mnemonic: "词不离句，句不离搭配。"
+  },
+  e2: {
+    summary: "时态和语态是语法题的稳定得分点。先找时间状语，再确定动作发生的时间和主被动关系。",
+    goals: ["根据时间状语判断时态", "掌握完成时与被动语态", "避免主谓一致错误"],
+    sections: [
+      {
+        title: "时间状语定时态",
+        intro: "时间词是最可靠的判断依据。",
+        bullets: [
+          "every day、usually 对应一般现在时。",
+          "yesterday、last year、ago 对应一般过去时。",
+          "since、for、already、yet、so far 常对应现在完成时。",
+          "tomorrow、next week 对应一般将来时。"
+        ]
+      },
+      {
+        title: "完成时与被动语态",
+        intro: "完成时强调对现在的影响，被动语态强调动作承受者。",
+        bullets: [
+          "现在完成时：have/has+过去分词，不能与明确过去时间连用。",
+          "一般过去时：动作发生在过去并与现在无关。",
+          "被动语态：be+过去分词，时态变化体现在 be 上。",
+          "情态动词被动：must be done、should have been done。"
+        ]
+      },
+      {
+        title: "主谓一致",
+        intro: "先找主语中心词，再看修饰成分。",
+        bullets: [
+          "the number of+复数名词，谓语用单数；a number of+复数名词，谓语用复数。",
+          "each、every、either、neither 作主语时谓语用单数。",
+          "neither...nor、either...or 遵循就近一致。",
+          "集合名词强调整体用单数，强调成员用复数。"
+        ]
+      }
+    ],
+    example: {
+      question: "She ___ here since 2010.",
+      solution: [
+        "since 2010 表示从过去持续到现在，用现在完成时。",
+        "主语 she 是第三人称单数，用 has lived。",
+        "答案：has lived。"
+      ]
+    },
+    pitfalls: [
+      "现在完成时与 yesterday、ago 等过去时间连用。",
+      "被动语态漏掉 be 动词或过去分词形式错误。",
+      "被 the number of 后的复数名词干扰，谓语误用复数。"
+    ],
+    mnemonic: "先找时间词，再定时态；主语看中心词。"
+  },
+  e3: {
+    summary: "非谓语动词是语法难点，也是写作提分点。核心是判断“主动还是被动、目的还是习惯”。",
+    goals: ["区分 to do、doing、done 的基本含义", "记住常接 doing 的动词", "会判断分词作状语时的逻辑主语"],
+    sections: [
+      {
+        title: "三种非谓语形式",
+        intro: "不定式常表目的或将来，动名词表习惯或抽象动作，分词表主动或被动。",
+        bullets: [
+          "to do：目的、结果、将来，常作宾语或状语。",
+          "doing：习惯性动作、抽象动作，常作主语或宾语。",
+          "done：被动或完成，常作定语或状语。",
+          "having done：先于主句动作发生，且为主动。"
+        ]
+      },
+      {
+        title: "固定搭配",
+        intro: "搭配题靠积累，但高频结构可以集中突破。",
+        bullets: [
+          "look forward to doing、be used to doing、devote to doing。",
+          "used to do 过去常常；be used to do 被用来做。",
+          "enjoy、finish、avoid、mind、suggest、practice 后接 doing。",
+          "want、decide、hope、plan 后接 to do。"
+        ]
+      },
+      {
+        title: "分词作状语",
+        intro: "分词逻辑主语必须与主句主语一致。",
+        bullets: [
+          "主动关系用 -ing：Seeing the teacher, he stood up.",
+          "被动关系用 -ed：Seen from the hill, the city looks beautiful.",
+          "独立主格结构自带逻辑主语，如 Weather permitting, we will go out."
+        ]
+      }
+    ],
+    example: {
+      question: "I'm looking forward to ___ from you. (hear)",
+      solution: [
+        "look forward to 中的 to 是介词，不是不定式符号。",
+        "介词后接动名词。",
+        "答案：hearing。"
+      ]
+    },
+    pitfalls: [
+      "把 look forward to 的 to 当成不定式，误填 hear。",
+      "分词作状语时逻辑主语与主句主语不一致。",
+      "混淆 used to do、be used to doing、be used to do。"
+    ],
+    mnemonic: "主动 ing，被动 ed，目的 to do。"
+  },
+  e4: {
+    summary: "定语从句的关键是“缺什么成分，选什么关系词”。把先行词代回从句，答案自然出现。",
+    goals: ["根据从句缺成分选择关系词", "区分限制性与非限制性定语从句", "掌握介词+which/whom结构"],
+    sections: [
+      {
+        title: "关系词选择",
+        intro: "关系代词在从句中作主语、宾语或定语；关系副词作状语。",
+        bullets: [
+          "指人：who（主格）、whom（宾格）、whose（所属）。",
+          "指物：which、that。",
+          "关系副词：when 表时间，where 表地点，why 表原因。",
+          "从句缺主语或宾语用关系代词，缺状语用关系副词。"
+        ]
+      },
+      {
+        title: "限制性与非限制性",
+        intro: "非限制性定语从句用逗号隔开，起补充说明作用。",
+        bullets: [
+          "非限制性定语从句不能用 that。",
+          "非限制性从句删除后，主句意思仍然完整。",
+          "which 可指代整个主句，as 也可引导非限制性定语从句。"
+        ]
+      },
+      {
+        title: "介词+关系代词",
+        intro: "介词提前时，指物用 which，指人用 whom。",
+        bullets: [
+          "The house in which we live is old.",
+          "介词后不能用 that 或 who。",
+          "固定动词短语中的介词通常不提前，如 look after。"
+        ]
+      }
+    ],
+    example: {
+      question: "This is the house ___ we lived in last year.",
+      solution: [
+        "先行词是物 the house。",
+        "从句 lived in 缺宾语，用 which 或 that。",
+        "答案：which/that。"
+      ]
+    },
+    pitfalls: [
+      "非限制性定语从句误用 that。",
+      "从句缺状语却选关系代词。",
+      "介词后误用 that 或 who。"
+    ],
+    mnemonic: "代回从句看缺啥：缺人 who，缺物 which，缺状语 where/when。"
+  },
+  e5: {
+    summary: "名词性从句包括主语、宾语、表语和同位语从句。判断从句是否缺成分，是选 that 还是 what 的关键。",
+    goals: ["区分 that 与 what", "掌握 whether 与 if 的使用场景", "识别同位语从句"],
+    sections: [
+      {
+        title: "that 与 what",
+        intro: "that 只起连接作用，不作成分；what 在从句中作主语或宾语。",
+        bullets: [
+          "That he passed the exam surprised us.（that 不作成分）",
+          "What he said made us happy.（what 作 said 的宾语）",
+          "what 不能引导定语从句，that 可以。",
+          "宾语从句中的 that 常可省略，主语从句中的 that 不能省略。"
+        ]
+      },
+      {
+        title: "whether 与 if",
+        intro: "两者都可表“是否”，但使用场景不同。",
+        bullets: [
+          "介词后只能用 whether。",
+          "句首主语从句只能用 whether。",
+          "与 or not 直接连用时用 whether。",
+          "宾语从句中 if 和 whether 常可互换。"
+        ]
+      },
+      {
+        title: "同位语从句",
+        intro: "同位语从句解释抽象名词的具体内容。",
+        bullets: [
+          "常见先行名词：fact、idea、news、hope、belief、promise。",
+          "同位语从句用 that 引导，that 不作成分但不能省略。",
+          "定语从句修饰名词，同位语从句说明名词内容。"
+        ]
+      }
+    ],
+    example: {
+      question: "___ he said at the meeting surprised everyone.",
+      solution: [
+        "从句 he said 缺宾语，需要一个既能连接又能作宾语的词。",
+        "what 在从句中作 said 的宾语。",
+        "答案：What。"
+      ]
+    },
+    pitfalls: [
+      "从句缺成分却用 that。",
+      "介词后误用 if。",
+      "把同位语从句误判为定语从句。"
+    ],
+    mnemonic: "缺成分用 what，不缺用 that。"
+  },
+  e6: {
+    summary: "状语从句与虚拟语气是语法综合题的高频组合。先判断真实条件还是虚拟条件，再套对应时态。",
+    goals: ["掌握主将从现", "记住三类虚拟语气公式", "识别建议要求类虚拟语气"],
+    sections: [
+      {
+        title: "时间状语从句：主将从现",
+        intro: "主句用将来时，条件或时间状语从句用一般现在时表将来。",
+        bullets: [
+          "If it rains tomorrow, we will stay at home.",
+          "when、until、as soon as、before、after 引导的时间状语从句同样遵循主将从现。",
+          "从句不能用 will 表示将来。"
+        ]
+      },
+      {
+        title: "三类虚拟语气",
+        intro: "虚拟语气的核心是“与事实相反”，时间决定公式。",
+        bullets: [
+          "与现在相反：if+过去式（be 用 were），主句 would/could+动词原形。",
+          "与过去相反：if+had done，主句 would have done。",
+          "与将来相反：if+were to do/should do，主句 would do。",
+          "混合虚拟：根据各自时间分别选择公式。"
+        ]
+      },
+      {
+        title: "建议、要求、命令类虚拟",
+        intro: "这类动词后的从句用 (should)+动词原形。",
+        bullets: [
+          "常见动词：suggest、advise、demand、require、insist、order。",
+          "常见形容词：important、necessary、essential、strange。",
+          "It is important that every student (should) arrive on time."
+        ]
+      }
+    ],
+    example: {
+      question: "If I ___ you, I would accept the offer.",
+      solution: [
+        "与现在事实相反，if 从句用一般过去时。",
+        "be 动词统一用 were。",
+        "答案：were。"
+      ]
+    },
+    pitfalls: [
+      "真实条件句与虚拟条件句混淆。",
+      "与过去相反的虚拟语气漏写 have done。",
+      "suggest 表示“建议”时才用虚拟语气，表示“暗示”时不用。"
+    ],
+    mnemonic: "现在过去式，过去 had done，将来 were to do。"
+  },
+  e7: {
+    summary: "倒装、强调和主谓一致是语法题的“细节分”。掌握固定触发词和句式，能快速排除干扰项。",
+    goals: ["识别部分倒装的触发条件", "掌握强调句结构", "避免主谓一致错误"],
+    sections: [
+      {
+        title: "部分倒装",
+        intro: "否定词或 only+状语置于句首时，主句部分倒装。",
+        bullets: [
+          "Never、Hardly、Seldom、Not until 置于句首，主句倒装。",
+          "Only+状语置于句首，主句倒装。",
+          "倒装只提前助动词，实义动词位置不变。",
+          "Not only...but also 连接两个分句时，前一分句倒装。"
+        ]
+      },
+      {
+        title: "强调句",
+        intro: "强调句结构为 It is/was+被强调部分+that/who+其余部分。",
+        bullets: [
+          "强调人可用 who 或 that，强调物只能用 that。",
+          "去掉 It is/was 和 that/who 后，句子结构仍然完整。",
+          "强调时间、地点、原因用 that，不用 when/where/why。"
+        ]
+      },
+      {
+        title: "主谓一致",
+        intro: "先找主语中心词，注意插入语和修饰成分。",
+        bullets: [
+          "along with、as well as、together with 后的名词不影响谓语数。",
+          "neither...nor、either...or 就近一致。",
+          "the number of 用单数，a number of 用复数。",
+          "不定式、动名词、从句作主语时，谓语通常用单数。"
+        ]
+      }
+    ],
+    example: {
+      question: "Not until he left ___ he had made a mistake.",
+      solution: [
+        "Not until 置于句首，主句部分倒装。",
+        "原句为 he realized，倒装后借助 did。",
+        "答案：did he realize。"
+      ]
+    },
+    pitfalls: [
+      "倒装时把实义动词也提前。",
+      "强调句中误用 when/where。",
+      "被 along with 等插入语干扰谓语数。"
+    ],
+    mnemonic: "否定提前，助动词也提前。"
+  },
+  e8: {
+    summary: "阅读理解占分高，核心是定位和同义替换。先读题干，再回原文，最后排除干扰项。",
+    goals: ["掌握细节题和主旨题的定位方法", "识别同义替换", "避开常见干扰项"],
+    sections: [
+      {
+        title: "四类题型",
+        intro: "不同题型对应不同阅读策略。",
+        bullets: [
+          "细节题：题干关键词定位，回原文找对应句。",
+          "主旨题：看首尾段和各段首句，概括共同主题。",
+          "推断题：答案基于原文，不选过度推断。",
+          "词义题：根据上下文和构词法判断。"
+        ]
+      },
+      {
+        title: "定位与同义替换",
+        intro: "正确答案往往是原文的同义改写，而不是原词照抄。",
+        bullets: [
+          "题干中的人名、数字、专有名词是最好的定位词。",
+          "注意词性转换、近义词替换和句式转换。",
+          "原文出现 but、however 时，转折后往往是重点。"
+        ]
+      },
+      {
+        title: "干扰项特征",
+        intro: "排除法能显著提高正确率。",
+        bullets: [
+          "偷换概念：把原文的 A 换成 B。",
+          "绝对化：出现 all、never、only 等词要警惕。",
+          "无中生有：原文没有的信息，即使常识正确也不选。",
+          "张冠李戴：把甲的观点套到乙身上。"
+        ]
+      }
+    ],
+    example: {
+      question: "原文：Students who take regular breaks tend to remember more. 题目：Students who take breaks tend to ___.",
+      solution: [
+        "定位到原文 take regular breaks。",
+        "tend to 后为 remember more。",
+        "答案：remember more。"
+      ]
+    },
+    pitfalls: [
+      "不读题干直接通读全文，浪费时间。",
+      "选择包含原文原词但整体意思错误的选项。",
+      "把常识判断当成原文信息。"
+    ],
+    mnemonic: "题干定位，原文找替，主旨看首尾。"
+  },
+  e9: {
+    summary: "完形填空考查上下文逻辑和词汇搭配。先通读抓主线，再逐空选择，最后复查。",
+    goals: ["学会通过上下文判断词义", "识别逻辑连接词", "利用复现原则解题"],
+    sections: [
+      {
+        title: "先通读，后填空",
+        intro: "第一遍只读不做，抓住文章人物、事件和态度。",
+        bullets: [
+          "通读时跳过空格，重点看首句和段首句。",
+          "第二遍逐空选择，先做有把握的空。",
+          "第三遍带入答案通读，检查逻辑是否通顺。"
+        ]
+      },
+      {
+        title: "逻辑连接词",
+        intro: "连接词决定前后句的关系，是完形的“路标”。",
+        bullets: [
+          "转折：but、however、yet、instead。",
+          "因果：because、so、therefore、as a result。",
+          "递进：besides、moreover、what is more。",
+          "让步：although、though、even if。"
+        ]
+      },
+      {
+        title: "复现与固定搭配",
+        intro: "上下文常出现同义词、反义词或原词复现。",
+        bullets: [
+          "前文出现 difficult，后文可能用 challenging 复现。",
+          "注意动词与介词的固定搭配。",
+          "注意名词的单复数和动词的时态一致。"
+        ]
+      }
+    ],
+    example: {
+      question: "Tom was tired, ___ he kept working.",
+      solution: [
+        "前后为转折关系：累但继续工作。",
+        "so 表结果，because 表原因，but 表转折。",
+        "答案：but。"
+      ]
+    },
+    pitfalls: [
+      "只看空格所在句，不看上下文。",
+      "忽略转折词，导致逻辑方向判断错误。",
+      "固定搭配记错介词。"
+    ],
+    mnemonic: "先通读，后填空，二遍复查。"
+  },
+  e10: {
+    summary: "翻译题考查句子结构，不是逐字对应。先找主干，再补修饰，最后检查语法细节。",
+    goals: ["掌握先主干后修饰的翻译顺序", "积累常见句型", "减少中式英语"],
+    sections: [
+      {
+        title: "先主干，后修饰",
+        intro: "先确定主谓宾，再把时间、地点、原因等状语放到合适位置。",
+        bullets: [
+          "中文无主句可补形式主语 it。",
+          "修饰语过长时，可拆成并列句或定语从句。",
+          "先保证语法正确，再追求表达地道。"
+        ]
+      },
+      {
+        title: "常见句型",
+        intro: "背熟高频句型，考场上直接套用。",
+        bullets: [
+          "It is+adj.+for sb.+to do sth.。",
+          "so...that...、such...that...。",
+          "not only...but also...。",
+          "be worth doing、be used to doing。"
+        ]
+      },
+      {
+        title: "检查清单",
+        intro: "译完必须检查，很多失分来自低级错误。",
+        bullets: [
+          "时态是否与中文时间一致。",
+          "主谓是否一致，名词单复数是否正确。",
+          "冠词、介词、动词搭配是否准确。"
+        ]
+      }
+    ],
+    example: {
+      question: "这本书值得一读。",
+      solution: [
+        "主干：这本书 + 值得 + 读。",
+        "固定搭配 be worth doing。",
+        "答案：This book is worth reading."
+      ]
+    },
+    pitfalls: [
+      "逐字翻译，出现中式英语。",
+      "忽略时态和单复数。",
+      "不会处理中文无主句。"
+    ],
+    mnemonic: "先主谓宾，再定状补。"
+  },
+  e11: {
+    summary: "应用文写作有固定套路。掌握三段式和万能句型，比临场发挥更稳。",
+    goals: ["掌握邀请信、申请信、感谢信结构", "背熟开头和结尾句型", "避免格式和语气错误"],
+    sections: [
+      {
+        title: "三段式结构",
+        intro: "第一段说明目的，第二段写具体内容，第三段期待回复。",
+        bullets: [
+          "开头直接点明写作目的，不绕弯子。",
+          "主体部分按时间或要点展开，每点一两句。",
+          "结尾表达感谢或期待回复。"
+        ]
+      },
+      {
+        title: "邀请信模板",
+        intro: "邀请信是高频题型，格式和语气都要得体。",
+        bullets: [
+          "开头：I am writing to invite you to...",
+          "主体：时间、地点、活动内容、注意事项。",
+          "结尾：I would appreciate it if you could reply soon.",
+          "语气礼貌，避免命令式表达。"
+        ]
+      },
+      {
+        title: "其他常见类型",
+        intro: "申请信、感谢信、通知的套路可以互相迁移。",
+        bullets: [
+          "申请信：说明申请职位/项目，突出自身优势。",
+          "感谢信：说明感谢原因，表达回报意愿。",
+          "通知：必须包含时间、地点、事由、对象。"
+        ]
+      }
+    ],
+    example: {
+      question: "写一封邀请信，邀请外教参加毕业晚会。",
+      solution: [
+        "开头：I am writing to invite you to our graduation party.",
+        "主体：时间、地点、活动安排。",
+        "结尾：We would be honored if you could come."
+      ]
+    },
+    pitfalls: [
+      "缺少称呼或落款。",
+      "语气过于随意或生硬。",
+      "通知缺少时间、地点等关键信息。"
+    ],
+    mnemonic: "目的—细节—期待。"
+  },
+  e12: {
+    summary: "考前英语复习要转向“考试策略”：时间分配、做题顺序和真题复盘，比继续背新词更有效。",
+    goals: ["建立稳定的做题顺序", "控制各题型时间", "用真题和错题完成最后冲刺"],
+    sections: [
+      {
+        title: "时间分配",
+        intro: "按分值分配时间，保证阅读和写作有充足时间。",
+        bullets: [
+          "词汇语法控制在 20 分钟内。",
+          "阅读每篇 8 分钟左右，四篇约 35 分钟。",
+          "完形 15 分钟，翻译 10 分钟，写作 25 分钟。",
+          "至少留 5 分钟检查答题卡。"
+        ]
+      },
+      {
+        title: "做题顺序",
+        intro: "先易后难，先拿稳分，再攻难题。",
+        bullets: [
+          "推荐顺序：词汇语法→阅读→完形→翻译→写作。",
+          "阅读和写作不要放在最后匆忙完成。",
+          "遇到卡题先标记跳过，避免影响节奏。"
+        ]
+      },
+      {
+        title: "真题复盘",
+        intro: "考前一周只做真题和错题。",
+        bullets: [
+          "严格计时，模拟真实考试节奏。",
+          "每套真题至少复盘两遍：错因和词汇。",
+          "整理高频词、固定搭配和写作句型。"
+        ]
+      }
+    ],
+    example: {
+      question: "考试只剩 30 分钟，阅读还有一篇、写作还没开始，怎么办？",
+      solution: [
+        "先保证写作，至少留 20 分钟完成结构和字数。",
+        "阅读用剩余时间快速定位，优先做细节题。",
+        "不要在两篇之间反复纠结，先拿到能拿的分。"
+      ]
+    },
+    pitfalls: [
+      "在单题上耗时过久，导致写作没时间。",
+      "做完不检查答题卡，涂错或漏涂。",
+      "考前继续做偏题怪题，打乱心态。"
+    ],
+    mnemonic: "先易后难，阅读写作留足时间。"
+  },
+  i1: {
+    summary: "计算机基础是信息技术考试的起点。掌握五大部件、存储单位、进制转换和编码常识，选择填空题就能稳定得分。",
+    goals: ["记住计算机五大组成部分", "熟练进行二进制、十进制转换", "分清内存与外存、位与字节"],
+    sections: [
+      {
+        title: "计算机的五大部件",
+        intro: "冯·诺依曼结构把计算机分为五个基本部分。",
+        bullets: [
+          "运算器、控制器、存储器、输入设备、输出设备。",
+          "CPU=运算器+控制器，是计算机的核心部件。",
+          "内存断电丢失数据，外存（硬盘、U 盘）可长期保存。",
+          "主机通常包括 CPU 和内存，外设包括输入、输出和存储设备。"
+        ]
+      },
+      {
+        title: "数据表示与存储单位",
+        intro: "计算机内部使用二进制，所有数据最终都变成 0 和 1。",
+        bullets: [
+          "1 字节（Byte）=8 位（bit）。",
+          "1KB=1024B，1MB=1024KB，1GB=1024MB，1TB=1024GB。",
+          "二进制 1011=1×2³+0×2²+1×2¹+1×2⁰=11。",
+          "八进制按 3 位分组，十六进制按 4 位分组。"
+        ]
+      },
+      {
+        title: "编码与字长",
+        intro: "编码是人与计算机之间的约定。",
+        bullets: [
+          "ASCII 码用 7 位或 8 位表示字符。",
+          "汉字编码包括输入码、机内码、字形码。",
+          "字长是 CPU 一次能处理的二进制位数，常见 32 位、64 位。"
+        ]
+      }
+    ],
+    example: {
+      question: "二进制数 1011 对应的十进制数是多少？",
+      solution: [
+        "按权展开：1×2³+0×2²+1×2¹+1×2⁰。",
+        "计算得 8+0+2+1=11。",
+        "答案：11。"
+      ]
+    },
+    pitfalls: [
+      "把 1KB 误算成 1000B。",
+      "bit 和 Byte 混淆，1Byte=8bit。",
+      "进制转换时权重用错。"
+    ],
+    mnemonic: "五部件、二进权、八比特一字节。"
+  },
+  i2: {
+    summary: "操作系统管理计算机的软硬件资源。Windows 的文件管理、快捷键和回收站是操作题和选择题的常考点。",
+    goals: ["理解操作系统的功能", "熟记 Windows 常用快捷键", "掌握文件与回收站操作"],
+    sections: [
+      {
+        title: "操作系统的功能",
+        intro: "操作系统是最重要的系统软件。",
+        bullets: [
+          "五大功能：处理器管理、存储管理、设备管理、文件管理、作业管理。",
+          "操作系统管理硬件资源和软件资源。",
+          "常见操作系统：Windows、Linux、macOS、Android、iOS。"
+        ]
+      },
+      {
+        title: "Windows 常用操作",
+        intro: "快捷键是送分题，必须形成肌肉记忆。",
+        bullets: [
+          "Ctrl+C 复制，Ctrl+X 剪切，Ctrl+V 粘贴。",
+          "Ctrl+Z 撤销，Ctrl+A 全选，Ctrl+S 保存。",
+          "Alt+Tab 切换窗口，Win+D 显示桌面。",
+          "Ctrl+Shift+Esc 打开任务管理器。"
+        ]
+      },
+      {
+        title: "文件与回收站",
+        intro: "扩展名决定文件类型和打开方式。",
+        bullets: [
+          "文件名的组成：主文件名+扩展名。",
+          "回收站暂存被删除的文件，未清空之前可以还原。",
+          "清空回收站后，文件通常无法通过回收站恢复。",
+          "文件属性包括只读、隐藏、存档等。"
+        ]
+      }
+    ],
+    example: {
+      question: "在 Windows 中复制选中内容的快捷键是什么？",
+      solution: [
+        "复制是 Copy，对应 Ctrl+C。",
+        "粘贴是 Ctrl+V，剪切是 Ctrl+X。",
+        "答案：Ctrl+C。"
+      ]
+    },
+    pitfalls: [
+      "复制、剪切、粘贴快捷键混淆。",
+      "认为删除到回收站就永久丢失。",
+      "忽略扩展名，导致文件无法正确打开。"
+    ],
+    mnemonic: "Ctrl+C 复制，Ctrl+X 剪切，Ctrl+V 粘贴，Ctrl+Z 撤销。"
+  },
+  i3: {
+    summary: "Word 操作题考查文档排版能力。扩展名、段落格式、页面设置和邮件合并是高频考点。",
+    goals: ["掌握 Word 基本操作", "会设置段落和页面格式", "理解邮件合并的用途"],
+    sections: [
+      {
+        title: "文档基础",
+        intro: "Word 文档的默认扩展名是 .docx。",
+        bullets: [
+          "新建、打开、保存、另存为是基本操作。",
+          "Ctrl+S 保存，F12 另存为。",
+          "文件保存位置和文件名按题目要求设置。"
+        ]
+      },
+      {
+        title: "段落与页面设置",
+        intro: "排版题先选中对象，再执行命令。",
+        bullets: [
+          "段落格式：对齐方式、缩进、行距、段前段后间距。",
+          "页面设置：纸张大小、页边距、方向。",
+          "页眉页脚、页码用于版式控制。",
+          "分节符可以把文档分成不同的排版节。"
+        ]
+      },
+      {
+        title: "邮件合并",
+        intro: "邮件合并用于批量生成格式相同、内容不同的文档。",
+        bullets: [
+          "准备主文档和数据源。",
+          "插入合并域，把数据源字段放到对应位置。",
+          "预览结果并完成合并。",
+          "常见应用：录取通知书、邀请函、标签。"
+        ]
+      }
+    ],
+    example: {
+      question: "如何把文档中所有正文段落设置为 1.5 倍行距？",
+      solution: [
+        "Ctrl+A 全选正文。",
+        "打开段落对话框。",
+        "行距选择 1.5 倍，确定。"
+      ]
+    },
+    pitfalls: [
+      "操作前没有选中对象，命令作用到错误位置。",
+      "分页符和分节符混淆。",
+      "保存时没有按题目要求选择路径和文件名。"
+    ],
+    mnemonic: "选中对象再操作。"
+  },
+  i4: {
+    summary: "Excel 是操作题重点。单元格引用、函数、排序筛选和图表，几乎每次考试都会出现。",
+    goals: ["分清相对引用与绝对引用", "掌握常用函数", "会做排序、筛选和图表"],
+    sections: [
+      {
+        title: "单元格引用",
+        intro: "引用方式决定公式复制后的变化规律。",
+        bullets: [
+          "相对引用 A1：复制公式时行列都变化。",
+          "绝对引用 $A$1：复制公式时行列都不变。",
+          "混合引用 A$1、$A1：只锁定行或列。",
+          "区域用冒号表示，如 A1:B5 表示 2 列 5 行共 10 个单元格。"
+        ]
+      },
+      {
+        title: "常用函数",
+        intro: "函数题先看参数，再确定区域和条件。",
+        bullets: [
+          "SUM 求和，AVERAGE 求平均，MAX/MIN 求最值。",
+          "COUNT 统计数值个数，COUNTA 统计非空单元格。",
+          "IF 条件判断：IF(条件,真值,假值)。",
+          "VLOOKUP 按列查找：VLOOKUP(查找值,区域,列号,匹配方式)。"
+        ]
+      },
+      {
+        title: "排序、筛选与图表",
+        intro: "数据分析操作按“选中数据→执行命令”的顺序完成。",
+        bullets: [
+          "排序可按单关键字或多关键字进行。",
+          "筛选用于显示满足条件的数据。",
+          "分类汇总前要先排序。",
+          "图表要选择合适类型：柱形图比较大小，折线图看趋势，饼图看比例。"
+        ]
+      }
+    ],
+    example: {
+      question: "公式 =SUM(A1:A5) 的含义是什么？",
+      solution: [
+        "SUM 是求和函数。",
+        "A1:A5 表示从 A1 到 A5 的连续区域。",
+        "答案：求 A1 到 A5 五个单元格的和。"
+      ]
+    },
+    pitfalls: [
+      "相对引用和绝对引用混淆，复制公式后结果错误。",
+      "公式忘记以等号开头。",
+      "VLOOKUP 的列号从区域第一列开始数，容易数错。"
+    ],
+    mnemonic: "$ 锁行列，冒号连区域，公式先等号。"
+  },
+  i5: {
+    summary: "PowerPoint 操作题考查母版、版式、动画、切换和放映。区分“切换”和“动画”是选择题常考陷阱。",
+    goals: ["掌握幻灯片母版和版式", "区分切换与动画", "会设置放映和导出"],
+    sections: [
+      {
+        title: "母版与版式",
+        intro: "母版用于统一演示文稿的视觉风格。",
+        bullets: [
+          "幻灯片母版控制标题、正文、背景、字体等。",
+          "修改母版后，使用该母版的幻灯片会同步更新。",
+          "版式决定幻灯片中占位符的布局。",
+          "演示文稿扩展名为 .pptx。"
+        ]
+      },
+      {
+        title: "动画与切换",
+        intro: "两者作用对象不同，是高频易错点。",
+        bullets: [
+          "切换作用于幻灯片之间。",
+          "动画作用于幻灯片中的对象（文字、图片、图表）。",
+          "动画分进入、强调、退出、动作路径四类。",
+          "动画顺序和持续时间可在动画窗格中调整。"
+        ]
+      },
+      {
+        title: "放映与导出",
+        intro: "演示文稿可以按不同方式播放和输出。",
+        bullets: [
+          "从头开始放映：F5；从当前幻灯片放映：Shift+F5。",
+          "可设置排练计时、循环放映、自定义放映。",
+          "可另存为 PDF、图片或视频。"
+        ]
+      }
+    ],
+    example: {
+      question: "“切换”效果作用于什么对象？",
+      solution: [
+        "切换是幻灯片之间的过渡效果。",
+        "动画才是作用于幻灯片内的对象。",
+        "答案：幻灯片之间。"
+      ]
+    },
+    pitfalls: [
+      "把切换和动画混为一谈。",
+      "修改母版后没有检查所有幻灯片。",
+      "保存时选错文件格式。"
+    ],
+    mnemonic: "切换片间，动画对象。"
+  },
+  i6: {
+    summary: "计算机网络基础考查分类、IP 地址、OSI 七层和 TCP/UDP。概念多但规律强，适合用口诀记忆。",
+    goals: ["掌握网络分类和拓扑", "记住 OSI 七层顺序", "分清 TCP 与 UDP"],
+    sections: [
+      {
+        title: "网络分类与拓扑",
+        intro: "按覆盖范围分，网络可分为局域网、城域网和广域网。",
+        bullets: [
+          "LAN 局域网，覆盖范围小，速度快。",
+          "MAN 城域网，覆盖一个城市。",
+          "WAN 广域网，覆盖范围最大，Internet 是典型代表。",
+          "常见拓扑：总线型、星型、环型、树型、网状型。"
+        ]
+      },
+      {
+        title: "IP 地址与 OSI 七层",
+        intro: "IPv4 地址是 32 位二进制数，通常写成点分十进制。",
+        bullets: [
+          "IPv4 地址由网络号和主机号组成。",
+          "OSI 七层：物理、数据链路、网络、传输、会话、表示、应用。",
+          "口诀：物数网传会表应。",
+          "IP 地址定位主机，MAC 地址定位网卡。"
+        ]
+      },
+      {
+        title: "TCP 与 UDP",
+        intro: "传输层两大协议，特点相反。",
+        bullets: [
+          "TCP 面向连接、可靠、速度相对慢。",
+          "UDP 无连接、不可靠、速度快。",
+          "TCP 适用于网页、邮件、文件传输。",
+          "UDP 适用于视频直播、在线游戏等实时场景。"
+        ]
+      }
+    ],
+    example: {
+      question: "IPv4 地址的长度是多少位？",
+      solution: [
+        "IPv4 使用 32 位二进制数表示。",
+        "通常分为 4 组，每组 8 位，用点分隔。",
+        "答案：32 位。"
+      ]
+    },
+    pitfalls: [
+      "OSI 七层顺序记混。",
+      "TCP 和 UDP 的特点记反。",
+      "把 IP 地址和 MAC 地址的作用混淆。"
+    ],
+    mnemonic: "物数网传会表应；TCP 可靠，UDP 快。"
+  },
+  i7: {
+    summary: "Internet 应用考查 DNS、HTTP/HTTPS、电子邮件协议和端口。协议与端口要成对记忆。",
+    goals: ["理解 DNS 的作用", "记住 HTTP/HTTPS 默认端口", "分清 SMTP、POP3、IMAP"],
+    sections: [
+      {
+        title: "域名与 DNS",
+        intro: "DNS 把域名解析为 IP 地址。",
+        bullets: [
+          "域名便于记忆，IP 地址用于网络寻址。",
+          "DNS 是域名系统，负责域名解析。",
+          "常见域名后缀：.com、.cn、.org、.edu。"
+        ]
+      },
+      {
+        title: "HTTP 与 HTTPS",
+        intro: "HTTP 是超文本传输协议，HTTPS 是加密版本。",
+        bullets: [
+          "HTTP 默认端口 80。",
+          "HTTPS 默认端口 443。",
+          "HTTPS 通过加密提高安全性。",
+          "浏览器访问网页通常使用 HTTP/HTTPS。"
+        ]
+      },
+      {
+        title: "电子邮件协议",
+        intro: "发送和接收使用不同协议。",
+        bullets: [
+          "SMTP 用于发送邮件。",
+          "POP3 用于接收邮件，通常下载到本地。",
+          "IMAP 用于接收邮件，邮件保留在服务器。",
+          "邮件地址格式：用户名@邮件服务器域名。"
+        ]
+      }
+    ],
+    example: {
+      question: "发送电子邮件使用哪个协议？",
+      solution: [
+        "发送邮件使用 SMTP。",
+        "POP3 和 IMAP 用于接收。",
+        "答案：SMTP。"
+      ]
+    },
+    pitfalls: [
+      "发送和接收协议混淆。",
+      "HTTP 与 HTTPS 端口记反。",
+      "把 DNS 当成邮件协议。"
+    ],
+    mnemonic: "SMTP 发，POP3/IMAP 收；80 是 HTTP，443 是 HTTPS。"
+  },
+  i8: {
+    summary: "信息安全考查病毒特征、防火墙、密码和备份。记住“预防为主、备份兜底”。",
+    goals: ["掌握计算机病毒的特征", "理解防火墙和杀毒软件的作用", "养成安全使用习惯"],
+    sections: [
+      {
+        title: "计算机病毒",
+        intro: "计算机病毒是一段具有破坏性的程序代码。",
+        bullets: [
+          "特征：传染性、潜伏性、破坏性、可触发性。",
+          "病毒不是生物病毒，本质是程序。",
+          "传播途径：U 盘、下载、邮件附件、恶意链接。",
+          "杀毒软件要定期更新病毒库。"
+        ]
+      },
+      {
+        title: "防火墙与备份",
+        intro: "防火墙和杀毒软件作用不同，不能互相替代。",
+        bullets: [
+          "防火墙隔离内外网，过滤非法访问。",
+          "防火墙不能清除已经进入系统的病毒。",
+          "定期备份是应对勒索病毒和数据损坏的有效手段。",
+          "重要数据建议采用“本地+云端”双重备份。"
+        ]
+      },
+      {
+        title: "密码与钓鱼防范",
+        intro: "人为疏忽往往是安全事件的第一步。",
+        bullets: [
+          "强密码：长度足够，混合大小写字母、数字和符号。",
+          "不同网站使用不同密码，定期更换。",
+          "不点击陌生链接，不随意安装未知软件。",
+          "警惕冒充客服、领导、学校的钓鱼信息。"
+        ]
+      }
+    ],
+    example: {
+      question: "下列密码中安全性最高的是哪一个？",
+      solution: [
+        "123456、生日、姓名拼音都属于弱密码。",
+        "强密码应包含大小写字母、数字和符号。",
+        "答案：Ab3$xY9! 这类混合密码。"
+      ]
+    },
+    pitfalls: [
+      "认为安装防火墙就不会中病毒。",
+      "多个网站使用同一个密码。",
+      "把重要文件只保存在本机，没有备份。"
+    ],
+    mnemonic: "传染潜伏破坏触发；防火墙过滤，备份兜底。"
+  },
+  i9: {
+    summary: "多媒体技术考查图像、音频、视频格式和压缩方式。格式与压缩类型要对应记忆。",
+    goals: ["认识常见多媒体格式", "区分有损压缩与无损压缩", "理解分辨率和颜色深度"],
+    sections: [
+      {
+        title: "图像格式",
+        intro: "不同格式适用于不同场景。",
+        bullets: [
+          "BMP：位图，文件较大，通常不压缩。",
+          "JPEG：有损压缩，适合照片。",
+          "PNG：无损压缩，支持透明背景。",
+          "GIF：支持动画，颜色数有限。"
+        ]
+      },
+      {
+        title: "音频与视频",
+        intro: "音频和视频格式决定文件大小和兼容性。",
+        bullets: [
+          "音频：WAV 无损、MP3 有损压缩。",
+          "视频：MP4 兼容性好，AVI 文件通常较大。",
+          "流媒体适合在线播放，需考虑带宽。",
+          "格式转换可能造成质量损失。"
+        ]
+      },
+      {
+        title: "分辨率与颜色深度",
+        intro: "两者共同影响图像质量和文件大小。",
+        bullets: [
+          "分辨率越高，图像越清晰，文件越大。",
+          "颜色深度表示每个像素使用的位数。",
+          "颜色深度越大，可表示的颜色越多。",
+          "多媒体数据压缩分无损压缩和有损压缩。"
+        ]
+      }
+    ],
+    example: {
+      question: "JPEG 图像采用哪种压缩方式？",
+      solution: [
+        "JPEG 通过舍弃部分细节减小文件体积。",
+        "这种压缩不可逆，属于有损压缩。",
+        "答案：有损压缩。"
+      ]
+    },
+    pitfalls: [
+      "把 JPEG 当成无损压缩。",
+      "图像、音频、视频格式混淆。",
+      "认为分辨率越高越好，忽略文件大小。"
+    ],
+    mnemonic: "JPEG 有损，PNG 无损，GIF 会动。"
+  },
+  i10: {
+    summary: "数据库基础考查关系模型和 SQL。行是记录，列是字段，主键唯一标识记录。",
+    goals: ["理解数据库、DBMS 和关系模型", "掌握主键和外键", "会写简单 SQL 查询"],
+    sections: [
+      {
+        title: "数据库基本概念",
+        intro: "数据库是有组织地存储和管理数据的仓库。",
+        bullets: [
+          "DBMS 是数据库管理系统，负责数据定义、操纵和控制。",
+          "关系模型用二维表表示数据。",
+          "一行是一条记录，一列是一个字段（属性）。",
+          "常见数据库：MySQL、SQL Server、Oracle。"
+        ]
+      },
+      {
+        title: "主键与外键",
+        intro: "键用于唯一标识记录和建立表间联系。",
+        bullets: [
+          "主键的值唯一且不能为空。",
+          "一个表只能有一个主键，但主键可以由多个字段组成。",
+          "外键用于建立两个表之间的联系。",
+          "外键值必须对应另一个表的主键值或为空。"
+        ]
+      },
+      {
+        title: "SQL 查询",
+        intro: "SELECT-FROM-WHERE 是最基本的查询句式。",
+        bullets: [
+          "SELECT 列名 FROM 表名 WHERE 条件。",
+          "SELECT * 表示查询所有列。",
+          "ORDER BY 排序，GROUP BY 分组。",
+          "INSERT 插入、UPDATE 修改、DELETE 删除。"
+        ]
+      }
+    ],
+    example: {
+      question: "查询成绩大于等于 90 分的学生姓名。",
+      solution: [
+        "选择列：姓名；选择表：学生表。",
+        "条件：成绩>=90。",
+        "SQL：SELECT 姓名 FROM 学生 WHERE 成绩>=90。"
+      ]
+    },
+    pitfalls: [
+      "把行和列的概念说反。",
+      "认为主键可以为空或重复。",
+      "SQL 关键字拼写错误。"
+    ],
+    mnemonic: "SELECT 列 FROM 表 WHERE 条件。"
+  },
+  i11: {
+    summary: "算法与程序设计考查算法特征、三种基本结构、排序查找复杂度和语言常识。",
+    goals: ["掌握算法的五个特征", "记住常见算法复杂度", "分清编译型与解释型语言"],
+    sections: [
+      {
+        title: "算法的基本特征",
+        intro: "算法是解决问题的明确步骤。",
+        bullets: [
+          "五个特征：有穷性、确定性、可行性、输入、输出。",
+          "三种基本结构：顺序、选择、循环。",
+          "算法可以用流程图、伪代码或自然语言描述。",
+          "随机性不是算法的基本特征。"
+        ]
+      },
+      {
+        title: "排序与查找",
+        intro: "复杂度是选择题高频考点。",
+        bullets: [
+          "冒泡排序最坏时间复杂度 O(n²)。",
+          "快速排序平均时间复杂度 O(n log n)。",
+          "顺序查找 O(n)，二分查找 O(log n)。",
+          "二分查找要求数据有序。"
+        ]
+      },
+      {
+        title: "程序设计语言",
+        intro: "程序=数据结构+算法。",
+        bullets: [
+          "编译型语言：C、C++，先编译后运行。",
+          "解释型语言：Python、JavaScript，逐行解释执行。",
+          "源程序需要经过编译或解释才能运行。",
+          "变量、数据类型、控制结构是程序设计基础。"
+        ]
+      }
+    ],
+    example: {
+      question: "冒泡排序最坏情况下的时间复杂度是多少？",
+      solution: [
+        "冒泡排序需要多轮比较和交换。",
+        "最坏情况下比较次数约为 n²/2。",
+        "答案：O(n²)。"
+      ]
+    },
+    pitfalls: [
+      "把有穷性和可行性混淆。",
+      "认为二分查找不需要有序。",
+      "编译型与解释型语言记反。"
+    ],
+    mnemonic: "顺序选择循环；冒泡 n²，二分 log n。"
+  },
+  i12: {
+    summary: "综合操作题按步骤给分。看清要求、及时保存、先易后难，是信息技术实操考试的三条铁律。",
+    goals: ["掌握操作题答题顺序", "避免保存和文件名错误", "形成考前操作清单"],
+    sections: [
+      {
+        title: "操作题步骤",
+        intro: "操作题通常按步骤评分，做完一步保存一步。",
+        bullets: [
+          "先看清题目要求的位置、文件名和格式。",
+          "按“选中对象→执行命令→检查结果”的顺序操作。",
+          "Word 注意段落、页面、页眉页脚。",
+          "Excel 注意区域引用、函数参数和图表类型。",
+          "PPT 注意母版、切换和动画的区别。"
+        ]
+      },
+      {
+        title: "选择题策略",
+        intro: "先排除明显错误项，再在剩余选项中比较。",
+        bullets: [
+          "注意绝对化表述，如“所有”“必须”“唯一”。",
+          "遇到计算题先写公式，再代入数据。",
+          "不确定的题先标记，不要空着。",
+          "检查单位、进制和端口号。"
+        ]
+      },
+      {
+        title: "考前清单",
+        intro: "把高频操作各练一遍，比盲目刷题有效。",
+        bullets: [
+          "Word：字体段落、页眉页脚、邮件合并。",
+          "Excel：SUM/AVERAGE/IF/VLOOKUP、排序筛选、图表。",
+          "PPT：母版、动画、切换、放映。",
+          "网络与安全：IP、协议、端口、病毒特征。"
+        ]
+      }
+    ],
+    example: {
+      question: "Excel 操作题要求计算平均分并保留两位小数，应该怎么做？",
+      solution: [
+        "选中结果单元格。",
+        "输入 =AVERAGE(数据区域)。",
+        "在单元格格式中设置数字格式为两位小数。",
+        "按题目要求保存文件。"
+      ]
+    },
+    pitfalls: [
+      "没有按题目要求保存位置和文件名。",
+      "操作前没有选中正确对象。",
+      "做完不检查，公式引用区域错误。"
+    ],
+    mnemonic: "看清要求，按步操作，及时保存。"
+  },
+  s1: {
+    summary: "软件工程概述是专业课的框架。三要素、生命周期和开发模型是简答题和选择题的基础。",
+    goals: ["记住软件工程三要素", "掌握生命周期阶段顺序", "比较瀑布、增量、敏捷模型"],
+    sections: [
+      {
+        title: "软件工程三要素",
+        intro: "软件工程用工程化方法开发和维护软件。",
+        bullets: [
+          "三要素：方法、工具、过程。",
+          "方法提供技术手段，工具提供支撑环境，过程组织活动顺序。",
+          "目标是提高软件质量、降低开发成本、保证进度。"
+        ]
+      },
+      {
+        title: "软件生命周期",
+        intro: "生命周期是软件从提出到退役的全过程。",
+        bullets: [
+          "阶段顺序：可行性研究、需求分析、设计、编码、测试、维护。",
+          "维护是持续时间最长、成本占比最高的阶段。",
+          "每个阶段都有明确的输入、活动和输出。",
+          "阶段评审用于尽早发现错误。"
+        ]
+      },
+      {
+        title: "常见开发模型",
+        intro: "不同模型适用于不同项目特点。",
+        bullets: [
+          "瀑布模型：阶段清晰、文档完整，但难以适应需求变化。",
+          "增量模型：分批交付，降低风险。",
+          "敏捷模型：迭代开发、快速反馈，适合需求变化频繁的项目。",
+          "原型模型：通过原型澄清需求。"
+        ]
+      }
+    ],
+    example: {
+      question: "瀑布模型的主要缺点是什么？",
+      solution: [
+        "瀑布模型要求各阶段按顺序推进。",
+        "前期确定的需求后期变更成本很高。",
+        "答案：难以适应需求变化。"
+      ]
+    },
+    pitfalls: [
+      "生命周期阶段顺序记错。",
+      "认为测试完成后项目就结束，忽略维护。",
+      "把瀑布模型和敏捷模型的特点混淆。"
+    ],
+    mnemonic: "方法工具过程；需求设计编码测试维护。"
+  },
+  s2: {
+    summary: "需求工程解决“做什么”。需求分类、获取方法、SRS 和需求验证是案例分析的高频考点。",
+    goals: ["区分功能需求与非功能需求", "掌握需求获取方法", "理解 SRS 的作用"],
+    sections: [
+      {
+        title: "需求分类",
+        intro: "需求分为功能需求、非功能需求和领域需求。",
+        bullets: [
+          "功能需求：系统必须完成的功能。",
+          "非功能需求：性能、安全、可靠性、易用性等约束。",
+          "领域需求：来自业务领域的特殊要求。",
+          "非功能需求常以“响应时间不超过 2 秒”等形式出现。"
+        ]
+      },
+      {
+        title: "需求获取方法",
+        intro: "不同方法适用于不同利益相关者。",
+        bullets: [
+          "访谈：适合深入了解关键用户。",
+          "问卷：适合大范围收集意见。",
+          "观察：适合发现用户未说出口的需求。",
+          "原型：帮助用户直观理解系统。",
+          "文档分析：从现有资料中提取需求。"
+        ]
+      },
+      {
+        title: "SRS 与需求验证",
+        intro: "SRS 是需求阶段的标志性文档。",
+        bullets: [
+          "SRS 是软件需求规格说明书。",
+          "SRS 应包含功能需求、非功能需求、接口、约束等。",
+          "需求验证检查正确性、完整性、一致性和可测试性。",
+          "需求变更要经过评审和版本控制。"
+        ]
+      }
+    ],
+    example: {
+      question: "“系统响应时间不超过 2 秒”属于哪类需求？",
+      solution: [
+        "它描述的是性能约束，不是具体功能。",
+        "性能属于非功能需求。",
+        "答案：非功能需求。"
+      ]
+    },
+    pitfalls: [
+      "功能需求和非功能需求混淆。",
+      "认为 SRS 只是功能列表。",
+      "忽略需求的可测试性。"
+    ],
+    mnemonic: "功能非功能领域；访谈问卷观察原型文档。"
+  },
+  s3: {
+    summary: "结构化分析用数据流图描述数据流动，用数据字典定义数据。结构化设计用结构图描述模块调用。",
+    goals: ["掌握 DFD 的基本元素和分层", "理解数据字典的作用", "区分 DFD 与结构图"],
+    sections: [
+      {
+        title: "数据流图 DFD",
+        intro: "DFD 从数据流动和加工的角度描述系统逻辑模型。",
+        bullets: [
+          "基本元素：外部实体、加工、数据流、数据存储。",
+          "分层：顶层图、0 层图、1 层图。",
+          "父子图要平衡，数据流不能凭空出现或消失。",
+          "DFD 只画数据流，不画控制流。"
+        ]
+      },
+      {
+        title: "数据字典",
+        intro: "数据字典对 DFD 中的数据元素进行严格定义。",
+        bullets: [
+          "定义数据项、数据流、数据存储和加工。",
+          "数据字典是开发人员和用户沟通的依据。",
+          "数据字典应与 DFD 保持一致。"
+        ]
+      },
+      {
+        title: "结构化设计",
+        intro: "结构化设计自顶向下、逐步细化，强调模块化。",
+        bullets: [
+          "结构图描述模块之间的调用关系。",
+          "模块设计追求高内聚、低耦合。",
+          "设计过程中要进行信息隐蔽和抽象。",
+          "结构图不等于流程图。"
+        ]
+      }
+    ],
+    example: {
+      question: "DFD 中是否应该画出控制流？",
+      solution: [
+        "DFD 的名称是数据流图，描述数据流动与加工。",
+        "控制流属于程序流程图的内容。",
+        "答案：不应该，DFD 只画数据流。"
+      ]
+    },
+    pitfalls: [
+      "在 DFD 中画控制流。",
+      "父子图数据流不平衡。",
+      "把结构图和流程图混淆。"
+    ],
+    mnemonic: "DFD 画数据，结构图画调用。"
+  },
+  s4: {
+    summary: "模块化设计的核心是“高内聚、低耦合”。耦合与内聚的类型排序是选择题必考点。",
+    goals: ["理解耦合与内聚的含义", "记住耦合和内聚的类型排序", "能判断模块设计质量"],
+    sections: [
+      {
+        title: "耦合",
+        intro: "耦合衡量模块之间的依赖程度，越低越好。",
+        bullets: [
+          "由低到高：数据耦合、标记耦合、控制耦合、外部耦合、公共耦合、内容耦合。",
+          "数据耦合只传递数据参数，耦合程度最低。",
+          "内容耦合直接访问另一个模块内部数据，耦合程度最高。",
+          "设计时应尽量减少模块间接口的复杂性。"
+        ]
+      },
+      {
+        title: "内聚",
+        intro: "内聚衡量模块内部各元素的联系程度，越高越好。",
+        bullets: [
+          "由高到低：功能内聚、顺序内聚、通信内聚、过程内聚、时间内聚、逻辑内聚、偶然内聚。",
+          "功能内聚只完成一个明确功能，内聚程度最高。",
+          "偶然内聚的模块内部各元素没有实质联系，内聚程度最低。",
+          "设计时应追求功能内聚。"
+        ]
+      },
+      {
+        title: "设计目标",
+        intro: "高内聚、低耦合是模块化设计的理想状态。",
+        bullets: [
+          "高内聚使模块职责单一，便于理解和维护。",
+          "低耦合使模块之间独立，修改影响范围小。",
+          "模块规模要适中，避免过大或过小。",
+          "信息隐蔽可以降低模块间的依赖。"
+        ]
+      }
+    ],
+    example: {
+      question: "下列内聚类型中，内聚程度最高的是哪一个？",
+      solution: [
+        "功能内聚的模块只完成一个明确功能。",
+        "逻辑内聚、偶然内聚等内聚程度较低。",
+        "答案：功能内聚。"
+      ]
+    },
+    pitfalls: [
+      "耦合和内聚的“高低”方向记反。",
+      "把功能内聚和偶然内聚混淆。",
+      "认为耦合越高越好。"
+    ],
+    mnemonic: "功能内聚最高，内容耦合最差；高内聚低耦合。"
+  },
+  s5: {
+    summary: "UML 用图形描述面向对象系统。用例图看功能，类图看关系，顺序图看时间顺序。",
+    goals: ["掌握用例图、类图、顺序图的作用", "区分聚合与组合", "能根据场景选择 UML 图"],
+    sections: [
+      {
+        title: "用例图",
+        intro: "用例图描述参与者与系统功能之间的关系。",
+        bullets: [
+          "参与者可以是人、外部系统或设备。",
+          "用例表示系统提供的一项功能。",
+          "用例图常用于需求分析阶段。",
+          "用例之间可以有包含、扩展和泛化关系。"
+        ]
+      },
+      {
+        title: "类图",
+        intro: "类图描述类的属性、方法以及类之间的关系。",
+        bullets: [
+          "关联：类之间的一般连接。",
+          "聚合：整体与部分可以分离。",
+          "组合：整体与部分不可分离，整体销毁部分也销毁。",
+          "继承：子类复用父类的特征。",
+          "依赖：一个类的变化影响另一个类。"
+        ]
+      },
+      {
+        title: "顺序图与活动图",
+        intro: "两者都描述动态行为，但侧重点不同。",
+        bullets: [
+          "顺序图强调对象之间消息传递的时间顺序。",
+          "活动图强调业务流程、并发和分支。",
+          "状态图描述对象的状态变化。",
+          "不同 UML 图用于不同建模目的。"
+        ]
+      }
+    ],
+    example: {
+      question: "聚合与组合的主要区别是什么？",
+      solution: [
+        "聚合是弱整体-部分关系，部分可以独立存在。",
+        "组合是强整体-部分关系，整体销毁时部分也销毁。",
+        "答案：部分是否可分离。"
+      ]
+    },
+    pitfalls: [
+      "聚合与组合混淆。",
+      "用例图和类图的作用说反。",
+      "顺序图和活动图的侧重点混淆。"
+    ],
+    mnemonic: "用例看功能，类图看关系，顺序看时间。"
+  },
+  s6: {
+    summary: "软件体系结构关注系统整体结构，详细设计关注模块内部。C/S、B/S 和设计工具是高频考点。",
+    goals: ["比较 C/S 与 B/S", "认识常见架构风格", "掌握详细设计工具"],
+    sections: [
+      {
+        title: "C/S 与 B/S",
+        intro: "两种架构各有适用场景。",
+        bullets: [
+          "C/S：客户端/服务器，客户端需要安装，交互性能好。",
+          "B/S：浏览器/服务器，客户端无需安装，部署维护方便。",
+          "B/S 依赖网络和浏览器，交互性通常不如 C/S。",
+          "大型管理系统常用 B/S 架构。"
+        ]
+      },
+      {
+        title: "常见架构风格",
+        intro: "架构风格决定系统的组织方式。",
+        bullets: [
+          "分层架构：按职责分层，便于替换和维护。",
+          "MVC：模型、视图、控制器分离。",
+          "客户机/服务器：请求-响应模式。",
+          "管道-过滤器：数据依次经过多个处理环节。"
+        ]
+      },
+      {
+        title: "详细设计工具",
+        intro: "详细设计描述模块内部算法和数据结构。",
+        bullets: [
+          "程序流程图：用图形表示处理步骤。",
+          "N-S 图：结构化的盒图。",
+          "PAD 图：问题分析图。",
+          "伪代码：介于自然语言和程序语言之间。",
+          "甘特图属于项目管理工具，不是详细设计工具。"
+        ]
+      }
+    ],
+    example: {
+      question: "与 C/S 相比，B/S 架构的主要优点是什么？",
+      solution: [
+        "B/S 通过浏览器访问，客户端无需安装。",
+        "升级维护集中在服务器端。",
+        "答案：部署和维护方便。"
+      ]
+    },
+    pitfalls: [
+      "把甘特图当成详细设计工具。",
+      "C/S 与 B/S 的优缺点说反。",
+      "混淆架构风格和设计模式。"
+    ],
+    mnemonic: "B/S 易维护，C/S 交互强。"
+  },
+  s7: {
+    summary: "软件测试的目的是发现缺陷，而不是证明程序没有错误。测试阶段、黑盒白盒和静态动态是基础考点。",
+    goals: ["理解测试的根本目的", "掌握测试阶段顺序", "区分黑盒、白盒、静态、动态测试"],
+    sections: [
+      {
+        title: "测试的目的",
+        intro: "测试只能证明缺陷存在，不能证明程序没有缺陷。",
+        bullets: [
+          "测试的根本目的是发现程序中的缺陷。",
+          "测试不能证明软件绝对正确。",
+          "尽早测试可以降低修复成本。",
+          "测试用例应覆盖正常和异常情况。"
+        ]
+      },
+      {
+        title: "测试阶段",
+        intro: "测试按从局部到整体的顺序进行。",
+        bullets: [
+          "单元测试：针对最小可测试单元。",
+          "集成测试：检查模块之间的接口和协作。",
+          "系统测试：检查整个系统的功能和性能。",
+          "验收测试：由用户确认系统是否满足需求。"
+        ]
+      },
+      {
+        title: "测试方法",
+        intro: "不同方法关注不同方面。",
+        bullets: [
+          "黑盒测试关注功能，不看内部代码。",
+          "白盒测试关注内部逻辑和代码结构。",
+          "静态测试不运行程序，如代码审查。",
+          "动态测试需要运行程序。",
+          "单元测试常用白盒方法，系统测试多用黑盒方法。"
+        ]
+      }
+    ],
+    example: {
+      question: "软件测试的根本目的是什么？",
+      solution: [
+        "测试可以发现缺陷，但不能证明程序无错。",
+        "因此测试的目的是尽可能发现缺陷。",
+        "答案：发现程序中的缺陷。"
+      ]
+    },
+    pitfalls: [
+      "认为测试通过就证明程序没有错误。",
+      "测试阶段顺序记错。",
+      "黑盒测试和白盒测试混淆。"
+    ],
+    mnemonic: "单元集成系统验收；黑盒看功能，白盒看代码。"
+  },
+  s8: {
+    summary: "测试用例设计是专业课计算和案例题重点。等价类、边界值和判定表是三种常用方法。",
+    goals: ["掌握等价类划分", "会用边界值分析", "理解测试用例的组成"],
+    sections: [
+      {
+        title: "等价类划分",
+        intro: "把输入域划分为若干等价类，从每类中选取代表值。",
+        bullets: [
+          "有效等价类：符合需求的输入。",
+          "无效等价类：不符合需求的输入。",
+          "每个等价类至少设计一个测试用例。",
+          "等价类划分属于黑盒测试方法。"
+        ]
+      },
+      {
+        title: "边界值分析",
+        intro: "大量缺陷出现在边界附近。",
+        bullets: [
+          "取边界值、边界内侧值和边界外侧值。",
+          "例如输入范围 1—100，应测试 0、1、2、99、100、101。",
+          "边界值分析常与等价类划分结合使用。",
+          "边界值分析也属于黑盒测试。"
+        ]
+      },
+      {
+        title: "测试用例的组成",
+        intro: "测试用例必须能判断结果是否正确。",
+        bullets: [
+          "包含输入数据、预期输出和执行步骤。",
+          "测试用例应具有代表性、可重复性。",
+          "判定表适合处理多个条件的组合。",
+          "因果图用于分析输入条件与输出结果的关系。"
+        ]
+      }
+    ],
+    example: {
+      question: "输入范围是 1—100，边界值测试应选取哪些值？",
+      solution: [
+        "边界是 1 和 100。",
+        "还要取边界内侧 2、99 和外侧 0、101。",
+        "答案：0、1、2、99、100、101。"
+      ]
+    },
+    pitfalls: [
+      "只测边界值，不测边界附近的值。",
+      "忽略无效等价类。",
+      "测试用例缺少预期输出。"
+    ],
+    mnemonic: "有效无效加边界，内外都要测。"
+  },
+  s9: {
+    summary: "项目管理考查进度、关键路径、风险 and 沟通。关键路径是耗时最长的路径，决定项目最短工期。",
+    goals: ["掌握甘特图和 PERT 图", "会找关键路径", "理解风险管理和沟通路径"],
+    sections: [
+      {
+        title: "进度管理工具",
+        intro: "甘特图和 PERT 图是两种常见工具。",
+        bullets: [
+          "甘特图用横道线表示任务起止时间和进度。",
+          "PERT 图用网络图表示任务依赖关系。",
+          "关键路径法用于确定项目最短工期。",
+          "里程碑表示重要时间节点。"
+        ]
+      },
+      {
+        title: "关键路径",
+        intro: "关键路径上的任务没有浮动时间。",
+        bullets: [
+          "关键路径是耗时最长的路径。",
+          "关键路径决定项目的最短工期。",
+          "关键路径上的任务延迟会直接导致项目延期。",
+          "非关键路径任务有一定的浮动时间。"
+        ]
+      },
+      {
+        title: "风险与沟通",
+        intro: "项目管理不仅是进度，还包括风险和团队沟通。",
+        bullets: [
+          "风险管理：识别、分析、规划应对、监控。",
+          "n 人团队的沟通路径数为 n(n-1)/2。",
+          "5 人团队的沟通路径数为 10。",
+          "风险应对策略：规避、转移、减轻、接受。"
+        ]
+      }
+    ],
+    example: {
+      question: "5 人团队有多少条沟通路径？",
+      solution: [
+        "沟通路径公式为 n(n-1)/2。",
+        "代入 n=5，得 5×4/2=10。",
+        "答案：10 条。"
+      ]
+    },
+    pitfalls: [
+      "把关键路径当成最短路径。",
+      "认为关键路径上的任务有浮动时间。",
+      "沟通路径公式记错。"
+    ],
+    mnemonic: "最长路径是关键，零浮动不能拖。"
+  },
+  s10: {
+    summary: "软件质量与配置管理是专业课的“记忆型”考点。质量特性、基线、版本控制和维护类型要能准确区分。",
+    goals: ["记住软件质量特性", "理解配置管理和基线", "区分四种维护类型"],
+    sections: [
+      {
+        title: "软件质量特性",
+        intro: "ISO 质量模型从多个维度评价软件。",
+        bullets: [
+          "功能性、可靠性、易用性、效率、可维护性、可移植性。",
+          "可靠性关注系统在规定条件下正常运行的能力。",
+          "可维护性关注修改、测试和升级的难易程度。",
+          "可读性不是 ISO 9126 的顶层质量特性。"
+        ]
+      },
+      {
+        title: "配置管理",
+        intro: "配置管理保证软件产品的完整性和可追溯性。",
+        bullets: [
+          "配置项标识、版本控制、变更控制、配置审计。",
+          "基线是经评审确认的配置项集合。",
+          "基线变更必须走变更控制流程。",
+          "Git、SVN 是常用的版本控制工具。"
+        ]
+      },
+      {
+        title: "软件维护",
+        intro: "维护是软件生命周期中持续时间最长的阶段。",
+        bullets: [
+          "改正性维护：修复已发现的错误。",
+          "适应性维护：适应环境变化。",
+          "完善性维护：增加新功能或改进性能。",
+          "预防性维护：提前改进，防止未来问题。"
+        ]
+      }
+    ],
+    example: {
+      question: "什么是基线？",
+      solution: [
+        "基线是经过评审和确认的配置项集合。",
+        "基线一经确定，变更需要走变更控制流程。",
+        "答案：经评审确认的配置项集合。"
+      ]
+    },
+    pitfalls: [
+      "把可读性当成软件质量特性。",
+      "认为基线可以随意修改。",
+      "四种维护类型混淆。"
+    ],
+    mnemonic: "功能可靠易用效率，可维护可移植；基线经评审。"
+  },
+  s11: {
+    summary: "C 语言与数据结构是软件工程专业课的基础。数组下标、指针、栈队列和复杂度是选择题高频点。",
+    goals: ["掌握数组下标和指针基础", "区分栈与队列", "会判断常见时间复杂度"],
+    sections: [
+      {
+        title: "数组与指针",
+        intro: "C 语言数组下标从 0 开始，指针存放地址。",
+        bullets: [
+          "int a[5] 的合法下标是 0—4。",
+          "数组名在大多数表达式中表示首地址。",
+          "*p 取指针指向的值，&x 取变量地址。",
+          "指针的类型决定它指向的数据类型。"
+        ]
+      },
+      {
+        title: "栈与队列",
+        intro: "两者都是线性结构，但访问规则不同。",
+        bullets: [
+          "栈：后进先出 LIFO，只在栈顶插入和删除。",
+          "队列：先进先出 FIFO，队尾插入、队头删除。",
+          "栈常用于函数调用、表达式求值。",
+          "队列常用于任务调度、广度优先搜索。"
+        ]
+      },
+      {
+        title: "时间复杂度",
+        intro: "复杂度关注基本操作执行次数的增长阶。",
+        bullets: [
+          "顺序结构 O(1)，单层循环 O(n)，双重循环 O(n²)。",
+          "二分查找 O(log n)，要求数据有序。",
+          "冒泡排序最坏 O(n²)，快速排序平均 O(n log n)。",
+          "空间复杂度关注额外存储空间的增长。"
+        ]
+      }
+    ],
+    example: {
+      question: "int a[5] 的合法下标范围是什么？",
+      solution: [
+        "C 语言数组下标从 0 开始。",
+        "长度为 5 的数组下标是 0、1、2、3、4。",
+        "答案：0—4。"
+      ]
+    },
+    pitfalls: [
+      "数组下标从 1 开始计算。",
+      "混淆指针本身的值和指针指向的值。",
+      "把栈的 LIFO 和队列的 FIFO 记反。"
+    ],
+    mnemonic: "栈后进先出，队列先进先出；下标从 0 开始。"
+  },
+  s12: {
+    summary: "综合案例题考查专业知识的组织能力。按“问题—分析—方案—评价”作答，分点写术语，最容易得分。",
+    goals: ["掌握案例题答题结构", "规范绘制 UML 图和流程图", "形成简答题模板"],
+    sections: [
+      {
+        title: "案例题答题结构",
+        intro: "案例题不是写作文，而是按要点给分。",
+        bullets: [
+          "第一步：指出案例中的问题。",
+          "第二步：分析问题产生的原因。",
+          "第三步：给出解决方案。",
+          "第四步：评价方案的效果或风险。",
+          "每点用专业术语开头，再展开解释。"
+        ]
+      },
+      {
+        title: "画图规范",
+        intro: "画图题要注意图例、箭头和命名。",
+        bullets: [
+          "用例图：参与者、用例、关系要标清。",
+          "类图：类名、属性、方法、关系符号要规范。",
+          "流程图：开始/结束、判断、处理、箭头方向要完整。",
+          "DFD：外部实体、加工、数据流、数据存储要区分。"
+        ]
+      },
+      {
+        title: "简答题模板",
+        intro: "分点作答，关键词优先。",
+        bullets: [
+          "定义类：先下定义，再写特点和适用场景。",
+          "比较类：先列共同点，再列不同点。",
+          "过程类：按阶段顺序写，每阶段一句说明。",
+          "案例类：问题—分析—方案—评价。"
+        ]
+      }
+    ],
+    example: {
+      question: "案例：某系统需求频繁变更，瀑布模型导致返工严重，应如何改进？",
+      solution: [
+        "问题：需求变更频繁，瀑布模型不适应变化。",
+        "分析：瀑布模型前期锁定需求，后期变更成本高。",
+        "方案：改用增量或敏捷模型，缩短迭代周期，增加用户反馈。",
+        "评价：提高响应速度，但需要加强需求管理和版本控制。"
+      ]
+    },
+    pitfalls: [
+      "答案口语化，缺少专业术语。",
+      "不分点，阅卷老师难以找到得分点。",
+      "画图缺少图例或箭头方向。"
+    ],
+    mnemonic: "问题—分析—方案—评价。"
+  }
+};
+
+const CHEATSHEETS = {
+  math: {
+    title: "高等数学公式速查",
+    subtitle: "极限、导数、积分、级数与空间解析几何",
+    groups: [
+      {
+        title: "极限与等价无穷小",
+        items: [
+          { name: "重要极限", value: "lim(x→0)sinx/x=1；lim(x→∞)(1+1/x)^x=e" },
+          { name: "等价无穷小", value: "sinx~x，tanx~x，1-cosx~x²/2，ln(1+x)~x，e^x-1~x" },
+          { name: "1^∞ 型", value: "lim(1+ax)^(1/x)=e^a" }
+        ]
+      },
+      {
+        title: "导数公式",
+        items: [
+          { name: "幂函数", value: "(xⁿ)'=nxⁿ⁻¹" },
+          { name: "三角函数", value: "(sinx)'=cosx，(cosx)'=-sinx" },
+          { name: "指数对数", value: "(e^x)'=e^x，(lnx)'=1/x" },
+          { name: "链式法则", value: "y'=f'(u)·u'" }
+        ]
+      },
+      {
+        title: "积分公式",
+        items: [
+          { name: "幂函数", value: "∫xⁿdx=xⁿ⁺¹/(n+1)+C（n≠-1）" },
+          { name: "倒数", value: "∫1/x dx=ln|x|+C" },
+          { name: "指数", value: "∫e^xdx=e^x+C" },
+          { name: "分部积分", value: "∫u dv=uv-∫v du" }
+        ]
+      },
+      {
+        title: "级数与向量",
+        items: [
+          { name: "p 级数", value: "p>1 收敛，p≤1 发散" },
+          { name: "几何级数", value: "|q|<1 收敛，和 a/(1-q)" },
+          { name: "数量积", value: "a·b=|a||b|cosθ" },
+          { name: "平面法向量", value: "Ax+By+Cz+D=0 的法向量为 (A,B,C)" }
+        ]
+      }
+    ]
+  },
+  english: {
+    title: "英语语法与句型速查",
+    subtitle: "时态、从句、非谓语与写作模板",
+    groups: [
+      {
+        title: "时态与语态",
+        items: [
+          { name: "一般现在时", value: "习惯、客观事实；主将从现" },
+          { name: "现在完成时", value: "have/has done；since/for/already/yet" },
+          { name: "一般过去时", value: "yesterday/last year/ago" },
+          { name: "被动语态", value: "be+过去分词；时态体现在 be 上" }
+        ]
+      },
+      {
+        title: "从句",
+        items: [
+          { name: "定语从句", value: "缺人 who，缺物 which，缺状语 where/when" },
+          { name: "名词性从句", value: "缺成分用 what，不缺用 that" },
+          { name: "同位语从句", value: "解释 fact/idea/news，用 that" },
+          { name: "状语从句", value: "时间条件从句主将从现" }
+        ]
+      },
+      {
+        title: "非谓语",
+        items: [
+          { name: "to do", value: "目的、将来" },
+          { name: "doing", value: "习惯、主动；介词后接 doing" },
+          { name: "done", value: "被动、完成" },
+          { name: "高频搭配", value: "look forward to doing；be used to doing" }
+        ]
+      },
+      {
+        title: "写作句型",
+        items: [
+          { name: "邀请信开头", value: "I am writing to invite you to..." },
+          { name: "期待回复", value: "I would appreciate it if you could reply soon." },
+          { name: "重要句型", value: "It is+adj.+for sb.+to do sth." },
+          { name: "倒装", value: "Not until...did+主语+动词原形" }
+        ]
+      }
+    ]
+  },
+  it: {
+    title: "信息技术速查",
+    subtitle: "快捷键、Excel 函数、网络协议与存储单位",
+    groups: [
+      {
+        title: "Windows 快捷键",
+        items: [
+          { name: "复制/剪切/粘贴", value: "Ctrl+C / Ctrl+X / Ctrl+V" },
+          { name: "撤销/全选/保存", value: "Ctrl+Z / Ctrl+A / Ctrl+S" },
+          { name: "切换窗口", value: "Alt+Tab" },
+          { name: "任务管理器", value: "Ctrl+Shift+Esc" }
+        ]
+      },
+      {
+        title: "Excel 函数",
+        items: [
+          { name: "求和/平均", value: "SUM / AVERAGE" },
+          { name: "最值/计数", value: "MAX / MIN / COUNT" },
+          { name: "条件判断", value: "IF(条件,真值,假值)" },
+          { name: "查找", value: "VLOOKUP(查找值,区域,列号,匹配方式)" }
+        ]
+      },
+      {
+        title: "网络协议与端口",
+        items: [
+          { name: "HTTP/HTTPS", value: "80 / 443" },
+          { name: "DNS", value: "域名解析为 IP" },
+          { name: "SMTP", value: "发送邮件" },
+          { name: "POP3/IMAP", value: "接收邮件" },
+          { name: "IPv4", value: "32 位地址" }
+        ]
+      },
+      {
+        title: "单位与进制",
+        items: [
+          { name: "存储单位", value: "1KB=1024B，1MB=1024KB，1GB=1024MB" },
+          { name: "位与字节", value: "1Byte=8bit" },
+          { name: "进制", value: "二进制权为 2 的幂；八进制 3 位一组，十六进制 4 位一组" },
+          { name: "OSI 七层", value: "物数网传会表应" }
+        ]
+      }
+    ]
+  },
+  se: {
+    title: "软件工程速查",
+    subtitle: "生命周期、UML、测试与项目管理",
+    groups: [
+      {
+        title: "生命周期与模型",
+        items: [
+          { name: "三要素", value: "方法、工具、过程" },
+          { name: "阶段顺序", value: "可行性→需求→设计→编码→测试→维护" },
+          { name: "瀑布模型", value: "阶段清晰，难适应需求变化" },
+          { name: "敏捷模型", value: "迭代、快速反馈、适应变化" }
+        ]
+      },
+      {
+        title: "UML 图",
+        items: [
+          { name: "用例图", value: "参与者与系统功能" },
+          { name: "类图", value: "类与关联、聚合、组合、继承、依赖" },
+          { name: "顺序图", value: "消息的时间顺序" },
+          { name: "活动图", value: "业务流程与并发" }
+        ]
+      },
+      {
+        title: "测试与质量",
+        items: [
+          { name: "测试目的", value: "发现缺陷，不能证明无错" },
+          { name: "测试阶段", value: "单元→集成→系统→验收" },
+          { name: "黑盒/白盒", value: "黑盒看功能，白盒看代码" },
+          { name: "质量特性", value: "功能、可靠、易用、效率、可维护、可移植" }
+        ]
+      },
+      {
+        title: "项目与设计",
+        items: [
+          { name: "关键路径", value: "耗时最长的路径，决定最短工期" },
+          { name: "沟通路径", value: "n(n-1)/2" },
+          { name: "耦合/内聚", value: "低耦合、高内聚；功能内聚最高，内容耦合最差" },
+          { name: "详细设计工具", value: "程序流程图、N-S 图、PAD 图、伪代码" }
+        ]
+      }
+    ]
+  }
+};
+  </script>
+  <script>
 (function () {
   "use strict";
 
@@ -4127,12 +7256,13 @@ const QUESTIONS = [
   const VIEW_TITLES = {
     dashboard: "学习总览",
     today: "今日学习",
+    materials: "学习资料",
     practice: "每日巩固",
     exam: "阶段测验",
     analysis: "学情分析",
     settings: "设置"
   };
-  const NAV_ORDER = ["dashboard", "today", "practice", "exam", "analysis", "settings"];
+  const NAV_ORDER = ["dashboard", "today", "materials", "practice", "exam", "analysis", "settings"];
 
   const SUBJECT_MAP = {};
   SUBJECTS.forEach(function (s) { SUBJECT_MAP[s.id] = s; });
@@ -4153,7 +7283,11 @@ const QUESTIONS = [
     examConfig: { subject: "math", stage: "basic" },
     practice: null,
     exam: null,
-    examResult: null
+    examResult: null,
+    materialsSubject: "all",
+    materialsQuery: "",
+    readingUnit: null,
+    cheatsheet: null
   };
 
   let state = loadState();
@@ -4254,6 +7388,7 @@ const QUESTIONS = [
       practiceLog: [],
       exams: [],
       wrongs: [],
+      readMaterials: [],
       streak: { last: "", days: 0 },
       startedAt: todayKey()
     };
@@ -4323,6 +7458,9 @@ const QUESTIONS = [
         count: Number(x.count) || 1
       };
     }) : [];
+    result.readMaterials = Array.isArray(raw.readMaterials)
+      ? raw.readMaterials.filter(function (id) { return !!MATERIALS[id]; })
+      : [];
     result.streak = Object.assign({ last: "", days: 0 }, raw.streak || {});
     result.startedAt = /^\d{4}-\d{2}-\d{2}$/.test(result.startedAt || "") ? result.startedAt : def.startedAt;
     return result;
@@ -4821,6 +7959,10 @@ const QUESTIONS = [
 
   function navigate(view) {
     if (!VIEW_TITLES[view]) view = "dashboard";
+    if (view === "materials") {
+      ui.readingUnit = null;
+      ui.cheatsheet = null;
+    }
     if (location.hash === "#" + view) {
       ui.view = view;
       render();
@@ -5134,6 +8276,7 @@ const QUESTIONS = [
         (doneToday
           ? '<button class="btn btn-outline btn-sm" type="button" disabled>今日已完成</button>'
           : '<button class="btn btn-primary btn-sm" type="button" data-action="completeUnit" data-id="' + unit.id + '">' + (already ? "完成复习" : "标记已学") + "</button>") +
+        '<button class="btn btn-soft btn-sm" type="button" data-action="openMaterial" data-id="' + unit.id + '">看讲义</button>' +
         '<button class="btn btn-soft btn-sm" type="button" data-action="practiceUnit" data-id="' + unit.id + '">练这个单元</button>' +
         "</div></article>";
     }).join("");
@@ -5152,6 +8295,193 @@ const QUESTIONS = [
       '<div class="card"><span class="tag tag-soft">强化阶段</span><h3 style="font-size:14px;margin:10px 0 5px">专题突破综合题</h3><p style="font-size:12px;color:var(--muted)">把跨知识点题型拆开训练，错题当天复盘。</p></div>' +
       '<div class="card"><span class="tag tag-soft">冲刺阶段</span><h3 style="font-size:14px;margin:10px 0 5px">限时模拟稳得分</h3><p style="font-size:12px;color:var(--muted)">严格计时，优先把会做的题全部拿到分。</p></div>' +
       "</div>";
+  }
+
+  /* ---------- 学习资料 ---------- */
+  function materialIsRead(unitId) {
+    return state.readMaterials.indexOf(unitId) !== -1;
+  }
+
+  function materialMatches(unit, query) {
+    if (!query) return true;
+    const m = MATERIALS[unit.id];
+    if (!m) return false;
+    const parts = [unit.title, m.summary].concat(m.goals || []);
+    (m.sections || []).forEach(function (sec) {
+      parts.push(sec.title, sec.intro || "");
+      parts.push.apply(parts, sec.bullets || []);
+    });
+    if (m.example) {
+      parts.push(m.example.question || "");
+      parts.push.apply(parts, m.example.solution || []);
+    }
+    parts.push.apply(parts, m.pitfalls || []);
+    parts.push(m.mnemonic || "");
+    return parts.join(" ").toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  }
+
+  function openMaterial(unitId) {
+    if (!MATERIALS[unitId]) {
+      showToast("该单元讲义还在整理中");
+      return;
+    }
+    ui.readingUnit = unitId;
+    ui.cheatsheet = null;
+    ui.view = "materials";
+    if (location.hash === "#materials") {
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      location.hash = "materials";
+    }
+  }
+
+  function toggleMaterialRead(unitId) {
+    if (!MATERIALS[unitId]) return;
+    const idx = state.readMaterials.indexOf(unitId);
+    if (idx === -1) {
+      state.readMaterials.push(unitId);
+      touchStreak();
+      showToast("已标记为已读");
+    } else {
+      state.readMaterials.splice(idx, 1);
+      showToast("已取消已读标记");
+    }
+    saveState();
+    render();
+  }
+
+  function viewMaterials() {
+    if (ui.cheatsheet) return viewCheatsheet(ui.cheatsheet);
+    if (ui.readingUnit) return viewMaterialReader(ui.readingUnit);
+    const query = ui.materialsQuery || "";
+    const filter = ui.materialsSubject || "all";
+    const filtered = UNITS.filter(function (u) {
+      if (filter !== "all" && u.subject !== filter) return false;
+      return materialMatches(u, query);
+    });
+    const readCount = state.readMaterials.length;
+    const tabs = [{ id: "all", name: "全部资料", color: "#1d4ed8", soft: "#eff6ff" }].concat(SUBJECTS.map(function (s) {
+      return { id: s.id, name: s.short, color: s.color, soft: s.soft };
+    })).map(function (t) {
+      return '<button class="tab-pill' + (filter === t.id ? " active" : "") + '" type="button" data-action="filterMaterials" data-id="' + t.id + '">' +
+        esc(t.name) + "</button>";
+    }).join("");
+
+    const cheatCards = SUBJECTS.map(function (s) {
+      const c = CHEATSHEETS[s.id];
+      if (!c) return "";
+      return '<article class="cheat-card card" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
+        '<span class="subject-icon">' + esc(s.icon) + "</span>" +
+        "<div><h3>" + esc(c.title) + "</h3><p>" + esc(c.subtitle) + "</p></div>" +
+        '<button class="text-link" type="button" data-action="openCheatsheet" data-id="' + s.id + '">查看 →</button></article>';
+    }).join("");
+
+    const cards = filtered.map(function (unit) {
+      const m = MATERIALS[unit.id];
+      const s = SUBJECT_MAP[unit.subject];
+      if (!m) return "";
+      const read = materialIsRead(unit.id);
+      const sectionCount = (m.sections || []).length;
+      return '<article class="material-card card" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
+        '<div class="material-top"><span class="subject-icon">' + esc(s.icon) + "</span>" +
+        "<div><span class=\"tag tag-soft\">" + esc(STAGE_MAP[unit.stage].name) + "</span>" +
+        "<h3>" + esc(unit.title) + "</h3><p>" + esc(s.name) + " · " + sectionCount + " 节 · 1 道例题</p></div>" +
+        (read ? '<span class="read-badge">已读</span>' : '<span class="read-badge muted">未读</span>') + "</div>" +
+        '<p class="material-summary">' + esc(m.summary) + "</p>" +
+        '<div class="material-foot">' +
+        '<button class="btn btn-sm btn-soft" type="button" data-action="openMaterial" data-id="' + unit.id + '">阅读讲义</button>' +
+        '<button class="text-link" type="button" data-action="practiceUnit" data-id="' + unit.id + '">配套练习 →</button>' +
+        "</div></article>";
+    }).join("");
+
+    const empty = '<div class="empty"><strong>没有找到匹配的讲义</strong>换一个关键词，或切换到其他科目试试。</div>';
+
+    return '<div class="page-head"><div><h2>学习资料</h2>' +
+      "<p>四科 48 份精讲讲义，每份包含学习目标、知识讲解、例题、易错点和记忆口诀。先读讲义，再做配套练习，效果更好。</p></div>" +
+      '<div class="day-badge"><strong>' + readCount + "</strong><span>已读讲义<br>/ 48</span></div></div>" +
+      '<section class="materials-hero card">' +
+      '<div class="materials-hero-copy"><span class="eyebrow">精讲讲义 · 速查手册</span>' +
+      "<h2>把知识点讲清楚，再去做题</h2>" +
+      "<p>讲义按今日学习顺序编排，可以配合每单元配套题使用。阅读后标记“已读”，系统会记录你的资料学习进度。</p>" +
+      '<div class="material-stats"><div><strong>' + UNITS.length + "</strong><span>份单元讲义</span></div>" +
+      "<div><strong>4</strong><span>份速查手册</span></div>" +
+      "<div><strong>" + readCount + "</strong><span>已读讲义</span></div></div></div>" +
+      '<div class="search-box"><input id="materialSearchInput" type="search" value="' + esc(query) + '" placeholder="搜索知识点，如：极限、从句、Excel、关键路径">' +
+      '<button class="btn btn-primary btn-sm" type="button" data-action="applyMaterialSearch">搜索</button>' +
+      (query ? '<button class="text-link" type="button" data-action="clearMaterialSearch">清除</button>' : "") + "</div></section>" +
+      '<div class="subject-tabs">' + tabs + "</div>" +
+      '<div class="section-head"><div><h2>速查手册</h2><p>考前快速回顾公式、句型和概念</p></div></div>' +
+      '<div class="cheat-grid">' + cheatCards + "</div>" +
+      '<div class="section-head"><div><h2>单元讲义</h2><p>' + (query ? "搜索“" + esc(query) + "” · " : "") + "共 " + filtered.length + " 份</p></div>" +
+      '<span class="tag">' + esc(filter === "all" ? "全部科目" : SUBJECT_MAP[filter].name) + "</span></div>" +
+      '<div class="material-grid">' + (cards || empty) + "</div>" +
+      '<p class="footer-note">讲义为备考学习资料，题目与解析可在“每日巩固”和“阶段测验”中练习。</p>';
+  }
+
+  function viewMaterialReader(unitId) {
+    const unit = UNIT_MAP[unitId];
+    const m = MATERIALS[unitId];
+    if (!unit || !m) { ui.readingUnit = null; return viewMaterials(); }
+    const s = SUBJECT_MAP[unit.subject];
+    const read = materialIsRead(unitId);
+    const list = unitsOf(unit.subject);
+    const idx = list.findIndex(function (u) { return u.id === unitId; });
+    const prev = idx > 0 ? list[idx - 1] : null;
+    const next = idx >= 0 && idx < list.length - 1 ? list[idx + 1] : null;
+
+    const sections = (m.sections || []).map(function (sec, i) {
+      return '<section class="article-section"><h3><span class="section-index">' + (i + 1) + "</span>" + esc(sec.title) + "</h3>" +
+        (sec.intro ? '<p class="article-intro">' + esc(sec.intro) + "</p>" : "") +
+        '<ul class="article-points">' + (sec.bullets || []).map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") + "</ul></section>";
+    }).join("");
+
+    const goals = (m.goals || []).map(function (g) { return "<li>" + esc(g) + "</li>"; }).join("");
+    const pitfalls = (m.pitfalls || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
+    const solution = (m.example && m.example.solution || []).map(function (x, i) {
+      return "<li><span class=\"step-index\">" + (i + 1) + "</span>" + esc(x) + "</li>";
+    }).join("");
+
+    return '<div class="reader-top"><button class="btn btn-outline btn-sm" type="button" data-action="backMaterials">← 返回资料库</button>' +
+      '<div class="reader-actions">' +
+      '<button class="btn ' + (read ? "btn-outline" : "btn-primary") + ' btn-sm" type="button" data-action="toggleMaterialRead" data-id="' + unit.id + '">' +
+      (read ? "取消已读" : "标记已读") + "</button>" +
+      '<button class="btn btn-soft btn-sm" type="button" data-action="practiceUnit" data-id="' + unit.id + '">做配套练习</button>' +
+      "</div></div>" +
+      '<article class="reader-article card" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
+      '<header class="article-head"><div class="article-tags"><span class="tag tag-soft">' + esc(s.name) + "</span><span class=\"tag\">" +
+      esc(STAGE_MAP[unit.stage].name) + '</span><span class="tag">讲义 ' + (idx + 1) + "/" + list.length + "</span></div>" +
+      "<h1>" + esc(unit.title) + "</h1><p>" + esc(m.summary) + "</p></header>" +
+      '<div class="article-goals"><strong>学完这份讲义，你应该能</strong><ul>' + goals + "</ul></div>" +
+      '<div class="article-body">' + sections + "</div>" +
+      (m.example ? '<div class="example-box"><div class="example-label">例题</div><h3>' + esc(m.example.question) + "</h3>" +
+        '<ol class="example-steps">' + solution + "</ol></div>" : "") +
+      '<div class="pitfall-box"><div class="example-label">易错点</div><ul>' + pitfalls + "</ul></div>" +
+      '<div class="mnemonic-box"><span>记忆口诀</span><strong>' + esc(m.mnemonic) + "</strong></div>" +
+      '<div class="reader-nav">' +
+      (prev ? '<button class="btn btn-outline btn-sm" type="button" data-action="openMaterial" data-id="' + prev.id + '">← ' + esc(prev.title) + "</button>" : "<span></span>") +
+      (next ? '<button class="btn btn-outline btn-sm" type="button" data-action="openMaterial" data-id="' + next.id + '">' + esc(next.title) + " →</button>" : "<span></span>") +
+      "</div></article>" +
+      '<p class="footer-note">读完后可以标记已读，再进入配套练习检验掌握情况。</p>';
+  }
+
+  function viewCheatsheet(subjectId) {
+    const c = CHEATSHEETS[subjectId];
+    const s = SUBJECT_MAP[subjectId];
+    if (!c || !s) { ui.cheatsheet = null; return viewMaterials(); }
+    const groups = c.groups.map(function (g) {
+      return '<section class="cheat-group"><h3>' + esc(g.title) + '</h3><div class="cheat-items">' +
+        g.items.map(function (item) {
+          return '<div class="cheat-item"><span>' + esc(item.name) + "</span><strong>" + esc(item.value) + "</strong></div>";
+        }).join("") + "</div></section>";
+    }).join("");
+    return '<div class="reader-top"><button class="btn btn-outline btn-sm" type="button" data-action="backMaterials">← 返回资料库</button>' +
+      '<button class="btn btn-soft btn-sm" type="button" data-action="practiceSubject" data-id="' + subjectId + '">做' + esc(s.short) + "专项练习</button></div>" +
+      '<article class="reader-article card" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
+      '<header class="article-head"><div class="article-tags"><span class="tag tag-soft">速查手册</span><span class="tag">' + esc(s.name) + "</span></div>" +
+      "<h1>" + esc(c.title) + "</h1><p>" + esc(c.subtitle) + "。适合考前快速回顾，也适合做题时查漏补缺。</p></header>" +
+      '<div class="cheat-groups">' + groups + "</div></article>" +
+      '<p class="footer-note">速查表用于快速回忆，不替代系统学习。建议配合对应单元讲义使用。</p>';
   }
 
   /* ---------- 每日巩固 ---------- */
@@ -5694,6 +9024,7 @@ const QUESTIONS = [
     let html = "";
     switch (ui.view) {
       case "today": html = viewToday(); break;
+      case "materials": html = viewMaterials(); break;
       case "practice": html = viewPractice(); break;
       case "exam": html = viewExam(); break;
       case "analysis": html = viewAnalysis(); break;
@@ -5716,6 +9047,17 @@ const QUESTIONS = [
   }
 
   /* ---------- 事件绑定 ---------- */
+  function applyMaterialSearch() {
+    const input = document.getElementById("materialSearchInput");
+    ui.materialsQuery = input ? input.value.trim() : "";
+    render();
+    const next = document.getElementById("materialSearchInput");
+    if (next) {
+      next.focus();
+      try { next.setSelectionRange(next.value.length, next.value.length); } catch (err) {}
+    }
+  }
+
   function handleViewClick(e) {
     const target = e.target.closest("[data-action]");
     if (target) {
@@ -5759,6 +9101,44 @@ const QUESTIONS = [
         }
         ui.practice = null;
         render();
+        return;
+      }
+      if (action === "openMaterial") {
+        openMaterial(target.dataset.id);
+        return;
+      }
+      if (action === "backMaterials") {
+        ui.readingUnit = null;
+        ui.cheatsheet = null;
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      if (action === "toggleMaterialRead") {
+        toggleMaterialRead(target.dataset.id);
+        return;
+      }
+      if (action === "filterMaterials") {
+        ui.materialsSubject = target.dataset.id === "all" || SUBJECT_MAP[target.dataset.id] ? target.dataset.id : "all";
+        render();
+        return;
+      }
+      if (action === "applyMaterialSearch") {
+        applyMaterialSearch();
+        return;
+      }
+      if (action === "clearMaterialSearch") {
+        ui.materialsQuery = "";
+        render();
+        return;
+      }
+      if (action === "openCheatsheet") {
+        if (CHEATSHEETS[target.dataset.id]) {
+          ui.cheatsheet = target.dataset.id;
+          ui.readingUnit = null;
+          render();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
         return;
       }
       if (action === "startDaily") {
@@ -5884,6 +9264,12 @@ const QUESTIONS = [
     document.getElementById("view").addEventListener("click", handleViewClick);
     document.getElementById("view").addEventListener("change", function (e) {
       if (e.target && e.target.id === "importFile") importDataFile(e.target.files[0]);
+    });
+    document.getElementById("view").addEventListener("keydown", function (e) {
+      if (e.target && e.target.id === "materialSearchInput" && e.key === "Enter") {
+        e.preventDefault();
+        applyMaterialSearch();
+      }
     });
     document.getElementById("themeBtn").addEventListener("click", function () {
       state.profile.theme = state.profile.theme === "dark" ? "light" : "dark";
