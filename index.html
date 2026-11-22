@@ -4717,6 +4717,4326 @@ const QUESTIONS = [
     options: ["写成一大段长文", "分点作答并突出专业术语", "只写一个结论", "用口语化表达"],
     answer: 1,
     explain: "分点作答便于阅卷，专业术语能体现掌握程度，是主观题得分关键。"
+  },
+  {
+    "id": "q121",
+    "subject": "math",
+    "unit": "m1",
+    "stage": "basic",
+    "stem": "求极限 lim(x→0) sin2x / (3x) 的值。",
+    "options": [
+      "2/3",
+      "1",
+      "3/2",
+      "0"
+    ],
+    "answer": 0,
+    "explain": "x→0 时 sin2x ~ 2x，所以 sin2x/(3x) → 2x/(3x)=2/3。"
+  },
+  {
+    "id": "q122",
+    "subject": "math",
+    "unit": "m1",
+    "stage": "basic",
+    "stem": "求极限 lim(x→∞) (3x²-2x+1)/(x²+4)。",
+    "options": [
+      "3",
+      "无穷大",
+      "0",
+      "1"
+    ],
+    "answer": 0,
+    "explain": "分子分母同除以 x²，最高次项系数之比为 3/1=3。"
+  },
+  {
+    "id": "q123",
+    "subject": "math",
+    "unit": "m1",
+    "stage": "basic",
+    "stem": "求极限 lim(x→0) (1+3x)^(1/x)。",
+    "options": [
+      "3e",
+      "e",
+      "e²",
+      "e³"
+    ],
+    "answer": 3,
+    "explain": "利用 lim(1+u)^(1/u)=e，令 u=3x，原式=[(1+3x)^(1/(3x))]³ → e³。"
+  },
+  {
+    "id": "q124",
+    "subject": "math",
+    "unit": "m1",
+    "stage": "basic",
+    "stem": "当 x→0 时，1-cos2x 与下列哪个量等价？",
+    "options": [
+      "x²",
+      "2x²",
+      "4x²",
+      "x²/2"
+    ],
+    "answer": 1,
+    "explain": "1-cos2x=2sin²x ~ 2x²，所以等价于 2x²。"
+  },
+  {
+    "id": "q125",
+    "subject": "math",
+    "unit": "m1",
+    "stage": "basic",
+    "stem": "函数 f(x)=(x²-1)/(x-1) 在 x=1 处的间断类型是（ ）。",
+    "options": [
+      "跳跃间断点",
+      "无穷间断点",
+      "振荡间断点",
+      "可去间断点"
+    ],
+    "answer": 3,
+    "explain": "约分后 f(x)=x+1（x≠1），x→1 时极限为 2，极限存在但函数无定义，属于可去间断点。"
+  },
+  {
+    "id": "q126",
+    "subject": "math",
+    "unit": "m1",
+    "stage": "basic",
+    "stem": "求极限 lim(x→0) ln(1+2x)/x。",
+    "options": [
+      "2",
+      "e²",
+      "0",
+      "1"
+    ],
+    "answer": 0,
+    "explain": "x→0 时 ln(1+2x) ~ 2x，所以原式 → 2x/x=2。"
+  },
+  {
+    "id": "q127",
+    "subject": "math",
+    "unit": "m2",
+    "stage": "basic",
+    "stem": "设 y=sin2x，则 y' 等于（ ）。",
+    "options": [
+      "2sin2x",
+      "cos2x",
+      "2cos2x",
+      "-2cos2x"
+    ],
+    "answer": 2,
+    "explain": "复合函数求导，外层 sin 的导数为 cos，再乘内层 2x 的导数 2。"
+  },
+  {
+    "id": "q128",
+    "subject": "math",
+    "unit": "m2",
+    "stage": "basic",
+    "stem": "设 y=ln(x²+1)，则 y' 等于（ ）。",
+    "options": [
+      "1/(x²+1)",
+      "2x/(x²+1)",
+      "2x",
+      "x/(x²+1)"
+    ],
+    "answer": 1,
+    "explain": "外层 ln 求导得 1/(x²+1)，再乘内层导数 2x。"
+  },
+  {
+    "id": "q129",
+    "subject": "math",
+    "unit": "m2",
+    "stage": "basic",
+    "stem": "函数 y=tanx 的导数是（ ）。",
+    "options": [
+      "csc²x",
+      "-sec²x",
+      "1/cosx",
+      "sec²x"
+    ],
+    "answer": 3,
+    "explain": "(tanx)'=sec²x=1/cos²x，这是基本求导公式。"
+  },
+  {
+    "id": "q130",
+    "subject": "math",
+    "unit": "m2",
+    "stage": "basic",
+    "stem": "设 y=x/(x+1)，则 y' 等于（ ）。",
+    "options": [
+      "1/(x+1)",
+      "-1/(x+1)²",
+      "1/(x+1)²",
+      "x/(x+1)²"
+    ],
+    "answer": 2,
+    "explain": "用商法则：[(x)'(x+1)-x(x+1)']/(x+1)²=[(x+1)-x]/(x+1)²=1/(x+1)²。"
+  },
+  {
+    "id": "q131",
+    "subject": "math",
+    "unit": "m2",
+    "stage": "basic",
+    "stem": "曲线 y=x² 在 x=1 处的切线斜率是（ ）。",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": 2,
+    "explain": "y'=2x，代入 x=1 得切线斜率 2。"
+  },
+  {
+    "id": "q132",
+    "subject": "math",
+    "unit": "m2",
+    "stage": "basic",
+    "stem": "关于函数可导与连续的关系，正确的是（ ）。",
+    "options": [
+      "可导必连续",
+      "连续必可导",
+      "二者等价",
+      "二者互不相关"
+    ],
+    "answer": 0,
+    "explain": "可导一定连续，但连续不一定可导，例如 y=|x| 在 x=0 处连续但不可导。"
+  },
+  {
+    "id": "q133",
+    "subject": "math",
+    "unit": "m3",
+    "stage": "basic",
+    "stem": "函数 y=x³-3x 的单调递增区间是（ ）。",
+    "options": [
+      "(-1,1)",
+      "(-∞,1)",
+      "(1,+∞)",
+      "(-∞,-1)∪(1,+∞)"
+    ],
+    "answer": 3,
+    "explain": "y'=3x²-3=3(x-1)(x+1)，当 x<-1 或 x>1 时 y'>0，函数递增。"
+  },
+  {
+    "id": "q134",
+    "subject": "math",
+    "unit": "m3",
+    "stage": "basic",
+    "stem": "函数 f(x)=x²-4x+1 的极小值是（ ）。",
+    "options": [
+      "1",
+      "3",
+      "-3",
+      "-1"
+    ],
+    "answer": 2,
+    "explain": "f'(x)=2x-4，令其为 0 得 x=2，f(2)=4-8+1=-3，且 f''=2>0，为极小值。"
+  },
+  {
+    "id": "q135",
+    "subject": "math",
+    "unit": "m3",
+    "stage": "basic",
+    "stem": "函数 f(x)=x³ 在 x=0 处（ ）。",
+    "options": [
+      "无法判断",
+      "取得极小值",
+      "取得极大值",
+      "不是极值点"
+    ],
+    "answer": 3,
+    "explain": "f'(0)=0，但 f'(x)=3x² 在 x=0 两侧都为正，不变号，所以 x=0 不是极值点。"
+  },
+  {
+    "id": "q136",
+    "subject": "math",
+    "unit": "m3",
+    "stage": "basic",
+    "stem": "当 x>0 时，函数 f(x)=x+1/x 的最小值是（ ）。",
+    "options": [
+      "1",
+      "2",
+      "e",
+      "4"
+    ],
+    "answer": 1,
+    "explain": "由基本不等式 x+1/x≥2√(x·1/x)=2，当 x=1 时取等号。"
+  },
+  {
+    "id": "q137",
+    "subject": "math",
+    "unit": "m3",
+    "stage": "basic",
+    "stem": "若在某区间内恒有 f''(x)>0，则曲线在该区间内（ ）。",
+    "options": [
+      "凸（上凸）",
+      "是直线",
+      "无法确定",
+      "凹（下凸）"
+    ],
+    "answer": 3,
+    "explain": "二阶导数大于零表示切线斜率递增，曲线呈凹向上（下凸）形状。"
+  },
+  {
+    "id": "q138",
+    "subject": "math",
+    "unit": "m3",
+    "stage": "basic",
+    "stem": "函数 f(x)=x²-2x 在闭区间 [0,2] 上的最大值是（ ）。",
+    "options": [
+      "1",
+      "2",
+      "-1",
+      "0"
+    ],
+    "answer": 3,
+    "explain": "f(0)=0，f(2)=0，顶点 x=1 处 f(1)=-1，所以最大值为 0。"
+  },
+  {
+    "id": "q139",
+    "subject": "math",
+    "unit": "m4",
+    "stage": "basic",
+    "stem": "求不定积分 ∫2x dx。",
+    "options": [
+      "2x+C",
+      "x²+C",
+      "2x²+C",
+      "x²"
+    ],
+    "answer": 1,
+    "explain": "∫2x dx=x²+C，不定积分结果必须带任意常数 C。"
+  },
+  {
+    "id": "q140",
+    "subject": "math",
+    "unit": "m4",
+    "stage": "basic",
+    "stem": "求不定积分 ∫cosx dx。",
+    "options": [
+      "sinx+C",
+      "-sinx+C",
+      "cosx+C",
+      "-cosx+C"
+    ],
+    "answer": 0,
+    "explain": "因为 (sinx)'=cosx，所以 ∫cosx dx=sinx+C。"
+  },
+  {
+    "id": "q141",
+    "subject": "math",
+    "unit": "m4",
+    "stage": "basic",
+    "stem": "求不定积分 ∫e^(3x) dx。",
+    "options": [
+      "3e^(3x)+C",
+      "e^(3x)/3+C",
+      "e^(3x)/9+C",
+      "e^(3x)+C"
+    ],
+    "answer": 1,
+    "explain": "凑微分：∫e^(3x)dx=(1/3)∫e^(3x)d(3x)=e^(3x)/3+C。"
+  },
+  {
+    "id": "q142",
+    "subject": "math",
+    "unit": "m4",
+    "stage": "basic",
+    "stem": "求不定积分 ∫1/(x+1) dx。",
+    "options": [
+      "1/(x+1)²+C",
+      "(x+1)+C",
+      "lnx+C",
+      "ln|x+1|+C"
+    ],
+    "answer": 3,
+    "explain": "∫1/(x+1)d(x+1)=ln|x+1|+C，绝对值不能省略。"
+  },
+  {
+    "id": "q143",
+    "subject": "math",
+    "unit": "m4",
+    "stage": "basic",
+    "stem": "求不定积分 ∫x sinx dx。",
+    "options": [
+      "x sinx-cosx+C",
+      "-x cosx+sinx+C",
+      "x cosx-sinx+C",
+      "-x sinx+cosx+C"
+    ],
+    "answer": 1,
+    "explain": "分部积分，取 u=x，dv=sinx dx，得 -x cosx+∫cosx dx=-x cosx+sinx+C。"
+  },
+  {
+    "id": "q144",
+    "subject": "math",
+    "unit": "m4",
+    "stage": "basic",
+    "stem": "求不定积分 ∫(2x+3)^5 dx。",
+    "options": [
+      "(2x+3)^6+C",
+      "(2x+3)^6/12+C",
+      "(2x+3)^6/6+C",
+      "5(2x+3)^4+C"
+    ],
+    "answer": 1,
+    "explain": "凑微分 d(2x+3)=2dx，原式=(1/2)·(2x+3)^6/6+C=(2x+3)^6/12+C。"
+  },
+  {
+    "id": "q145",
+    "subject": "math",
+    "unit": "m5",
+    "stage": "strong",
+    "stem": "计算定积分 ∫₀¹ 3x² dx。",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": 0,
+    "explain": "原函数为 x³，代入上下限得 1³-0=1。"
+  },
+  {
+    "id": "q146",
+    "subject": "math",
+    "unit": "m5",
+    "stage": "strong",
+    "stem": "计算定积分 ∫₀^(π/2) cosx dx。",
+    "options": [
+      "2",
+      "π/2",
+      "0",
+      "1"
+    ],
+    "answer": 3,
+    "explain": "原函数为 sinx，代入得 sin(π/2)-sin0=1。"
+  },
+  {
+    "id": "q147",
+    "subject": "math",
+    "unit": "m5",
+    "stage": "strong",
+    "stem": "计算定积分 ∫₋₁¹ x³ dx。",
+    "options": [
+      "-1",
+      "0",
+      "2",
+      "1"
+    ],
+    "answer": 1,
+    "explain": "x³ 是奇函数，在对称区间 [-1,1] 上的积分为 0。"
+  },
+  {
+    "id": "q148",
+    "subject": "math",
+    "unit": "m5",
+    "stage": "strong",
+    "stem": "计算定积分 ∫₀² (x+1) dx。",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "answer": 2,
+    "explain": "原函数为 x²/2+x，代入得 (2+2)-0=4。"
+  },
+  {
+    "id": "q149",
+    "subject": "math",
+    "unit": "m5",
+    "stage": "strong",
+    "stem": "求导数 d/dx ∫₀^(x²) sin t dt。",
+    "options": [
+      "2x sin x²",
+      "x² sin x²",
+      "cos x²",
+      "sin x²"
+    ],
+    "answer": 0,
+    "explain": "变上限积分求导，被积函数在 φ(x)=x² 处取值，再乘 φ'(x)=2x，得 2x sin x²。"
+  },
+  {
+    "id": "q150",
+    "subject": "math",
+    "unit": "m5",
+    "stage": "strong",
+    "stem": "曲线 y=x 与 y=x² 在 [0,1] 上围成的面积为（ ）。",
+    "options": [
+      "1/4",
+      "1/6",
+      "1/2",
+      "1/3"
+    ],
+    "answer": 1,
+    "explain": "面积 S=∫₀¹(x-x²)dx=[x²/2-x³/3]₀¹=1/2-1/3=1/6。"
+  },
+  {
+    "id": "q151",
+    "subject": "math",
+    "unit": "m6",
+    "stage": "strong",
+    "stem": "微分方程 y'=3x² 的通解是（ ）。",
+    "options": [
+      "y=x²+C",
+      "y=x³",
+      "y=x³+C",
+      "y=3x³+C"
+    ],
+    "answer": 2,
+    "explain": "两边积分得 y=∫3x²dx=x³+C，通解含任意常数。"
+  },
+  {
+    "id": "q152",
+    "subject": "math",
+    "unit": "m6",
+    "stage": "strong",
+    "stem": "微分方程 y'=y 的通解是（ ）。",
+    "options": [
+      "y=Cx",
+      "y=Ce^x",
+      "y=e^x+C",
+      "y=C+x"
+    ],
+    "answer": 1,
+    "explain": "分离变量 dy/y=dx，积分得 ln|y|=x+C₁，即 y=Ce^x。"
+  },
+  {
+    "id": "q153",
+    "subject": "math",
+    "unit": "m6",
+    "stage": "strong",
+    "stem": "微分方程 y''-3y'+2y=0 的通解是（ ）。",
+    "options": [
+      "C₁e^(-x)+C₂e^(-2x)",
+      "C₁cosx+C₂sinx",
+      "C₁e^x+C₂e^(-2x)",
+      "C₁e^x+C₂e^(2x)"
+    ],
+    "answer": 3,
+    "explain": "特征方程 r²-3r+2=0，根为 r=1、2，所以通解为 C₁e^x+C₂e^(2x)。"
+  },
+  {
+    "id": "q154",
+    "subject": "math",
+    "unit": "m6",
+    "stage": "strong",
+    "stem": "微分方程 y'=2x，且 y(0)=1，其特解是（ ）。",
+    "options": [
+      "y=2x+1",
+      "y=x²-1",
+      "y=x²",
+      "y=x²+1"
+    ],
+    "answer": 3,
+    "explain": "通解 y=x²+C，代入 y(0)=1 得 C=1，所以 y=x²+1。"
+  },
+  {
+    "id": "q155",
+    "subject": "math",
+    "unit": "m6",
+    "stage": "strong",
+    "stem": "微分方程 dy/dx=x/y 的通解是（ ）。",
+    "options": [
+      "y=x²+C",
+      "y²=x²+C",
+      "y=x+C",
+      "y²=x²"
+    ],
+    "answer": 1,
+    "explain": "分离变量 y dy=x dx，两边积分得 y²/2=x²/2+C₁，即 y²=x²+C。"
+  },
+  {
+    "id": "q156",
+    "subject": "math",
+    "unit": "m6",
+    "stage": "strong",
+    "stem": "微分方程 y''+4y=0 的通解是（ ）。",
+    "options": [
+      "C₁e^(2x)+C₂e^(-2x)",
+      "C₁cos2x+C₂sin2x",
+      "C₁cosx+C₂sinx",
+      "C₁+C₂x"
+    ],
+    "answer": 1,
+    "explain": "特征方程 r²+4=0，根为 r=±2i，所以通解为 C₁cos2x+C₂sin2x。"
+  },
+  {
+    "id": "q157",
+    "subject": "math",
+    "unit": "m7",
+    "stage": "strong",
+    "stem": "设 z=x²+y²，则 ∂z/∂y 等于（ ）。",
+    "options": [
+      "2y",
+      "x²",
+      "y²",
+      "2x"
+    ],
+    "answer": 0,
+    "explain": "对 y 求偏导时把 x 视为常数，所以 z 对 y 的偏导为 2y。"
+  },
+  {
+    "id": "q158",
+    "subject": "math",
+    "unit": "m7",
+    "stage": "strong",
+    "stem": "设 z=e^(xy)，则 ∂z/∂x 等于（ ）。",
+    "options": [
+      "x e^(xy)",
+      "xy e^(xy)",
+      "e^(xy)",
+      "y e^(xy)"
+    ],
+    "answer": 3,
+    "explain": "对 x 求偏导时把 y 视为常数，链式法则得 e^(xy)·y。"
+  },
+  {
+    "id": "q159",
+    "subject": "math",
+    "unit": "m7",
+    "stage": "strong",
+    "stem": "设 z=x²+y²，则全微分 dz 等于（ ）。",
+    "options": [
+      "2x dx",
+      "2x dx+2y dy",
+      "x dx+y dy",
+      "2xy dxdy"
+    ],
+    "answer": 1,
+    "explain": "dz=(∂z/∂x)dx+(∂z/∂y)dy=2x dx+2y dy。"
+  },
+  {
+    "id": "q160",
+    "subject": "math",
+    "unit": "m7",
+    "stage": "strong",
+    "stem": "计算 ∫∫_D x dA，其中 D：0≤x≤1，0≤y≤1。",
+    "options": [
+      "1/4",
+      "1/3",
+      "1/2",
+      "1"
+    ],
+    "answer": 2,
+    "explain": "化为累次积分 ∫₀¹x dx·∫₀¹dy=(1/2)·1=1/2。"
+  },
+  {
+    "id": "q161",
+    "subject": "math",
+    "unit": "m7",
+    "stage": "strong",
+    "stem": "设 z=x³y²，则 ∂z/∂x 在点 (1,1) 处的值是（ ）。",
+    "options": [
+      "2",
+      "3",
+      "6",
+      "1"
+    ],
+    "answer": 1,
+    "explain": "∂z/∂x=3x²y²，代入 (1,1) 得 3。"
+  },
+  {
+    "id": "q162",
+    "subject": "math",
+    "unit": "m7",
+    "stage": "strong",
+    "stem": "把二重积分化为累次积分时，最关键的一步是（ ）。",
+    "options": [
+      "求极限",
+      "解微分方程",
+      "先求导",
+      "画出积分区域并确定上下限"
+    ],
+    "answer": 3,
+    "explain": "先画区域图，再根据区域形状确定积分次序与上下限，能有效避免出错。"
+  },
+  {
+    "id": "q163",
+    "subject": "math",
+    "unit": "m8",
+    "stage": "strong",
+    "stem": "级数 ∑(n=1→∞) 1/n 的敛散性是（ ）。",
+    "options": [
+      "无法确定",
+      "收敛",
+      "发散",
+      "条件收敛"
+    ],
+    "answer": 2,
+    "explain": "调和级数 ∑1/n 是发散的，虽然通项趋于 0，但部分和无限增大。"
+  },
+  {
+    "id": "q164",
+    "subject": "math",
+    "unit": "m8",
+    "stage": "strong",
+    "stem": "级数 ∑(n=1→∞) 1/n³ 的敛散性是（ ）。",
+    "options": [
+      "收敛",
+      "发散",
+      "条件收敛",
+      "无法确定"
+    ],
+    "answer": 0,
+    "explain": "这是 p 级数，p=3>1，所以收敛。"
+  },
+  {
+    "id": "q165",
+    "subject": "math",
+    "unit": "m8",
+    "stage": "strong",
+    "stem": "级数 ∑(n=1→∞)(1/3)^n 的和是（ ）。",
+    "options": [
+      "1/3",
+      "3/2",
+      "2",
+      "1/2"
+    ],
+    "answer": 3,
+    "explain": "首项 a=1/3，公比 q=1/3，和为 a/(1-q)=(1/3)/(2/3)=1/2。"
+  },
+  {
+    "id": "q166",
+    "subject": "math",
+    "unit": "m8",
+    "stage": "strong",
+    "stem": "级数 ∑(n=1→∞)(-1)^n 的敛散性是（ ）。",
+    "options": [
+      "绝对收敛",
+      "条件收敛",
+      "收敛",
+      "发散"
+    ],
+    "answer": 3,
+    "explain": "通项 (-1)^n 不趋于 0，不满足收敛的必要条件，所以发散。"
+  },
+  {
+    "id": "q167",
+    "subject": "math",
+    "unit": "m8",
+    "stage": "strong",
+    "stem": "用比值判别法判断正项级数时，若极限 ρ<1，则级数（ ）。",
+    "options": [
+      "一定等于 0",
+      "收敛",
+      "发散",
+      "无法判断"
+    ],
+    "answer": 1,
+    "explain": "比值判别法：ρ<1 收敛，ρ>1 发散，ρ=1 时失效。"
+  },
+  {
+    "id": "q168",
+    "subject": "math",
+    "unit": "m8",
+    "stage": "strong",
+    "stem": "级数 ∑(n=0→∞) 2(1/2)^n 的和是（ ）。",
+    "options": [
+      "2",
+      "4",
+      "1",
+      "8"
+    ],
+    "answer": 1,
+    "explain": "首项 a=2，公比 q=1/2，和为 2/(1-1/2)=4。"
+  },
+  {
+    "id": "q169",
+    "subject": "math",
+    "unit": "m9",
+    "stage": "sprint",
+    "stem": "设 a=(1,0,-1)，b=(2,1,0)，则 a·b 等于（ ）。",
+    "options": [
+      "2",
+      "3",
+      "0",
+      "1"
+    ],
+    "answer": 0,
+    "explain": "数量积为对应分量乘积之和：1×2+0×1+(-1)×0=2。"
+  },
+  {
+    "id": "q170",
+    "subject": "math",
+    "unit": "m9",
+    "stage": "sprint",
+    "stem": "向量 a=(3,4,0) 的模长是（ ）。",
+    "options": [
+      "25",
+      "4",
+      "5",
+      "7"
+    ],
+    "answer": 2,
+    "explain": "|a|=√(3²+4²+0²)=√25=5。"
+  },
+  {
+    "id": "q171",
+    "subject": "math",
+    "unit": "m9",
+    "stage": "sprint",
+    "stem": "对任意向量 a，a×a 等于（ ）。",
+    "options": [
+      "2a",
+      "a",
+      "零向量",
+      "|a|²"
+    ],
+    "answer": 2,
+    "explain": "向量与自身平行，夹角为 0，叉积的模为 |a|²sin0=0，结果是零向量。"
+  },
+  {
+    "id": "q172",
+    "subject": "math",
+    "unit": "m9",
+    "stage": "sprint",
+    "stem": "两个非零向量平行的充要条件是（ ）。",
+    "options": [
+      "点积为 0",
+      "叉积为零向量",
+      "模长相等",
+      "夹角为 90°"
+    ],
+    "answer": 1,
+    "explain": "a∥b 等价于 a×b=0；点积为 0 表示两向量垂直。"
+  },
+  {
+    "id": "q173",
+    "subject": "math",
+    "unit": "m9",
+    "stage": "sprint",
+    "stem": "平面 2x-y+3z=6 的一个法向量是（ ）。",
+    "options": [
+      "(2,1,3)",
+      "(-1,2,3)",
+      "(6,0,0)",
+      "(2,-1,3)"
+    ],
+    "answer": 3,
+    "explain": "平面 Ax+By+Cz+D=0 的法向量为 (A,B,C)，所以是 (2,-1,3)。"
+  },
+  {
+    "id": "q174",
+    "subject": "math",
+    "unit": "m9",
+    "stage": "sprint",
+    "stem": "直线 (x-1)/2=(y+1)/3=z/4 的一个方向向量是（ ）。",
+    "options": [
+      "(2,-3,4)",
+      "(1,1,0)",
+      "(1,-1,0)",
+      "(2,3,4)"
+    ],
+    "answer": 3,
+    "explain": "对称式分母构成方向向量，所以方向向量为 (2,3,4)。"
+  },
+  {
+    "id": "q175",
+    "subject": "math",
+    "unit": "m10",
+    "stage": "sprint",
+    "stem": "求极限 lim(x→0) tanx/x。",
+    "options": [
+      "不存在",
+      "0",
+      "1",
+      "无穷大"
+    ],
+    "answer": 2,
+    "explain": "x→0 时 tanx~x，所以 tanx/x → 1。"
+  },
+  {
+    "id": "q176",
+    "subject": "math",
+    "unit": "m10",
+    "stage": "sprint",
+    "stem": "求极限 lim(x→∞) (1+2/x)^x。",
+    "options": [
+      "e",
+      "e²",
+      "2e",
+      "1"
+    ],
+    "answer": 1,
+    "explain": "令 u=2/x，原式=[(1+u)^(1/u)]² → e²。"
+  },
+  {
+    "id": "q177",
+    "subject": "math",
+    "unit": "m10",
+    "stage": "sprint",
+    "stem": "用洛必达法则求极限 lim(x→0)(e^x-1-x)/x²。",
+    "options": [
+      "1/2",
+      "1",
+      "2",
+      "0"
+    ],
+    "answer": 0,
+    "explain": "两次洛必达：分子 e^x-1，分子 e^x；分母 2x，再求导分母 2，极限 e^0/2=1/2。"
+  },
+  {
+    "id": "q178",
+    "subject": "math",
+    "unit": "m10",
+    "stage": "sprint",
+    "stem": "设 f 在 x₀ 处可导，则 lim(h→0)[f(x₀+h)-f(x₀)]/h 等于（ ）。",
+    "options": [
+      "0",
+      "f''(x₀)",
+      "f(x₀)",
+      "f'(x₀)"
+    ],
+    "answer": 3,
+    "explain": "这正是导数在 x₀ 处的定义式，结果为 f'(x₀)。"
+  },
+  {
+    "id": "q179",
+    "subject": "math",
+    "unit": "m10",
+    "stage": "sprint",
+    "stem": "求极限 lim(x→0)(sinx-x)/x³。",
+    "options": [
+      "1/3",
+      "-1/6",
+      "1/6",
+      "0"
+    ],
+    "answer": 1,
+    "explain": "用泰勒展开 sinx=x-x³/6+o(x³)，所以 (sinx-x)/x³ → -1/6。"
+  },
+  {
+    "id": "q180",
+    "subject": "math",
+    "unit": "m10",
+    "stage": "sprint",
+    "stem": "分段函数在分界点处可导的条件是（ ）。",
+    "options": [
+      "左右导数都存在",
+      "左右导数存在且相等",
+      "函数连续即可",
+      "左导数存在即可"
+    ],
+    "answer": 1,
+    "explain": "可导要求左右导数都存在且相等，仅连续不能保证可导。"
+  },
+  {
+    "id": "q181",
+    "subject": "math",
+    "unit": "m11",
+    "stage": "sprint",
+    "stem": "计算定积分 ∫₀¹ x e^x dx。",
+    "options": [
+      "e-1",
+      "e",
+      "e+1",
+      "1"
+    ],
+    "answer": 3,
+    "explain": "分部积分：原函数为 (x-1)e^x，代入得 0-(-1)=1。"
+  },
+  {
+    "id": "q182",
+    "subject": "math",
+    "unit": "m11",
+    "stage": "sprint",
+    "stem": "求不定积分 ∫x cosx dx。",
+    "options": [
+      "-x sinx+cosx+C",
+      "x cosx+sinx+C",
+      "x sinx+cosx+C",
+      "x sinx-cosx+C"
+    ],
+    "answer": 2,
+    "explain": "分部积分，u=x，dv=cosx dx，得 x sinx-∫sinx dx=x sinx+cosx+C。"
+  },
+  {
+    "id": "q183",
+    "subject": "math",
+    "unit": "m11",
+    "stage": "sprint",
+    "stem": "计算定积分 ∫₀^π sin²x dx。",
+    "options": [
+      "2π",
+      "π/4",
+      "π/2",
+      "π"
+    ],
+    "answer": 2,
+    "explain": "利用 sin²x=(1-cos2x)/2，积分得 π/2。"
+  },
+  {
+    "id": "q184",
+    "subject": "math",
+    "unit": "m11",
+    "stage": "sprint",
+    "stem": "计算定积分 ∫₋₁¹ |x| dx。",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "1/2"
+    ],
+    "answer": 1,
+    "explain": "被积函数为偶函数，积分为 2∫₀¹x dx=2·(1/2)=1。"
+  },
+  {
+    "id": "q185",
+    "subject": "math",
+    "unit": "m11",
+    "stage": "sprint",
+    "stem": "计算定积分 ∫₀¹ 2x(x²+1)³ dx。",
+    "options": [
+      "4",
+      "1",
+      "15",
+      "15/4"
+    ],
+    "answer": 3,
+    "explain": "令 u=x²+1，du=2x dx，积分变为 ∫₁²u³du=(2⁴-1⁴)/4=15/4。"
+  },
+  {
+    "id": "q186",
+    "subject": "math",
+    "unit": "m11",
+    "stage": "sprint",
+    "stem": "求不定积分 ∫1/(1+x²) dx。",
+    "options": [
+      "arcsinx+C",
+      "1/(1+x²)+C",
+      "arctanx+C",
+      "ln(1+x²)+C"
+    ],
+    "answer": 2,
+    "explain": "(arctanx)'=1/(1+x²)，所以积分为 arctanx+C。"
+  },
+  {
+    "id": "q187",
+    "subject": "math",
+    "unit": "m12",
+    "stage": "sprint",
+    "stem": "考场上比较合理的时间分配原则是（ ）。",
+    "options": [
+      "先做完全不会的题",
+      "先死磕压轴题",
+      "先易后难，保证基础分",
+      "按题号平均分配，不看难度"
+    ],
+    "answer": 2,
+    "explain": "先做会做的题能稳定拿分，也为后面的难题留出时间和心态空间。"
+  },
+  {
+    "id": "q188",
+    "subject": "math",
+    "unit": "m12",
+    "stage": "sprint",
+    "stem": "一道计算题做到一半卡住，最合理的处理是（ ）。",
+    "options": [
+      "一直耗到考试结束",
+      "写下已完成的步骤，先做其他题",
+      "全部擦掉重写",
+      "直接交卷"
+    ],
+    "answer": 1,
+    "explain": "计算题按步骤给分，保留已完成的正确步骤，先做其他题，最后再回来补。"
+  },
+  {
+    "id": "q189",
+    "subject": "math",
+    "unit": "m12",
+    "stage": "sprint",
+    "stem": "一道选择题思考三分钟仍没有思路，应该（ ）。",
+    "options": [
+      "先标记跳过，最后再回来看",
+      "随便选一个后立刻交卷",
+      "放弃整场考试",
+      "继续死磕"
+    ],
+    "answer": 0,
+    "explain": "先标记跳过可以避免在一道题上浪费过多时间，后续有时间再回头处理。"
+  },
+  {
+    "id": "q190",
+    "subject": "math",
+    "unit": "m12",
+    "stage": "sprint",
+    "stem": "答完题后检查，重点应该放在（ ）。",
+    "options": [
+      "不再检查",
+      "只检查姓名",
+      "只看高分题",
+      "计算过程、单位和答题卡填涂"
+    ],
+    "answer": 3,
+    "explain": "计算题容易在符号、单位和抄写上出错，答题卡填涂也要逐题核对。"
+  },
+  {
+    "id": "q191",
+    "subject": "math",
+    "unit": "m12",
+    "stage": "sprint",
+    "stem": "使用草稿纸时，比较好的习惯是（ ）。",
+    "options": [
+      "只写最终答案",
+      "写得越乱越省时间",
+      "分区书写并标清题号，方便复查",
+      "完全不用草稿纸"
+    ],
+    "answer": 2,
+    "explain": "草稿分区、标清题号，复查时能快速找到计算过程，减少重复劳动。"
+  },
+  {
+    "id": "q192",
+    "subject": "math",
+    "unit": "m12",
+    "stage": "sprint",
+    "stem": "数学考试中书写解答题时，应该（ ）。",
+    "options": [
+      "写清关键步骤和结论",
+      "只写最终答案",
+      "只写公式不计算",
+      "全部用文字描述"
+    ],
+    "answer": 0,
+    "explain": "解答题按步骤给分，关键步骤、公式和结论都要写清楚。"
+  },
+  {
+    "id": "q193",
+    "subject": "english",
+    "unit": "e1",
+    "stage": "basic",
+    "stem": "单词 significant 最可能的意思是（ ）。",
+    "options": [
+      "small",
+      "strange",
+      "quick",
+      "important"
+    ],
+    "answer": 3,
+    "explain": "significant 表示“重要的、显著的”，与 important 最接近。"
+  },
+  {
+    "id": "q194",
+    "subject": "english",
+    "unit": "e1",
+    "stage": "basic",
+    "stem": "单词 increase 的反义词是（ ）。",
+    "options": [
+      "grow",
+      "expand",
+      "reduce",
+      "raise"
+    ],
+    "answer": 2,
+    "explain": "increase 表示增加，其反义词是 reduce（减少）。"
+  },
+  {
+    "id": "q195",
+    "subject": "english",
+    "unit": "e1",
+    "stage": "basic",
+    "stem": "短语 in advance 最接近的意思是（ ）。",
+    "options": [
+      "in danger",
+      "beforehand",
+      "at last",
+      "by chance"
+    ],
+    "answer": 1,
+    "explain": "in advance 意为“提前”，与 beforehand 意思接近。"
+  },
+  {
+    "id": "q196",
+    "subject": "english",
+    "unit": "e1",
+    "stage": "basic",
+    "stem": "短语 be aware of 最接近的意思是（ ）。",
+    "options": [
+      "know about",
+      "look after",
+      "give up",
+      "run into"
+    ],
+    "answer": 0,
+    "explain": "be aware of 表示“意识到、知道”，与 know about 接近。"
+  },
+  {
+    "id": "q197",
+    "subject": "english",
+    "unit": "e1",
+    "stage": "basic",
+    "stem": "短语 concentrate on 最接近的意思是（ ）。",
+    "options": [
+      "depend on",
+      "carry on",
+      "turn on",
+      "focus on"
+    ],
+    "answer": 3,
+    "explain": "concentrate on 表示“集中注意力于”，与 focus on 同义。"
+  },
+  {
+    "id": "q198",
+    "subject": "english",
+    "unit": "e1",
+    "stage": "basic",
+    "stem": "单词 available 最可能的意思是（ ）。",
+    "options": [
+      "危险的",
+      "稀有的",
+      "可获得的",
+      "昂贵的"
+    ],
+    "answer": 2,
+    "explain": "available 表示“可获得的、可使用的”，在语境中常指“有空、可用”。"
+  },
+  {
+    "id": "q199",
+    "subject": "english",
+    "unit": "e2",
+    "stage": "basic",
+    "stem": "He ___ TV when I called him.",
+    "options": [
+      "has watched",
+      "watched",
+      "was watching",
+      "watches"
+    ],
+    "answer": 2,
+    "explain": "when 引导的过去时间点表示背景动作正在进行，用过去进行时 was watching。"
+  },
+  {
+    "id": "q200",
+    "subject": "english",
+    "unit": "e2",
+    "stage": "basic",
+    "stem": "By next year, she ___ here for five years.",
+    "options": [
+      "works",
+      "worked",
+      "will have worked",
+      "is working"
+    ],
+    "answer": 2,
+    "explain": "By next year 表示到将来某时为止，用将来完成时 will have worked。"
+  },
+  {
+    "id": "q201",
+    "subject": "english",
+    "unit": "e2",
+    "stage": "basic",
+    "stem": "I ___ my homework already.",
+    "options": [
+      "finished",
+      "have finished",
+      "will finish",
+      "finish"
+    ],
+    "answer": 1,
+    "explain": "already 常与现在完成时连用，强调动作对现在的影响。"
+  },
+  {
+    "id": "q202",
+    "subject": "english",
+    "unit": "e2",
+    "stage": "basic",
+    "stem": "They ___ to the park yesterday.",
+    "options": [
+      "have gone",
+      "will go",
+      "go",
+      "went"
+    ],
+    "answer": 3,
+    "explain": "yesterday 是明确的过去时间，用一般过去时 went。"
+  },
+  {
+    "id": "q203",
+    "subject": "english",
+    "unit": "e2",
+    "stage": "basic",
+    "stem": "Look! It ___ outside.",
+    "options": [
+      "has rained",
+      "rains",
+      "rained",
+      "is raining"
+    ],
+    "answer": 3,
+    "explain": "Look! 提示说话时正在发生，用现在进行时 is raining。"
+  },
+  {
+    "id": "q204",
+    "subject": "english",
+    "unit": "e2",
+    "stage": "basic",
+    "stem": "She ___ in this school since 2018.",
+    "options": [
+      "teaches",
+      "taught",
+      "has taught",
+      "is teaching"
+    ],
+    "answer": 2,
+    "explain": "since 2018 表示从过去持续到现在，用现在完成时 has taught。"
+  },
+  {
+    "id": "q205",
+    "subject": "english",
+    "unit": "e3",
+    "stage": "basic",
+    "stem": "___ along the street, I met an old friend.",
+    "options": [
+      "Walking",
+      "Walked",
+      "To walk",
+      "Walk"
+    ],
+    "answer": 0,
+    "explain": "主语 I 与 walk 是主动关系，且表示伴随动作，用现在分词 Walking。"
+  },
+  {
+    "id": "q206",
+    "subject": "english",
+    "unit": "e3",
+    "stage": "basic",
+    "stem": "The book ___ by him last year is popular.",
+    "options": [
+      "to write",
+      "writes",
+      "writing",
+      "written"
+    ],
+    "answer": 3,
+    "explain": "book 与 write 是被动关系，用过去分词 written 作后置定语。"
+  },
+  {
+    "id": "q207",
+    "subject": "english",
+    "unit": "e3",
+    "stage": "basic",
+    "stem": "I want ___ there by bus.",
+    "options": [
+      "gone",
+      "go",
+      "going",
+      "to go"
+    ],
+    "answer": 3,
+    "explain": "want to do sth 是固定搭配，表示“想要做某事”。"
+  },
+  {
+    "id": "q208",
+    "subject": "english",
+    "unit": "e3",
+    "stage": "basic",
+    "stem": "He kept me ___ for an hour.",
+    "options": [
+      "wait",
+      "waiting",
+      "waited",
+      "to wait"
+    ],
+    "answer": 1,
+    "explain": "keep sb doing sth 表示“让某人一直做某事”，用现在分词 waiting。"
+  },
+  {
+    "id": "q209",
+    "subject": "english",
+    "unit": "e3",
+    "stage": "basic",
+    "stem": "___ the work, he went home.",
+    "options": [
+      "Having finished",
+      "Finish",
+      "To finish",
+      "Finished"
+    ],
+    "answer": 0,
+    "explain": "完成工作发生在回家之前，且主语 he 主动完成，用现在分词完成式 Having finished。"
+  },
+  {
+    "id": "q210",
+    "subject": "english",
+    "unit": "e3",
+    "stage": "basic",
+    "stem": "She is easy ___ along with.",
+    "options": [
+      "to get",
+      "got",
+      "get",
+      "getting"
+    ],
+    "answer": 0,
+    "explain": "be easy to do 结构中用不定式 to get，表示“容易相处”。"
+  },
+  {
+    "id": "q211",
+    "subject": "english",
+    "unit": "e4",
+    "stage": "basic",
+    "stem": "The man ___ helped me is my teacher.",
+    "options": [
+      "whose",
+      "which",
+      "who",
+      "whom"
+    ],
+    "answer": 2,
+    "explain": "先行词 man 指人，在从句中作主语，用关系代词 who。"
+  },
+  {
+    "id": "q212",
+    "subject": "english",
+    "unit": "e4",
+    "stage": "basic",
+    "stem": "This is the best film ___ I have ever seen.",
+    "options": [
+      "which",
+      "who",
+      "that",
+      "what"
+    ],
+    "answer": 2,
+    "explain": "先行词被最高级 the best 修饰时，关系代词通常用 that。"
+  },
+  {
+    "id": "q213",
+    "subject": "english",
+    "unit": "e4",
+    "stage": "basic",
+    "stem": "I still remember the day ___ we first met.",
+    "options": [
+      "when",
+      "where",
+      "why",
+      "which"
+    ],
+    "answer": 0,
+    "explain": "先行词 day 表示时间，在从句中作时间状语，用关系副词 when。"
+  },
+  {
+    "id": "q214",
+    "subject": "english",
+    "unit": "e4",
+    "stage": "basic",
+    "stem": "The reason ___ he was late is unknown.",
+    "options": [
+      "why",
+      "where",
+      "which",
+      "when"
+    ],
+    "answer": 0,
+    "explain": "先行词 reason 表示原因，从句中作原因状语，用关系副词 why。"
+  },
+  {
+    "id": "q215",
+    "subject": "english",
+    "unit": "e4",
+    "stage": "basic",
+    "stem": "He lives in a house ___ windows face south.",
+    "options": [
+      "where",
+      "which",
+      "that",
+      "whose"
+    ],
+    "answer": 3,
+    "explain": "windows 与 house 是所属关系，用 whose 表示“它的”。"
+  },
+  {
+    "id": "q216",
+    "subject": "english",
+    "unit": "e4",
+    "stage": "basic",
+    "stem": "___ is known to all, the earth is round.",
+    "options": [
+      "It",
+      "As",
+      "That",
+      "What"
+    ],
+    "answer": 1,
+    "explain": "As is known to all 是固定搭配，as 引导非限制性定语从句，指代整个主句。"
+  },
+  {
+    "id": "q217",
+    "subject": "english",
+    "unit": "e5",
+    "stage": "strong",
+    "stem": "___ he will come is still uncertain.",
+    "options": [
+      "Whether",
+      "What",
+      "If",
+      "That"
+    ],
+    "answer": 0,
+    "explain": "表示“是否”的主语从句用 whether 引导，if 一般不能引导主语从句。"
+  },
+  {
+    "id": "q218",
+    "subject": "english",
+    "unit": "e5",
+    "stage": "strong",
+    "stem": "I don't know ___ he is.",
+    "options": [
+      "which",
+      "whether",
+      "that",
+      "who"
+    ],
+    "answer": 3,
+    "explain": "从句缺少表语，且询问“他是谁”，用 who 引导宾语从句。"
+  },
+  {
+    "id": "q219",
+    "subject": "english",
+    "unit": "e5",
+    "stage": "strong",
+    "stem": "The fact ___ he lied surprised us.",
+    "options": [
+      "whether",
+      "which",
+      "that",
+      "what"
+    ],
+    "answer": 2,
+    "explain": "fact 后接同位语从句，从句意思完整，用 that 引导且不充当成分。"
+  },
+  {
+    "id": "q220",
+    "subject": "english",
+    "unit": "e5",
+    "stage": "strong",
+    "stem": "___ we need most is more time.",
+    "options": [
+      "That",
+      "What",
+      "Which",
+      "Whether"
+    ],
+    "answer": 1,
+    "explain": "主语从句缺少宾语，表示“我们需要的东西”，用 what。"
+  },
+  {
+    "id": "q221",
+    "subject": "english",
+    "unit": "e5",
+    "stage": "strong",
+    "stem": "It is not clear ___ the meeting will start.",
+    "options": [
+      "when",
+      "what",
+      "who",
+      "that"
+    ],
+    "answer": 0,
+    "explain": "从句缺少时间状语，表示会议何时开始，用 when。"
+  },
+  {
+    "id": "q222",
+    "subject": "english",
+    "unit": "e5",
+    "stage": "strong",
+    "stem": "She asked me ___ I had finished the work.",
+    "options": [
+      "what",
+      "which",
+      "that",
+      "if"
+    ],
+    "answer": 3,
+    "explain": "宾语从句表示“是否”，用 if 或 whether 引导。"
+  },
+  {
+    "id": "q223",
+    "subject": "english",
+    "unit": "e6",
+    "stage": "strong",
+    "stem": "If I had known the truth, I ___ you.",
+    "options": [
+      "had told",
+      "will tell",
+      "would tell",
+      "would have told"
+    ],
+    "answer": 3,
+    "explain": "与过去事实相反的虚拟语气，主句用 would have done。"
+  },
+  {
+    "id": "q224",
+    "subject": "english",
+    "unit": "e6",
+    "stage": "strong",
+    "stem": "I wish I ___ taller.",
+    "options": [
+      "am",
+      "was",
+      "were",
+      "be"
+    ],
+    "answer": 2,
+    "explain": "wish 后的宾语从句表示与现在事实相反的愿望，be 动词用 were。"
+  },
+  {
+    "id": "q225",
+    "subject": "english",
+    "unit": "e6",
+    "stage": "strong",
+    "stem": "He speaks as if he ___ there before.",
+    "options": [
+      "was",
+      "had been",
+      "has been",
+      "is"
+    ],
+    "answer": 1,
+    "explain": "as if 从句表示与过去事实相反，用过去完成时 had been。"
+  },
+  {
+    "id": "q226",
+    "subject": "english",
+    "unit": "e6",
+    "stage": "strong",
+    "stem": "___ it rains tomorrow, we will stay at home.",
+    "options": [
+      "Because",
+      "Unless",
+      "If",
+      "Although"
+    ],
+    "answer": 2,
+    "explain": "表示“如果明天下雨”，用 if 引导条件状语从句。"
+  },
+  {
+    "id": "q227",
+    "subject": "english",
+    "unit": "e6",
+    "stage": "strong",
+    "stem": "It is time we ___ the problem.",
+    "options": [
+      "are solving",
+      "solve",
+      "solved",
+      "will solve"
+    ],
+    "answer": 2,
+    "explain": "It is time (that) sb did sth 是虚拟语气固定句型，用过去式 solved。"
+  },
+  {
+    "id": "q228",
+    "subject": "english",
+    "unit": "e6",
+    "stage": "strong",
+    "stem": "___ hard he tried, he could not open the door.",
+    "options": [
+      "However",
+      "Whatever",
+      "Whenever",
+      "Wherever"
+    ],
+    "answer": 0,
+    "explain": "However + 形容词/副词 + 主语 + 谓语，表示“无论多么……”。"
+  },
+  {
+    "id": "q229",
+    "subject": "english",
+    "unit": "e7",
+    "stage": "strong",
+    "stem": "Never ___ I seen such a beautiful place.",
+    "options": [
+      "had",
+      "did",
+      "do",
+      "have"
+    ],
+    "answer": 3,
+    "explain": "Never 置于句首引起部分倒装，句子为现在完成时，助动词 have 提前。"
+  },
+  {
+    "id": "q230",
+    "subject": "english",
+    "unit": "e7",
+    "stage": "strong",
+    "stem": "Hardly ___ he arrived when it began to rain.",
+    "options": [
+      "has",
+      "was",
+      "did",
+      "had"
+    ],
+    "answer": 3,
+    "explain": "Hardly...when... 句型中主句用过去完成时，且倒装，助动词 had 提前。"
+  },
+  {
+    "id": "q231",
+    "subject": "english",
+    "unit": "e7",
+    "stage": "strong",
+    "stem": "It was not until ten o'clock ___ he came back.",
+    "options": [
+      "before",
+      "when",
+      "that",
+      "which"
+    ],
+    "answer": 2,
+    "explain": "这是强调句型 It was not until...that...，强调时间状语。"
+  },
+  {
+    "id": "q232",
+    "subject": "english",
+    "unit": "e7",
+    "stage": "strong",
+    "stem": "Only then ___ he realize the importance of time.",
+    "options": [
+      "he did",
+      "did he",
+      "he does",
+      "does he"
+    ],
+    "answer": 1,
+    "explain": "Only + 状语置于句首时，主句部分倒装，助动词 did 提前。"
+  },
+  {
+    "id": "q233",
+    "subject": "english",
+    "unit": "e7",
+    "stage": "strong",
+    "stem": "Each of the students ___ a dictionary.",
+    "options": [
+      "has",
+      "are",
+      "were",
+      "have"
+    ],
+    "answer": 0,
+    "explain": "each of + 复数名词作主语时，谓语用单数 has。"
+  },
+  {
+    "id": "q234",
+    "subject": "english",
+    "unit": "e7",
+    "stage": "strong",
+    "stem": "Neither he nor I ___ wrong.",
+    "options": [
+      "are",
+      "were",
+      "is",
+      "am"
+    ],
+    "answer": 3,
+    "explain": "neither...nor... 连接主语时遵循就近原则，靠近谓语的是 I，用 am。"
+  },
+  {
+    "id": "q235",
+    "subject": "english",
+    "unit": "e8",
+    "stage": "strong",
+    "stem": "阅读：Many people think that success comes from talent alone. However, research shows that practice and persistence matter just as much. People who set clear goals and keep practicing tend to improve faster than those who rely only on natural ability.\n\nWhat is the main idea of the passage?",
+    "options": [
+      "Research is useless.",
+      "Talent is the only key to success.",
+      "Practice and persistence are important for success.",
+      "Goals make people tired."
+    ],
+    "answer": 2,
+    "explain": "文章先提出“成功只靠天赋”的观点，再用 however 转折，强调练习和坚持同样重要。"
+  },
+  {
+    "id": "q236",
+    "subject": "english",
+    "unit": "e8",
+    "stage": "strong",
+    "stem": "阅读：Many people think that success comes from talent alone. However, research shows that practice and persistence matter just as much. People who set clear goals and keep practicing tend to improve faster than those who rely only on natural ability.\n\nAccording to the passage, people who keep practicing tend to ___.",
+    "options": [
+      "improve faster",
+      "give up easily",
+      "depend on luck",
+      "never fail"
+    ],
+    "answer": 0,
+    "explain": "原文明确说 keep practicing 的人 tend to improve faster。"
+  },
+  {
+    "id": "q237",
+    "subject": "english",
+    "unit": "e8",
+    "stage": "strong",
+    "stem": "阅读：Many people think that success comes from talent alone. However, research shows that practice and persistence matter just as much. People who set clear goals and keep practicing tend to improve faster than those who rely only on natural ability.\n\nThe word persistence is closest in meaning to（ ）。",
+    "options": [
+      "keeping trying",
+      "resting",
+      "complaining",
+      "giving up"
+    ],
+    "answer": 0,
+    "explain": "persistence 表示“坚持不懈”，与 keeping trying 意思接近。"
+  },
+  {
+    "id": "q238",
+    "subject": "english",
+    "unit": "e8",
+    "stage": "strong",
+    "stem": "阅读：Online learning has become popular because it is flexible. Students can watch lessons at any time and review difficult parts again. However, it also requires self-discipline, because no one reminds them to study.\n\nWhat is the main idea of the passage?",
+    "options": [
+      "Students hate online learning.",
+      "Teachers cannot use technology.",
+      "Online learning has advantages and challenges.",
+      "Online learning is always better."
+    ],
+    "answer": 2,
+    "explain": "文章既讲了在线学习的灵活性优点，也指出需要自律的挑战。"
+  },
+  {
+    "id": "q239",
+    "subject": "english",
+    "unit": "e8",
+    "stage": "strong",
+    "stem": "阅读：Online learning has become popular because it is flexible. Students can watch lessons at any time and review difficult parts again. However, it also requires self-discipline, because no one reminds them to study.\n\nOne advantage of online learning is that ___.",
+    "options": [
+      "it is always free",
+      "students can study flexibly",
+      "it needs no discipline",
+      "teachers give no homework"
+    ],
+    "answer": 1,
+    "explain": "原文第一句指出 online learning is flexible，学生可以随时看课。"
+  },
+  {
+    "id": "q240",
+    "subject": "english",
+    "unit": "e8",
+    "stage": "strong",
+    "stem": "阅读：Online learning has become popular because it is flexible. Students can watch lessons at any time and review difficult parts again. However, it also requires self-discipline, because no one reminds them to study.\n\nOnline learning requires ___.",
+    "options": [
+      "self-discipline",
+      "a big house",
+      "traveling",
+      "new friends"
+    ],
+    "answer": 0,
+    "explain": "原文 However 后明确说 it also requires self-discipline。"
+  },
+  {
+    "id": "q241",
+    "subject": "english",
+    "unit": "e9",
+    "stage": "sprint",
+    "stem": "He studied hard, ___ he passed the exam.",
+    "options": [
+      "but",
+      "or",
+      "though",
+      "so"
+    ],
+    "answer": 3,
+    "explain": "前后是因果关系，学习努力所以通过考试，用 so。"
+  },
+  {
+    "id": "q242",
+    "subject": "english",
+    "unit": "e9",
+    "stage": "sprint",
+    "stem": "___ it was raining, they went out.",
+    "options": [
+      "So",
+      "If",
+      "Although",
+      "Because"
+    ],
+    "answer": 2,
+    "explain": "前后是让步关系，“虽然下雨，他们还是出去了”，用 Although。"
+  },
+  {
+    "id": "q243",
+    "subject": "english",
+    "unit": "e9",
+    "stage": "sprint",
+    "stem": "She was tired; ___, she finished the work.",
+    "options": [
+      "besides",
+      "however",
+      "therefore",
+      "instead"
+    ],
+    "answer": 1,
+    "explain": "前后是转折关系，虽然累但还是完成了工作，用 however。"
+  },
+  {
+    "id": "q244",
+    "subject": "english",
+    "unit": "e9",
+    "stage": "sprint",
+    "stem": "First, read the question carefully. ___, find the key information.",
+    "options": [
+      "Then",
+      "However",
+      "Although",
+      "Instead"
+    ],
+    "answer": 0,
+    "explain": "First 之后的下一步用 Then，表示顺承关系。"
+  },
+  {
+    "id": "q245",
+    "subject": "english",
+    "unit": "e9",
+    "stage": "sprint",
+    "stem": "Tom lost his key, ___ he couldn't enter the room.",
+    "options": [
+      "but",
+      "or",
+      "unless",
+      "so"
+    ],
+    "answer": 3,
+    "explain": "丢钥匙导致进不了门，是因果关系，用 so。"
+  },
+  {
+    "id": "q246",
+    "subject": "english",
+    "unit": "e9",
+    "stage": "sprint",
+    "stem": "The weather was bad. ___, the match was canceled.",
+    "options": [
+      "Otherwise",
+      "Besides",
+      "Therefore",
+      "However"
+    ],
+    "answer": 2,
+    "explain": "天气不好导致比赛取消，是因果关系，用 Therefore。"
+  },
+  {
+    "id": "q247",
+    "subject": "english",
+    "unit": "e10",
+    "stage": "sprint",
+    "stem": "翻译：他昨天没来上学。",
+    "options": [
+      "He not came to school yesterday.",
+      "He didn't come to school yesterday.",
+      "He doesn't come to school yesterday.",
+      "He didn't came to school yesterday."
+    ],
+    "answer": 1,
+    "explain": "yesterday 用一般过去时，否定借助 didn't，后接动词原形 come。"
+  },
+  {
+    "id": "q248",
+    "subject": "english",
+    "unit": "e10",
+    "stage": "sprint",
+    "stem": "翻译：我花了两个小时完成作业。",
+    "options": [
+      "It took me two hours to finish my homework.",
+      "I spent two hours to finish my homework.",
+      "It cost me two hours finishing my homework.",
+      "I take two hours finish my homework."
+    ],
+    "answer": 0,
+    "explain": "It takes sb some time to do sth 是固定句型，过去时用 took。"
+  },
+  {
+    "id": "q249",
+    "subject": "english",
+    "unit": "e10",
+    "stage": "sprint",
+    "stem": "翻译：这是我读过的最好的书。",
+    "options": [
+      "This is the best book I ever read it.",
+      "This is the better book I read.",
+      "This is best book I have read.",
+      "This is the best book I have ever read."
+    ],
+    "answer": 3,
+    "explain": "最高级后用 that 引导定语从句（可省略），现在完成时表示“至今读过”。"
+  },
+  {
+    "id": "q250",
+    "subject": "english",
+    "unit": "e10",
+    "stage": "sprint",
+    "stem": "翻译：据说他已经去了北京。",
+    "options": [
+      "He is said went to Beijing.",
+      "People say him to go Beijing.",
+      "It is said that he has gone to Beijing.",
+      "It says that he went Beijing."
+    ],
+    "answer": 2,
+    "explain": "It is said that... 是“据说”的固定句型，has gone to 表示已去。"
+  },
+  {
+    "id": "q251",
+    "subject": "english",
+    "unit": "e10",
+    "stage": "sprint",
+    "stem": "翻译：越努力，越幸运。",
+    "options": [
+      "You work harder, you get luckier.",
+      "The harder you work, the luckier you get.",
+      "Harder you work, luckier you get.",
+      "The more hard you work, the more lucky you get."
+    ],
+    "answer": 1,
+    "explain": "the + 比较级..., the + 比较级... 表示“越……越……”。"
+  },
+  {
+    "id": "q252",
+    "subject": "english",
+    "unit": "e10",
+    "stage": "sprint",
+    "stem": "翻译：直到他解释，我才明白。",
+    "options": [
+      "Not until he explained did I understand.",
+      "Not until he explained I understood.",
+      "Until he explained did I understand.",
+      "He explained until I understood."
+    ],
+    "answer": 0,
+    "explain": "Not until 置于句首时主句部分倒装，助动词 did 提前。"
+  },
+  {
+    "id": "q253",
+    "subject": "english",
+    "unit": "e11",
+    "stage": "sprint",
+    "stem": "英文书信的开头称呼通常用（ ）。",
+    "options": [
+      "Hello Smith",
+      "To Smith",
+      "Mr. Smith",
+      "Dear Mr. Smith,"
+    ],
+    "answer": 3,
+    "explain": "正式英文书信常用 Dear + 称呼 + 逗号，例如 Dear Mr. Smith。"
+  },
+  {
+    "id": "q254",
+    "subject": "english",
+    "unit": "e11",
+    "stage": "sprint",
+    "stem": "感谢信的结尾最合适的是（ ）。",
+    "options": [
+      "Give me money.",
+      "Goodbye forever.",
+      "Thank you again for your help.",
+      "I hate you."
+    ],
+    "answer": 2,
+    "explain": "感谢信结尾应再次表达感谢，语气礼貌得体。"
+  },
+  {
+    "id": "q255",
+    "subject": "english",
+    "unit": "e11",
+    "stage": "sprint",
+    "stem": "英文通知的标题通常用（ ）。",
+    "options": [
+      "Diary",
+      "Notice",
+      "Letter",
+      "Story"
+    ],
+    "answer": 1,
+    "explain": "通知一般以 Notice 作为标题，居中书写。"
+  },
+  {
+    "id": "q256",
+    "subject": "english",
+    "unit": "e11",
+    "stage": "sprint",
+    "stem": "写请假条时必须写明的内容是（ ）。",
+    "options": [
+      "请假原因和时间",
+      "喜欢的颜色",
+      "午餐内容",
+      "天气情况"
+    ],
+    "answer": 0,
+    "explain": "请假条的核心信息是请假原因和请假时间，便于对方安排。"
+  },
+  {
+    "id": "q257",
+    "subject": "english",
+    "unit": "e11",
+    "stage": "sprint",
+    "stem": "建议信正文通常先（ ）。",
+    "options": [
+      "表达愤怒",
+      "写个人经历",
+      "列参考文献",
+      "说明问题"
+    ],
+    "answer": 3,
+    "explain": "建议信一般先说明存在的问题，再提出具体建议，逻辑清晰。"
+  },
+  {
+    "id": "q258",
+    "subject": "english",
+    "unit": "e11",
+    "stage": "sprint",
+    "stem": "邀请信应包含的关键信息是（ ）。",
+    "options": [
+      "只写自己的名字",
+      "只有日期",
+      "活动时间、地点和内容",
+      "只有问候语"
+    ],
+    "answer": 2,
+    "explain": "邀请信必须交代活动的时间、地点和内容，方便对方决定是否参加。"
+  },
+  {
+    "id": "q259",
+    "subject": "english",
+    "unit": "e12",
+    "stage": "sprint",
+    "stem": "英语考试中写应用文时，通常采用的结构是（ ）。",
+    "options": [
+      "只写日期",
+      "三段式结构",
+      "只写一段",
+      "不写称呼"
+    ],
+    "answer": 1,
+    "explain": "应用文通常采用“开头—主体—结尾”的三段式结构，层次清晰。"
+  },
+  {
+    "id": "q260",
+    "subject": "english",
+    "unit": "e12",
+    "stage": "sprint",
+    "stem": "做英语长篇阅读时，比较高效的做法是（ ）。",
+    "options": [
+      "先读题干，再回原文定位",
+      "逐字翻译全文",
+      "直接放弃",
+      "只读第一段"
+    ],
+    "answer": 0,
+    "explain": "先看题干能明确要找的信息，再回原文定位，节省时间。"
+  },
+  {
+    "id": "q261",
+    "subject": "english",
+    "unit": "e12",
+    "stage": "sprint",
+    "stem": "遇到不会的选择题，比较合理的做法是（ ）。",
+    "options": [
+      "先标记，最后再猜",
+      "立即放弃整场考试",
+      "抄别人的答案",
+      "空着不填"
+    ],
+    "answer": 0,
+    "explain": "先标记跳过，最后根据排除法作答，避免在一题上浪费时间。"
+  },
+  {
+    "id": "q262",
+    "subject": "english",
+    "unit": "e12",
+    "stage": "sprint",
+    "stem": "考前一星期的英语复习策略，最合理的是（ ）。",
+    "options": [
+      "完全不复习",
+      "只背答案",
+      "大量做新题",
+      "回归错题和高频词汇"
+    ],
+    "answer": 3,
+    "explain": "考前应回归错题和高频词汇，巩固已有知识，保持语感。"
+  },
+  {
+    "id": "q263",
+    "subject": "english",
+    "unit": "e12",
+    "stage": "sprint",
+    "stem": "写作文之前最重要的一步是（ ）。",
+    "options": [
+      "用中文写",
+      "列提纲",
+      "直接抄题目",
+      "写得越长越好"
+    ],
+    "answer": 1,
+    "explain": "先列提纲能理清结构和要点，避免写到一半跑题或遗漏内容。"
+  },
+  {
+    "id": "q264",
+    "subject": "english",
+    "unit": "e12",
+    "stage": "sprint",
+    "stem": "检查作文时，重点应关注（ ）。",
+    "options": [
+      "拼写、时态和字数",
+      "字体是否漂亮",
+      "纸张颜色",
+      "署名位置"
+    ],
+    "answer": 0,
+    "explain": "拼写、时态和字数直接影响得分，是检查作文时最应关注的内容。"
+  },
+  {
+    "id": "q265",
+    "subject": "it",
+    "unit": "i1",
+    "stage": "basic",
+    "stem": "1GB 等于（ ）。",
+    "options": [
+      "1024MB",
+      "1000MB",
+      "1024B",
+      "1024KB"
+    ],
+    "answer": 0,
+    "explain": "存储单位按 1024 进制换算：1GB=1024MB，1MB=1024KB，1KB=1024B。"
+  },
+  {
+    "id": "q266",
+    "subject": "it",
+    "unit": "i1",
+    "stage": "basic",
+    "stem": "二进制数 1101 对应的十进制数是（ ）。",
+    "options": [
+      "13",
+      "15",
+      "11",
+      "12"
+    ],
+    "answer": 0,
+    "explain": "1×2³+1×2²+0×2¹+1×2⁰=8+4+1=13。"
+  },
+  {
+    "id": "q267",
+    "subject": "it",
+    "unit": "i1",
+    "stage": "basic",
+    "stem": "十六进制数 A 对应的十进制数是（ ）。",
+    "options": [
+      "12",
+      "9",
+      "10",
+      "11"
+    ],
+    "answer": 2,
+    "explain": "十六进制中 A 表示 10，B 表示 11，C 表示 12。"
+  },
+  {
+    "id": "q268",
+    "subject": "it",
+    "unit": "i1",
+    "stage": "basic",
+    "stem": "计算机中表示信息的最小单位是（ ）。",
+    "options": [
+      "字节",
+      "位",
+      "字",
+      "KB"
+    ],
+    "answer": 1,
+    "explain": "位（bit）是最小单位，只能表示 0 或 1；8 位组成一个字节。"
+  },
+  {
+    "id": "q269",
+    "subject": "it",
+    "unit": "i1",
+    "stage": "basic",
+    "stem": "八进制数 17 对应的十进制数是（ ）。",
+    "options": [
+      "14",
+      "15",
+      "16",
+      "13"
+    ],
+    "answer": 1,
+    "explain": "1×8¹+7×8⁰=8+7=15。"
+  },
+  {
+    "id": "q270",
+    "subject": "it",
+    "unit": "i1",
+    "stage": "basic",
+    "stem": "1TB 等于（ ）。",
+    "options": [
+      "1024MB",
+      "1000MB",
+      "1024GB",
+      "1000GB"
+    ],
+    "answer": 2,
+    "explain": "1TB=1024GB，1GB=1024MB，依此类推。"
+  },
+  {
+    "id": "q271",
+    "subject": "it",
+    "unit": "i2",
+    "stage": "basic",
+    "stem": "在 Windows 中，复制选中内容的快捷键是（ ）。",
+    "options": [
+      "Ctrl+Z",
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+X"
+    ],
+    "answer": 1,
+    "explain": "Ctrl+C 复制，Ctrl+V 粘贴，Ctrl+X 剪切，Ctrl+Z 撤销。"
+  },
+  {
+    "id": "q272",
+    "subject": "it",
+    "unit": "i2",
+    "stage": "basic",
+    "stem": "在 Windows 中，粘贴内容的快捷键是（ ）。",
+    "options": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+X",
+      "Ctrl+Z"
+    ],
+    "answer": 1,
+    "explain": "Ctrl+V 用于把剪贴板中的内容粘贴到当前位置。"
+  },
+  {
+    "id": "q273",
+    "subject": "it",
+    "unit": "i2",
+    "stage": "basic",
+    "stem": "在 Windows 中，剪切选中内容的快捷键是（ ）。",
+    "options": [
+      "Ctrl+V",
+      "Ctrl+X",
+      "Ctrl+Z",
+      "Ctrl+C"
+    ],
+    "answer": 1,
+    "explain": "Ctrl+X 剪切会把内容放入剪贴板，并在原位置移除。"
+  },
+  {
+    "id": "q274",
+    "subject": "it",
+    "unit": "i2",
+    "stage": "basic",
+    "stem": "在 Windows 中，撤销上一步操作的快捷键是（ ）。",
+    "options": [
+      "Ctrl+X",
+      "Ctrl+Z",
+      "Ctrl+C",
+      "Ctrl+V"
+    ],
+    "answer": 1,
+    "explain": "Ctrl+Z 是撤销，Ctrl+Y 通常用于重做。"
+  },
+  {
+    "id": "q275",
+    "subject": "it",
+    "unit": "i2",
+    "stage": "basic",
+    "stem": "删除桌面上的快捷方式后，通常（ ）。",
+    "options": [
+      "系统被卸载",
+      "源文件也被删除",
+      "只删除快捷方式，源文件保留",
+      "磁盘被格式化"
+    ],
+    "answer": 2,
+    "explain": "快捷方式只是指向源文件的链接，删除快捷方式不会删除源文件。"
+  },
+  {
+    "id": "q276",
+    "subject": "it",
+    "unit": "i2",
+    "stage": "basic",
+    "stem": "在 Windows 中查看和结束正在运行的程序，通常使用（ ）。",
+    "options": [
+      "任务管理器",
+      "回收站",
+      "记事本",
+      "画图"
+    ],
+    "answer": 0,
+    "explain": "任务管理器可以查看进程、CPU 和内存占用，并结束无响应的程序。"
+  },
+  {
+    "id": "q277",
+    "subject": "it",
+    "unit": "i3",
+    "stage": "basic",
+    "stem": "Word 中的页眉和页脚通常用于（ ）。",
+    "options": [
+      "只显示正文第一段",
+      "给图片加说明",
+      "设置表格标题",
+      "在页面顶部和底部重复显示内容"
+    ],
+    "answer": 3,
+    "explain": "页眉页脚中的内容会在每一页的顶部或底部重复出现，常用于页码、标题。"
+  },
+  {
+    "id": "q278",
+    "subject": "it",
+    "unit": "i3",
+    "stage": "basic",
+    "stem": "在 Word 中把文中所有“计算机”改成“电脑”，应使用（ ）。",
+    "options": [
+      "打印",
+      "保存",
+      "查找和替换",
+      "复制粘贴"
+    ],
+    "answer": 2,
+    "explain": "查找和替换可以批量修改文本，是处理重复内容的常用功能。"
+  },
+  {
+    "id": "q279",
+    "subject": "it",
+    "unit": "i3",
+    "stage": "basic",
+    "stem": "在 Word 中设置段落首行缩进，应在（ ）中操作。",
+    "options": [
+      "打印设置",
+      "段落格式",
+      "字体格式",
+      "页面设置"
+    ],
+    "answer": 1,
+    "explain": "首行缩进属于段落格式，可在“段落”对话框中设置。"
+  },
+  {
+    "id": "q280",
+    "subject": "it",
+    "unit": "i3",
+    "stage": "basic",
+    "stem": "Word 中的项目符号主要用于（ ）。",
+    "options": [
+      "为段落添加列表符号",
+      "改变字体颜色",
+      "插入图片",
+      "设置页边距"
+    ],
+    "answer": 0,
+    "explain": "项目符号用于把并列内容组织成列表，使层次更清晰。"
+  },
+  {
+    "id": "q281",
+    "subject": "it",
+    "unit": "i3",
+    "stage": "basic",
+    "stem": "打印 Word 文档前想查看实际打印效果，应使用（ ）。",
+    "options": [
+      "大纲视图",
+      "草稿视图",
+      "阅读模式",
+      "打印预览"
+    ],
+    "answer": 3,
+    "explain": "打印预览能显示页面分页、页边距和打印效果，便于提前调整。"
+  },
+  {
+    "id": "q282",
+    "subject": "it",
+    "unit": "i3",
+    "stage": "basic",
+    "stem": "在 Word 表格中合并单元格是指（ ）。",
+    "options": [
+      "插入新行",
+      "拆分表格",
+      "将多个单元格合并为一个",
+      "删除整个表格"
+    ],
+    "answer": 2,
+    "explain": "合并单元格会把选中的多个单元格合为一个，常用于制作表头。"
+  },
+  {
+    "id": "q283",
+    "subject": "it",
+    "unit": "i4",
+    "stage": "basic",
+    "stem": "Excel 中用于求平均值的函数是（ ）。",
+    "options": [
+      "COUNT",
+      "SUM",
+      "AVERAGE",
+      "MAX"
+    ],
+    "answer": 2,
+    "explain": "AVERAGE 求平均值，SUM 求和，MAX 求最大值，COUNT 计数。"
+  },
+  {
+    "id": "q284",
+    "subject": "it",
+    "unit": "i4",
+    "stage": "basic",
+    "stem": "Excel 中用于求最大值的函数是（ ）。",
+    "options": [
+      "SUM",
+      "AVERAGE",
+      "MAX",
+      "COUNT"
+    ],
+    "answer": 2,
+    "explain": "MAX 返回一组数值中的最大值。"
+  },
+  {
+    "id": "q285",
+    "subject": "it",
+    "unit": "i4",
+    "stage": "basic",
+    "stem": "Excel 中用于统计数值个数的函数是（ ）。",
+    "options": [
+      "AVERAGE",
+      "MAX",
+      "COUNT",
+      "SUM"
+    ],
+    "answer": 2,
+    "explain": "COUNT 统计包含数值的单元格个数。"
+  },
+  {
+    "id": "q286",
+    "subject": "it",
+    "unit": "i4",
+    "stage": "basic",
+    "stem": "Excel 中表示绝对引用的符号是（ ）。",
+    "options": [
+      "%",
+      "&",
+      "$",
+      "#"
+    ],
+    "answer": 2,
+    "explain": "在列标或行号前加 $ 表示绝对引用，如 $A$1。"
+  },
+  {
+    "id": "q287",
+    "subject": "it",
+    "unit": "i4",
+    "stage": "basic",
+    "stem": "在 Excel 中按成绩从高到低排列，应使用（ ）功能。",
+    "options": [
+      "冻结窗格",
+      "排序",
+      "筛选",
+      "求和"
+    ],
+    "answer": 1,
+    "explain": "排序可以按指定列升序或降序排列数据。"
+  },
+  {
+    "id": "q288",
+    "subject": "it",
+    "unit": "i4",
+    "stage": "basic",
+    "stem": "Excel 中表示 A1 到 A10 连续区域的写法是（ ）。",
+    "options": [
+      "A1:A10",
+      "A1-A10",
+      "A1/A10",
+      "A1&A10"
+    ],
+    "answer": 0,
+    "explain": "Excel 区域用冒号连接起止单元格，如 A1:A10。"
+  },
+  {
+    "id": "q289",
+    "subject": "it",
+    "unit": "i5",
+    "stage": "strong",
+    "stem": "在 PowerPoint 中从第一张幻灯片开始放映，通常按（ ）。",
+    "options": [
+      "F1",
+      "F7",
+      "F12",
+      "F5"
+    ],
+    "answer": 3,
+    "explain": "F5 从第一张开始放映，Shift+F5 从当前幻灯片开始放映。"
+  },
+  {
+    "id": "q290",
+    "subject": "it",
+    "unit": "i5",
+    "stage": "strong",
+    "stem": "在 PowerPoint 中从当前幻灯片开始放映，通常按（ ）。",
+    "options": [
+      "Ctrl+F5",
+      "Alt+F5",
+      "Shift+F5",
+      "F5"
+    ],
+    "answer": 2,
+    "explain": "Shift+F5 从当前幻灯片开始放映，适合检查某一页效果。"
+  },
+  {
+    "id": "q291",
+    "subject": "it",
+    "unit": "i5",
+    "stage": "strong",
+    "stem": "在 PowerPoint 中设置幻灯片自动换片时间，应在（ ）中操作。",
+    "options": [
+      "视图选项卡",
+      "切换选项卡",
+      "插入选项卡",
+      "审阅选项卡"
+    ],
+    "answer": 1,
+    "explain": "自动换片时间属于幻灯片切换设置，在“切换”选项卡中调整。"
+  },
+  {
+    "id": "q292",
+    "subject": "it",
+    "unit": "i5",
+    "stage": "strong",
+    "stem": "PowerPoint 中的“动画”效果作用于（ ）。",
+    "options": [
+      "幻灯片内的对象",
+      "整张幻灯片切换",
+      "幻灯片顺序",
+      "文件保存"
+    ],
+    "answer": 0,
+    "explain": "动画用于设置文字、图片等对象进入、强调和退出的效果。"
+  },
+  {
+    "id": "q293",
+    "subject": "it",
+    "unit": "i5",
+    "stage": "strong",
+    "stem": "要统一修改所有幻灯片的标题格式，应使用（ ）。",
+    "options": [
+      "普通视图",
+      "备注页",
+      "大纲视图",
+      "幻灯片母版"
+    ],
+    "answer": 3,
+    "explain": "幻灯片母版控制整套幻灯片的统一版式和格式。"
+  },
+  {
+    "id": "q294",
+    "subject": "it",
+    "unit": "i5",
+    "stage": "strong",
+    "stem": "要让幻灯片按讲解时间自动播放，可使用（ ）。",
+    "options": [
+      "拼写检查",
+      "字数统计",
+      "排练计时",
+      "自动更正"
+    ],
+    "answer": 2,
+    "explain": "排练计时会记录每页停留时间，放映时可自动切换。"
+  },
+  {
+    "id": "q295",
+    "subject": "it",
+    "unit": "i6",
+    "stage": "strong",
+    "stem": "IPv6 地址的长度是（ ）。",
+    "options": [
+      "256 位",
+      "32 位",
+      "64 位",
+      "128 位"
+    ],
+    "answer": 3,
+    "explain": "IPv6 地址为 128 位，IPv4 地址为 32 位。"
+  },
+  {
+    "id": "q296",
+    "subject": "it",
+    "unit": "i6",
+    "stage": "strong",
+    "stem": "子网掩码的主要作用是（ ）。",
+    "options": [
+      "区分网络号和主机号",
+      "加密数据",
+      "压缩文件",
+      "提高网速"
+    ],
+    "answer": 0,
+    "explain": "子网掩码与 IP 地址配合，用于确定网络地址和主机地址。"
+  },
+  {
+    "id": "q297",
+    "subject": "it",
+    "unit": "i6",
+    "stage": "strong",
+    "stem": "与 UDP 相比，TCP 的主要特点是（ ）。",
+    "options": [
+      "不可靠但速度更快",
+      "完全一样",
+      "不能传输数据",
+      "可靠但开销较大"
+    ],
+    "answer": 3,
+    "explain": "TCP 面向连接、提供可靠传输，开销较大；UDP 无连接、速度快但不保证可靠。"
+  },
+  {
+    "id": "q298",
+    "subject": "it",
+    "unit": "i6",
+    "stage": "strong",
+    "stem": "路由器的主要作用是（ ）。",
+    "options": [
+      "存储文件",
+      "打印文档",
+      "连接不同网络并转发数据",
+      "显示图像"
+    ],
+    "answer": 2,
+    "explain": "路由器工作在网络层，负责在不同网络之间选择路径并转发数据包。"
+  },
+  {
+    "id": "q299",
+    "subject": "it",
+    "unit": "i6",
+    "stage": "strong",
+    "stem": "局域网的英文缩写是（ ）。",
+    "options": [
+      "PAN",
+      "LAN",
+      "WAN",
+      "MAN"
+    ],
+    "answer": 1,
+    "explain": "LAN 是局域网，WAN 是广域网，MAN 是城域网，PAN 是个人区域网。"
+  },
+  {
+    "id": "q300",
+    "subject": "it",
+    "unit": "i6",
+    "stage": "strong",
+    "stem": "OSI 参考模型中最高的层次是（ ）。",
+    "options": [
+      "物理层",
+      "网络层",
+      "应用层",
+      "数据链路层"
+    ],
+    "answer": 2,
+    "explain": "OSI 七层从下到上为物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。"
+  },
+  {
+    "id": "q301",
+    "subject": "it",
+    "unit": "i7",
+    "stage": "strong",
+    "stem": "电子邮件地址中 @ 前面的部分是（ ）。",
+    "options": [
+      "域名",
+      "密码",
+      "协议",
+      "用户名"
+    ],
+    "answer": 3,
+    "explain": "电子邮件地址格式为“用户名@域名”，@ 前是用户名，后是邮件服务器域名。"
+  },
+  {
+    "id": "q302",
+    "subject": "it",
+    "unit": "i7",
+    "stage": "strong",
+    "stem": "FTP 协议主要用于（ ）。",
+    "options": [
+      "网页浏览",
+      "视频播放",
+      "文件传输",
+      "发送邮件"
+    ],
+    "answer": 2,
+    "explain": "FTP 是文件传输协议，用于在客户端和服务器之间上传、下载文件。"
+  },
+  {
+    "id": "q303",
+    "subject": "it",
+    "unit": "i7",
+    "stage": "strong",
+    "stem": "发送电子邮件通常使用的协议是（ ）。",
+    "options": [
+      "FTP",
+      "SMTP",
+      "POP3",
+      "HTTP"
+    ],
+    "answer": 1,
+    "explain": "SMTP 用于发送邮件，POP3 和 IMAP 用于接收邮件。"
+  },
+  {
+    "id": "q304",
+    "subject": "it",
+    "unit": "i7",
+    "stage": "strong",
+    "stem": "接收电子邮件常用的协议是（ ）。",
+    "options": [
+      "POP3",
+      "SMTP",
+      "DNS",
+      "ARP"
+    ],
+    "answer": 0,
+    "explain": "POP3 用于从邮件服务器下载邮件，IMAP 也可用于接收并同步邮件。"
+  },
+  {
+    "id": "q305",
+    "subject": "it",
+    "unit": "i7",
+    "stage": "strong",
+    "stem": "URL 中表示协议的部分通常是（ ）。",
+    "options": [
+      "www",
+      ".com",
+      "/index",
+      "http://"
+    ],
+    "answer": 3,
+    "explain": "URL 开头如 http:// 表示使用的协议，www 是主机名的一部分。"
+  },
+  {
+    "id": "q306",
+    "subject": "it",
+    "unit": "i7",
+    "stage": "strong",
+    "stem": "搜索引擎的主要作用是（ ）。",
+    "options": [
+      "下载驱动",
+      "管理文件",
+      "检索网络信息",
+      "发送邮件"
+    ],
+    "answer": 2,
+    "explain": "搜索引擎通过关键词检索互联网上的网页和信息。"
+  },
+  {
+    "id": "q307",
+    "subject": "it",
+    "unit": "i8",
+    "stage": "strong",
+    "stem": "木马程序的主要特点是（ ）。",
+    "options": [
+      "提高网速",
+      "伪装成正常程序",
+      "自动复制传播",
+      "破坏硬件"
+    ],
+    "answer": 1,
+    "explain": "木马常伪装成正常软件，诱导用户运行后窃取信息或远程控制。"
+  },
+  {
+    "id": "q308",
+    "subject": "it",
+    "unit": "i8",
+    "stage": "strong",
+    "stem": "蠕虫病毒的主要特点是（ ）。",
+    "options": [
+      "自我复制并传播",
+      "只显示广告",
+      "加密文件",
+      "修复系统"
+    ],
+    "answer": 0,
+    "explain": "蠕虫能利用网络自我复制和传播，消耗系统与网络资源。"
+  },
+  {
+    "id": "q309",
+    "subject": "it",
+    "unit": "i8",
+    "stage": "strong",
+    "stem": "为防止账号被盗，不同网站最好（ ）。",
+    "options": [
+      "全部使用同一个密码",
+      "把密码告诉他人",
+      "写在公共便签上",
+      "使用不同密码"
+    ],
+    "answer": 3,
+    "explain": "不同网站使用不同密码，可以避免一个网站泄露导致其他账号被撞库。"
+  },
+  {
+    "id": "q310",
+    "subject": "it",
+    "unit": "i8",
+    "stage": "strong",
+    "stem": "钓鱼网站的常见手段是（ ）。",
+    "options": [
+      "压缩文件",
+      "备份数据",
+      "伪造登录页面骗取账号密码",
+      "提高网速"
+    ],
+    "answer": 2,
+    "explain": "钓鱼网站仿冒正规网站页面，诱导用户输入账号、密码等敏感信息。"
+  },
+  {
+    "id": "q311",
+    "subject": "it",
+    "unit": "i8",
+    "stage": "strong",
+    "stem": "定期备份数据的主要目的是（ ）。",
+    "options": [
+      "节省内存",
+      "防止数据丢失",
+      "提高屏幕亮度",
+      "加快开机"
+    ],
+    "answer": 1,
+    "explain": "备份能在硬件故障、误删或病毒攻击后恢复数据，降低损失。"
+  },
+  {
+    "id": "q312",
+    "subject": "it",
+    "unit": "i8",
+    "stage": "strong",
+    "stem": "计算机感染病毒后，首先应该（ ）。",
+    "options": [
+      "断开网络并查杀病毒",
+      "继续正常使用",
+      "删除所有文件",
+      "重启显示器"
+    ],
+    "answer": 0,
+    "explain": "先断开网络防止病毒继续传播，再用杀毒软件查杀并备份重要数据。"
+  },
+  {
+    "id": "q313",
+    "subject": "it",
+    "unit": "i9",
+    "stage": "sprint",
+    "stem": "MP3 是一种（ ）。",
+    "options": [
+      "图像格式",
+      "文本格式",
+      "数据库格式",
+      "音频格式"
+    ],
+    "answer": 3,
+    "explain": "MP3 是常见的音频压缩格式，广泛用于音乐播放。"
+  },
+  {
+    "id": "q314",
+    "subject": "it",
+    "unit": "i9",
+    "stage": "sprint",
+    "stem": "MP4 通常用于存储（ ）。",
+    "options": [
+      "图像",
+      "表格",
+      "视频",
+      "音频"
+    ],
+    "answer": 2,
+    "explain": "MP4 是常见的视频容器格式，可同时包含视频和音频。"
+  },
+  {
+    "id": "q315",
+    "subject": "it",
+    "unit": "i9",
+    "stage": "sprint",
+    "stem": "GIF 格式的一个显著特点是（ ）。",
+    "options": [
+      "用于网络配置",
+      "支持简单的动画",
+      "支持高精度打印",
+      "用于数据库查询"
+    ],
+    "answer": 1,
+    "explain": "GIF 支持多帧图像，可用于制作简单的循环动画。"
+  },
+  {
+    "id": "q316",
+    "subject": "it",
+    "unit": "i9",
+    "stage": "sprint",
+    "stem": "图像分辨率越高，通常意味着（ ）。",
+    "options": [
+      "图像越清晰，文件可能越大",
+      "图像越模糊",
+      "文件一定越小",
+      "颜色越少"
+    ],
+    "answer": 0,
+    "explain": "分辨率越高，像素越多，细节越清晰，但文件体积通常也越大。"
+  },
+  {
+    "id": "q317",
+    "subject": "it",
+    "unit": "i9",
+    "stage": "sprint",
+    "stem": "位图图像放大后通常（ ）。",
+    "options": [
+      "完全不变",
+      "更清晰",
+      "变成矢量图",
+      "容易失真"
+    ],
+    "answer": 3,
+    "explain": "位图由像素组成，放大后像素被拉伸，容易出现锯齿和模糊。"
+  },
+  {
+    "id": "q318",
+    "subject": "it",
+    "unit": "i9",
+    "stage": "sprint",
+    "stem": "矢量图的显著特点是（ ）。",
+    "options": [
+      "只能存照片",
+      "不能缩放",
+      "放大不易失真",
+      "由像素组成"
+    ],
+    "answer": 2,
+    "explain": "矢量图用数学描述图形，放大后仍保持清晰边缘。"
+  },
+  {
+    "id": "q319",
+    "subject": "it",
+    "unit": "i10",
+    "stage": "sprint",
+    "stem": "关系表中主键的主要作用是（ ）。",
+    "options": [
+      "加密文件",
+      "唯一标识一条记录",
+      "提高屏幕亮度",
+      "压缩数据"
+    ],
+    "answer": 1,
+    "explain": "主键的值在表中唯一，用于区分不同记录。"
+  },
+  {
+    "id": "q320",
+    "subject": "it",
+    "unit": "i10",
+    "stage": "sprint",
+    "stem": "SQL 中修改表中数据使用（ ）。",
+    "options": [
+      "UPDATE",
+      "SELECT",
+      "DELETE",
+      "CREATE"
+    ],
+    "answer": 0,
+    "explain": "UPDATE 修改记录，SELECT 查询，DELETE 删除，CREATE 创建对象。"
+  },
+  {
+    "id": "q321",
+    "subject": "it",
+    "unit": "i10",
+    "stage": "sprint",
+    "stem": "在关系表中，一列称为（ ）。",
+    "options": [
+      "记录",
+      "文件",
+      "索引",
+      "字段"
+    ],
+    "answer": 3,
+    "explain": "关系表中一列是一个字段（属性），一行是一条记录。"
+  },
+  {
+    "id": "q322",
+    "subject": "it",
+    "unit": "i10",
+    "stage": "sprint",
+    "stem": "SQL 中删除表中记录使用（ ）。",
+    "options": [
+      "UPDATE",
+      "CREATE",
+      "DELETE",
+      "SELECT"
+    ],
+    "answer": 2,
+    "explain": "DELETE 用于删除记录，DROP 用于删除表等数据库对象。"
+  },
+  {
+    "id": "q323",
+    "subject": "it",
+    "unit": "i10",
+    "stage": "sprint",
+    "stem": "DBMS 是指（ ）。",
+    "options": [
+      "数据库管理员",
+      "数据库管理系统",
+      "数据库文件",
+      "数据表"
+    ],
+    "answer": 1,
+    "explain": "DBMS 是 Database Management System，用于建立、管理和维护数据库。"
+  },
+  {
+    "id": "q324",
+    "subject": "it",
+    "unit": "i10",
+    "stage": "sprint",
+    "stem": "外键的主要作用是（ ）。",
+    "options": [
+      "建立表与表之间的联系",
+      "唯一标识记录",
+      "加密数据",
+      "排序数据"
+    ],
+    "answer": 0,
+    "explain": "外键引用另一张表的主键，用于建立表之间的关联并保证参照完整性。"
+  },
+  {
+    "id": "q325",
+    "subject": "it",
+    "unit": "i11",
+    "stage": "sprint",
+    "stem": "算法必须在有限步内结束，这一特征称为（ ）。",
+    "options": [
+      "确定性",
+      "可行性",
+      "输入性",
+      "有穷性"
+    ],
+    "answer": 3,
+    "explain": "有穷性要求算法在执行有限步骤后结束，不能无限循环。"
+  },
+  {
+    "id": "q326",
+    "subject": "it",
+    "unit": "i11",
+    "stage": "sprint",
+    "stem": "二分查找要求数据必须（ ）。",
+    "options": [
+      "全是负数",
+      "全是小数",
+      "有序",
+      "无序"
+    ],
+    "answer": 2,
+    "explain": "二分查找通过比较中间元素缩小范围，前提是数据已按顺序排列。"
+  },
+  {
+    "id": "q327",
+    "subject": "it",
+    "unit": "i11",
+    "stage": "sprint",
+    "stem": "流程图中菱形框通常表示（ ）。",
+    "options": [
+      "开始结束",
+      "判断",
+      "处理",
+      "输入输出"
+    ],
+    "answer": 1,
+    "explain": "菱形表示判断，矩形表示处理，平行四边形表示输入输出。"
+  },
+  {
+    "id": "q328",
+    "subject": "it",
+    "unit": "i11",
+    "stage": "sprint",
+    "stem": "流程图中平行四边形通常表示（ ）。",
+    "options": [
+      "输入输出",
+      "判断",
+      "处理",
+      "开始结束"
+    ],
+    "answer": 0,
+    "explain": "平行四边形表示输入输出，矩形表示处理，菱形表示判断。"
+  },
+  {
+    "id": "q329",
+    "subject": "it",
+    "unit": "i11",
+    "stage": "sprint",
+    "stem": "递归算法必须具备（ ）。",
+    "options": [
+      "无限循环",
+      "大量变量",
+      "图形界面",
+      "终止条件"
+    ],
+    "answer": 3,
+    "explain": "递归必须有终止条件，否则会不断调用自身导致栈溢出。"
+  },
+  {
+    "id": "q330",
+    "subject": "it",
+    "unit": "i11",
+    "stage": "sprint",
+    "stem": "时间复杂度 O(1) 表示（ ）。",
+    "options": [
+      "平方时间复杂度",
+      "指数时间复杂度",
+      "常数时间复杂度",
+      "线性时间复杂度"
+    ],
+    "answer": 2,
+    "explain": "O(1) 表示执行时间不随问题规模增长，是常数级复杂度。"
+  },
+  {
+    "id": "q331",
+    "subject": "it",
+    "unit": "i12",
+    "stage": "sprint",
+    "stem": "在 Office 软件中保存文件的快捷键是（ ）。",
+    "options": [
+      "Ctrl+O",
+      "Ctrl+S",
+      "Ctrl+P",
+      "Ctrl+N"
+    ],
+    "answer": 1,
+    "explain": "Ctrl+S 保存，Ctrl+P 打印，Ctrl+N 新建，Ctrl+O 打开。"
+  },
+  {
+    "id": "q332",
+    "subject": "it",
+    "unit": "i12",
+    "stage": "sprint",
+    "stem": "在 Office 软件中新建文件的快捷键是（ ）。",
+    "options": [
+      "Ctrl+S",
+      "Ctrl+P",
+      "Ctrl+N",
+      "Ctrl+O"
+    ],
+    "answer": 2,
+    "explain": "Ctrl+N 用于新建文件。"
+  },
+  {
+    "id": "q333",
+    "subject": "it",
+    "unit": "i12",
+    "stage": "sprint",
+    "stem": "在 Office 软件中打印文件的快捷键是（ ）。",
+    "options": [
+      "Ctrl+P",
+      "Ctrl+N",
+      "Ctrl+O",
+      "Ctrl+S"
+    ],
+    "answer": 0,
+    "explain": "Ctrl+P 打开打印界面。"
+  },
+  {
+    "id": "q334",
+    "subject": "it",
+    "unit": "i12",
+    "stage": "sprint",
+    "stem": "完成 Office 操作题后，正确的做法是（ ）。",
+    "options": [
+      "删除文件",
+      "格式化磁盘",
+      "保存并检查文件名和保存位置",
+      "直接关闭不保存"
+    ],
+    "answer": 2,
+    "explain": "操作题按步骤和结果评分，完成后必须按要求保存到指定位置。"
+  },
+  {
+    "id": "q335",
+    "subject": "it",
+    "unit": "i12",
+    "stage": "sprint",
+    "stem": "给文件命名时，比较好的习惯是（ ）。",
+    "options": [
+      "超过 255 个字符",
+      "清晰反映内容和版本",
+      "随意乱写",
+      "只用符号"
+    ],
+    "answer": 1,
+    "explain": "清晰的命名便于查找和区分版本，避免重复劳动。"
+  },
+  {
+    "id": "q336",
+    "subject": "it",
+    "unit": "i12",
+    "stage": "sprint",
+    "stem": "提交操作题前，应该（ ）。",
+    "options": [
+      "检查是否按要求保存",
+      "重启电脑",
+      "删除所有文件",
+      "关闭显示器"
+    ],
+    "answer": 0,
+    "explain": "提交前核对文件名、保存位置和题目要求，避免因保存问题丢分。"
+  },
+  {
+    "id": "q337",
+    "subject": "se",
+    "unit": "s1",
+    "stage": "basic",
+    "stem": "软件生命周期中持续时间最长的阶段是（ ）。",
+    "options": [
+      "概要设计",
+      "编码实现",
+      "运行维护",
+      "需求分析"
+    ],
+    "answer": 2,
+    "explain": "软件投入使用后的运行维护阶段通常持续时间最长，成本占比也最高。"
+  },
+  {
+    "id": "q338",
+    "subject": "se",
+    "unit": "s1",
+    "stage": "basic",
+    "stem": "软件危机的主要表现是（ ）。",
+    "options": [
+      "网速变快",
+      "显示器变大",
+      "开发成本超支、进度拖延、质量难保证",
+      "硬件价格下降"
+    ],
+    "answer": 2,
+    "explain": "软件危机指软件开发过程中出现的成本、进度、质量难以控制等问题。"
+  },
+  {
+    "id": "q339",
+    "subject": "se",
+    "unit": "s1",
+    "stage": "basic",
+    "stem": "软件工程中的“过程”指的是（ ）。",
+    "options": [
+      "测试数据",
+      "开发软件所需完成的一系列活动",
+      "编程语言",
+      "计算机硬件"
+    ],
+    "answer": 1,
+    "explain": "过程是把人员、方法、工具组织起来完成软件开发的一系列活动。"
+  },
+  {
+    "id": "q340",
+    "subject": "se",
+    "unit": "s1",
+    "stage": "basic",
+    "stem": "瀑布模型的主要特点是（ ）。",
+    "options": [
+      "阶段顺序进行、文档驱动",
+      "迭代增量",
+      "边做边改",
+      "不需要文档"
+    ],
+    "answer": 0,
+    "explain": "瀑布模型按阶段顺序推进，每个阶段都有明确文档，后期变更成本高。"
+  },
+  {
+    "id": "q341",
+    "subject": "se",
+    "unit": "s1",
+    "stage": "basic",
+    "stem": "与硬件相比，软件的特点是（ ）。",
+    "options": [
+      "一定会产生物理磨损",
+      "不需要维护",
+      "开发一次即可",
+      "逻辑产品，不会磨损但会退化"
+    ],
+    "answer": 3,
+    "explain": "软件是逻辑产品，没有物理磨损，但会因环境变化和维护不当而退化。"
+  },
+  {
+    "id": "q342",
+    "subject": "se",
+    "unit": "s1",
+    "stage": "basic",
+    "stem": "软件工程追求的目标是（ ）。",
+    "options": [
+      "使用最新语言",
+      "取消测试",
+      "提高质量、降低成本、保证进度",
+      "增加代码行数"
+    ],
+    "answer": 2,
+    "explain": "软件工程的目标是在给定成本和进度下开发出满足需求、质量可靠的软件。"
+  },
+  {
+    "id": "q343",
+    "subject": "se",
+    "unit": "s2",
+    "stage": "basic",
+    "stem": "下列属于功能需求的是（ ）。",
+    "options": [
+      "系统支持 1000 人并发",
+      "用户能够在线提交订单",
+      "系统响应时间小于 2 秒",
+      "系统可用性达到 99%"
+    ],
+    "answer": 1,
+    "explain": "在线提交订单描述系统应做什么，属于功能需求；其余是性能或质量属性。"
+  },
+  {
+    "id": "q344",
+    "subject": "se",
+    "unit": "s2",
+    "stage": "basic",
+    "stem": "SRS 是指（ ）。",
+    "options": [
+      "软件需求规格说明书",
+      "软件设计文档",
+      "测试报告",
+      "用户手册"
+    ],
+    "answer": 0,
+    "explain": "SRS 是 Software Requirements Specification，即软件需求规格说明书。"
+  },
+  {
+    "id": "q345",
+    "subject": "se",
+    "unit": "s2",
+    "stage": "basic",
+    "stem": "获取用户需求时，比较有效的方法是（ ）。",
+    "options": [
+      "只靠猜测",
+      "只写代码",
+      "只做测试",
+      "访谈、问卷、观察"
+    ],
+    "answer": 3,
+    "explain": "访谈、问卷、观察和原型演示都能帮助分析人员获取真实需求。"
+  },
+  {
+    "id": "q346",
+    "subject": "se",
+    "unit": "s2",
+    "stage": "basic",
+    "stem": "需求发生变更时，正确的做法是（ ）。",
+    "options": [
+      "忽略变更",
+      "删除需求文档",
+      "走变更控制流程",
+      "直接修改代码"
+    ],
+    "answer": 2,
+    "explain": "需求变更应经过申请、评审和批准，保证变更可控、可追溯。"
+  },
+  {
+    "id": "q347",
+    "subject": "se",
+    "unit": "s2",
+    "stage": "basic",
+    "stem": "功能需求主要描述（ ）。",
+    "options": [
+      "系统有多稳定",
+      "系统应该做什么",
+      "系统运行多快",
+      "系统有多安全"
+    ],
+    "answer": 1,
+    "explain": "功能需求描述系统应提供的功能和行为，非功能需求描述质量属性。"
+  },
+  {
+    "id": "q348",
+    "subject": "se",
+    "unit": "s2",
+    "stage": "basic",
+    "stem": "需求验证的主要目的是（ ）。",
+    "options": [
+      "确认需求正确、完整、一致",
+      "加快编码速度",
+      "减少文档数量",
+      "增加系统功能"
+    ],
+    "answer": 0,
+    "explain": "需求验证通过评审等方式确认需求正确、完整、一致且可测试。"
+  },
+  {
+    "id": "q349",
+    "subject": "se",
+    "unit": "s3",
+    "stage": "basic",
+    "stem": "数据流图 DFD 的基本元素包括（ ）。",
+    "options": [
+      "类、对象、方法",
+      "表、字段、记录",
+      "节点、边、权重",
+      "外部实体、加工、数据流、数据存储"
+    ],
+    "answer": 3,
+    "explain": "DFD 用外部实体、加工、数据流和数据存储描述系统的数据流动。"
+  },
+  {
+    "id": "q350",
+    "subject": "se",
+    "unit": "s3",
+    "stage": "basic",
+    "stem": "数据流图中的箭头通常表示（ ）。",
+    "options": [
+      "模块调用",
+      "数据库表",
+      "数据流及其方向",
+      "加工顺序"
+    ],
+    "answer": 2,
+    "explain": "箭头表示数据流，箭头方向表示数据流动的方向。"
+  },
+  {
+    "id": "q351",
+    "subject": "se",
+    "unit": "s3",
+    "stage": "basic",
+    "stem": "分层数据流图中，父图与子图之间应（ ）。",
+    "options": [
+      "只画一层",
+      "保持数据流平衡",
+      "完全无关",
+      "层数越多越好"
+    ],
+    "answer": 1,
+    "explain": "父图和子图的输入输出数据流应保持一致，称为数据流平衡。"
+  },
+  {
+    "id": "q352",
+    "subject": "se",
+    "unit": "s3",
+    "stage": "basic",
+    "stem": "数据流图中的“加工”表示（ ）。",
+    "options": [
+      "对数据进行的处理",
+      "数据的存放位置",
+      "数据的来源",
+      "系统的用户"
+    ],
+    "answer": 0,
+    "explain": "加工表示把输入数据转换为输出数据的处理过程。"
+  },
+  {
+    "id": "q353",
+    "subject": "se",
+    "unit": "s3",
+    "stage": "basic",
+    "stem": "数据流图中的“外部实体”是指（ ）。",
+    "options": [
+      "程序模块",
+      "数据库表",
+      "测试用例",
+      "系统之外提供或接收数据的人或组织"
+    ],
+    "answer": 3,
+    "explain": "外部实体是系统边界之外、与系统交换数据的人、组织或其他系统。"
+  },
+  {
+    "id": "q354",
+    "subject": "se",
+    "unit": "s3",
+    "stage": "basic",
+    "stem": "数据流图中的“数据存储”表示（ ）。",
+    "options": [
+      "数据的加工",
+      "数据的输出",
+      "数据的静态存放",
+      "数据的流动"
+    ],
+    "answer": 2,
+    "explain": "数据存储表示数据暂时或长期存放的位置，如数据库、文件。"
+  },
+  {
+    "id": "q355",
+    "subject": "se",
+    "unit": "s4",
+    "stage": "basic",
+    "stem": "模块化设计追求高内聚、低耦合，其目的是（ ）。",
+    "options": [
+      "取消接口",
+      "提高模块独立性",
+      "增加模块数量",
+      "减少注释"
+    ],
+    "answer": 1,
+    "explain": "高内聚低耦合能提高模块独立性，使模块更易维护和复用。"
+  },
+  {
+    "id": "q356",
+    "subject": "se",
+    "unit": "s4",
+    "stage": "basic",
+    "stem": "偶然内聚的特点是（ ）。",
+    "options": [
+      "模块内元素之间没有明显联系",
+      "模块只完成一个功能",
+      "模块按时间顺序执行",
+      "模块通过参数通信"
+    ],
+    "answer": 0,
+    "explain": "偶然内聚中模块内各部分没有明显关系，内聚程度最低。"
+  },
+  {
+    "id": "q357",
+    "subject": "se",
+    "unit": "s4",
+    "stage": "basic",
+    "stem": "下列耦合类型中，耦合程度最高的是（ ）。",
+    "options": [
+      "数据耦合",
+      "标记耦合",
+      "控制耦合",
+      "内容耦合"
+    ],
+    "answer": 3,
+    "explain": "内容耦合中一个模块直接访问另一个模块内部数据或代码，耦合最强。"
+  },
+  {
+    "id": "q358",
+    "subject": "se",
+    "unit": "s4",
+    "stage": "basic",
+    "stem": "模块的扇入表示（ ）。",
+    "options": [
+      "模块的代码行数",
+      "模块的数量",
+      "有多少模块调用它",
+      "它调用了多少模块"
+    ],
+    "answer": 2,
+    "explain": "扇入是直接调用该模块的上级模块数量，扇出是该模块调用的下级模块数量。"
+  },
+  {
+    "id": "q359",
+    "subject": "se",
+    "unit": "s4",
+    "stage": "basic",
+    "stem": "模块独立性越好，通常意味着（ ）。",
+    "options": [
+      "内聚和耦合都低",
+      "内聚越高、耦合越低",
+      "内聚越低、耦合越高",
+      "内聚和耦合都高"
+    ],
+    "answer": 1,
+    "explain": "模块独立性由内聚和耦合共同衡量，追求高内聚、低耦合。"
+  },
+  {
+    "id": "q360",
+    "subject": "se",
+    "unit": "s4",
+    "stage": "basic",
+    "stem": "公共耦合是指（ ）。",
+    "options": [
+      "模块通过公共数据区通信",
+      "模块之间没有任何联系",
+      "模块只传递参数",
+      "模块之间存在嵌套"
+    ],
+    "answer": 0,
+    "explain": "公共耦合中多个模块共享同一公共数据环境，耦合程度较高。"
+  },
+  {
+    "id": "q361",
+    "subject": "se",
+    "unit": "s5",
+    "stage": "strong",
+    "stem": "UML 中的参与者（Actor）通常表示（ ）。",
+    "options": [
+      "系统内部的类",
+      "数据库表",
+      "测试用例",
+      "与系统交互的人或外部系统"
+    ],
+    "answer": 3,
+    "explain": "参与者是系统外部、与系统交互的人、设备或其他系统。"
+  },
+  {
+    "id": "q362",
+    "subject": "se",
+    "unit": "s5",
+    "stage": "strong",
+    "stem": "UML 类图主要描述（ ）。",
+    "options": [
+      "系统部署",
+      "数据流",
+      "类的静态结构及关系",
+      "对象随时间变化"
+    ],
+    "answer": 2,
+    "explain": "类图展示类、属性、方法以及类之间的继承、关联等静态关系。"
+  },
+  {
+    "id": "q363",
+    "subject": "se",
+    "unit": "s5",
+    "stage": "strong",
+    "stem": "UML 部署图主要描述（ ）。",
+    "options": [
+      "数据流",
+      "软件在硬件节点上的部署",
+      "类的继承关系",
+      "用例之间的关系"
+    ],
+    "answer": 1,
+    "explain": "部署图描述系统物理架构，即软件组件在硬件节点上的分布。"
+  },
+  {
+    "id": "q364",
+    "subject": "se",
+    "unit": "s5",
+    "stage": "strong",
+    "stem": "UML 状态图主要描述（ ）。",
+    "options": [
+      "对象状态及状态之间的转移",
+      "类之间的关系",
+      "系统用例",
+      "系统部署"
+    ],
+    "answer": 0,
+    "explain": "状态图描述一个对象在生命周期中可能的状态及触发状态转移的事件。"
+  },
+  {
+    "id": "q365",
+    "subject": "se",
+    "unit": "s5",
+    "stage": "strong",
+    "stem": "UML 中聚合关系的特点是（ ）。",
+    "options": [
+      "整体与部分同生共死",
+      "表示继承关系",
+      "表示接口实现",
+      "整体与部分可以分离"
+    ],
+    "answer": 3,
+    "explain": "聚合是弱整体—部分关系，部分可以独立于整体存在；组合则是强关系。"
+  },
+  {
+    "id": "q366",
+    "subject": "se",
+    "unit": "s5",
+    "stage": "strong",
+    "stem": "UML 活动图适合描述（ ）。",
+    "options": [
+      "数据库表结构",
+      "网络拓扑",
+      "业务流程和工作流",
+      "类的静态结构"
+    ],
+    "answer": 2,
+    "explain": "活动图用于描述业务流程、工作流和操作中的控制流。"
+  },
+  {
+    "id": "q367",
+    "subject": "se",
+    "unit": "s6",
+    "stage": "strong",
+    "stem": "C/S 架构的主要特点是（ ）。",
+    "options": [
+      "没有用户界面",
+      "客户端和服务器分工处理",
+      "完全不需要服务器",
+      "只能通过浏览器访问"
+    ],
+    "answer": 1,
+    "explain": "C/S 架构由客户端和服务器协同工作，客户端通常需要安装专用程序。"
+  },
+  {
+    "id": "q368",
+    "subject": "se",
+    "unit": "s6",
+    "stage": "strong",
+    "stem": "分层架构的主要优点是（ ）。",
+    "options": [
+      "关注点分离、易于维护",
+      "所有代码写在一层",
+      "减少模块数量",
+      "不需要接口"
+    ],
+    "answer": 0,
+    "explain": "分层架构把系统划分为多个层次，每层职责单一，便于替换和维护。"
+  },
+  {
+    "id": "q369",
+    "subject": "se",
+    "unit": "s6",
+    "stage": "strong",
+    "stem": "MVC 架构中的 M 表示（ ）。",
+    "options": [
+      "视图",
+      "控制器",
+      "中间件",
+      "模型"
+    ],
+    "answer": 3,
+    "explain": "MVC 是模型（Model）、视图（View）、控制器（Controller）的缩写。"
+  },
+  {
+    "id": "q370",
+    "subject": "se",
+    "unit": "s6",
+    "stage": "strong",
+    "stem": "下列属于概要设计阶段任务的是（ ）。",
+    "options": [
+      "执行单元测试",
+      "培训用户",
+      "划分模块并设计软件结构",
+      "编写具体函数代码"
+    ],
+    "answer": 2,
+    "explain": "概要设计确定软件体系结构、模块划分和接口，详细设计再细化到函数。"
+  },
+  {
+    "id": "q371",
+    "subject": "se",
+    "unit": "s6",
+    "stage": "strong",
+    "stem": "中间件的主要作用是（ ）。",
+    "options": [
+      "打印文件",
+      "连接不同系统、屏蔽差异",
+      "显示图像",
+      "存储数据"
+    ],
+    "answer": 1,
+    "explain": "中间件位于操作系统和应用之间，用于连接分布式组件、屏蔽平台差异。"
+  },
+  {
+    "id": "q372",
+    "subject": "se",
+    "unit": "s6",
+    "stage": "strong",
+    "stem": "典型的三层架构包括（ ）。",
+    "options": [
+      "表示层、业务逻辑层、数据访问层",
+      "输入层、输出层、存储层",
+      "前端、后端、数据库",
+      "类、对象、接口"
+    ],
+    "answer": 0,
+    "explain": "三层架构通常分为表示层、业务逻辑层和数据访问层，职责清晰。"
+  },
+  {
+    "id": "q373",
+    "subject": "se",
+    "unit": "s7",
+    "stage": "strong",
+    "stem": "验收测试通常由（ ）参与。",
+    "options": [
+      "开发人员",
+      "数据库管理员",
+      "网络管理员",
+      "用户或客户"
+    ],
+    "answer": 3,
+    "explain": "验收测试由用户或客户确认软件是否满足需求，决定是否接收。"
+  },
+  {
+    "id": "q374",
+    "subject": "se",
+    "unit": "s7",
+    "stage": "strong",
+    "stem": "黑盒测试的主要依据是（ ）。",
+    "options": [
+      "数据库结构",
+      "编译器实现",
+      "需求规格说明书",
+      "程序内部代码"
+    ],
+    "answer": 2,
+    "explain": "黑盒测试不关心内部结构，依据需求规格说明设计输入和预期输出。"
+  },
+  {
+    "id": "q375",
+    "subject": "se",
+    "unit": "s7",
+    "stage": "strong",
+    "stem": "白盒测试的主要依据是（ ）。",
+    "options": [
+      "项目计划",
+      "程序内部逻辑结构",
+      "用户需求",
+      "界面设计"
+    ],
+    "answer": 1,
+    "explain": "白盒测试基于代码内部逻辑设计用例，关注语句、分支和路径覆盖。"
+  },
+  {
+    "id": "q376",
+    "subject": "se",
+    "unit": "s7",
+    "stage": "strong",
+    "stem": "单元测试的测试对象通常是（ ）。",
+    "options": [
+      "最小可测试单元（如函数）",
+      "整个系统",
+      "多个子系统",
+      "最终用户"
+    ],
+    "answer": 0,
+    "explain": "单元测试针对函数、方法或类等最小可测试单元进行验证。"
+  },
+  {
+    "id": "q377",
+    "subject": "se",
+    "unit": "s7",
+    "stage": "strong",
+    "stem": "集成测试的重点是（ ）。",
+    "options": [
+      "单个函数内部",
+      "用户界面美观",
+      "文档格式",
+      "模块之间的接口"
+    ],
+    "answer": 3,
+    "explain": "集成测试关注模块组装后接口、数据传递和协同工作是否正确。"
+  },
+  {
+    "id": "q378",
+    "subject": "se",
+    "unit": "s7",
+    "stage": "strong",
+    "stem": "回归测试的主要目的是（ ）。",
+    "options": [
+      "减少代码量",
+      "增加新功能",
+      "确认修改没有引入新问题",
+      "提高运行速度"
+    ],
+    "answer": 2,
+    "explain": "软件修改后重新执行相关测试，确认原有功能没有被破坏。"
+  },
+  {
+    "id": "q379",
+    "subject": "se",
+    "unit": "s8",
+    "stage": "strong",
+    "stem": "设计测试用例时，除了有效输入，还应考虑（ ）。",
+    "options": [
+      "只考虑界面",
+      "无效输入和边界情况",
+      "只考虑正常输入",
+      "只考虑最大输入"
+    ],
+    "answer": 1,
+    "explain": "完整测试既要覆盖有效输入，也要覆盖无效输入和边界情况。"
+  },
+  {
+    "id": "q380",
+    "subject": "se",
+    "unit": "s8",
+    "stage": "strong",
+    "stem": "输入范围是 1—100，边界值测试应选取（ ）。",
+    "options": [
+      "0、1、100、101",
+      "50",
+      "1",
+      "100"
+    ],
+    "answer": 0,
+    "explain": "边界值分析选取边界及其邻近值，即 0、1、100、101。"
+  },
+  {
+    "id": "q381",
+    "subject": "se",
+    "unit": "s8",
+    "stage": "strong",
+    "stem": "判定表适合描述（ ）。",
+    "options": [
+      "程序的循环结构",
+      "数据库索引",
+      "网络拓扑",
+      "多个条件组合对应的处理规则"
+    ],
+    "answer": 3,
+    "explain": "判定表把条件组合与对应动作列成表格，适合表达复杂逻辑规则。"
+  },
+  {
+    "id": "q382",
+    "subject": "se",
+    "unit": "s8",
+    "stage": "strong",
+    "stem": "错误推测法主要依据（ ）。",
+    "options": [
+      "数据库结构",
+      "网络协议",
+      "测试经验和直觉",
+      "代码覆盖率"
+    ],
+    "answer": 2,
+    "explain": "错误推测法根据经验和直觉推测容易出错的场景，再设计针对性用例。"
+  },
+  {
+    "id": "q383",
+    "subject": "se",
+    "unit": "s8",
+    "stage": "strong",
+    "stem": "语句覆盖属于（ ）。",
+    "options": [
+      "性能测试",
+      "白盒测试",
+      "黑盒测试",
+      "验收测试"
+    ],
+    "answer": 1,
+    "explain": "语句覆盖要求程序中每条可执行语句至少执行一次，属于白盒测试。"
+  },
+  {
+    "id": "q384",
+    "subject": "se",
+    "unit": "s8",
+    "stage": "strong",
+    "stem": "一份清晰的缺陷报告应包含（ ）。",
+    "options": [
+      "复现步骤、实际结果、预期结果",
+      "只有标题",
+      "只有截图",
+      "只有开发人员姓名"
+    ],
+    "answer": 0,
+    "explain": "缺陷报告应写清复现步骤、实际结果和预期结果，便于开发定位问题。"
+  },
+  {
+    "id": "q385",
+    "subject": "se",
+    "unit": "s9",
+    "stage": "sprint",
+    "stem": "项目网络图中，关键路径上的任务（ ）。",
+    "options": [
+      "可以随意拖延",
+      "成本最低",
+      "不需要资源",
+      "没有机动时间"
+    ],
+    "answer": 3,
+    "explain": "关键路径上的任务总时差为零，任何延误都会影响项目总工期。"
+  },
+  {
+    "id": "q386",
+    "subject": "se",
+    "unit": "s9",
+    "stage": "sprint",
+    "stem": "甘特图主要用于表示（ ）。",
+    "options": [
+      "数据结构",
+      "网络协议",
+      "任务进度和时间安排",
+      "模块依赖关系"
+    ],
+    "answer": 2,
+    "explain": "甘特图用横条展示任务的开始、持续时间和完成情况。"
+  },
+  {
+    "id": "q387",
+    "subject": "se",
+    "unit": "s9",
+    "stage": "sprint",
+    "stem": "5 人团队中可能的沟通路径数量是（ ）。",
+    "options": [
+      "25",
+      "10",
+      "15",
+      "20"
+    ],
+    "answer": 1,
+    "explain": "沟通路径数为 n(n-1)/2=5×4/2=10。"
+  },
+  {
+    "id": "q388",
+    "subject": "se",
+    "unit": "s9",
+    "stage": "sprint",
+    "stem": "风险管理的第一步通常是（ ）。",
+    "options": [
+      "风险识别",
+      "风险消除",
+      "风险转移",
+      "风险接受"
+    ],
+    "answer": 0,
+    "explain": "风险管理先识别可能的风险，再进行分析、规划和应对。"
+  },
+  {
+    "id": "q389",
+    "subject": "se",
+    "unit": "s9",
+    "stage": "sprint",
+    "stem": "项目进度管理常用的工具是（ ）。",
+    "options": [
+      "编译器和调试器",
+      "数据库和表格",
+      "浏览器和邮件",
+      "甘特图和网络图"
+    ],
+    "answer": 3,
+    "explain": "甘特图和网络图能直观表示任务进度、依赖关系和关键路径。"
+  },
+  {
+    "id": "q390",
+    "subject": "se",
+    "unit": "s9",
+    "stage": "sprint",
+    "stem": "软件成本估算常用的方法是（ ）。",
+    "options": [
+      "只看代码行数",
+      "不做估算",
+      "类比估算、参数估算",
+      "随机猜测"
+    ],
+    "answer": 2,
+    "explain": "类比估算参考历史项目，参数估算利用模型和参数，都是常用方法。"
+  },
+  {
+    "id": "q391",
+    "subject": "se",
+    "unit": "s10",
+    "stage": "sprint",
+    "stem": "软件可维护性是指（ ）。",
+    "options": [
+      "软件价格",
+      "修改、完善软件的难易程度",
+      "软件运行速度",
+      "软件界面颜色"
+    ],
+    "answer": 1,
+    "explain": "可维护性反映软件被理解、修改、扩展和移植的难易程度。"
+  },
+  {
+    "id": "q392",
+    "subject": "se",
+    "unit": "s10",
+    "stage": "sprint",
+    "stem": "配置管理的主要目标是（ ）。",
+    "options": [
+      "标识、控制和管理配置项及其变更",
+      "提高网速",
+      "压缩图片",
+      "加密数据库"
+    ],
+    "answer": 0,
+    "explain": "配置管理通过标识、控制、记录和审计，管理配置项及其变更。"
+  },
+  {
+    "id": "q393",
+    "subject": "se",
+    "unit": "s10",
+    "stage": "sprint",
+    "stem": "版本控制的主要作用是（ ）。",
+    "options": [
+      "提高网速",
+      "压缩图片",
+      "加密文件",
+      "管理代码历史和团队协作"
+    ],
+    "answer": 3,
+    "explain": "版本控制记录代码变更历史，支持多人协作、回退和分支管理。"
+  },
+  {
+    "id": "q394",
+    "subject": "se",
+    "unit": "s10",
+    "stage": "sprint",
+    "stem": "配置项是指（ ）。",
+    "options": [
+      "只包括源代码",
+      "只包括文档",
+      "需纳入配置管理的工作产品",
+      "所有临时文件"
+    ],
+    "answer": 2,
+    "explain": "配置项是需纳入配置管理的工作产品，包括代码、文档、数据和工具等。"
+  },
+  {
+    "id": "q395",
+    "subject": "se",
+    "unit": "s10",
+    "stage": "sprint",
+    "stem": "变更控制的主要目的是（ ）。",
+    "options": [
+      "减少测试",
+      "保证变更有序、可追溯",
+      "阻止所有变更",
+      "加快编码"
+    ],
+    "answer": 1,
+    "explain": "变更控制通过申请、评审、批准和记录，保证变更受控且可追溯。"
+  },
+  {
+    "id": "q396",
+    "subject": "se",
+    "unit": "s10",
+    "stage": "sprint",
+    "stem": "软件评审的主要目的是（ ）。",
+    "options": [
+      "尽早发现缺陷",
+      "增加代码行数",
+      "延长工期",
+      "减少文档"
+    ],
+    "answer": 0,
+    "explain": "评审能在早期发现需求和设计中的问题，降低后期返工成本。"
+  },
+  {
+    "id": "q397",
+    "subject": "se",
+    "unit": "s11",
+    "stage": "sprint",
+    "stem": "C 语言中数组名通常表示（ ）。",
+    "options": [
+      "数组长度",
+      "数组最后一个元素",
+      "数组元素个数",
+      "数组首元素地址"
+    ],
+    "answer": 3,
+    "explain": "数组名在大多数表达式中会转换为指向首元素的指针。"
+  },
+  {
+    "id": "q398",
+    "subject": "se",
+    "unit": "s11",
+    "stage": "sprint",
+    "stem": "栈的插入和删除操作通常发生在（ ）。",
+    "options": [
+      "任意位置",
+      "中间位置",
+      "栈顶",
+      "栈底"
+    ],
+    "answer": 2,
+    "explain": "栈只能在栈顶进行插入（入栈）和删除（出栈）操作。"
+  },
+  {
+    "id": "q399",
+    "subject": "se",
+    "unit": "s11",
+    "stage": "sprint",
+    "stem": "队列的基本特点是（ ）。",
+    "options": [
+      "不能删除",
+      "先进先出",
+      "后进先出",
+      "随机存取"
+    ],
+    "answer": 1,
+    "explain": "队列遵循先进先出（FIFO）原则，从队尾入队、队头出队。"
+  },
+  {
+    "id": "q400",
+    "subject": "se",
+    "unit": "s11",
+    "stage": "sprint",
+    "stem": "双重循环结构的时间复杂度通常是（ ）。",
+    "options": [
+      "O(n²)",
+      "O(1)",
+      "O(log n)",
+      "O(n)"
+    ],
+    "answer": 0,
+    "explain": "外层循环执行 n 次，内层也执行约 n 次，总次数约为 n²。"
+  },
+  {
+    "id": "q401",
+    "subject": "se",
+    "unit": "s11",
+    "stage": "sprint",
+    "stem": "C 语言中指针变量存放的是（ ）。",
+    "options": [
+      "数值",
+      "字符",
+      "数组",
+      "地址"
+    ],
+    "answer": 3,
+    "explain": "指针变量存放内存地址，通过它可以访问所指向的数据。"
+  },
+  {
+    "id": "q402",
+    "subject": "se",
+    "unit": "s11",
+    "stage": "sprint",
+    "stem": "二分查找的平均时间复杂度是（ ）。",
+    "options": [
+      "O(n²)",
+      "O(1)",
+      "O(log n)",
+      "O(n)"
+    ],
+    "answer": 2,
+    "explain": "二分查找每次把搜索范围缩小一半，复杂度为 O(log n)。"
+  },
+  {
+    "id": "q403",
+    "subject": "se",
+    "unit": "s12",
+    "stage": "sprint",
+    "stem": "某项目需求频繁变更，瀑布模型导致大量返工，较合理的改进是（ ）。",
+    "options": [
+      "不进行测试",
+      "改用迭代或敏捷开发",
+      "采用更严格的瀑布模型",
+      "取消需求分析"
+    ],
+    "answer": 1,
+    "explain": "需求频繁变更时，迭代或敏捷开发能通过短周期反馈更好地适应变化。"
+  },
+  {
+    "id": "q404",
+    "subject": "se",
+    "unit": "s12",
+    "stage": "sprint",
+    "stem": "软件工程案例题中，评价方案时通常要说明（ ）。",
+    "options": [
+      "方案的优点、局限和适用条件",
+      "只看代码行数",
+      "只写个人喜好",
+      "只写结论"
+    ],
+    "answer": 0,
+    "explain": "评价方案应说明优点、局限和适用条件，体现分析的完整性。"
+  },
+  {
+    "id": "q405",
+    "subject": "se",
+    "unit": "s12",
+    "stage": "sprint",
+    "stem": "软件工程简答题最容易得分的作答方式是（ ）。",
+    "options": [
+      "写成一大段长文",
+      "只写一个词",
+      "完全口语化",
+      "分点作答并突出专业术语"
+    ],
+    "answer": 3,
+    "explain": "分点作答便于阅卷，专业术语能体现掌握程度，是主观题得分关键。"
+  },
+  {
+    "id": "q406",
+    "subject": "se",
+    "unit": "s12",
+    "stage": "sprint",
+    "stem": "软件项目延期最常见的原因是（ ）。",
+    "options": [
+      "显示器太大",
+      "键盘太快",
+      "需求不清、估算不足、变更频繁",
+      "电脑太新"
+    ],
+    "answer": 2,
+    "explain": "需求不明确、工作量估算不足和频繁变更都会导致进度失控。"
+  },
+  {
+    "id": "q407",
+    "subject": "se",
+    "unit": "s12",
+    "stage": "sprint",
+    "stem": "提高软件质量最有效的做法是（ ）。",
+    "options": [
+      "只更换编程语言",
+      "规范开发过程并加强测试与评审",
+      "只增加人手",
+      "只延长工期"
+    ],
+    "answer": 1,
+    "explain": "质量来自过程控制，规范过程、测试和评审能系统性地减少缺陷。"
+  },
+  {
+    "id": "q408",
+    "subject": "se",
+    "unit": "s12",
+    "stage": "sprint",
+    "stem": "回答“如何改进”类问题时，应该（ ）。",
+    "options": [
+      "针对问题提出可执行措施",
+      "泛泛而谈",
+      "重复问题描述",
+      "批评用户"
+    ],
+    "answer": 0,
+    "explain": "改进类问题要给出具体、可执行的措施，并与前面的问题分析对应。"
   }
 ];
   </script>
@@ -7389,6 +11709,7 @@ const CHEATSHEETS = {
       exams: [],
       wrongs: [],
       readMaterials: [],
+      recentQuestions: [],
       streak: { last: "", days: 0 },
       startedAt: todayKey()
     };
@@ -7460,6 +11781,9 @@ const CHEATSHEETS = {
     }) : [];
     result.readMaterials = Array.isArray(raw.readMaterials)
       ? raw.readMaterials.filter(function (id) { return !!MATERIALS[id]; })
+      : [];
+    result.recentQuestions = Array.isArray(raw.recentQuestions)
+      ? raw.recentQuestions.filter(function (id) { return !!QUESTION_MAP[id]; }).slice(-240)
       : [];
     result.streak = Object.assign({ last: "", days: 0 }, raw.streak || {});
     result.startedAt = /^\d{4}-\d{2}-\d{2}$/.test(result.startedAt || "") ? result.startedAt : def.startedAt;
@@ -7703,6 +12027,30 @@ const CHEATSHEETS = {
   }
 
   /* ---------- 练习流程 ---------- */
+  function rememberQuestions(qids) {
+    if (!Array.isArray(state.recentQuestions)) state.recentQuestions = [];
+    qids.forEach(function (id) {
+      const idx = state.recentQuestions.indexOf(id);
+      if (idx !== -1) state.recentQuestions.splice(idx, 1);
+      state.recentQuestions.push(id);
+    });
+    if (state.recentQuestions.length > 240) {
+      state.recentQuestions = state.recentQuestions.slice(-240);
+    }
+  }
+
+  function pickQuestions(pool, count) {
+    if (!pool.length || count <= 0) return [];
+    const recent = state.recentQuestions || [];
+    const fresh = pool.filter(function (q) { return recent.indexOf(q.id) === -1; });
+    const used = pool.filter(function (q) { return recent.indexOf(q.id) !== -1; });
+    const picked = shuffle(fresh).slice(0, count);
+    if (picked.length < count) {
+      picked.push.apply(picked, shuffle(used).slice(0, count - picked.length));
+    }
+    return picked;
+  }
+
   function buildDailyPractice() {
     const entry = todayEntry();
     const picked = [];
@@ -7710,36 +12058,37 @@ const CHEATSHEETS = {
       const unitId = entry.units.find(function (id) {
         return UNIT_MAP[id] && UNIT_MAP[id].subject === s.id;
       });
-      let pool = unitId ? QUESTIONS.filter(function (q) { return q.unit === unitId; }) : [];
-      const need = 3 - pool.length;
-      if (need > 0) {
-        const stageId = unitId && UNIT_MAP[unitId] ? UNIT_MAP[unitId].stage : null;
-        const exclude = pool.map(function (q) { return q.id; }).concat(picked);
-        let extra = QUESTIONS.filter(function (q) {
+      const unitPool = unitId ? QUESTIONS.filter(function (q) { return q.unit === unitId; }) : [];
+      const stageId = unitId && UNIT_MAP[unitId] ? UNIT_MAP[unitId].stage : null;
+      const chosen = pickQuestions(unitPool, 4);
+      const exclude = picked.concat(chosen.map(function (q) { return q.id; }));
+      if (chosen.length < 4) {
+        const extraPool = QUESTIONS.filter(function (q) {
           return q.subject === s.id && q.stage === stageId && exclude.indexOf(q.id) === -1;
         });
-        if (extra.length < need) {
-          const more = QUESTIONS.filter(function (q) {
-            return q.subject === s.id && exclude.indexOf(q.id) === -1 &&
-              extra.map(function (x) { return x.id; }).indexOf(q.id) === -1;
-          });
-          extra = extra.concat(shuffle(more));
-        }
-        pool = pool.concat(shuffle(extra).slice(0, need));
+        const extra = pickQuestions(extraPool, 4 - chosen.length);
+        chosen.push.apply(chosen, extra);
+        extra.forEach(function (q) { exclude.push(q.id); });
       }
-      picked.push.apply(picked, shuffle(pool).slice(0, 3).map(function (q) { return q.id; }));
+      if (chosen.length < 4) {
+        const restPool = QUESTIONS.filter(function (q) {
+          return q.subject === s.id && exclude.indexOf(q.id) === -1;
+        });
+        chosen.push.apply(chosen, pickQuestions(restPool, 4 - chosen.length));
+      }
+      picked.push.apply(picked, chosen.map(function (q) { return q.id; }));
     });
     return shuffle(picked);
   }
 
   function buildSubjectPractice(subjectId) {
-    return shuffle(QUESTIONS.filter(function (q) { return q.subject === subjectId; }))
-      .slice(0, 6).map(function (q) { return q.id; });
+    const pool = QUESTIONS.filter(function (q) { return q.subject === subjectId; });
+    return shuffle(pickQuestions(pool, 10).map(function (q) { return q.id; }));
   }
 
   function buildUnitPractice(unitId) {
-    return shuffle(QUESTIONS.filter(function (q) { return q.unit === unitId; }))
-      .map(function (q) { return q.id; });
+    const pool = QUESTIONS.filter(function (q) { return q.unit === unitId; });
+    return shuffle(pickQuestions(pool, 8).map(function (q) { return q.id; }));
   }
 
   function startPractice(mode, options) {
@@ -7793,6 +12142,7 @@ const CHEATSHEETS = {
     };
     recordPracticeResult(result);
     recordWrongs(details);
+    rememberQuestions(p.qids);
     touchStreak();
     if (p.mode === "daily") {
       const entry = todayEntry();
@@ -7810,15 +12160,15 @@ const CHEATSHEETS = {
     const subjectId = ui.examConfig.subject;
     const stageId = ui.examConfig.stage;
     let pool = QUESTIONS.filter(function (q) { return q.subject === subjectId && q.stage === stageId; });
-    if (pool.length < 10) {
+    if (pool.length < 15) {
       const extra = QUESTIONS.filter(function (q) {
         return q.subject === subjectId && q.stage !== stageId &&
           pool.map(function (p) { return p.id; }).indexOf(q.id) === -1;
       });
-      pool = pool.concat(shuffle(extra).slice(0, 10 - pool.length));
+      pool = pool.concat(shuffle(extra).slice(0, 15 - pool.length));
     }
-    const qids = shuffle(pool).slice(0, 10).map(function (q) { return q.id; });
-    if (qids.length < 10) {
+    const qids = shuffle(pickQuestions(pool, 15).map(function (q) { return q.id; }));
+    if (qids.length < 15) {
       showToast("该阶段题目不足，请切换其他阶段");
       return;
     }
@@ -7830,7 +12180,7 @@ const CHEATSHEETS = {
       answers: {},
       index: 0,
       startedAt: Date.now(),
-      duration: 15 * 60,
+      duration: 20 * 60,
       result: null
     };
     ui.view = "exam";
@@ -7866,7 +12216,7 @@ const CHEATSHEETS = {
       date: todayKey(),
       subject: exam.subject,
       stage: exam.stage,
-      score: correct * 10,
+      score: Math.round(correct / details.length * 100),
       correct: correct,
       totalQ: details.length,
       timeUsed: timeUsed,
@@ -7875,6 +12225,7 @@ const CHEATSHEETS = {
     };
     state.exams.push(record);
     recordWrongs(details);
+    rememberQuestions(exam.qids);
     touchStreak();
     saveState();
     ui.exam = null;
@@ -8155,7 +12506,7 @@ const CHEATSHEETS = {
     const quizRow = '<button class="task-row' + (quizDone ? " done" : "") + '" type="button" data-view="practice" style="--subject:var(--brand)">' +
       '<span class="task-check">' + checkSvg() + "</span>" +
       '<span class="task-main"><strong>每日巩固 · 四科混合练习</strong><small>' +
-      (quizDone ? "今日已答对 " + entry.quiz.correct + "/" + entry.quiz.total + " 题" : "约 12 题 · 检验今天的掌握情况") +
+      (quizDone ? "今日已答对 " + entry.quiz.correct + "/" + entry.quiz.total + " 题" : "约 16 题 · 检验今天的掌握情况") +
       "</small></span>" +
       '<span class="task-side">' + (quizDone ? "再练一次" : "去练习 →") + "</span>" +
       "</button>";
@@ -8495,7 +12846,7 @@ const CHEATSHEETS = {
     const total = sum(state.practiceLog, "total");
     const correct = sum(state.practiceLog, "correct");
     const acc = total ? round(correct / total * 100) : null;
-    const todayQuestions = 12;
+    const todayQuestions = 16;
 
     const scope = SUBJECTS.map(function (s) {
       const id = entry.units.find(function (uid) { return UNIT_MAP[uid] && UNIT_MAP[uid].subject === s.id; });
@@ -8511,7 +12862,8 @@ const CHEATSHEETS = {
     const subjectCards = SUBJECTS.map(function (s) {
       return '<article class="subject-card card" style="--subject:' + s.color + ";--soft:" + s.soft + '">' +
         '<div class="subject-top"><span class="subject-icon">' + esc(s.icon) + "</span>" +
-        "<div><h3>" + esc(s.name) + "专项</h3><p>从本科题库随机抽 6 题</p></div></div>" +
+        "<div><h3>" + esc(s.name) + "专项</h3><p>题库 " +
+        QUESTIONS.filter(function (q) { return q.subject === s.id; }).length + " 题 · 每次随机 10 题</p></div></div>" +
         '<div class="subject-meta"><span>已练 <b>' + sum(state.practiceLog.filter(function (x) { return x.subject === s.id; }), "total") +
         "</b> 题</span><span>正确率 <b>" + (function () {
           const logs = state.practiceLog.filter(function (x) { return x.subject === s.id; });
@@ -8523,10 +12875,10 @@ const CHEATSHEETS = {
     }).join("");
 
     return '<section class="practice-hero card">' +
-      "<div><span class=\"eyebrow\">每日巩固</span><h2>" + (quiz ? "今天已经巩固过一轮" : "用 12 道题检验今天的学习") + "</h2>" +
+      "<div><span class=\"eyebrow\">每日巩固</span><h2>" + (quiz ? "今天已经巩固过一轮" : "用 16 道题检验今天的学习") + "</h2>" +
       "<p>题目来自今天四个知识单元，覆盖高数、英语、信息技术与软件工程专业课。提交后立即查看逐题解析，错题会自动进入错题本。</p>" +
       '<div class="practice-meta"><div><strong>' + todayQuestions + "</strong><span>今日题量</span></div>" +
-      "<div><strong>约 15</strong><span>分钟</span></div>" +
+      "<div><strong>约 20</strong><span>分钟</span></div>" +
       "<div><strong>" + (quiz ? quiz.correct + "/" + quiz.total : "--") + "</strong><span>今日成绩</span></div>" +
       "<div><strong>" + (acc == null ? "--" : acc + "%") + "</strong><span>累计正确率</span></div></div></div>" +
       '<button class="btn btn-primary" type="button" data-action="startDaily">' + (quiz ? "再练一轮" : "开始今日巩固") + "</button>" +
@@ -8537,11 +12889,11 @@ const CHEATSHEETS = {
       '<div class="stat-box"><span>错题本</span><strong>' + state.wrongs.length + "<small> 题</small></strong></div>" +
       '<div class="stat-box"><span>今日巩固</span><strong>' + (quiz ? quiz.correct + "/" + quiz.total : "待完成") + "</strong></div>" +
       "</div>" +
-      '<div class="section-head"><div><h2>今日出题范围</h2><p>每科抽取 3 题，优先覆盖当天单元</p></div></div>' +
+      '<div class="section-head"><div><h2>今日出题范围</h2><p>每科抽取 4 题，优先覆盖当天单元</p></div></div>' +
       '<div class="card" style="padding:12px"><div class="school-list" style="margin:0">' + scope + "</div></div>" +
-      '<div class="section-head"><div><h2>分科专项练习</h2><p>想单独补一科时使用，每次 6 题</p></div></div>' +
+      '<div class="section-head"><div><h2>分科专项练习</h2><p>想单独补一科时使用，每次 10 题</p></div></div>' +
       '<div class="subject-grid">' + subjectCards + "</div>" +
-      '<p class="footer-note">练习记录会用于计算各科掌握度，建议每天至少完成一次巩固。</p>';
+      '<p class="footer-note">题库共 ' + QUESTIONS.length + ' 题。每次抽题会优先避开最近做过的题，练完可以直接换一批继续刷新。</p>';
   }
 
   function viewPracticeQuiz() {
@@ -8621,8 +12973,9 @@ const CHEATSHEETS = {
       (weak.length ? '<p style="font-size:11.5px;color:var(--muted);margin-top:12px">薄弱单元：' + weak.map(function (u) { return esc(u.title); }).join("、") + "</p>" : "") +
       "</div></section>" +
       '<div class="section-head"><div><h2>逐题解析</h2><p>答错的题已自动加入错题本</p></div>' +
-      '<div style="display:flex;gap:8px"><button class="btn btn-outline btn-sm" type="button" data-view="analysis">查看学情</button>' +
-      '<button class="btn btn-primary btn-sm" type="button" data-action="exitPractice">返回巩固首页</button></div></div>' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-outline btn-sm" type="button" data-view="analysis">查看学情</button>' +
+      '<button class="btn btn-primary btn-sm" type="button" data-action="retryPractice">再随机一批</button>' +
+      '<button class="btn btn-outline btn-sm" type="button" data-action="exitPractice">返回巩固首页</button></div></div>' +
       '<div class="review-list">' + review + "</div>";
   }
 
@@ -8668,7 +13021,7 @@ const CHEATSHEETS = {
     }
 
     return '<div class="page-head"><div><h2>阶段测验</h2>' +
-      "<p>按科目和阶段抽取 10 道题，限时 15 分钟，满分 100 分。建议每学完一个阶段就测一次，用成绩校准掌握度。</p></div>" +
+      "<p>按科目和阶段抽取 15 道题，限时 20 分钟，满分 100 分。建议每学完一个阶段就测一次，用成绩校准掌握度。</p></div>" +
       '<div class="day-badge"><strong>' + (avg == null ? "--" : avg) + "</strong><span>历史平均<br>得分</span></div></div>" +
       '<div class="grid grid-2">' +
       '<section class="card"><div class="chart-head"><div><h3>选择科目</h3><p>四科均可单独测验</p></div></div><div class="choice-grid">' + subjectChoices + "</div>" +
@@ -8678,7 +13031,7 @@ const CHEATSHEETS = {
       '<section class="card"><div class="chart-head"><div><h3>选择阶段</h3><p>按学习进度选择对应难度</p></div></div><div class="choice-grid">' + stageChoices + "</div>" +
       '<div class="config-row"><span>科目</span><strong>' + esc(subject.name) + "</strong></div>" +
       '<div class="config-row"><span>阶段</span><strong>' + esc(stage.name) + "</strong></div>" +
-      '<div class="config-row"><span>题量与时间</span><strong>10 题 · 15 分钟</strong></div>' +
+      '<div class="config-row"><span>题量与时间</span><strong>15 题 · 20 分钟</strong></div>' +
       '<button class="btn btn-primary btn-block" type="button" data-action="startExam">开始 ' + esc(subject.short) + " · " + esc(stage.short) + "测验</button>" +
       '<p class="exam-note">交卷后立即出分并展示逐题解析，成绩会计入该科掌握度。未作答题目按错误计分。</p></section>' +
       "</div>" + historyHtml +
@@ -8720,7 +13073,7 @@ const CHEATSHEETS = {
       '<aside class="card exam-side"><h3>答题卡</h3><div class="quiz-palette">' + palette + "</div>" +
       '<div class="palette-legend"><span><i style="background:var(--brand)"></i>当前</span><span><i style="background:var(--brand-soft);border:1px solid var(--brand)"></i>已答</span><span><i style="background:var(--line)"></i>未答</span></div>' +
       '<button class="btn btn-primary btn-block" type="button" data-action="submitExam">交卷并查看解析</button>' +
-      '<p class="exam-note">时间到会自动交卷。离开页面计时不会暂停，建议留出完整 15 分钟。</p></aside></div>';
+      '<p class="exam-note">时间到会自动交卷。离开页面计时不会暂停，建议留出完整 20 分钟。</p></aside></div>';
   }
 
   function viewExamResult() {
@@ -8746,7 +13099,7 @@ const CHEATSHEETS = {
       const chosenText = d.chosen == null ? "未作答" : LETTERS[d.chosen] + ". " + q.options[d.chosen];
       return '<div class="review-item ' + (d.correct ? "is-correct" : "is-wrong") + '">' +
         '<div class="review-head"><span>第 ' + (i + 1) + " 题 · " + esc(UNIT_MAP[q.unit] ? UNIT_MAP[q.unit].title : "") + "</span>" +
-        '<span class="tag ' + (d.correct ? "tag-success" : "tag-danger") + '">' + (d.correct ? "正确 +10" : "错误 0") + "</span></div>" +
+        '<span class="tag ' + (d.correct ? "tag-success" : "tag-danger") + '">' + (d.correct ? "正确" : "错误") + "</span></div>" +
         '<p class="review-stem">' + esc(q.stem) + "</p>" +
         '<div class="review-answer">你的答案：<span class="' + (d.correct ? "right-text" : "wrong-text") + '">' + esc(chosenText) +
         "</span> ｜ 正确答案：<span class=\"right-text\">" + LETTERS[q.answer] + ". " + esc(q.options[q.answer]) + "</span></div>" +
@@ -9151,6 +13504,18 @@ const CHEATSHEETS = {
       }
       if (action === "practiceUnit") {
         startPractice("unit", { unitId: target.dataset.id });
+        return;
+      }
+      if (action === "retryPractice") {
+        if (!ui.practice) {
+          render();
+          return;
+        }
+        const mode = ui.practice.mode;
+        const subjectId = ui.practice.subjectId;
+        const unitId = ui.practice.unitId;
+        ui.practice = null;
+        startPractice(mode, { subjectId: subjectId, unitId: unitId });
         return;
       }
       if (action === "completeUnit") {
