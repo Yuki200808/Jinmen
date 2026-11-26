@@ -3019,7 +3019,7 @@ button.school-row:hover {
 
       <div class="sidebar-goal" id="sidebarGoal"></div>
       <div class="sidebar-foot">
-        <span>数据保存在本地浏览器</span>
+        <span>本地保存 · 登录后云同步</span>
         <span class="dot"></span>
         <span>v1.0</span>
       </div>
@@ -3044,6 +3044,13 @@ button.school-row:hover {
             <strong id="topStreak">0</strong>
             <span class="chip-unit">天</span>
           </div>
+          <button class="chip account-chip" type="button" data-view="settings" title="账号与云同步">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path>
+            </svg>
+            <strong id="accountState">登录</strong>
+          </button>
           <button class="icon-btn" id="themeBtn" type="button" aria-label="切换深色模式" title="切换深色模式">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
@@ -13131,6 +13138,21 @@ const CHEATSHEETS = {
 
   const STORAGE_KEY = "jinmen-upgrade-v1";
   const LETTERS = ["A", "B", "C", "D", "E", "F"];
+  const SUPABASE_URL = "https://vjdljgeguwygcrkqjjne.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZGxqZ2VndXd5Z2Nya3Fqam5lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU0NjUwMDIsImV4cCI6MjExMTA0MTAwMn0.yrkNymOobihWc6S8_mYAFRjS383oIIAlBAJylxrNNJ0";
+  const AUTH_KEY = "jinmen-auth-v1";
+  const auth = {
+    session: null,
+    user: null,
+    lastSync: 0,
+    syncing: false,
+    autoSync: false,
+    busy: false,
+    message: "",
+    error: ""
+  };
+  let suppressCloud = false;
+  let cloudTimer = null;
   const VIEW_TITLES = {
     dashboard: "学习总览",
     today: "今日学习",
@@ -13169,6 +13191,7 @@ const CHEATSHEETS = {
   };
 
   let state = loadState();
+  loadAuth();
 
   /* ---------- 基础工具 ---------- */
   function pad(n) {
@@ -13364,6 +13387,290 @@ const CHEATSHEETS = {
     } catch (err) {
       showToast("本地保存失败，请检查浏览器存储权限");
     }
+    if (auth.user && auth.autoSync && !suppressCloud) scheduleCloudPush();
+  }
+
+
+  /* ---------- 账号与云同步 ---------- */
+  function loadAuth() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(AUTH_KEY) || "null");
+      if (raw && raw.session) {
+        auth.session = raw.session;
+        auth.user = raw.user || null;
+        auth.lastSync = Number(raw.lastSync) || 0;
+      }
+    } catch (err) { /* ignore */ }
+  }
+
+  function saveAuth() {
+    try {
+      localStorage.setItem(AUTH_KEY, JSON.stringify({ session: auth.session, user: auth.user, lastSync: auth.lastSync }));
+    } catch (err) { /* ignore */ }
+  }
+
+  function clearAuth() {
+    auth.session = null;
+    auth.user = null;
+    auth.lastSync = 0;
+    auth.autoSync = false;
+    auth.syncing = false;
+    auth.message = "";
+    auth.error = "";
+    try { localStorage.removeItem(AUTH_KEY); } catch (err) { /* ignore */ }
+  }
+
+  function setSession(data) {
+    auth.session = {
+      access_token: data.access_token,
+      refresh_token: data.refresh_token,
+      expires_at: Date.now() + (Number(data.expires_in) || 3600) * 1000
+    };
+    auth.user = data.user || { id: "", email: data.email || "" };
+    saveAuth();
+  }
+
+  async function ensureSession() {
+    if (!auth.session) return false;
+    if (!auth.session.expires_at || Date.now() < auth.session.expires_at - 60000) return true;
+    if (!auth.session.refresh_token) return false;
+    try {
+      const res = await fetch(SUPABASE_URL + "/auth/v1/token?grant_type=refresh_token", {
+        method: "POST",
+        headers: { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json" },
+        body: JSON.stringify({ refresh_token: auth.session.refresh_token })
+      });
+      if (!res.ok) return false;
+      setSession(await res.json());
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  async function supabaseFetch(path, opts) {
+    const o = opts || {};
+    const headers = Object.assign({ apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json" }, o.headers || {});
+    if (!o.noAuth && auth.session && auth.session.access_token) {
+      headers.Authorization = "Bearer " + auth.session.access_token;
+    }
+    const res = await fetch(SUPABASE_URL + path, {
+      method: o.method || "GET",
+      headers: headers,
+      body: o.body ? JSON.stringify(o.body) : undefined
+    });
+    const text = await res.text();
+    let data = null;
+    if (text) { try { data = JSON.parse(text); } catch (err) { data = text; } }
+    if (!res.ok) {
+      const msg = (data && (data.msg || data.message || data.error_description || data.error)) || ("请求失败 " + res.status);
+      throw new Error(msg);
+    }
+    return data;
+  }
+
+  function authErrorMessage(msg) {
+    const m = String(msg || "");
+    if (/Invalid login credentials/i.test(m)) return "邮箱或密码错误";
+    if (/Email not confirmed/i.test(m)) return "邮箱还未确认，请先到邮箱点击确认链接";
+    if (/already registered/i.test(m)) return "该邮箱已注册，请直接登录";
+    if (/Password should be at least/i.test(m)) return "密码至少 6 位";
+    if (/rate limit/i.test(m)) return "操作过于频繁，请稍后再试";
+    return m || "操作失败";
+  }
+
+  function readAuthForm() {
+    const emailEl = document.getElementById("authEmail");
+    const passEl = document.getElementById("authPassword");
+    return {
+      email: emailEl ? emailEl.value.trim() : "",
+      password: passEl ? passEl.value : ""
+    };
+  }
+
+  async function authSignIn() {
+    if (auth.busy) return;
+    const form = readAuthForm();
+    if (!form.email || !form.password) { auth.error = "请输入邮箱和密码"; auth.message = ""; render(); return; }
+    auth.busy = true; auth.error = ""; auth.message = "正在登录…"; render();
+    try {
+      const data = await supabaseFetch("/auth/v1/token?grant_type=password", {
+        method: "POST", noAuth: true, body: { email: form.email, password: form.password }
+      });
+      setSession(data);
+      auth.message = "登录成功，正在检查云端数据…";
+      await pullCloudState(false);
+    } catch (err) {
+      auth.error = authErrorMessage(err.message);
+      auth.message = "";
+    }
+    auth.busy = false;
+    render();
+  }
+
+  async function authSignUp() {
+    if (auth.busy) return;
+    const form = readAuthForm();
+    if (!form.email || !form.password) { auth.error = "请输入邮箱和密码"; auth.message = ""; render(); return; }
+    if (form.password.length < 6) { auth.error = "密码至少 6 位"; auth.message = ""; render(); return; }
+    auth.busy = true; auth.error = ""; auth.message = "正在注册…"; render();
+    try {
+      const data = await supabaseFetch("/auth/v1/signup", {
+        method: "POST", noAuth: true, body: { email: form.email, password: form.password }
+      });
+      if (data && data.access_token) {
+        setSession(data);
+        auth.message = "注册成功，正在检查云端数据…";
+        await pullCloudState(false);
+      } else {
+        auth.message = "注册成功，请到邮箱点击确认链接后再登录";
+      }
+    } catch (err) {
+      auth.error = authErrorMessage(err.message);
+      auth.message = "";
+    }
+    auth.busy = false;
+    render();
+  }
+
+  function authSignOut() {
+    clearAuth();
+    showToast("已退出账号，数据仍保存在本机");
+    render();
+  }
+
+  function applyRemoteState(remote) {
+    const next = normalizeState(remote);
+    suppressCloud = true;
+    state = next;
+    saveState();
+    suppressCloud = false;
+  }
+
+  async function pullCloudState(manual) {
+    if (!auth.user || !auth.user.id) return;
+    auth.error = "";
+    if (manual) { auth.message = "正在读取云端数据…"; render(); }
+    try {
+      if (!(await ensureSession())) throw new Error("登录已过期，请重新登录");
+      const user = await supabaseFetch("/auth/v1/user");
+      const meta = (user && user.user_metadata) || {};
+      const remoteState = meta.jinmen && typeof meta.jinmen === "object" ? meta.jinmen : null;
+      const remoteTime = Number(meta.jinmenSyncedAt) || 0;
+      const localHas = state.practiceLog.length || state.exams.length || state.wrongs.length || totalCompleted() > 0;
+      if (!remoteState || !Object.keys(remoteState).length) {
+        auth.message = "云端暂无数据，正在上传本地进度…";
+        await pushCloudState(true);
+        auth.autoSync = true;
+      } else if (!localHas) {
+        applyRemoteState(remoteState);
+        auth.lastSync = Date.now(); saveAuth();
+        auth.message = "已载入云端学习进度";
+        auth.autoSync = true;
+      } else if (manual) {
+        applyRemoteState(remoteState);
+        auth.lastSync = Date.now(); saveAuth();
+        auth.message = "已用云端数据覆盖本地";
+        auth.autoSync = true;
+      } else {
+        if (auth.lastSync && remoteTime > auth.lastSync + 2000) {
+          auth.message = "云端有更新的数据，可点“从云端恢复”覆盖本地";
+          auth.autoSync = false;
+        } else {
+          auth.message = "本地和云端都有数据，已保留本地；可点“上传本地”覆盖云端";
+          auth.autoSync = false;
+        }
+      }
+    } catch (err) {
+      auth.error = authErrorMessage(err.message);
+    }
+    render();
+  }
+
+  function compactState() {
+    const copy = {};
+    ["version", "profile", "completed", "readMaterials", "streak", "recentQuestions"].forEach(function (k) {
+      if (state[k] !== undefined) copy[k] = state[k];
+    });
+    copy.dailyLog = {};
+    Object.keys(state.dailyLog || {}).sort().slice(-30).forEach(function (k) {
+      copy.dailyLog[k] = state.dailyLog[k];
+    });
+    copy.practiceLog = (state.practiceLog || []).slice(-200).map(function (x) {
+      return { date: x.date, subject: x.subject, correct: x.correct, total: x.total };
+    });
+    copy.exams = (state.exams || []).slice(-30).map(function (x) {
+      return { date: x.date, subject: x.subject, stage: x.stage, score: x.score, correct: x.correct, totalQ: x.totalQ, timeUsed: x.timeUsed };
+    });
+    copy.wrongs = (state.wrongs || []).slice(-200).map(function (x) {
+      return { qid: x.qid, date: x.date, count: x.count };
+    });
+    return copy;
+  }
+
+  async function pushCloudState(silent) {
+    if (!auth.user || !auth.user.id) return false;
+    if (auth.syncing) return false;
+    auth.syncing = true;
+    auth.error = "";
+    try {
+      if (!(await ensureSession())) throw new Error("登录已过期，请重新登录");
+      await supabaseFetch("/auth/v1/user", {
+        method: "PUT",
+        body: { data: { jinmen: compactState(), jinmenSyncedAt: Date.now() } }
+      });
+      auth.lastSync = Date.now();
+      saveAuth();
+      auth.message = "已同步到云端";
+      auth.syncing = false;
+      if (!silent) render();
+      return true;
+    } catch (err) {
+      auth.error = authErrorMessage(err.message);
+      auth.syncing = false;
+      if (!silent) render();
+      return false;
+    }
+  }
+
+  function scheduleCloudPush() {
+    if (!auth.user || !auth.autoSync) return;
+    clearTimeout(cloudTimer);
+    cloudTimer = setTimeout(function () {
+      pushCloudState(true);
+    }, 2500);
+  }
+
+  function accountStatusText() {
+    if (auth.syncing) return "同步中…";
+    if (auth.lastSync) return "上次同步 " + new Date(auth.lastSync).toLocaleString();
+    return "尚未同步";
+  }
+
+  function accountCardHtml() {
+    if (!auth.user) {
+      return '<div class="chart-head"><div><h3>账号与云同步</h3><p>登录后可在电脑、手机之间同步学习进度</p></div><span class="tag">Supabase</span></div>' +
+        '<div class="form-grid">' +
+        '<div class="field"><label for="authEmail">邮箱</label><input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>' +
+        '<div class="field"><label for="authPassword">密码</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="至少 6 位"><small>首次使用点“注册”，之后到邮箱点确认链接</small></div>' +
+        '</div>' +
+        '<div class="form-actions"><button class="btn btn-primary" type="button" data-action="authLogin">登录</button>' +
+        '<button class="btn btn-outline" type="button" data-action="authRegister">注册</button></div>' +
+        (auth.message ? '<p class="footer-note">' + esc(auth.message) + '</p>' : '') +
+        (auth.error ? '<p class="footer-note" style="color:var(--danger)">' + esc(auth.error) + '</p>' : '') +
+        '<p class="footer-note">不登录也可以使用，数据只保存在当前浏览器。密码由 Supabase 保存，本站不接触明文密码。</p>';
+    }
+    return '<div class="chart-head"><div><h3>账号与云同步</h3><p>已登录，学习数据可跨设备同步</p></div><span class="tag tag-success">已登录</span></div>' +
+      '<div class="config-row" style="border-top:0"><span>账号</span><strong>' + esc(auth.user.email || "") + '</strong></div>' +
+      '<div class="config-row"><span>同步状态</span><strong>' + esc(accountStatusText()) + '</strong></div>' +
+      '<div class="form-actions" style="flex-wrap:wrap">' +
+      '<button class="btn btn-primary" type="button" data-action="cloudSync"' + (auth.syncing ? " disabled" : "") + '>立即同步</button>' +
+      '<button class="btn btn-outline" type="button" data-action="cloudUseRemote">从云端恢复</button>' +
+      '<button class="btn btn-outline" type="button" data-action="cloudUseLocal">上传本地</button>' +
+      '<button class="btn btn-danger btn-sm" type="button" data-action="authLogout">退出登录</button></div>' +
+      (auth.message ? '<p class="footer-note">' + esc(auth.message) + '</p>' : '') +
+      (auth.error ? '<p class="footer-note" style="color:var(--danger)">' + esc(auth.error) + '</p>' : '') +
+      '<p class="footer-note">同步采用“整份数据覆盖”：换设备时先点“从云端恢复”；本机进度更新后点“上传本地”。数据保存在你的账号资料中，不需要额外建表。</p>';
   }
 
   /* ---------- 学习进度计算 ---------- */
@@ -14854,7 +15161,8 @@ const CHEATSHEETS = {
         '<div class="school-meta"><span class="tag">' + esc(s.level) + '</span><span class="school-score">' + s.line + "/750</span></div></button>";
     }).join("");
 
-    return '<div class="page-head"><div><h2>设置</h2><p>调整考试日期、目标院校与每日学习目标。所有数据保存在当前浏览器，可随时导出备份。</p></div></div>' +
+    return '<div class="page-head"><div><h2>设置</h2><p>调整考试日期、目标院校与每日学习目标。未登录时数据保存在当前浏览器；登录后可跨设备同步。</p></div></div>' +
+      '<section class="card" style="margin-bottom:16px">' + accountCardHtml() + '</section>' +
       '<div class="settings-grid">' +
       '<section class="card"><div class="chart-head"><div><h3>个人备考设置</h3><p>保存后立即生效</p></div></div>' +
       '<div class="form-grid">' +
@@ -14968,6 +15276,8 @@ const CHEATSHEETS = {
   function render() {
     clearInterval(examTimerId);
     applyTheme();
+    const accEl = document.getElementById("accountState");
+    if (accEl) accEl.textContent = auth.user ? "已登录" : "登录";
     if (!VIEW_TITLES[ui.view]) ui.view = "dashboard";
     renderChrome();
     const view = document.getElementById("view");
@@ -15103,6 +15413,11 @@ const CHEATSHEETS = {
         startPractice("daily");
         return;
       }
+      if (action === "authLogin") { authSignIn(); return; }
+      if (action === "authRegister") { authSignUp(); return; }
+      if (action === "authLogout") { authSignOut(); return; }
+      if (action === "cloudSync" || action === "cloudUseLocal") { pushCloudState(false); return; }
+      if (action === "cloudUseRemote") { pullCloudState(true); return; }
       if (action === "practiceSubject") {
         startPractice("subject", { subjectId: target.dataset.id });
         return;
@@ -15241,6 +15556,8 @@ const CHEATSHEETS = {
         applyMaterialSearch();
       }
     });
+    const accountBtn = document.querySelector(".account-chip");
+    if (accountBtn) accountBtn.addEventListener("click", function () { navigate("settings"); });
     document.getElementById("themeBtn").addEventListener("click", function () {
       state.profile.theme = state.profile.theme === "dark" ? "light" : "dark";
       saveState();
